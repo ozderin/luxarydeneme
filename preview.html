@@ -1857,8 +1857,8 @@
     const std = PRICES.standard, vip = PRICES.vip;
     const pp = state.pkg === 'vip' ? vip : (state.pkg === 'standard' ? std : 0);
     const ppWas = state.pkg === 'vip' ? PRICES.vipWas : (state.pkg === 'standard' ? PRICES.standardWas : 0);
-    const pkgTotal = pp * state.adults + Math.round(pp * 0.5) * state.kids;
-    const pkgWasTotal = ppWas * state.adults + Math.round(ppWas * 0.5) * state.kids;
+    const pkgTotal = pp * state.adults + (pp * 0.5) * state.kids;
+    const pkgWasTotal = ppWas * state.adults + (ppWas * 0.5) * state.kids;
     const alcoholTotal = state.alcohol ? PRICES.alcohol * state.adults : 0;
     const headcount = state.adults + state.kids + state.babies;
     const transferHeadcount = state.adults + state.kids;
