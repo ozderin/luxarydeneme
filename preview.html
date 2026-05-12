@@ -1617,32 +1617,39 @@
         </div>
       </div>
 
-      <!-- STEP 2 — Extras -->
+      <!-- STEP 2 — Drinks, Transfer & Optional Add-on -->
       <div class="wiz-step" data-step="2">
         <div class="wiz-section">
-          <span class="wiz-label">Optional Extras</span>
+          <span class="wiz-label">Drinks & Transfer</span>
+          <p class="wiz-hint" style="margin-top:0;margin-bottom:10px">Both choices are required to continue.</p>
 
           <div class="wiz-extra">
             <div class="info">
-              <div class="nm">Unlimited Alcohol Package <span class="pr">+€15 / person</span></div>
-              <div class="ds">Beer · Rakı · Gin · Vodka · Red &amp; White Wine — unlimited service through the evening. Imported drinks available at extra cost.</div>
+              <div class="nm">Drink Option <span class="pr">Required</span></div>
+              <div class="ds">Soft drinks are included in every package. Add unlimited local alcohol for €15 per person — beer, rakı, gin, vodka, red &amp; white wine. Imported drinks at extra cost.</div>
+              <p id="wizAlcoholWarn" class="wiz-warn">Please choose a drink option.</p>
             </div>
             <div class="tgl-row">
-              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="0">No</button>
-              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="1">Yes</button>
+              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="0">Soft Drinks</button>
+              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="1">+ Alcohol €15</button>
             </div>
           </div>
 
           <div class="wiz-extra">
             <div class="info">
-              <div class="nm">Hotel Transfer <span class="pr">+€5 / person</span></div>
-              <div class="ds">Door-to-door private transfer — hotel pickup before the cruise and drop-off after. Handled both ways.</div>
+              <div class="nm">Pickup Option <span class="pr">Required</span></div>
+              <div class="ds">Self-coming to our pier at Eminönü, or door-to-door private transfer from your hotel for €5 per person (round-trip).</div>
+              <p id="wizTransferWarn" class="wiz-warn">Please choose a pickup option.</p>
             </div>
             <div class="tgl-row">
-              <button type="button" class="wiz-extra-btn sel" data-extra="transfer" data-val="0">No</button>
-              <button type="button" class="wiz-extra-btn" data-extra="transfer" data-val="1">Yes</button>
+              <button type="button" class="wiz-extra-btn" data-extra="transfer" data-val="0">Meet at Pier</button>
+              <button type="button" class="wiz-extra-btn" data-extra="transfer" data-val="1">+ Pickup €5</button>
             </div>
           </div>
+        </div>
+
+        <div class="wiz-section">
+          <span class="wiz-label">Optional Add-on</span>
 
           <div class="wiz-extra">
             <div class="info">
@@ -1794,7 +1801,7 @@
 
   const state = {
     step:1, pkg:null, date:'', adults:0, kids:0, babies:0,
-    alcohol:0, transfer:0, romantic:0,
+    alcohol:null, transfer:null, romantic:0,
     name:'', cc:'', phone:'', address:'', room:'', channel:''
   };
 
@@ -1885,7 +1892,9 @@
     all('[data-extra="'+name+'"]').forEach(b => {
       b.classList.toggle('sel', +b.dataset.val === val);
     });
+    if (name === 'alcohol'){ $('wizAlcoholWarn').classList.remove('show'); }
     if (name === 'transfer'){
+      $('wizTransferWarn').classList.remove('show');
       $('wizAddressWrap').style.display = val ? 'block' : 'none';
     }
     renderFoot();
@@ -1932,7 +1941,13 @@
       if (!ok) return;
       showStep(2); return;
     }
-    if (state.step === 2){ showStep(3); return; }
+    if (state.step === 2){
+      let ok = true;
+      if (state.alcohol === null){ $('wizAlcoholWarn').classList.add('show'); ok = false; }
+      if (state.transfer === null){ $('wizTransferWarn').classList.add('show'); ok = false; }
+      if (!ok) return;
+      showStep(3); return;
+    }
     if (state.step === 3){
       let ok = true;
       const name = $('wizName').value.trim();
