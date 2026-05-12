@@ -635,8 +635,9 @@
   /* counters */
   .wiz-counters{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .wiz-counter{border-bottom:1px solid var(--line-soft);padding:8px 0}
-  .wiz-counter .lab{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:6px;font-family:var(--sans);font-weight:500;display:flex;align-items:baseline;justify-content:center;gap:6px}
-  .wiz-counter .lab .age{font-size:8px;letter-spacing:.18em;color:var(--gold);font-weight:400}
+  .wiz-counter .lab{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:4px;font-family:var(--sans);font-weight:500;display:flex;align-items:baseline;justify-content:center;gap:6px;flex-wrap:wrap}
+  .wiz-counter .lab .age{font-size:8px;letter-spacing:.18em;color:var(--ink-soft);font-weight:400}
+  .wiz-counter .cap{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-family:var(--sans);font-weight:500;line-height:1;text-align:center}
   .wiz-counter .ctrl{display:flex;align-items:center;justify-content:center;gap:10px}
   .wiz-counter button{width:28px;height:28px;border-radius:50%;border:1px solid var(--gold-deep);color:var(--gold);font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center;background:transparent;transition:all .2s;font-family:var(--sans);font-weight:300}
   .wiz-counter button:hover{border-color:var(--gold);background:rgba(201,169,97,.08)}
@@ -1617,6 +1618,7 @@
           <div class="wiz-counters">
             <div class="wiz-counter">
               <div class="lab">Adult <span class="age">Age 8+</span></div>
+              <div class="cap">Full price</div>
               <div class="ctrl">
                 <button type="button" data-counter="adults" data-delta="-1" aria-label="Decrease adults">−</button>
                 <span class="val" id="wizAdults">0</span>
@@ -1625,6 +1627,7 @@
             </div>
             <div class="wiz-counter">
               <div class="lab">Kids <span class="age">Age 4–7</span></div>
+              <div class="cap">50% off</div>
               <div class="ctrl">
                 <button type="button" data-counter="kids" data-delta="-1" aria-label="Decrease kids">−</button>
                 <span class="val" id="wizKids">0</span>
@@ -1633,6 +1636,7 @@
             </div>
             <div class="wiz-counter">
               <div class="lab">Baby <span class="age">Age 0–3</span></div>
+              <div class="cap">Free</div>
               <div class="ctrl">
                 <button type="button" data-counter="babies" data-delta="-1" aria-label="Decrease babies">−</button>
                 <span class="val" id="wizBabies">0</span>
@@ -1640,7 +1644,6 @@
               </div>
             </div>
           </div>
-          <p class="wiz-hint" style="text-align:center">Adult (8+) full price · Kids (4–7) 50% off · Baby (0–3) free</p>
         </div>
       </div>
 
