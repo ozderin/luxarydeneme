@@ -1861,14 +1861,15 @@
     const pkgWasTotal = ppWas * state.adults + Math.round(ppWas * 0.5) * state.kids;
     const alcoholTotal = state.alcohol ? PRICES.alcohol * state.adults : 0;
     const headcount = state.adults + state.kids + state.babies;
-    const transferTotal = state.transfer ? PRICES.transfer * headcount : 0;
+    const transferHeadcount = state.adults + state.kids;
+    const transferTotal = state.transfer ? PRICES.transfer * transferHeadcount : 0;
     const romanticTotal = state.romantic ? PRICES.romantic : 0;
     const total = pkgTotal + alcoholTotal + transferTotal + romanticTotal;
     const wasTotal = pkgWasTotal + alcoholTotal + transferTotal + romanticTotal;
     return {
       pkgTotal, pkgWasTotal, alcoholTotal, transferTotal, romanticTotal,
       total, wasTotal,
-      pp, ppWas, headcount
+      pp, ppWas, headcount, transferHeadcount
     };
   }
 
@@ -2076,7 +2077,7 @@
       lines.push(['Package · '+pkgLbl+' — '+detail, fmt(t.pkgTotal)]);
     }
     if (t.alcoholTotal) lines.push(['Unlimited alcohol × '+state.adults, fmt(t.alcoholTotal)]);
-    if (t.transferTotal) lines.push(['Hotel transfer × '+t.headcount, fmt(t.transferTotal)]);
+    if (t.transferTotal) lines.push(['Hotel transfer × '+t.transferHeadcount, fmt(t.transferTotal)]);
     if (t.romanticTotal) lines.push(['Romantic table', fmt(t.romanticTotal)]);
     $('wizPriceLines').innerHTML = lines.map(l => '<div class="wiz-pl"><span>'+l[0]+'</span><b>'+l[1]+'</b></div>').join('');
     $('wizSumTotal').textContent = fmt(t.total);
