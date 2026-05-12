@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Allura&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <style>
   :root{
     --bg:#07070B;
@@ -585,6 +586,27 @@
 
   /* date + inputs */
   .wiz-input{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line-soft);padding:10px 0;font-family:var(--sans);font-size:14px;color:var(--ink);transition:border-color .25s;font-weight:400}
+
+  /* pickup address: autocomplete + map */
+  .wiz-addr-search{position:relative}
+  .wiz-addr-results{position:absolute;top:100%;left:0;right:0;background:var(--bg-2);border:1px solid var(--gold-deep);border-top:0;max-height:240px;overflow:auto;z-index:10;list-style:none;margin:0;padding:0;font-family:var(--sans)}
+  .wiz-addr-results li{padding:10px 14px;border-bottom:1px solid rgba(201,169,97,.12);cursor:pointer;color:var(--ink);font-size:13px;transition:background .15s}
+  .wiz-addr-results li:hover{background:rgba(201,169,97,.08)}
+  .wiz-addr-results li:last-child{border-bottom:0}
+  .wiz-addr-results .lbl{font-weight:500}
+  .wiz-addr-results .sub{font-size:11px;color:var(--ink-soft);margin-top:2px}
+  .wiz-addr-results .empty{color:var(--ink-soft);font-style:italic;cursor:default}
+  .wiz-addr-results .empty:hover{background:transparent}
+  .wiz-addr-loading{position:absolute;right:0;top:14px;width:14px;height:14px;border:2px solid rgba(201,169,97,.2);border-top-color:var(--gold);border-radius:50%;animation:wizSpin .8s linear infinite;display:none}
+  .wiz-addr-loading.show{display:block}
+  @keyframes wizSpin{to{transform:rotate(360deg)}}
+  .wiz-map{height:220px;border:1px solid var(--gold-deep);margin-top:12px;background:var(--bg-2);display:none}
+  .wiz-map.show{display:block}
+  .wiz-map .leaflet-tile{filter:saturate(.55) brightness(.78) contrast(1.05)}
+  .wiz-map .leaflet-control-attribution{background:rgba(15,15,21,.85);color:var(--ink-soft);font-size:9px}
+  .wiz-map .leaflet-control-attribution a{color:var(--gold)}
+  .wiz-map .leaflet-bar a{background:var(--bg-2);color:var(--gold);border-color:var(--gold-deep)}
+  .wiz-map .leaflet-bar a:hover{background:var(--bg-3)}
   .wiz-input:focus{outline:0;border-bottom-color:var(--gold)}
   .wiz-input::placeholder{color:var(--ink-soft)}
   /* Custom date picker (upward popup) */
@@ -1694,8 +1716,14 @@
         </div>
 
         <div class="wiz-section" id="wizAddressWrap" style="display:none">
-          <span class="wiz-label">Pickup Address</span>
-          <input type="text" id="wizAddress" class="wiz-input" placeholder="Hotel name or address">
+          <span class="wiz-label">Pickup Location</span>
+          <div class="wiz-addr-search">
+            <input type="text" id="wizAddress" class="wiz-input" placeholder="Search hotel name or address…" autocomplete="off">
+            <span class="wiz-addr-loading" id="wizAddrLoading"></span>
+            <ul class="wiz-addr-results" id="wizAddrResults" style="display:none"></ul>
+          </div>
+          <p class="wiz-hint">Drag the marker if you need to fine-tune the location.</p>
+          <div class="wiz-map" id="wizMap"></div>
           <div style="margin-top:14px">
             <span class="wiz-label" style="font-size:8px;letter-spacing:.28em;border:0;padding:0;margin-bottom:6px">Room Number</span>
             <input type="text" id="wizRoom" class="wiz-input" placeholder="e.g. 507" maxlength="10">
@@ -1773,6 +1801,7 @@
   </div>
 </div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 (function(){
   const PRICES = { standard:25, vip:65, alcohol:15, transfer:5, romantic:15 };
@@ -1802,7 +1831,7 @@
   const state = {
     step:1, pkg:null, date:'', adults:0, kids:0, babies:0,
     alcohol:null, transfer:null, romantic:0,
-    name:'', cc:'', phone:'', address:'', room:'', channel:''
+    name:'', cc:'', phone:'', address:'', lat:null, lon:null, room:'', channel:''
   };
 
   const $ = id => document.getElementById(id);
@@ -1842,6 +1871,13 @@
     $('wizBack').style.visibility = n > 1 ? 'visible' : 'hidden';
     const body = document.querySelector('.wiz-body');
     if (body) body.scrollTop = 0;
+    if (n === 3 && state.transfer){
+      setTimeout(() => {
+        initMap();
+        if (state.lat && state.lon) placeMarker(state.lat, state.lon);
+        else if (map) map.invalidateSize();
+      }, 80);
+    }
   }
 
   function renderFoot(){
@@ -2024,7 +2060,10 @@
     if (state.babies) gp.push(state.babies+' bab'+(state.babies===1?'y':'ies')+' (0-3)');
     msg += '• Guests: '+gp.join(' + ')+'%0A';
     if (state.alcohol) msg += '• Unlimited alcohol package%0A';
-    if (state.transfer){ msg += '• Hotel transfer · '+state.address+(state.room?(' (Room '+state.room+')'):'')+'%0A'; }
+    if (state.transfer){
+      msg += '• Hotel transfer · '+state.address+(state.room?(' (Room '+state.room+')'):'')+'%0A';
+      if (state.lat && state.lon) msg += '  📍 https://maps.google.com/?q='+state.lat+','+state.lon+'%0A';
+    }
     if (state.romantic) msg += '• Romantic table setup%0A';
     msg += '%0A• Name: '+state.name+'%0A';
     msg += '• Phone: +'+state.cc+' '+state.phone+'%0A';
@@ -2037,6 +2076,98 @@
       url = 'https://wa.me/'+PHONE+'?text='+msg;
     }
     window.open(url,'_blank');
+  }
+
+  /* ---- Pickup map (Leaflet + Nominatim autocomplete) ---- */
+  let map = null, marker = null;
+  let searchTimer = null, searchSeq = 0;
+  const ISTANBUL_CENTER = [41.0082, 28.9784];
+
+  function initMap(){
+    if (map || typeof L === 'undefined') return;
+    L.Icon.Default.mergeOptions({
+      iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+      iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+      shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png'
+    });
+    const el = $('wizMap');
+    el.classList.add('show');
+    map = L.map(el, { scrollWheelZoom: false }).setView(ISTANBUL_CENTER, 11);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+    setTimeout(() => map.invalidateSize(), 100);
+  }
+
+  function placeMarker(lat, lon){
+    initMap();
+    if (!map) return;
+    const ll = [lat, lon];
+    map.setView(ll, 15);
+    if (marker){ marker.setLatLng(ll); }
+    else {
+      marker = L.marker(ll, { draggable: true }).addTo(map);
+      marker.on('dragend', () => {
+        const p = marker.getLatLng();
+        state.lat = p.lat; state.lon = p.lng;
+      });
+    }
+  }
+
+  function escHtml(s){
+    return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function renderAddrResults(items){
+    const ul = $('wizAddrResults');
+    if (!items.length){
+      ul.innerHTML = '<li class="empty">No results — try a different name</li>';
+      ul.style.display = 'block';
+      return;
+    }
+    ul.innerHTML = items.map(it => {
+      const parts = (it.display_name||'').split(', ');
+      const main = parts[0];
+      const sub = parts.slice(1, 3).join(', ');
+      return '<li data-lat="'+it.lat+'" data-lon="'+it.lon+'" data-name="'+escHtml(it.display_name)+'">'+
+        '<div class="lbl">'+escHtml(main)+'</div>'+
+        '<div class="sub">'+escHtml(sub)+'</div>'+
+      '</li>';
+    }).join('');
+    ul.style.display = 'block';
+    Array.from(ul.children).forEach(li => {
+      if (!li.dataset.lat) return;
+      li.addEventListener('click', () => {
+        state.address = li.dataset.name;
+        state.lat = parseFloat(li.dataset.lat);
+        state.lon = parseFloat(li.dataset.lon);
+        $('wizAddress').value = li.dataset.name;
+        ul.style.display = 'none';
+        placeMarker(state.lat, state.lon);
+      });
+    });
+  }
+
+  function searchAddress(q){
+    clearTimeout(searchTimer);
+    const seq = ++searchSeq;
+    const ul = $('wizAddrResults');
+    const spinner = $('wizAddrLoading');
+    if (q.length < 3){
+      ul.style.display = 'none';
+      spinner.classList.remove('show');
+      return;
+    }
+    spinner.classList.add('show');
+    searchTimer = setTimeout(() => {
+      const url = 'https://nominatim.openstreetmap.org/search?format=json&countrycodes=tr&limit=8&viewbox=28.5,41.3,29.5,40.8&bounded=1&q='+encodeURIComponent(q);
+      fetch(url, { headers: { 'Accept-Language': 'en' } })
+        .then(r => r.json())
+        .then(items => { if (seq === searchSeq) renderAddrResults(items); })
+        .catch(() => { if (seq === searchSeq) renderAddrResults([]); })
+        .finally(() => { if (seq === searchSeq) spinner.classList.remove('show'); });
+    }, 450);
   }
 
   /* ---- Wire events ---- */
@@ -2054,8 +2185,10 @@
       if ($('wizCcDrop').classList.contains('show')) closeCcDrop(); else openCcDrop();
     });
     $('wizCcSearch').addEventListener('input', e => renderCountries(e.target.value));
+    $('wizAddress').addEventListener('input', e => searchAddress(e.target.value));
     document.addEventListener('click', e => {
       if (!e.target.closest('.wiz-cc-wrap')) closeCcDrop();
+      if (!e.target.closest('.wiz-addr-search')) $('wizAddrResults').style.display = 'none';
     });
 
     /* pre-select from data-preselect on Reserve Standard / VIP */
