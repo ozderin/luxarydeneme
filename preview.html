@@ -667,12 +667,12 @@
   .wiz-cc-list .cc{color:var(--ink-soft);font-size:12px;flex:none}
 
   /* contact channels */
-  .wiz-channels{display:flex;justify-content:center;gap:32px;margin-top:14px}
-  .wiz-ch{display:flex;flex-direction:column;align-items:center;gap:6px;background:0;border:0;padding:8px 4px;color:var(--ink-soft);cursor:pointer;transition:color .2s,transform .2s}
-  .wiz-ch:hover{color:var(--ink);transform:translateY(-1px)}
-  .wiz-ch.sel{color:var(--gold)}
-  .wiz-ch svg{width:30px;height:30px}
-  .wiz-ch .lab{font-size:9px;letter-spacing:.28em;text-transform:uppercase;font-family:var(--sans);font-weight:500}
+  .wiz-channels{display:flex;justify-content:center;gap:14px;margin-top:14px}
+  .wiz-ch{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:10px;background:rgba(201,169,97,.06);border:1px solid var(--gold-deep);padding:13px 22px;color:var(--ink);cursor:pointer;transition:all .25s;min-width:150px;font-family:var(--sans)}
+  .wiz-ch:hover{background:rgba(201,169,97,.14);border-color:var(--gold);transform:translateY(-1px)}
+  .wiz-ch.sel{background:var(--gold);color:var(--bg);border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+  .wiz-ch svg{width:22px;height:22px;flex:none}
+  .wiz-ch .lab{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600}
 
   /* reservation summary card (Step 4) */
   .wiz-card{background:linear-gradient(180deg,rgba(201,169,97,.03),rgba(15,15,21,.6));border:1px solid var(--gold-deep);padding:0;position:relative;margin-bottom:20px}
@@ -735,7 +735,8 @@
     .wiz-counters{grid-template-columns:repeat(3,1fr);gap:8px}
     .wiz-rows{grid-template-columns:1fr;gap:10px 0}
     .wiz-row.full{grid-column:span 1}
-    .wiz-channels{gap:22px}
+    .wiz-channels{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .wiz-ch{min-width:0;padding:12px 14px}
     .wiz-extra{grid-template-columns:1fr}
     .wiz-extra .tgl-row{justify-self:start}
     .wiz-cc-wrap{flex:0 0 100px}
