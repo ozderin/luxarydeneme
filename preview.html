@@ -783,6 +783,24 @@
   }
 
   .pv{position:fixed;top:8px;right:8px;background:rgba(7,7,11,.7);color:var(--gold);padding:4px 9px;border:1px solid var(--gold-deep);font-size:8px;letter-spacing:.32em;text-transform:uppercase;z-index:80;backdrop-filter:blur(4px);pointer-events:none}
+
+  /* Legal prose (Privacy / Terms / Cancellation modals) */
+  .legal-prose{font-family:var(--sans);color:var(--ink-muted);line-height:1.75;font-size:14px}
+  .legal-prose h3{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);letter-spacing:.01em;margin:28px 0 10px;line-height:1.25}
+  .legal-prose h3:first-child{margin-top:0}
+  .legal-prose p{margin:0 0 14px}
+  .legal-prose p:last-child{margin-bottom:0}
+  .legal-prose ul{margin:0 0 14px;padding-left:0;list-style:none}
+  .legal-prose ul li{margin-bottom:8px;position:relative;padding-left:16px}
+  .legal-prose ul li::before{content:"·";color:var(--gold);position:absolute;left:4px;top:-2px;font-size:20px;line-height:1}
+  .legal-prose strong{color:var(--ink);font-weight:500}
+  .legal-prose a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,169,97,.35)}
+  .legal-prose a:hover{color:var(--gold-bright);border-bottom-color:var(--gold-bright)}
+  .legal-prose .meta{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:28px;padding-top:18px;border-top:1px solid rgba(201,169,97,.15)}
+  @media(max-width:680px){
+    .legal-prose{font-size:13px}
+    .legal-prose h3{font-size:16px;margin:22px 0 8px}
+  }
 </style>
 </head>
 <body>
@@ -1062,9 +1080,9 @@
       <div class="footer-legal">
         <a href="/city-guide/">City Guide</a>
         <a href="/blog/">Blog</a>
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Cancellation</a>
+        <a href="#m-privacy">Privacy</a>
+        <a href="#m-terms">Terms</a>
+        <a href="#m-cancellation">Cancellation</a>
       </div>
     </div>
 
@@ -1526,6 +1544,153 @@
       </div>
       <div class="cta-btns">
         <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- M-PRIVACY -->
+<div class="modal" id="m-privacy">
+  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <div class="modal-frame editorial">
+    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <div class="ed-flat-head">
+      <div class="modal-eyebrow">Privacy · Data Protection</div>
+      <h2 class="modal-title">Your privacy, <span class="modal-script">respected</span></h2>
+      <p class="ed-hero-tagline">How we collect, use, and protect your personal data — short, clear, no jargon.</p>
+    </div>
+    <div class="ed-content">
+      <div class="legal-prose">
+        <h3>Who we are</h3>
+        <p>Luxury Bosphorus Tour ("we", "us") operates this site and the booking conversations on WhatsApp and Telegram. For any privacy-related question, message us through either channel.</p>
+
+        <h3>What we collect</h3>
+        <p>When you reserve, we collect only what we need to confirm and operate your evening:</p>
+        <ul>
+          <li>Your <strong>name</strong> and <strong>phone number</strong></li>
+          <li>The <strong>date</strong>, package, party size, and any add-ons you've chosen</li>
+          <li>Your <strong>hotel name / pickup address</strong> and optional room number — only when you request hotel transfer</li>
+          <li>Any free-text <strong>messages</strong> you send us</li>
+        </ul>
+        <p>We do not ask for ID numbers, credit-card data, or any document. Payment is taken on board.</p>
+
+        <h3>Why we collect it</h3>
+        <ul>
+          <li>To confirm your reservation and hold your table</li>
+          <li>To coordinate hotel pickup, when applicable</li>
+          <li>To reach you with last-minute updates (weather, time changes)</li>
+          <li>To honour cancellation requests</li>
+        </ul>
+
+        <h3>Who we share it with</h3>
+        <p>Only with the staff who need it to deliver your evening:</p>
+        <ul>
+          <li><strong>Our transfer driver</strong>, if you've chosen hotel pickup — receives only your hotel / room and name</li>
+          <li><strong>Our reception team</strong> at the pier, to recognise your reservation</li>
+        </ul>
+        <p>We do not sell, rent, or trade your data. We do not pass anything to advertisers.</p>
+
+        <h3>Third-party services used on this site</h3>
+        <ul>
+          <li><strong>Google Fonts</strong> — for typography (no personal data is sent)</li>
+          <li><strong>OpenStreetMap</strong> — only when you search for your hotel; the search query is sent to OSM's Nominatim service to return results</li>
+          <li><strong>WhatsApp / Telegram</strong> — when you tap "Confirm via …" you continue the booking in their respective apps; their own privacy policies then apply</li>
+        </ul>
+
+        <h3>How long we keep it</h3>
+        <p>Active booking conversations are kept while customer support remains useful — typically up to 12 months after your evening. After that, personal details are deleted.</p>
+
+        <h3>Your rights</h3>
+        <p>You can ask us to <strong>see</strong>, <strong>correct</strong>, or <strong>delete</strong> any data we hold about you. Message us on WhatsApp or Telegram and we'll process the request promptly.</p>
+
+        <h3>Cookies</h3>
+        <p>This site does not set tracking cookies. Your browser may locally cache fonts and map tiles for performance.</p>
+
+        <p class="meta">Last updated · May 2026</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- M-TERMS -->
+<div class="modal" id="m-terms">
+  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <div class="modal-frame editorial">
+    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <div class="ed-flat-head">
+      <div class="modal-eyebrow">Terms · Booking Conditions</div>
+      <h2 class="modal-title">Booking <span class="modal-script">terms</span></h2>
+      <p class="ed-hero-tagline">The basic rules of the evening — what we promise, what we ask in return.</p>
+    </div>
+    <div class="ed-content">
+      <div class="legal-prose">
+        <h3>1. Reservation</h3>
+        <p>A reservation is held when we confirm it on WhatsApp or Telegram and send you a confirmation message. We accept guests up to one hour before departure, subject to availability. <strong>No prepayment is required.</strong></p>
+
+        <h3>2. Departure and duration</h3>
+        <p>Departure is at <strong>21:00</strong> from our pier at <strong>Eminönü</strong>. Doors open at <strong>20:00</strong> — please arrive in good time. The cruise runs for three hours and returns to the same pier around midnight.</p>
+
+        <h3>3. Pricing and payment</h3>
+        <p>Prices shown on this site are valid at booking. Adults pay full price, kids aged 4–7 pay half, babies aged 0–3 are free. Add-ons (transfer, alcohol, romantic table) are calculated per booking. Payment is taken <strong>on board</strong> in cash (EUR, TRY, USD) or by card.</p>
+
+        <h3>4. Hotel transfer</h3>
+        <p>If you choose pickup, our driver collects you at the hotel time we agree on WhatsApp. We need your hotel name and a confirmed pickup window. The same driver drops you back after the cruise.</p>
+
+        <h3>5. Cancellation and changes</h3>
+        <p>Free cancellation is available up to <strong>2 hours before departure</strong>. See our <a href="#m-cancellation">Cancellation policy</a> for details.</p>
+
+        <h3>6. Weather and sea conditions</h3>
+        <p>The cruise runs in almost all weather. In rare storm conditions the route may be shortened or the evening rescheduled — you are entitled to a free reschedule or to walk away with no charge.</p>
+
+        <h3>7. Behaviour on board</h3>
+        <p>We welcome a lively evening, but we reserve the right to refuse boarding to anyone who is significantly intoxicated, behaves aggressively, or endangers other guests or crew. The captain's authority is final at sea.</p>
+
+        <h3>8. Liability</h3>
+        <p>Operations are governed by Turkish maritime and consumer law. We carry full passenger insurance for the cruise.</p>
+
+        <h3>9. Photography and video</h3>
+        <p>You may photograph and film for personal use. If we want to publish any image that identifies guests, we will ask first.</p>
+
+        <h3>10. Updates to these terms</h3>
+        <p>We may update these terms from time to time. The version published on this page at the time of your booking is the one that applies to you.</p>
+
+        <p class="meta">Last updated · May 2026</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- M-CANCELLATION -->
+<div class="modal" id="m-cancellation">
+  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <div class="modal-frame editorial">
+    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <div class="ed-flat-head">
+      <div class="modal-eyebrow">Cancellation · Refunds</div>
+      <h2 class="modal-title">Cancellation <span class="modal-script">policy</span></h2>
+      <p class="ed-hero-tagline">How free cancellation works and what happens in special cases.</p>
+    </div>
+    <div class="ed-content">
+      <div class="legal-prose">
+        <h3>Free cancellation</h3>
+        <p>Cancel for any reason — no questions, no fee — up to <strong>2 hours before departure</strong> (i.e. by 19:00 on the evening of your cruise). Since we don't take prepayment, there's nothing to refund and nothing to chase. Just message us.</p>
+
+        <h3>How to cancel</h3>
+        <p>Reply to the WhatsApp or Telegram thread you used to book, or start a new message — name and date are enough for us to find your reservation. Confirmation arrives within minutes during operating hours.</p>
+
+        <h3>Inside the 2-hour window or no-show</h3>
+        <p>If you cancel after 19:00 or simply don't arrive, we don't chase a charge — but the table is held until departure and another guest cannot use it. Please send us a quick note when you can; it helps the table go to someone else.</p>
+
+        <h3>Weather or sea conditions</h3>
+        <p>If we cancel due to weather, captain's call, or vessel availability, we offer you either a <strong>free reschedule</strong> for any future evening within 6 months, or a full release if you've already paid anything in advance.</p>
+
+        <h3>Changes (date, party size, package)</h3>
+        <p>You can change your date, guest count, or package up to <strong>4 hours before departure</strong>, subject to availability. Date changes are free; upgrades pay the difference; downgrades follow the current published rates.</p>
+
+        <h3>Refunds, if applicable</h3>
+        <p>Most evenings carry no prepayment, so refunds rarely apply. In the few cases where a deposit was taken (private yacht, large groups), refunds are made through the same channel as the payment within 5 working days of the cancellation request.</p>
+
+        <p class="meta">Last updated · May 2026</p>
       </div>
     </div>
   </div>
