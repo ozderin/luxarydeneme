@@ -1969,19 +1969,32 @@
   function closeCcDrop(){ $('wizCcDrop').classList.remove('show'); $('wizCcBtn').setAttribute('aria-expanded','false'); $('wizCcSearch').value=''; renderCountries(''); }
 
   /* ---- Validation per step ---- */
+  function focusFirstError(focusInput){
+    const firstWarn = document.querySelector('.wiz-step.active .wiz-warn.show');
+    if (!firstWarn) return;
+    const section = firstWarn.closest('.wiz-section') || firstWarn.parentElement;
+    if (section && section.scrollIntoView){
+      section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    if (focusInput){
+      const input = section && section.querySelector('input, select, textarea');
+      if (input){ setTimeout(() => input.focus({ preventScroll: true }), 350); }
+    }
+  }
+
   function onNext(){
     if (state.step === 1){
       let ok = true;
       if (!state.pkg){ $('wizPkgWarn').classList.add('show'); ok = false; }
       if (state.adults < 1){ $('wizAdultsWarn').classList.add('show'); ok = false; }
-      if (!ok) return;
+      if (!ok){ focusFirstError(false); return; }
       showStep(2); return;
     }
     if (state.step === 2){
       let ok = true;
       if (state.alcohol === null){ $('wizAlcoholWarn').classList.add('show'); ok = false; }
       if (state.transfer === null){ $('wizTransferWarn').classList.add('show'); ok = false; }
-      if (!ok) return;
+      if (!ok){ focusFirstError(false); return; }
       showStep(3); return;
     }
     if (state.step === 3){
@@ -1994,7 +2007,7 @@
       if (!name){ $('wizNameWarn').classList.add('show'); ok = false; } else { $('wizNameWarn').classList.remove('show'); }
       if (!phone){ $('wizPhoneWarn').classList.add('show'); ok = false; } else { $('wizPhoneWarn').classList.remove('show'); }
       if (!state.channel){ $('wizChannelWarn').classList.add('show'); ok = false; }
-      if (!ok) return;
+      if (!ok){ focusFirstError(true); return; }
       showStep(4); return;
     }
   }
