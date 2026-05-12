@@ -259,6 +259,9 @@
   .modal-frame.editorial .modal-eyebrow{margin-bottom:8px}
   .modal-frame.editorial .modal-title{margin-bottom:8px;font-size:clamp(38px,4.6vw,60px)}
   .ed-hero-tagline{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink);opacity:.85;line-height:1.4;max-width:48ch;margin-top:6px}
+  .ed-flat-head{padding:40px 56px 26px;border-bottom:1px solid rgba(201,169,97,.18)}
+  @media(max-width:880px){.ed-flat-head{padding:30px 24px 20px}}
+  @media(max-width:680px){.ed-flat-head{padding:26px 18px 16px}}
 
   .ed-content{padding:32px 56px 36px}
   .ed-lede{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.1vw,26px);line-height:1.45;color:var(--ink);max-width:38ch;margin:0 auto;text-align:center;font-weight:400}
@@ -1333,14 +1336,10 @@
   <div class="modal-frame editorial">
     <a href="#" class="modal-close" aria-label="Kapat">×</a>
 
-    <div class="ed-hero">
-      <img src="data/boat-night-bridge.webp" alt="">
-      <div class="ed-hero-veil"></div>
-      <div class="ed-hero-text">
-        <div class="modal-eyebrow">The Programme · Hour by Hour</div>
-        <h2 class="modal-title">An evening, <span class="modal-script">step by step</span></h2>
-        <p class="ed-hero-tagline">From a 21:00 departure at Eminönü Pier to a midnight return — the full Bosphorus arc.</p>
-      </div>
+    <div class="ed-flat-head">
+      <div class="modal-eyebrow">The Programme · Hour by Hour</div>
+      <h2 class="modal-title">An evening, <span class="modal-script">step by step</span></h2>
+      <p class="ed-hero-tagline">From a 21:00 departure at Eminönü Pier to a midnight return — the full Bosphorus arc.</p>
     </div>
 
     <div class="ed-content">
