@@ -574,8 +574,9 @@
   .wiz-pkg .eb{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft);font-family:var(--sans);font-weight:500}
   .wiz-pkg .nm{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:.01em;line-height:1}
   .wiz-pkg .nm .nm-sub{font-size:.55em;font-weight:600;letter-spacing:.02em;margin-left:4px}
-  .wiz-pkg .pr{display:flex;align-items:baseline;gap:6px;margin-top:2px}
-  .wiz-pkg .pr .now{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--gold)}
+  .wiz-pkg .pr{display:flex;align-items:baseline;gap:8px;margin-top:4px;flex-wrap:wrap}
+  .wiz-pkg .pr .strike{font-family:var(--serif);font-size:15px;color:var(--ink-soft);text-decoration:line-through;text-decoration-color:rgba(201,169,97,.45)}
+  .wiz-pkg .pr .now{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--gold);line-height:1}
   .wiz-pkg .pr .per{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
   .wiz-pkg .ds{font-size:11px;color:var(--ink-muted);line-height:1.5}
   .wiz-pkg .badge{position:absolute;top:-1px;right:-1px;background:var(--gold);color:var(--bg);font-size:8px;letter-spacing:.28em;text-transform:uppercase;padding:4px 10px;font-weight:600;font-family:var(--sans)}
@@ -728,7 +729,8 @@
     .wiz-pkgs{grid-template-columns:1fr 1fr;gap:8px}
     .wiz-pkg{padding:14px 12px 14px}
     .wiz-pkg .nm{font-size:18px}
-    .wiz-pkg .pr .now{font-size:16px}
+    .wiz-pkg .pr .now{font-size:24px}
+    .wiz-pkg .pr .strike{font-size:13px}
     .wiz-pkg .pr .per{font-size:8px;letter-spacing:.16em}
     .wiz-pkg .ds{font-size:10px;line-height:1.45}
     .wiz-pkg .badge{font-size:7px;letter-spacing:.22em;padding:3px 7px}
@@ -1554,13 +1556,13 @@
           <div class="wiz-pkgs">
             <button type="button" class="wiz-pkg" data-pkg="standard">
               <span class="nm">Standard <span class="nm-sub">Menu</span></span>
-              <span class="pr"><span class="now">€25</span><span class="per">per person</span></span>
+              <span class="pr"><span class="strike">€38</span><span class="now">€25</span><span class="per">per person</span></span>
               <span class="ds">Multi-course dinner, soft drinks, Turkish night show.</span>
             </button>
             <button type="button" class="wiz-pkg" data-pkg="vip">
               <span class="badge">Most Popular</span>
               <span class="nm">VIP <span class="nm-sub">Menu</span></span>
-              <span class="pr"><span class="now">€65</span><span class="per">per person</span></span>
+              <span class="pr"><span class="strike">€100</span><span class="now">€65</span><span class="per">per person</span></span>
               <span class="ds">Premium meats, near-stage seating, elevated service.</span>
             </button>
           </div>
