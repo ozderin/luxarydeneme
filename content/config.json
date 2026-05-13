@@ -22,6 +22,9 @@
     "departure": "21:00",
     "return": "23:45"
   },
+  "video": {
+    "heroEmbed": "https://www.youtube.com/embed/QBB3ENbpYUM?autoplay=1&rel=0&modestbranding=1"
+  },
   "prices": {
     "currency": "EUR",
     "currencySymbol": "€",
