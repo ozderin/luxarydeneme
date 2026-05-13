@@ -792,6 +792,40 @@
 
   .pv{position:fixed;top:8px;right:8px;background:rgba(7,7,11,.7);color:var(--gold);padding:4px 9px;border:1px solid var(--gold-deep);font-size:8px;letter-spacing:.32em;text-transform:uppercase;z-index:80;backdrop-filter:blur(4px);pointer-events:none}
 
+  /* Menu detail (m-dinner course-by-course) */
+  .menu-detail{margin:8px 0 40px}
+  .menu-detail-head{text-align:center;margin-bottom:36px}
+  .menu-detail-eyebrow{font-family:var(--sans);font-weight:500;font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .menu-detail-title{font-family:var(--serif);font-weight:500;font-size:32px;color:var(--ink);letter-spacing:.02em;margin:0 0 12px;line-height:1.1}
+  .menu-detail-title em{font-family:var(--script);font-style:normal;color:var(--gold-bright);text-transform:none}
+  .menu-detail-intro{font-family:var(--sans);font-size:14px;color:var(--ink-muted);line-height:1.7;max-width:560px;margin:0 auto}
+  .menu-block{margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid rgba(201,169,97,.15)}
+  .menu-block:last-of-type{border-bottom:0}
+  .menu-block-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+  .menu-block-step{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.32em;color:var(--gold-deep)}
+  .menu-block-name{font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);letter-spacing:.01em}
+  .menu-block-count{font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-left:auto}
+  .menu-block-desc{font-family:var(--sans);font-size:14px;color:var(--ink-muted);line-height:1.7;max-width:680px;margin:0 0 14px}
+  .menu-block-figure{margin:14px 0 0;overflow:hidden;border:1px solid rgba(201,169,97,.15)}
+  .menu-block-figure img{width:100%;height:auto;max-height:240px;object-fit:cover;display:block}
+  .dish-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:8px}
+  .dish-card{background:linear-gradient(180deg,rgba(201,169,97,.04),rgba(15,15,21,.6));border:1px solid var(--line-soft);padding:18px 20px;display:flex;flex-direction:column;gap:6px;position:relative}
+  .dish-card.vip{border-color:var(--gold-deep);background:linear-gradient(180deg,rgba(201,169,97,.08),rgba(15,15,21,.6))}
+  .dish-card .dish-cat{font-family:var(--sans);font-weight:500;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+  .dish-card.vip .dish-cat::after{content:" · VIP";color:var(--gold-bright);font-weight:600}
+  .dish-card .dish-name{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);margin:0;letter-spacing:.01em;line-height:1.25}
+  .dish-card .dish-desc{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;margin:0}
+  .dish-card .dish-ph{width:calc(100% + 40px);margin-left:-20px;margin-right:-20px;margin-top:8px;height:140px;object-fit:cover;display:block;border-top:1px solid rgba(201,169,97,.15)}
+  .menu-detail-foot{font-family:var(--sans);font-size:12px;color:var(--ink-soft);line-height:1.6;text-align:center;font-style:italic;margin-top:8px}
+  @media(max-width:680px){
+    .menu-detail-title{font-size:24px}
+    .menu-block-head{gap:10px}
+    .menu-block-name{font-size:18px}
+    .menu-block-count{margin-left:0;width:100%}
+    .dish-grid{grid-template-columns:1fr;gap:14px}
+    .dish-card .dish-ph{height:160px}
+  }
+
   /* Legal prose (Privacy / Terms / Cancellation modals) */
   .legal-prose{font-family:var(--sans);color:var(--ink-muted);line-height:1.75;font-size:14px}
   .legal-prose h3{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);letter-spacing:.01em;margin:28px 0 10px;line-height:1.25}
@@ -1119,6 +1153,89 @@
     </div>
 
     <div class="ed-content">
+
+      <!-- MENU IN DETAIL -->
+      <div class="menu-detail">
+        <div class="menu-detail-head">
+          <div class="menu-detail-eyebrow">What's on the menu</div>
+          <h3 class="menu-detail-title">Four courses, <em>served slowly</em></h3>
+          <p class="menu-detail-intro">A multi-course Turkish menu built around classic meze, a warm pastry, a generous main, and dessert. Standard and VIP follow the same arc — VIP differs in meze breadth and adds premium beef to the main course.</p>
+        </div>
+
+        <!-- 01 · MEZE -->
+        <div class="menu-block">
+          <div class="menu-block-head">
+            <span class="menu-block-step">01</span>
+            <span class="menu-block-name">Meze</span>
+            <span class="menu-block-count">Standard: 10 varieties · VIP: 15+ varieties</span>
+          </div>
+          <p class="menu-block-desc">Cold Turkish appetisers served family-style at your table: hummus, ezme (spicy tomato), haydari (strained yoghurt with herbs), fava (broad bean), atom (yoghurt with chili butter), kısır (bulgur salad), yaprak sarması (stuffed vine leaves), çoban salatası, smoked aubergine, beetroot tarator. VIP extends the spread with seasonal specials, octopus and a wider seafood selection.</p>
+          <div class="menu-block-figure">
+            <img src="data/table-candle-glasses.webp" alt="Turkish meze spread served on a candlelit Bosphorus dinner cruise table" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 02 · WARM STARTER -->
+        <div class="menu-block">
+          <div class="menu-block-head">
+            <span class="menu-block-step">02</span>
+            <span class="menu-block-name">Warm starter</span>
+            <span class="menu-block-count">Same in both packages</span>
+          </div>
+          <p class="menu-block-desc"><strong>Paçanga böreği</strong> — a crisp, fried filo pastry filled with beef pastırma (air-dried cured beef) and melted kashar cheese. A signature Turkish opener served hot, between meze and main.</p>
+        </div>
+
+        <!-- 03 · MAIN COURSE -->
+        <div class="menu-block">
+          <div class="menu-block-head">
+            <span class="menu-block-step">03</span>
+            <span class="menu-block-name">Main course</span>
+            <span class="menu-block-count">Choose one · seasonal salad included</span>
+          </div>
+          <p class="menu-block-desc">Each guest picks one main; partners can mix categories. Standard offers four choices below; VIP adds premium beef (tenderloin / ribeye) on top of the same four.</p>
+          <div class="dish-grid">
+            <div class="dish-card">
+              <span class="dish-cat">Meat</span>
+              <h4 class="dish-name">Grilled Meatballs</h4>
+              <p class="dish-desc">Hand-pressed beef and lamb köfte seasoned with cumin, parsley and onion. Served with smoked aubergine purée and grilled vegetables.</p>
+            </div>
+            <div class="dish-card vip">
+              <span class="dish-cat">Meat</span>
+              <h4 class="dish-name">Beef Tenderloin · Ribeye</h4>
+              <p class="dish-desc">Cut to order from premium Turkish beef, grilled to your preferred doneness and rested. Served with butter-roasted potatoes and a peppercorn jus.</p>
+              <img class="dish-ph" src="data/steak-wine.webp" alt="VIP main course on Bosphorus dinner cruise — grilled beef with red wine" loading="lazy">
+            </div>
+            <div class="dish-card">
+              <span class="dish-cat">Chicken</span>
+              <h4 class="dish-name">Grilled Chicken Breast</h4>
+              <p class="dish-desc">Marinated overnight in olive oil, lemon and herbs, then grilled to order. Served with seasonal roasted vegetables and yoghurt sauce.</p>
+              <img class="dish-ph" src="data/chicken-wine.webp" alt="Grilled chicken main course served with wine on Bosphorus dinner cruise" loading="lazy">
+            </div>
+            <div class="dish-card">
+              <span class="dish-cat">Fish</span>
+              <h4 class="dish-name">Salmon · Sea Bream</h4>
+              <p class="dish-desc">Pan-seared catch of the day with olive oil, lemon and Mediterranean herbs. Served with garlic potatoes and grilled greens.</p>
+            </div>
+            <div class="dish-card">
+              <span class="dish-cat">Vegetarian</span>
+              <h4 class="dish-name">Falafel Platter</h4>
+              <p class="dish-desc">Crispy chickpea falafel with bulgur pilaf, sautéed seasonal vegetables, roasted potatoes and crispy onion rings. Vegan on request.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 · DESSERT -->
+        <div class="menu-block">
+          <div class="menu-block-head">
+            <span class="menu-block-step">04</span>
+            <span class="menu-block-name">Dessert</span>
+            <span class="menu-block-count">Same in both packages</span>
+          </div>
+          <p class="menu-block-desc"><strong>Ice cream cake</strong> — layered vanilla, chocolate and pistachio finished with a warm syrup drizzle. Served as the night turns to the show's final act, before coffee and tea service.</p>
+        </div>
+
+        <p class="menu-detail-foot">Unlimited soft drinks (water, cola, juice) included in both packages. Unlimited local alcohol available as a +€15 add-on; imported spirits at extra cost. Dietary needs (vegetarian, vegan, gluten-free) handled on board — let us know on booking.</p>
+      </div>
 
       <div class="packages">
 
