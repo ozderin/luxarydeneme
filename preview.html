@@ -826,7 +826,7 @@
   }
 
   /* Language picker — floating bottom-right, sits above the WhatsApp pill */
-  .lang-picker{position:fixed;top:10px;right:18px;bottom:auto;z-index:95;margin:0}
+  .lang-picker{position:fixed;top:0;right:14px;bottom:auto;z-index:95;margin:0}
   .book-pill{margin-left:auto}
   .lang-btn{display:flex;align-items:center;gap:8px;background:rgba(7,7,11,.78);backdrop-filter:blur(8px);border:1px solid var(--gold-deep);color:var(--gold);padding:9px 13px;cursor:pointer;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:all .25s;line-height:1;box-shadow:0 6px 18px -6px rgba(0,0,0,.5)}
   .lang-btn:hover{background:rgba(15,15,21,.88);border-color:var(--gold)}
@@ -842,7 +842,7 @@
   .lang-list a span.name{flex:1}
   .lang-list a.active::after{content:"●";color:var(--gold);font-size:8px;margin-left:auto}
   @media(max-width:560px){
-    .lang-picker{top:8px;right:14px}
+    .lang-picker{top:0;right:10px}
     .lang-btn{padding:7px 10px;font-size:9px;letter-spacing:.16em;gap:6px}
     .lang-btn .lang-flag{width:16px}
   }
