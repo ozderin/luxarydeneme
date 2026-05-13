@@ -11,14 +11,14 @@
 <link rel="alternate" hreflang="tr" href="https://luxurybosphorustour.com/tr/">
 <link rel="alternate" hreflang="x-default" href="https://luxurybosphorustour.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Bosphorus Dinner Cruise Istanbul — Turkish Night Show">
-<meta property="og:description" content="Three-hour luxury Bosphorus dinner cruise from Eminönü Pier. Turkish night show, multi-course menu, optional hotel transfer. From €25 per person.">
+<meta property="og:title" content="Boğaz Akşam Yemekli Tekne Turu İstanbul — Türk Gecesi Şovu">
+<meta property="og:description" content="Eminönü iskelesinden kalkan üç saatlik lüks Boğaz akşam yemekli tekne turu. Türk gecesi şovu, çok aşamalı menü, opsiyonel otel transferi. Kişi başı 25 €'dan.">
 <meta property="og:image" content="https://luxurybosphorustour.com/data/boat-night-bridge.webp">
-<meta property="og:url" content="https://luxurybosphorustour.com/">
+<meta property="og:url" content="https://luxurybosphorustour.com/tr/">
 <meta property="og:site_name" content="Luxury Bosphorus Tour">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bosphorus Dinner Cruise Istanbul — Turkish Night Show">
-<meta name="twitter:description" content="Three-hour luxury Bosphorus dinner cruise from Eminönü Pier. Turkish night show, multi-course menu, hotel transfer. From €25.">
+<meta name="twitter:title" content="Boğaz Akşam Yemekli Tekne Turu İstanbul — Türk Gecesi Şovu">
+<meta name="twitter:description" content="Eminönü iskelesinden kalkan üç saatlik lüks Boğaz akşam yemekli tekne turu. Türk gecesi şovu, çok aşamalı menü, otel transferi. 25 €'dan.">
 <meta name="twitter:image" content="https://luxurybosphorustour.com/data/boat-night-bridge.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +54,7 @@
 
   /* ─────────── nav ─────────── */
   nav{position:absolute;top:0;left:0;right:0;z-index:30;padding:38px 0 14px}
-  nav .row{display:flex;align-items:center;gap:14px}
+  nav .row{display:flex;align-items:flex-start;gap:14px}
   .brand{display:flex;align-items:center;gap:12px}
   .brand .glyph{width:36px;height:36px}
   .brand .name{display:flex;flex-direction:column;line-height:1.1}
@@ -67,15 +67,19 @@
   .menu a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--gold)}
   .menu a:hover{color:var(--gold)}
 
+  .book-wrap{display:inline-flex;flex-direction:column;align-items:flex-end;gap:6px}
   .book-pill{display:inline-flex;align-items:center;gap:11px;padding:9px 16px;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:.22em;text-transform:uppercase;border-radius:2px;transition:all .3s;text-decoration:none;line-height:1}
   .book-pill:hover{background:var(--gold);color:var(--bg)}
   .book-pill .ico{width:14px;height:14px;flex:none}
   .book-pill .bp-content{display:flex;flex-direction:column;align-items:flex-start;gap:3px;line-height:1.05}
   .book-pill .bp-main{font-weight:600;letter-spacing:.22em;font-size:10px}
-  .book-pill .bp-sub{font-size:12px;letter-spacing:.06em;color:var(--gold-bright);font-family:var(--serif);text-transform:none;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
-  .book-pill:hover .bp-sub{color:var(--bg);opacity:.85}
-  .book-pill.closed .bp-sub{color:var(--ink-soft)}
-  .book-pill:hover.closed .bp-sub{color:var(--bg)}
+  .book-cd{display:inline-flex;flex-direction:column;align-items:flex-end;gap:3px;padding-right:2px;line-height:1}
+  .book-cd .lab{font-family:var(--sans);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-muted)}
+  .book-cd .h-row{display:inline-flex;align-items:center;gap:4px}
+  .book-cd .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 2px rgba(201,169,97,.18);animation:tonightPulse 2.2s ease-in-out infinite;flex:none}
+  .book-cd .cd-h{font-family:var(--serif);font-size:20px;letter-spacing:.02em;color:var(--gold-bright);font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+  .book-cd .cd-m,.book-cd .cd-s{font-family:var(--serif);font-size:11px;letter-spacing:.08em;color:var(--gold-bright);font-weight:500;font-variant-numeric:tabular-nums}
+  .book-cd.closed .lab,.book-cd.closed .cd-h,.book-cd.closed .cd-m,.book-cd.closed .cd-s{color:var(--ink-soft)}
 
   @media(max-width:1180px){.menu{gap:24px}}
   @media(max-width:980px){.menu{display:none}}
@@ -134,7 +138,7 @@
 
   .hero-h1{margin:0;padding:0;font-weight:inherit;font-size:inherit;display:flex;flex-direction:column}
   .h-line{font-family:var(--serif);font-weight:400;color:var(--ink);letter-spacing:.04em;line-height:.95;text-transform:uppercase;display:block}
-  .h-small{font-size:clamp(18px,1.7vw,24px);font-weight:300;letter-spacing:.32em;color:var(--ink-muted);white-space:nowrap}
+  .h-small{font-size:clamp(18px,1.7vw,24px);font-weight:300;letter-spacing:.32em;color:var(--ink-muted);white-space:nowrap;margin-bottom:12px}
   @media(max-width:980px){.h-small{letter-spacing:.18em;font-size:16px}}
   @media(max-width:560px){.h-small{letter-spacing:.12em;font-size:13px}}
   .h-mega{font-family:var(--serif);font-weight:600;font-size:clamp(56px,7.5vw,108px);line-height:.86;letter-spacing:-.01em;color:var(--gold);text-transform:uppercase;margin:2px 0}
@@ -855,7 +859,7 @@
 
   /* Language picker — floating bottom-right, sits above the WhatsApp pill */
   .lang-picker{position:fixed;top:0;right:14px;bottom:auto;z-index:95;margin:0}
-  .book-pill{margin-left:auto;margin-right:14px}
+  .book-wrap{margin-left:auto;margin-right:-18px}
   .lang-btn{display:flex;align-items:center;gap:8px;background:rgba(7,7,11,.78);backdrop-filter:blur(8px);border:1px solid var(--gold-deep);color:var(--gold);padding:9px 13px;cursor:pointer;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:all .25s;line-height:1;box-shadow:0 6px 18px -6px rgba(0,0,0,.5)}
   .lang-btn:hover{background:rgba(15,15,21,.88);border-color:var(--gold)}
   .lang-btn .lang-flag{width:18px;height:auto;display:block;border:1px solid rgba(201,169,97,.3)}
@@ -872,7 +876,7 @@
   @media(max-width:560px){
     .lang-picker{top:0;right:10px}
     nav{padding:30px 0 14px}
-    .book-pill{margin-right:0}
+    .book-wrap{margin-right:-8px}
     .lang-btn{padding:7px 10px;font-size:9px;letter-spacing:.16em;gap:6px}
     .lang-btn .lang-flag{width:16px}
   }
@@ -989,13 +993,23 @@
           <li><a href="/tr/" lang="tr" class="active"><img src="https://flagcdn.com/w40/tr.png" alt=""><span class="name">Türkçe</span></a></li>
         </ul>
       </div>
-      <a class="book-pill" href="#m-book">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
-        <span class="bp-content">
-          <span class="bp-main" id="bookPillMain">Bu Akşam Ayırt</span>
-          <span class="bp-sub" id="bookPillSub">kapanışa —</span>
+      <div class="book-wrap">
+        <a class="book-pill" href="#m-book">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          <span class="bp-content">
+            <span class="bp-main" id="bookPillMain">Bu Akşam Ayırt</span>
+          </span>
+        </a>
+        <span class="book-cd" id="bookCd">
+          <span class="lab" id="bookCdLabel">kalkışa</span>
+          <span class="h-row">
+            <span class="dot"></span>
+            <span class="cd-h" id="bookCdH">—</span>
+          </span>
+          <span class="cd-m" id="bookCdM">—</span>
+          <span class="cd-s" id="bookCdS">—</span>
         </span>
-      </a>
+      </div>
     </div>
   </nav>
 
@@ -1040,10 +1054,10 @@
 
       <!-- DEFAULT -->
       <div class="panel panel-default">
-        <div class="eyebrow">İstanbul · Boğaz'da Akşamlar</div>
+        <div class="eyebrow">Boğaz'da Akşamlar</div>
         <h1 class="hero-h1">
           <span class="h-line h-small">İstanbul · Türk Gecesi</span>
-          <span class="h-line h-mega">Boğaz</span>
+          <span class="h-line h-mega">Boğaz'da</span>
           <span class="h-line h-mid">Akşam Yemekli Tekne Turu <span class="h-script" id="heroScript">bu akşam</span></span>
         </h1>
         <p class="hero-booked hero-booked-desktop"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><strong class="js-booked-count">0</strong> <span class="js-booked-lab">kişi bu akşamki tura ayrıldı</span></p>
@@ -1061,7 +1075,7 @@
 
       <!-- DINNER -->
       <div class="panel panel-dinner">
-        <div class="eyebrow">Boğaz Akşam Yemekli Menü · Fine Dining</div>
+        <div class="eyebrow">Boğaz Akşam Yemekli Menü</div>
         <h2 class="hero-h1">
           <span class="h-line h-small">Çok yemekli Türk menüsü</span>
           <span class="h-line h-mega">Yemek</span>
@@ -1176,7 +1190,7 @@
 
     <!-- RIGHT — play + social rail -->
     <aside class="hero-side-right">
-      <a class="play" href="#" title="Play video">
+      <a class="play" href="#" title="Videoyu oynat">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <span class="label">Videoyu Oynat</span>
       </a>
@@ -1194,9 +1208,9 @@
 <section class="upcoming">
   <div class="wrap">
     <div class="up-row">
-      <div class="up-label">The Experience</div>
+      <div class="up-label">Deneyim</div>
       <div class="events">
-        <a class="ev e1" href="#m-dinner"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">Yemek</div><div class="sub">Fine dining</div></div></a>
+        <a class="ev e1" href="#m-dinner"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">Yemek</div><div class="sub">Akşam yemeği</div></div></a>
         <a class="ev e2" href="#m-shows"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">Şovlar</div><div class="sub">Türk gecesi</div></div></a>
         <a class="ev e3" href="#m-view"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">Manzara</div><div class="sub">Boğaz manzarası</div></div></a>
         <a class="ev e4" href="#m-party"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">Parti</div><div class="sub">DJ &amp; dans</div></div></a>
@@ -1210,8 +1224,8 @@
 <footer>
   <div class="wrap row">
     <div class="f-domain">luxurybosphorustour.com</div>
-    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Departure · <b>Eminönü</b></div>
-    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Door Opens · <b>20:00</b></div>
+    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kalkış · <b>Eminönü</b></div>
+    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Kapı Açılış · <b>20:00</b></div>
     <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.9 19.9 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.9 19.9 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg><b>+90 (XXX) XXX XX XX</b></div>
     <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg><b>info@luxurybosphorustour.com</b></div>
   </div>
@@ -1233,17 +1247,17 @@
           </svg>
           <h4>Luxury Bosphorus Tour</h4>
         </div>
-        <p>Istanbul's premier evening dinner cruise. Three decks, an Anatolian programme, and the Bosphorus by night — every evening, a celebration.</p>
+        <p>İstanbul'un en seçkin akşam Boğaz yemek turu. Üç güverte, Anadolu programı ve gece Boğaz — her akşam bir kutlama.</p>
       </div>
 
       <div class="footer-col footer-col-center">
-        <h5>Reservations</h5>
+        <h5>Rezervasyon</h5>
         <ul>
           <li><a href="tel:+90">+90 (XXX) XXX XX XX</a></li>
           <li><a href="mailto:reservations@luxurybosphorustour.com">reservations@luxurybosphorustour.com</a></li>
           <li><a href="#">WhatsApp</a></li>
           <li><a href="#">Telegram</a></li>
-          <li>Open daily · 24/7</li>
+          <li>Her gün · 7/24</li>
         </ul>
       </div>
 
@@ -1275,7 +1289,7 @@
     <div class="footer-divider"></div>
 
     <div class="footer-bottom">
-      <div class="footer-copy">© 2026 Luxury Bosphorus Tour · All evenings reserved.</div>
+      <div class="footer-copy">© 2026 Luxury Bosphorus Tour · Tüm hakları saklıdır.</div>
       <div class="footer-social">
         <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l.5-4H13V7.5c0-1.1.3-1.8 1.9-1.8H17V2.2C16.6 2.1 15.4 2 14 2c-3 0-5 1.8-5 5.2V10H6v4h3v8h4z"/></svg></a>
@@ -1283,11 +1297,11 @@
         <a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M11.944 0C5.345 0 0 5.345 0 11.944c0 6.6 5.345 11.944 11.944 11.944 6.6 0 11.945-5.344 11.945-11.944C23.889 5.345 18.544 0 11.944 0zm5.804 8.135l-1.943 9.137c-.144.654-.534.815-1.082.508l-2.99-2.205-1.443 1.388c-.16.16-.293.293-.6.293l.214-3.04 5.535-5c.241-.213-.054-.334-.373-.121L8.18 14.213l-2.95-.92c-.64-.2-.654-.64.135-.948l11.527-4.443c.534-.193 1.001.121.826.918z"/></svg></a>
       </div>
       <div class="footer-legal">
-        <a href="/city-guide/">City Guide</a>
+        <a href="/city-guide/">Şehir Rehberi</a>
         <a href="/blog/">Blog</a>
-        <a href="#m-privacy">Privacy</a>
-        <a href="#m-terms">Terms</a>
-        <a href="#m-cancellation">Cancellation</a>
+        <a href="#m-privacy">Gizlilik</a>
+        <a href="#m-terms">Koşullar</a>
+        <a href="#m-cancellation">İptal</a>
       </div>
     </div>
 
@@ -1305,9 +1319,9 @@
       <img src="/data/dining-romantic-wide.webp" alt="">
       <div class="ed-hero-veil"></div>
       <div class="ed-hero-text">
-        <div class="modal-eyebrow">Dinner · Fine Dining</div>
-        <h2 class="modal-title">Dinner <span class="modal-script">on the bosphorus</span></h2>
-        <p class="ed-hero-tagline">A three-hour evening, a multi-course menu — selected Turkish dishes served as the Bosphorus lights up.</p>
+        <div class="modal-eyebrow">Akşam Yemeği · Seçkin Mutfak</div>
+        <h2 class="modal-title">Yemek <span class="modal-script">boğaz'da</span></h2>
+        <p class="ed-hero-tagline">Üç saatlik bir akşam, çok aşamalı bir menü — Boğaz ışıklarıyla birlikte servis edilen seçkin Türk lezzetleri.</p>
       </div>
     </div>
 
@@ -1316,9 +1330,9 @@
       <!-- MENU IN DETAIL -->
       <div class="menu-detail">
         <div class="menu-detail-head">
-          <div class="menu-detail-eyebrow">What's on the menu</div>
-          <h3 class="menu-detail-title">Four courses, <em>served slowly</em></h3>
-          <p class="menu-detail-intro">A multi-course Turkish menu built around classic meze, a warm pastry, a generous main, and dessert. Standard and VIP follow the same arc — VIP differs in meze breadth and adds premium beef to the main course.</p>
+          <div class="menu-detail-eyebrow">Menüde neler var</div>
+          <h3 class="menu-detail-title">Dört kap, <em>sakince servis edilir</em></h3>
+          <p class="menu-detail-intro">Klasik mezeler, sıcak bir börek, cömert bir ana yemek ve tatlı etrafında kurgulanmış çok aşamalı bir Türk menüsü. Standart ve VIP aynı akışı izler — VIP, meze çeşitliliğinde genişler ve ana yemeğe premium dana eti ekler.</p>
         </div>
 
         <!-- 01 · MEZE -->
@@ -1326,11 +1340,11 @@
           <div class="menu-block-head">
             <span class="menu-block-step">01</span>
             <span class="menu-block-name">Meze</span>
-            <span class="menu-block-count">Standard: 10 varieties · VIP: 15+ varieties</span>
+            <span class="menu-block-count">Standart: 10 çeşit · VIP: 15+ çeşit</span>
           </div>
-          <p class="menu-block-desc">Cold Turkish appetisers served family-style at your table: hummus, ezme (spicy tomato), haydari (strained yoghurt with herbs), fava (broad bean), atom (yoghurt with chili butter), kısır (bulgur salad), yaprak sarması (stuffed vine leaves), çoban salatası, smoked aubergine, beetroot tarator. VIP extends the spread with seasonal specials, octopus and a wider seafood selection.</p>
+          <p class="menu-block-desc">Masanıza paylaşımlı olarak gelen soğuk Türk mezeleri: humus, ezme (acılı domates), haydari (otlu süzme yoğurt), fava, atom (acı tereyağlı yoğurt), kısır, yaprak sarması, çoban salatası, közlenmiş patlıcan, pancar tarator. VIP, mevsimlik özel tabakları, ahtapot ve daha geniş deniz ürünleri seçkisiyle sofrayı zenginleştirir.</p>
           <div class="menu-block-figure">
-            <img src="/data/table-candle-glasses.webp" alt="Turkish meze spread served on a candlelit Bosphorus dinner cruise table" loading="lazy">
+            <img src="/data/table-candle-glasses.webp" alt="Mum ışığında Boğaz akşam yemekli tekne turu masasında servis edilen Türk meze sofrası" loading="lazy">
           </div>
         </div>
 
@@ -1338,47 +1352,47 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">02</span>
-            <span class="menu-block-name">Warm starter</span>
-            <span class="menu-block-count">Same in both packages</span>
+            <span class="menu-block-name">Sıcak başlangıç</span>
+            <span class="menu-block-count">Her iki pakette de aynı</span>
           </div>
-          <p class="menu-block-desc"><strong>Paçanga böreği</strong> — a crisp, fried filo pastry filled with beef pastırma (air-dried cured beef) and melted kashar cheese. A signature Turkish opener served hot, between meze and main.</p>
+          <p class="menu-block-desc"><strong>Paçanga böreği</strong> — pastırma ve eriyen kaşar peyniriyle doldurulmuş, çıtır çıtır kızartılmış yufka böreği. Mezelerle ana yemek arasında sıcak servis edilen, klasikleşmiş bir Türk başlangıcı.</p>
         </div>
 
         <!-- 03 · MAIN COURSE -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">03</span>
-            <span class="menu-block-name">Main course</span>
-            <span class="menu-block-count">Choose one · seasonal salad included</span>
+            <span class="menu-block-name">Ana yemek</span>
+            <span class="menu-block-count">Birini seçin · mevsim salatası dahildir</span>
           </div>
-          <p class="menu-block-desc">Each guest picks one main; partners can mix categories. Standard offers four choices below; VIP adds premium beef (tenderloin / ribeye) on top of the same four.</p>
+          <p class="menu-block-desc">Her misafir bir ana yemek seçer; aynı masadakiler farklı kategorilerden tercih yapabilir. Standart pakette aşağıdaki dört seçenek; VIP, aynı dört seçeneğe ek olarak premium dana eti (bonfile / antrikot) sunar.</p>
           <div class="dish-grid">
             <div class="dish-card">
-              <span class="dish-cat">Meat</span>
-              <h4 class="dish-name">Grilled Meatballs</h4>
-              <p class="dish-desc">Hand-pressed beef and lamb köfte seasoned with cumin, parsley and onion. Served with smoked aubergine purée and grilled vegetables.</p>
+              <span class="dish-cat">Et</span>
+              <h4 class="dish-name">Izgara Köfte</h4>
+              <p class="dish-desc">Kimyon, maydanoz ve soğanla harmanlanmış el yapımı dana ve kuzu köftesi. Közlenmiş patlıcan püresi ve ızgara sebzelerle servis edilir.</p>
             </div>
             <div class="dish-card vip">
-              <span class="dish-cat">Meat</span>
-              <h4 class="dish-name">Beef Tenderloin · Ribeye</h4>
-              <p class="dish-desc">Cut to order from premium Turkish beef, grilled to your preferred doneness and rested. Served with butter-roasted potatoes and a peppercorn jus.</p>
-              <img class="dish-ph" src="/data/steak-wine.webp" alt="VIP main course on Bosphorus dinner cruise — grilled beef with red wine" loading="lazy">
+              <span class="dish-cat">Et</span>
+              <h4 class="dish-name">Dana Bonfile · Antrikot</h4>
+              <p class="dish-desc">Premium Türk danasından siparişe göre kesilir, istediğiniz pişme derecesinde ızgara yapılır ve dinlendirilir. Tereyağında soteleme patates ve karabiber sosuyla servis edilir.</p>
+              <img class="dish-ph" src="/data/steak-wine.webp" alt="Boğaz akşam yemekli tekne turunda VIP ana yemek — kırmızı şarapla ızgara dana eti" loading="lazy">
             </div>
             <div class="dish-card">
-              <span class="dish-cat">Chicken</span>
-              <h4 class="dish-name">Grilled Chicken Breast</h4>
-              <p class="dish-desc">Marinated overnight in olive oil, lemon and herbs, then grilled to order. Served with seasonal roasted vegetables and yoghurt sauce.</p>
-              <img class="dish-ph" src="/data/chicken-wine.webp" alt="Grilled chicken main course served with wine on Bosphorus dinner cruise" loading="lazy">
+              <span class="dish-cat">Tavuk</span>
+              <h4 class="dish-name">Izgara Tavuk Göğsü</h4>
+              <p class="dish-desc">Zeytinyağı, limon ve otlarla bir gece marine edilir, siparişe göre ızgaralanır. Mevsim fırın sebzeleri ve yoğurt sosuyla servis edilir.</p>
+              <img class="dish-ph" src="/data/chicken-wine.webp" alt="Boğaz akşam yemekli tekne turunda şarapla servis edilen ızgara tavuk ana yemeği" loading="lazy">
             </div>
             <div class="dish-card">
-              <span class="dish-cat">Fish</span>
-              <h4 class="dish-name">Salmon · Sea Bream</h4>
-              <p class="dish-desc">Pan-seared catch of the day with olive oil, lemon and Mediterranean herbs. Served with garlic potatoes and grilled greens.</p>
+              <span class="dish-cat">Balık</span>
+              <h4 class="dish-name">Somon · Çipura</h4>
+              <p class="dish-desc">Günün tazesi, zeytinyağı, limon ve Akdeniz otlarıyla tavada mühürlenir. Sarımsaklı patates ve ızgara yeşilliklerle servis edilir.</p>
             </div>
             <div class="dish-card">
-              <span class="dish-cat">Vegetarian</span>
-              <h4 class="dish-name">Falafel Platter</h4>
-              <p class="dish-desc">Crispy chickpea falafel with bulgur pilaf, sautéed seasonal vegetables, roasted potatoes and crispy onion rings. Vegan on request.</p>
+              <span class="dish-cat">Vejetaryen</span>
+              <h4 class="dish-name">Falafel Tabağı</h4>
+              <p class="dish-desc">Çıtır nohut falafel, bulgur pilavı, sote mevsim sebzeleri, fırın patates ve çıtır soğan halkaları. Talep üzerine vegan olarak hazırlanır.</p>
             </div>
           </div>
         </div>
@@ -1387,13 +1401,13 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">04</span>
-            <span class="menu-block-name">Dessert</span>
-            <span class="menu-block-count">Same in both packages</span>
+            <span class="menu-block-name">Tatlı</span>
+            <span class="menu-block-count">Her iki pakette de aynı</span>
           </div>
-          <p class="menu-block-desc"><strong>Ice cream cake</strong> — layered vanilla, chocolate and pistachio finished with a warm syrup drizzle. Served as the night turns to the show's final act, before coffee and tea service.</p>
+          <p class="menu-block-desc"><strong>Dondurmalı pasta</strong> — vanilya, çikolata ve fıstık katmanları, üzerine ılık şurup. Şovun final perdesine geçilirken, kahve ve çay servisinden önce gelir.</p>
         </div>
 
-        <p class="menu-detail-foot">Unlimited soft drinks (water, cola, juice) included in both packages. Unlimited local alcohol available as a +€15 add-on; imported spirits at extra cost. Dietary needs (vegetarian, vegan, gluten-free) handled on board — let us know on booking.</p>
+        <p class="menu-detail-foot">Sınırsız meşrubat (su, kola, meyve suyu) her iki pakete dahildir. Sınırsız yerli alkol +15 € ek olarak; ithal içkiler ek ücretle servis edilir. Özel diyetler (vejetaryen, vegan, glutensiz) teknede hazırlanır — rezervasyonda bize bildirin.</p>
       </div>
 
       <div class="photo-masonry">
@@ -1406,10 +1420,10 @@
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="Kapat">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
             <span class="info-divider"></span>
@@ -1420,15 +1434,15 @@
           </div>
         </div>
         <div class="info-tel">
-          <div class="info-label">Email:</div>
+          <div class="info-label">E-posta:</div>
           <div class="info-tel-row">
             <span class="info-val">reservations@luxurybosphorustour.com</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-packages">Packages <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-packages">Paketler <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">Şimdi Ayırt <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -1441,9 +1455,9 @@
     <a href="#" class="modal-close" aria-label="Kapat">×</a>
 
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Packages · Pricing</div>
-      <h2 class="modal-title">Standard & VIP <span class="modal-script">menus</span></h2>
-      <p class="ed-hero-tagline">Two packages, four optional add-ons. Choose what fits your evening — no hidden fees, payment on board.</p>
+      <div class="modal-eyebrow">Paketler · Fiyatlar</div>
+      <h2 class="modal-title">Standart ve VIP <span class="modal-script">menüler</span></h2>
+      <p class="ed-hero-tagline">İki paket, dört opsiyonel ek. Akşamınıza uyanı seçin — gizli ücret yok, ödeme teknede.</p>
     </div>
 
     <div class="ed-content">
@@ -1452,113 +1466,113 @@
 
         <!-- STANDARD -->
         <div class="pkg">
-          <div class="pkg-eyebrow">Standard Menu</div>
-          <div class="pkg-name">Standard</div>
-          <div class="pkg-price"><span class="strike">€38</span><span class="now">€25</span><span class="per">/ person</span></div>
-          <p class="pkg-desc">3-hour Bosphorus evening cruise, multi-course menu and unlimited soft drinks. Departing Eminönü Pier at 21:00.</p>
+          <div class="pkg-eyebrow">Standart Menü</div>
+          <div class="pkg-name">Standart</div>
+          <div class="pkg-price"><span class="strike">€38</span><span class="now">€25</span><span class="per">/ kişi</span></div>
+          <p class="pkg-desc">3 saatlik Boğaz akşam turu, çok aşamalı menü ve sınırsız meşrubat. Eminönü iskelesinden 21:00'da kalkış.</p>
           <div class="pkg-tags">
-            <span class="pkg-tag">3hr · 21:00</span>
-            <span class="pkg-tag">Eminönü departure</span>
-            <span class="pkg-tag">Taxes included</span>
+            <span class="pkg-tag">3 saat · 21:00</span>
+            <span class="pkg-tag">Eminönü kalkış</span>
+            <span class="pkg-tag">Vergiler dahil</span>
           </div>
-          <div class="pkg-included">What's Included</div>
+          <div class="pkg-included">Pakete Dahil</div>
           <ul class="pkg-list">
-            <li>10 varieties of Turkish meze</li>
-            <li>Warm appetizer: paçanga böreği (beef pastırma & kashar cheese)</li>
-            <li><span>Main course + seasonal salad — choose one:<br>
-<span class="cat">Meat:</span> meatball<br>
-<span class="cat">Chicken:</span> grilled chicken<br>
-<span class="cat">Fish:</span> salmon · sea bream<br>
-<span class="cat">Vegetarian:</span> falafel platter (potatoes, bulgur pilaf, sautéed vegetables, onion rings)</span></li>
-            <li>Dessert: ice cream cake</li>
-            <li>Unlimited soft drinks (water, cola, juice)</li>
+            <li>10 çeşit Türk mezesi</li>
+            <li>Sıcak başlangıç: paçanga böreği (pastırma ve kaşar peyniri)</li>
+            <li><span>Ana yemek + mevsim salatası — birini seçin:<br>
+<span class="cat">Et:</span> köfte<br>
+<span class="cat">Tavuk:</span> ızgara tavuk<br>
+<span class="cat">Balık:</span> somon · çipura<br>
+<span class="cat">Vejetaryen:</span> falafel tabağı (patates, bulgur pilavı, sote sebzeler, soğan halkaları)</span></li>
+            <li>Tatlı: dondurmalı pasta</li>
+            <li>Sınırsız meşrubat (su, kola, meyve suyu)</li>
           </ul>
-          <a class="pkg-cta" href="#m-book" data-preselect="standard">Reserve Standard →</a>
+          <a class="pkg-cta" href="#m-book" data-preselect="standard">Standart'ı Ayırt →</a>
         </div>
 
         <!-- VIP -->
         <div class="pkg popular">
-          <div class="pkg-badge">Most Popular</div>
-          <div class="pkg-eyebrow">VIP Menu</div>
+          <div class="pkg-badge">En Çok Tercih Edilen</div>
+          <div class="pkg-eyebrow">VIP Menü</div>
           <div class="pkg-name">VIP</div>
-          <div class="pkg-price"><span class="strike">€100</span><span class="now">€65</span><span class="per">/ person</span></div>
-          <p class="pkg-desc">An elevated evening with premium meat selections, traditional spread meze service, and a private table near the stage.</p>
+          <div class="pkg-price"><span class="strike">€100</span><span class="now">€65</span><span class="per">/ kişi</span></div>
+          <p class="pkg-desc">Premium et seçenekleri, klasik açık meze servisi ve sahneye yakın özel masayla yükseltilmiş bir akşam.</p>
           <div class="pkg-tags">
-            <span class="pkg-tag">3hr · 21:00</span>
-            <span class="pkg-tag">Near the stage</span>
-            <span class="pkg-tag">Taxes included</span>
+            <span class="pkg-tag">3 saat · 21:00</span>
+            <span class="pkg-tag">Sahneye yakın</span>
+            <span class="pkg-tag">Vergiler dahil</span>
           </div>
-          <div class="pkg-included">What's Included</div>
+          <div class="pkg-included">Pakete Dahil</div>
           <ul class="pkg-list">
-            <li>15+ varieties of Turkish meze · traditional spread service</li>
-            <li>Warm appetizer: paçanga böreği (beef pastırma & kashar cheese)</li>
-            <li><span>Main course + seasonal salad — choose one:<br>
-<span class="cat">Meat:</span> meatball · <strong>beef tenderloin · ribeye</strong><br>
-<span class="cat">Chicken:</span> grilled chicken<br>
-<span class="cat">Fish:</span> salmon · sea bream<br>
-<span class="cat">Vegetarian:</span> falafel platter</span></li>
-            <li>Dessert: ice cream cake</li>
-            <li>Unlimited soft drinks (water, cola, juice)</li>
+            <li>15+ çeşit Türk mezesi · klasik açık sofra servisi</li>
+            <li>Sıcak başlangıç: paçanga böreği (pastırma ve kaşar peyniri)</li>
+            <li><span>Ana yemek + mevsim salatası — birini seçin:<br>
+<span class="cat">Et:</span> köfte · <strong>dana bonfile · antrikot</strong><br>
+<span class="cat">Tavuk:</span> ızgara tavuk<br>
+<span class="cat">Balık:</span> somon · çipura<br>
+<span class="cat">Vejetaryen:</span> falafel tabağı</span></li>
+            <li>Tatlı: dondurmalı pasta</li>
+            <li>Sınırsız meşrubat (su, kola, meyve suyu)</li>
           </ul>
-          <a class="pkg-cta" href="#m-book" data-preselect="vip">Reserve VIP →</a>
+          <a class="pkg-cta" href="#m-book" data-preselect="vip">VIP'i Ayırt →</a>
         </div>
 
       </div>
 
       <!-- OPTIONAL EXTRAS -->
       <div class="extras" id="extras-section">
-        <div class="extras-head">Optional Extras</div>
+        <div class="extras-head">Opsiyonel Eklentiler</div>
         <div class="extras-list">
           <div class="extras-item">
             <span class="plus">+</span>
             <div class="body">
-              <div class="name">Hotel Transfer <span class="price">+€5 / person</span></div>
-              <div class="desc">Before the cruise, our driver collects you from your hotel and brings you to the pier. After the evening, the same driver is waiting to take you back. No need to plan transportation — handled both ways.</div>
+              <div class="name">Otel Transferi <span class="price">+5 € / kişi</span></div>
+              <div class="desc">Tur öncesi sürücümüz sizi otelinizden alıp iskeleye bırakır. Akşam sonunda aynı sürücü sizi iskelede bekler ve otelinize geri götürür. Ulaşımı düşünmenize gerek yok — her iki yön de halledilmiştir.</div>
             </div>
           </div>
           <div class="extras-item">
             <span class="plus">+</span>
             <div class="body">
-              <div class="name">Alcohol Package <span class="price">+€15 / person</span></div>
-              <div class="desc">Beer · Rakı · Gin · Vodka · Red &amp; White Wine — unlimited, included in the package.<br>Imported drinks (champagne, whisky, cognac, etc.) available at extra cost.</div>
+              <div class="name">Alkol Paketi <span class="price">+15 € / kişi</span></div>
+              <div class="desc">Bira · Rakı · Cin · Votka · Kırmızı ve Beyaz Şarap — sınırsız, pakete dahildir.<br>İthal içkiler (şampanya, viski, konyak vb.) ek ücretle servis edilir.</div>
             </div>
           </div>
           <div class="extras-item">
             <span class="plus">+</span>
             <div class="body">
-              <div class="name">Romantic Table <span class="price">+€15 / table</span></div>
-              <div class="desc">An elegant table dressed with candles and rose petals. Perfect for marriage proposals, first dates, anniversaries and special occasions.</div>
+              <div class="name">Romantik Masa <span class="price">+15 € / masa</span></div>
+              <div class="desc">Mum ve gül yapraklarıyla hazırlanmış zarif bir masa. Evlilik teklifleri, ilk randevular, yıldönümleri ve özel anlar için kusursuz.</div>
             </div>
           </div>
           <div class="extras-item">
             <span class="plus">+</span>
             <div class="body">
-              <div class="name">Professional Photography <span class="price">Ask on board</span></div>
-              <div class="desc">An on-board photographer captures your evening on the Bosphorus — turn moments into lasting memories. Ask our photo team for current prices and packages.</div>
+              <div class="name">Profesyonel Fotoğraf Çekimi <span class="price">Teknede sorun</span></div>
+              <div class="desc">Tekne fotoğrafçımız Boğaz'daki akşamınızı görüntüler — anılarınızı kalıcı hatıralara dönüştürür. Güncel fiyat ve paketler için fotoğraf ekibimize sorabilirsiniz.</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="ed-dietary">
-        Meat <span class="sep">·</span> Chicken <span class="sep">·</span> Fish <span class="sep">·</span> Vegetarian
+        Et <span class="sep">·</span> Tavuk <span class="sep">·</span> Balık <span class="sep">·</span> Vejetaryen
       </div>
 
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="Kapat">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-dinner">View Menu <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-dinner">Menüyü Gör <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">Şimdi Ayırt <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -1570,30 +1584,30 @@
     <a href="#" class="modal-close" aria-label="Kapat">×</a>
 
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Turkish Night Show · Live on Stage</div>
-      <h2 class="modal-title">Shows <span class="modal-script">every night</span></h2>
-      <p class="ed-hero-tagline">A four-act Turkish night programme, performed live every evening between dinner and the DJ — concert-grade lighting, professional performers, no interval.</p>
+      <div class="modal-eyebrow">Türk Gecesi Şovu · Sahnede Canlı</div>
+      <h2 class="modal-title">Şovlar <span class="modal-script">her gece</span></h2>
+      <p class="ed-hero-tagline">Akşam yemeği ile DJ arasında her gece sahnelenen dört perdelik bir Türk gecesi programı — konser düzeyinde ışık, profesyonel sanatçılar, ara yok.</p>
     </div>
 
     <div class="ed-content">
 
       <div class="menu-detail">
         <div class="menu-detail-head">
-          <div class="menu-detail-eyebrow">The programme · hour by hour</div>
-          <h3 class="menu-detail-title">Four acts, <em>back to back</em></h3>
-          <p class="menu-detail-intro">Performances run from roughly 21:30 to 22:30, while dinner continues at your table. Each act flows into the next — from the serenity of the opening dervish to the energetic peak of the belly dance.</p>
+          <div class="menu-detail-eyebrow">Program · saat saat</div>
+          <h3 class="menu-detail-title">Dört perde, <em>arka arkaya</em></h3>
+          <p class="menu-detail-intro">Gösteriler yaklaşık 21:30 ile 22:30 arasında sahnelenir, bu sırada akşam yemeği masanızda devam eder. Her perde sonrakine akar — açılışın huzurlu semazeninden oryantal dansın enerji doruğuna.</p>
         </div>
 
         <!-- 01 · WHIRLING DERVISH -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">01</span>
-            <span class="menu-block-name">Whirling Dervish</span>
-            <span class="menu-block-count">Opens the night · ~21:30</span>
+            <span class="menu-block-name">Semazen</span>
+            <span class="menu-block-count">Geceyi açar · ~21:30</span>
           </div>
-          <p class="menu-block-desc">The serene opening of the evening — a Mevlevi <strong>sema</strong>. The dervish spins in white robes around a central axis, one hand turned to the sky, one to the earth. Originating in 13th-century Konya with the poet Rumi, the dance is both spiritual ritual and theatrical art. A slow, contemplative start before the night builds in energy.</p>
+          <p class="menu-block-desc">Akşamın huzurlu açılışı — bir Mevlevi <strong>sema</strong>sı. Semazen, beyaz tennuresiyle merkezi bir eksen etrafında döner; bir eli göğe, bir eli yere dönüktür. 13. yüzyıl Konya'sında şair Mevlana ile başlayan bu dans hem manevi bir ritüel hem de bir sahne sanatıdır. Gece enerjisini toplamadan önce yavaş, düşünceli bir başlangıç.</p>
           <div class="menu-block-figure">
-            <img src="/data/whirling-dervish.webp" alt="Whirling dervish performance on a Bosphorus dinner cruise — Mevlevi sema" loading="lazy">
+            <img src="/data/whirling-dervish.webp" alt="Boğaz akşam yemekli tekne turunda semazen gösterisi — Mevlevi sema" loading="lazy">
           </div>
         </div>
 
@@ -1601,12 +1615,12 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">02</span>
-            <span class="menu-block-name">Anatolian Folk Dance</span>
+            <span class="menu-block-name">Anadolu Halk Oyunları</span>
             <span class="menu-block-count">~21:50</span>
           </div>
-          <p class="menu-block-desc">A folk dance company in regional costumes performs across Anatolia's cultural map — Black Sea <strong>horon</strong>, Aegean <strong>zeybek</strong>, eastern <strong>halay</strong>. Energetic, percussive, accompanied by traditional Anatolian instruments. The cultural breadth of Turkey in fifteen minutes.</p>
+          <p class="menu-block-desc">Yöresel kostümleriyle bir halk oyunları topluluğu Anadolu'nun kültürel haritasında geziniyor — Karadeniz <strong>horonu</strong>, Ege <strong>zeybeği</strong>, doğunun <strong>halay</strong>ı. Enerjik, vurmalı, geleneksel Anadolu çalgılarıyla. Türkiye'nin kültürel genişliği on beş dakikada.</p>
           <div class="menu-block-figure">
-            <img src="/data/folk-dance.webp" alt="Anatolian folk dance company performing on Bosphorus dinner cruise deck" loading="lazy">
+            <img src="/data/folk-dance.webp" alt="Boğaz akşam yemekli tekne turunun güvertesinde Anadolu halk oyunları topluluğu" loading="lazy">
           </div>
         </div>
 
@@ -1614,12 +1628,12 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">03</span>
-            <span class="menu-block-name">Drum Ensemble</span>
+            <span class="menu-block-name">Davul Ekibi</span>
             <span class="menu-block-count">~22:10</span>
           </div>
-          <p class="menu-block-desc">A professional percussion ensemble takes the deck — <strong>davul</strong>, <strong>darbuka</strong> and <strong>bendir</strong> layered over each other in driving rhythms. The room's energy lifts; this is where the night turns from observation to participation, guests clapping along, lights washing across the deck.</p>
+          <p class="menu-block-desc">Profesyonel bir perküsyon ekibi güverteyi devralır — <strong>davul</strong>, <strong>darbuka</strong> ve <strong>bendir</strong> sürükleyici ritimlerde üst üste biner. Salonun enerjisi yükselir; gecenin gözlemden katılıma döndüğü an burasıdır: misafirler alkış tutar, ışıklar güverteyi yıkar.</p>
           <div class="menu-block-figure">
-            <img src="/data/drummer-party.webp" alt="Live drum ensemble performance on Bosphorus dinner cruise" loading="lazy">
+            <img src="/data/drummer-party.webp" alt="Boğaz akşam yemekli tekne turunda canlı davul ekibi gösterisi" loading="lazy">
           </div>
         </div>
 
@@ -1627,33 +1641,33 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">04</span>
-            <span class="menu-block-name">Belly Dance</span>
-            <span class="menu-block-count">The night's peak · ~22:30</span>
+            <span class="menu-block-name">Oryantal Dans</span>
+            <span class="menu-block-count">Gecenin doruğu · ~22:30</span>
           </div>
-          <p class="menu-block-desc">The evening's centrepiece — a professional belly dancer's full routine, weaving between tables and the stage. Bright sequined costumes, expressive choreography, audience moments with guests pulled gently into the dance. The kind of moment guests photograph and remember for years.</p>
+          <p class="menu-block-desc">Akşamın baş gösterisi — profesyonel bir oryantal dansçının masalarla sahne arasında akan tüm rutini. Parlak pullu kostümler, ifade yüklü koreografi, dansa nazikçe dahil edilen misafirlerle seyirci anları. Misafirlerin fotoğraflayıp yıllarca hatırladığı türden bir an.</p>
           <div class="menu-block-figure">
-            <img src="/data/belly-dance-blue.webp" alt="Belly dance performance on Bosphorus dinner cruise — the night's peak" loading="lazy">
+            <img src="/data/belly-dance-blue.webp" alt="Boğaz akşam yemekli tekne turunda oryantal dans gösterisi — gecenin doruğu" loading="lazy">
           </div>
         </div>
 
-        <p class="menu-detail-foot">After the four acts, the DJ takes the deck until midnight (see <a href="#m-party">Party</a>). All performers are professionally trained, with full-time stage and music careers — concert-grade lighting and sound across the main deck.</p>
+        <p class="menu-detail-foot">Dört perdenin ardından DJ gece yarısına kadar güverteyi devralır (bkz. <a href="#m-party">Parti</a>). Tüm sanatçılar profesyonel olarak yetiştirilmiştir, sahne ve müzik kariyerleri tam zamanlıdır — ana güvertede konser düzeyinde ışık ve ses.</p>
       </div>
 
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="Kapat">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-packages">Packages <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-packages">Paketler <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">Şimdi Ayırt <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -1665,49 +1679,49 @@
     <a href="#" class="modal-close" aria-label="Kapat">×</a>
 
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">View · Between Two Continents</div>
-      <h2 class="modal-title">View <span class="modal-script">after dark</span></h2>
-      <p class="ed-hero-tagline">A three-hour cruise across Europe and Asia — bridges, palaces and the illuminated silhouette of Istanbul.</p>
+      <div class="modal-eyebrow">Manzara · İki Kıta Arasında</div>
+      <h2 class="modal-title">Manzara <span class="modal-script">gece çöktüğünde</span></h2>
+      <p class="ed-hero-tagline">Avrupa ve Asya boyunca üç saatlik bir tur — köprüler, saraylar ve İstanbul'un ışıklı silüeti.</p>
     </div>
 
     <div class="ed-content">
 
       <!-- highlight photo strip -->
       <div class="photo-masonry">
-        <img src="/data/boat-night-bridge.webp" alt="Bosphorus Bridge illuminated at night on a Bosphorus dinner cruise" loading="lazy">
-        <img src="/data/a2.webp" alt="Dolmabahçe Palace from the water on a Bosphorus night cruise" loading="lazy">
-        <img src="/data/3.webp" alt="Ortaköy Mosque on the Bosphorus shore at night" loading="lazy">
-        <img src="/data/boat-night-drone.webp" alt="Aerial view of the Bosphorus and Istanbul shoreline at night" loading="lazy">
-        <img src="/data/couple-cheers-bridge.webp" alt="Couple under the Bosphorus Bridge on a dinner cruise" loading="lazy">
+        <img src="/data/boat-night-bridge.webp" alt="Boğaz akşam yemekli tekne turunda gece ışıklandırılmış Boğaziçi Köprüsü" loading="lazy">
+        <img src="/data/a2.webp" alt="Boğaz gece turunda denizden Dolmabahçe Sarayı" loading="lazy">
+        <img src="/data/3.webp" alt="Gece Boğaz kıyısında Ortaköy Camii" loading="lazy">
+        <img src="/data/boat-night-drone.webp" alt="Geceleyin Boğaz ve İstanbul kıyı şeridinin havadan görünümü" loading="lazy">
+        <img src="/data/couple-cheers-bridge.webp" alt="Yemekli tekne turunda Boğaziçi Köprüsü altında çift" loading="lazy">
       </div>
 
       <div class="route-map">
-        <div class="route-map-title">The Three-Hour Route</div>
+        <div class="route-map-title">Üç Saatlik Rota</div>
         <div class="route-stops">
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-pier-sunset.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Eminönü</div><div class="route-stop-side">Departure</div></div></summary><div class="route-balloon">Heart of the historic peninsula, where the Bosphorus meets the Golden Horn. Our evening begins here, at our pier with Galata Tower across the water.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/a1.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Karaköy</div><div class="route-stop-side">European</div></div></summary><div class="route-balloon">Once Galata's harbour, today a vibrant district of European-era architecture, art galleries and waterfront cafés.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/a2.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Dolmabahçe Palace</div><div class="route-stop-side">European</div></div></summary><div class="route-balloon">Sultan Abdülmecid's grand baroque palace, opened in 1856 — the seat of Ottoman power for the empire's final decades.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/2.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Çırağan Palace</div><div class="route-stop-side">European</div></div></summary><div class="route-balloon">The last imperial palace, built for Sultan Abdülaziz in 1871. Today, a luxury hotel rising directly from the strait.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/3.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Ortaköy Mosque</div><div class="route-stop-side">European</div></div></summary><div class="route-balloon">An iconic baroque-revival mosque (1856) whose marble façade is mirrored in the Bosphorus — postcard of Istanbul.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-night-bridge.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Bosphorus Bridge</div><div class="route-stop-side">Bridge</div></div></summary><div class="route-balloon">The first bridge to span the strait, opened in 1973. Two continents joined overhead — illuminated nightly in changing colours.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/4.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Bebek</div><div class="route-stop-side">European</div></div></summary><div class="route-balloon">A storied European bay, famed for its waterfront mansions, cafés and elegant promenade — Istanbul's calm corner.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/5.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Rumeli Fortress</div><div class="route-stop-side">European</div></div></summary><div class="route-balloon">Built in just four months in 1452 by Mehmed II — the fortress that sealed Constantinople's fate before the conquest.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-night-drone.webp')"></div><div class="route-stop-text"><div class="route-stop-name">FSM Bridge</div><div class="route-stop-side">Mid-point</div></div></summary><div class="route-balloon">The strait's second bridge (1988), named for Mehmed the Conqueror. Mid-point of the cruise — we turn here for the Asian shore.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/6.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Beylerbeyi Palace</div><div class="route-stop-side">Asian</div></div></summary><div class="route-balloon">The summer palace of the Ottoman sultans (1865), where royal guests were received on the Asian shore.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/8.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Üsküdar</div><div class="route-stop-side">Asian</div></div></summary><div class="route-balloon">The Asian heart of Istanbul — ancient Chrysopolis. Mihrimah Sultan Mosque, narrow streets and time-worn quaysides.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/10.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Maiden's Tower</div><div class="route-stop-side">From afar</div></div></summary><div class="route-balloon">A legendary 18th-century tower at the heart of the strait. We pass close enough to see it lit, far enough to keep its mystery.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/couple-cheers-bridge.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Eminönü</div><div class="route-stop-side">Arrival</div></div></summary><div class="route-balloon">Back to where the evening began — the pier, the city, the night closing in. Three hours, two continents, one Bosphorus.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-pier-sunset.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Eminönü</div><div class="route-stop-side">Kalkış</div></div></summary><div class="route-balloon">Tarihi yarımadanın kalbi, Boğaz'ın Haliç ile buluştuğu nokta. Akşamımız burada, karşı yakada Galata Kulesi'nin uzandığı iskelemizde başlıyor.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/a1.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Karaköy</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">Bir zamanlar Galata'nın limanı; bugün Avrupa dönemi mimarisi, sanat galerileri ve sahil kafeleriyle hareketli bir semt.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/a2.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Dolmabahçe Sarayı</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">Sultan Abdülmecid'in 1856'da açılan görkemli barok sarayı — imparatorluğun son on yıllarında Osmanlı iktidarının merkezi.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/2.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Çırağan Sarayı</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">1871'de Sultan Abdülaziz için inşa edilen son hanedan sarayı. Bugün doğrudan Boğaz'dan yükselen lüks bir otel.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/3.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Ortaköy Camii</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">Mermer cephesi Boğaz'da yansıyan ikonik bir neo-barok cami (1856) — İstanbul'un kartpostalı.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-night-bridge.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Boğaziçi Köprüsü</div><div class="route-stop-side">Köprü</div></div></summary><div class="route-balloon">Boğaz'ı geçen ilk köprü, 1973'te açıldı. Tepede iki kıta birleşiyor — her gece değişen renklerle aydınlatılıyor.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/4.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Bebek</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">Yalıları, kafeleri ve zarif sahil yürüyüşüyle ün yapmış, Avrupa yakasının tarihi bir koyu — İstanbul'un sakin köşesi.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/5.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Rumeli Hisarı</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">II. Mehmed tarafından 1452'de yalnızca dört ayda inşa edildi — fetihten önce Konstantinopolis'in kaderini belirleyen kale.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-night-drone.webp')"></div><div class="route-stop-text"><div class="route-stop-name">FSM Köprüsü</div><div class="route-stop-side">Orta Nokta</div></div></summary><div class="route-balloon">Boğaz'ın ikinci köprüsü (1988), Fatih Sultan Mehmed'in adını taşır. Turun orta noktası — burada Asya yakasına dönüyoruz.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/6.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Beylerbeyi Sarayı</div><div class="route-stop-side">Asya</div></div></summary><div class="route-balloon">Osmanlı sultanlarının yazlık sarayı (1865); kraliyet konuklarının Asya yakasında ağırlandığı yer.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/8.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Üsküdar</div><div class="route-stop-side">Asya</div></div></summary><div class="route-balloon">İstanbul'un Asya kalbi — antik Khrysopolis. Mihrimah Sultan Camii, dar sokaklar ve zamanın izini taşıyan rıhtımlar.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/10.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Kız Kulesi</div><div class="route-stop-side">Uzaktan</div></div></summary><div class="route-balloon">Boğaz'ın kalbinde efsanevi bir 18. yüzyıl kulesi. Işıklarını görecek kadar yaklaşıyoruz, gizemini koruyacak kadar uzakta kalıyoruz.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/couple-cheers-bridge.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Eminönü</div><div class="route-stop-side">Varış</div></div></summary><div class="route-balloon">Akşamın başladığı yere dönüş — iskele, şehir, çöken gece. Üç saat, iki kıta, tek Boğaz.</div></details>
         </div>
       </div>
 
-      <p class="ed-narrative">On the European side: Dolmabahçe Palace, Çırağan, Ortaköy Mosque, the 15 July Martyrs Bridge in red light. On the Asian side: Beylerbeyi Palace, Kuzguncuk houses, Anadolu Hisarı. At the midpoint, the Fatih Sultan Mehmet Bridge; on the return, Maiden's Tower and the Topkapı silhouette.</p>
+      <p class="ed-narrative">Avrupa yakasında: Dolmabahçe Sarayı, Çırağan, Ortaköy Camii, kırmızı ışığa bürünmüş 15 Temmuz Şehitler Köprüsü. Asya yakasında: Beylerbeyi Sarayı, Kuzguncuk evleri, Anadolu Hisarı. Orta noktada Fatih Sultan Mehmet Köprüsü; dönüşte Kız Kulesi ve Topkapı silüeti.</p>
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="Kapat">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
             <span class="info-divider"></span>
@@ -1718,15 +1732,15 @@
           </div>
         </div>
         <div class="info-tel">
-          <div class="info-label">Email:</div>
+          <div class="info-label">E-posta:</div>
           <div class="info-tel-row">
             <span class="info-val">reservations@luxurybosphorustour.com</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-info">FAQ <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-info">SSS <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">Şimdi Ayırt <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -1738,40 +1752,40 @@
     <a href="#" class="modal-close" aria-label="Kapat">×</a>
 
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Party · DJ &amp; Dance Floor</div>
-      <h2 class="modal-title">Party <span class="modal-script">under the stars</span></h2>
-      <p class="ed-hero-tagline">After the Turkish night show, the party shifts to the sky deck — open-air, a resident DJ, dancing under the Bosphorus stars until midnight.</p>
+      <div class="modal-eyebrow">Parti · DJ ve Dans Pisti</div>
+      <h2 class="modal-title">Parti <span class="modal-script">yıldızların altında</span></h2>
+      <p class="ed-hero-tagline">Türk gecesi şovunun ardından parti üst güverteye taşınır — açık hava, daimi DJ, gece yarısına kadar Boğaz yıldızları altında dans.</p>
     </div>
 
     <div class="ed-content">
 
       <div class="menu-detail">
         <div class="menu-detail-head">
-          <div class="menu-detail-eyebrow">After the show</div>
-          <h3 class="menu-detail-title">A real party, <em>without the show-off</em></h3>
-          <p class="menu-detail-intro">No celebrity DJ acts and no laser theatre — just an open-air dance floor on the sky deck, a resident DJ who reads the crowd, and a Bosphorus skyline as backdrop. Dance if you like; the lounge deck stays calm if you don't.</p>
+          <div class="menu-detail-eyebrow">Şovdan sonra</div>
+          <h3 class="menu-detail-title">Gerçek bir parti, <em>gösterişten uzak</em></h3>
+          <p class="menu-detail-intro">Ünlü DJ numarası ve lazer tiyatrosu yok — sadece üst güvertede açık hava bir dans pisti, kalabalığı iyi okuyan daimi bir DJ ve fon olarak Boğaz silüeti. İsterseniz dans edin; istemezseniz lounge güvertesi sakinliğini korur.</p>
         </div>
 
         <!-- 01 · THE SHIFT -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">01</span>
-            <span class="menu-block-name">The shift</span>
-            <span class="menu-block-count">~22:30 · After the belly dance</span>
+            <span class="menu-block-name">Geçiş anı</span>
+            <span class="menu-block-count">~22:30 · Oryantal dansın ardından</span>
           </div>
-          <p class="menu-block-desc">As the four-act Turkish night show closes with the belly dance, the lights change and the DJ takes the deck. Dinner service quietens; coffee and drinks continue. Anyone ready to dance moves up to the sky deck — those who prefer to linger over a drink stay at their table.</p>
+          <p class="menu-block-desc">Dört perdelik Türk gecesi şovu oryantal dansla kapanırken ışıklar değişir ve DJ güverteyi devralır. Yemek servisi yavaşlar; kahve ve içecekler devam eder. Dans etmek isteyenler üst güverteye çıkar — masada içkisinin tadını çıkarmak isteyenler yerinde kalır.</p>
         </div>
 
         <!-- 02 · THE SKY DECK -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">02</span>
-            <span class="menu-block-name">The sky deck</span>
-            <span class="menu-block-count">Open-air · second bar</span>
+            <span class="menu-block-name">Üst güverte</span>
+            <span class="menu-block-count">Açık hava · ikinci bar</span>
           </div>
-          <p class="menu-block-desc">The top of the boat opens to the sky — dance floor in the centre, lounge seating around the edge, the second bar serving cocktails and the Bosphorus on every side. In warmer months the breeze does the cooling; in winter the deck is heated.</p>
+          <p class="menu-block-desc">Teknenin üst katı gökyüzüne açılır — ortada dans pisti, kenarlarda lounge oturma alanı, kokteyl servisi yapan ikinci bar ve her yanda Boğaz. Sıcak aylarda rüzgâr serinletir; kışın güverte ısıtılır.</p>
           <div class="menu-block-figure">
-            <img src="/data/dance-floor-crowd.webp" alt="Sky-deck dance floor on a Bosphorus dinner cruise after the Turkish night show" loading="lazy">
+            <img src="/data/dance-floor-crowd.webp" alt="Türk gecesi şovundan sonra Boğaz akşam yemekli tekne turunda üst güverte dans pisti" loading="lazy">
           </div>
         </div>
 
@@ -1779,60 +1793,60 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">03</span>
-            <span class="menu-block-name">The DJ</span>
-            <span class="menu-block-count">Resident · reads the crowd</span>
+            <span class="menu-block-name">DJ</span>
+            <span class="menu-block-count">Daimi · kalabalığı okur</span>
           </div>
-          <p class="menu-block-desc">A resident DJ — professional, well practised on this floor, with full sound and lighting at hand. The set leans into whatever the room wants on the night: a young couple's evening reads different to a friends-of-six birthday. No name on a marquee; we'd rather over-deliver than over-promise.</p>
+          <p class="menu-block-desc">Daimi bir DJ — profesyonel, bu pistte deneyimli, tam ses ve ışık hâkimiyetiyle. Set, o gece salonun ne istediğine yaslanır: genç bir çiftin akşamı, altı arkadaşın doğum gününden farklı okunur. Tabelada bir isim aramayın; söz vermek yerine teslim etmeyi tercih ederiz.</p>
         </div>
 
         <!-- 04 · THE WEEK -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">04</span>
-            <span class="menu-block-name">Theme by night</span>
-            <span class="menu-block-count">Loose, never strict</span>
+            <span class="menu-block-name">Geceye göre tema</span>
+            <span class="menu-block-count">Esnek, asla katı değil</span>
           </div>
-          <p class="menu-block-desc">A rough weekly cadence we keep to — but the DJ always adapts to the crowd:</p>
+          <p class="menu-block-desc">Sürdürdüğümüz yaklaşık bir haftalık akış — ama DJ her zaman kalabalığa uyum sağlar:</p>
           <ul class="theme-list">
-            <li><strong>Monday</strong> · Latin warm-up</li>
-            <li><strong>Tuesday</strong> · Deep house</li>
-            <li><strong>Wednesday</strong> · 90s &amp; vintage hits</li>
-            <li><strong>Thursday</strong> · R&amp;B</li>
-            <li><strong>Friday</strong> · Commercial hits</li>
-            <li><strong>Saturday</strong> · Open format · the crowd decides</li>
-            <li><strong>Sunday</strong> · Lounge — slower, jazzier</li>
+            <li><strong>Pazartesi</strong> · Latin ısınma</li>
+            <li><strong>Salı</strong> · Deep house</li>
+            <li><strong>Çarşamba</strong> · 90'lar ve nostalji</li>
+            <li><strong>Perşembe</strong> · R&amp;B</li>
+            <li><strong>Cuma</strong> · Popüler hit'ler</li>
+            <li><strong>Cumartesi</strong> · Serbest format · salon karar verir</li>
+            <li><strong>Pazar</strong> · Lounge — yavaş, caz tınılı</li>
           </ul>
           <div class="menu-block-figure">
-            <img src="/data/happy-guests.webp" alt="Guests dancing on a Bosphorus dinner cruise after midnight" loading="lazy">
+            <img src="/data/happy-guests.webp" alt="Gece yarısından sonra Boğaz akşam yemekli tekne turunda dans eden misafirler" loading="lazy">
           </div>
         </div>
 
-        <p class="menu-detail-foot">Private charters available for birthdays, bachelor / bachelorette parties and corporate events — message us on WhatsApp or Telegram for a custom evening. The DJ booth can host a guest DJ if you bring one.</p>
+        <p class="menu-detail-foot">Doğum günleri, bekarlığa veda partileri ve kurumsal etkinlikler için özel kiralama mevcut — kişiye özel bir akşam için WhatsApp veya Telegram'dan bize yazın. DJ kabini, yanınızda getireceğiniz bir konuk DJ'i ağırlayabilir.</p>
       </div>
 
       <!-- PHOTO STRIP -->
       <div class="photo-masonry">
-        <img src="/data/dance-floor-crowd.webp" alt="Open-air dance floor on the Bosphorus cruise sky deck" loading="lazy">
-        <img src="/data/friends-cheers.webp" alt="Friends toasting drinks on a Bosphorus dinner cruise" loading="lazy">
-        <img src="/data/cocktails-neon.webp" alt="Cocktails on a Bosphorus cruise after dark" loading="lazy">
-        <img src="/data/couple-cheers-bridge.webp" alt="Couple under the Bosphorus Bridge during the party" loading="lazy">
-        <img src="/data/happy-guests.webp" alt="Guests enjoying the party on a Bosphorus cruise" loading="lazy">
+        <img src="/data/dance-floor-crowd.webp" alt="Boğaz turunun üst güvertesinde açık hava dans pisti" loading="lazy">
+        <img src="/data/friends-cheers.webp" alt="Boğaz akşam yemekli tekne turunda kadeh kaldıran arkadaşlar" loading="lazy">
+        <img src="/data/cocktails-neon.webp" alt="Karanlıktan sonra Boğaz turunda kokteyller" loading="lazy">
+        <img src="/data/couple-cheers-bridge.webp" alt="Parti sırasında Boğaziçi Köprüsü altında bir çift" loading="lazy">
+        <img src="/data/happy-guests.webp" alt="Boğaz turunda partinin tadını çıkaran misafirler" loading="lazy">
       </div>
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="Kapat">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-packages">Packages <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-packages">Paketler <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">Şimdi Ayırt <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -1845,66 +1859,66 @@
     <a href="#" class="modal-close" aria-label="Kapat">×</a>
 
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">The Programme · Hour by Hour</div>
-      <h2 class="modal-title">An evening, <span class="modal-script">step by step</span></h2>
-      <p class="ed-hero-tagline">From a 21:00 departure at Eminönü Pier to a midnight return — the full Bosphorus arc.</p>
+      <div class="modal-eyebrow">Program · Saat Saat</div>
+      <h2 class="modal-title">Bir akşam, <span class="modal-script">adım adım</span></h2>
+      <p class="ed-hero-tagline">Eminönü iskelesinden 21:00 kalkışından gece yarısı dönüşüne — tüm Boğaz yayı.</p>
     </div>
 
     <div class="ed-content">
       <div class="flow-stages">
         <div class="flow-stage">
-          <span class="stage-tag">Begin</span>
+          <span class="stage-tag">Başlangıç</span>
           <img class="ph" src="/data/boat-pier-sunset.webp" alt="" loading="lazy">
           <div class="body">
             <div class="head-row">
-              <h4>Welcome</h4>
+              <h4>Karşılama</h4>
               <div class="time">20:30</div>
             </div>
-            <p>Doors open at 20:00. Our pier at Eminönü looks out from the historic peninsula onto one of the Bosphorus's most beautiful vistas — framed by the silhouette of Galata Tower. If time allows, watching the sunset from the boat's deck is a pleasure of its own. Once aboard, your reservation is confirmed and, at your private table, the evening opens with our exquisite meze service.</p>
+            <p>Kapılar 20:00'da açılır. Eminönü'ndeki iskelemiz, tarihi yarımadadan Boğaz'ın en güzel manzaralarından birine bakar — Galata Kulesi'nin silüetiyle çerçevelenmiş. Vaktiniz varsa teknenin güvertesinden günbatımını izlemek başlı başına bir keyiftir. Tekneye binince rezervasyonunuz onaylanır ve özel masanızda akşam, seçkin meze servisimizle başlar.</p>
           </div>
-          <button type="button" class="flow-stage-next" aria-label="Next stage">↓</button>
+          <button type="button" class="flow-stage-next" aria-label="Sonraki aşama">↓</button>
         </div>
         <div class="flow-stage">
           <img class="ph" src="/data/dining-romantic-wide.webp" alt="" loading="lazy">
           <div class="body">
             <div class="head-row">
-              <h4>Dinner</h4>
+              <h4>Akşam Yemeği</h4>
               <div class="time">21:00</div>
             </div>
-            <p>While you enjoy a variety of seasonal mezes and drinks, your main course is served alongside a seasonal salad. On one side, the Bosphorus's unmatched view; on the other, the stage programme — savour your meal, take in the show, drift into the view; the evening unfolds at the tempo you choose.</p>
+            <p>Çeşit çeşit mevsim mezeleri ve içecekleriniz eşliğinde, ana yemeğiniz mevsim salatasıyla servis edilir. Bir yanda Boğaz'ın eşsiz manzarası; öte yanda sahne programı — yemeğinizi tadın, gösteriyi izleyin, manzaraya bırakın kendinizi; akşam sizin seçtiğiniz tempoda akar.</p>
           </div>
-          <button type="button" class="flow-stage-next" aria-label="Next stage">↓</button>
+          <button type="button" class="flow-stage-next" aria-label="Sonraki aşama">↓</button>
         </div>
         <div class="flow-stage">
           <img class="ph" src="/data/whirling-dervish.webp" alt="" loading="lazy">
           <div class="body">
             <div class="head-row">
-              <h4>The Show</h4>
+              <h4>Şov</h4>
               <div class="time">21:30</div>
             </div>
-            <p>The stage opens with the serenity of a whirling dervish — Anatolian folk dances and a drum ensemble lift the night's energy, climaxing in belly dance. As your dinner continues, a four-act Anatolian evening unfolds before you, all from your table.</p>
+            <p>Sahne, bir semazenin huzuruyla açılır — Anadolu halk oyunları ve davul ekibi gecenin enerjisini yükseltir, oryantal dansla doruğa ulaşır. Yemeğiniz sürerken önünüzde dört perdelik bir Anadolu akşamı açılır, üstelik masanızdan kalkmadan.</p>
           </div>
-          <button type="button" class="flow-stage-next" aria-label="Next stage">↓</button>
+          <button type="button" class="flow-stage-next" aria-label="Sonraki aşama">↓</button>
         </div>
         <div class="flow-stage">
-          <span class="stage-tag">Finale</span>
+          <span class="stage-tag">Final</span>
           <img class="ph" src="/data/dance-floor-crowd.webp" alt="" loading="lazy">
           <div class="body">
             <div class="head-row">
-              <h4>DJ Party</h4>
+              <h4>DJ Partisi</h4>
               <div class="time">22:30</div>
             </div>
-            <p>After the show, momentum carries the night forward — the DJ takes over and the dance floor opens. For those seeking calm, the upper deck offers its own pleasure: sip your drink and take in the Bosphorus's colourful panorama; we recommend plenty of photographs. Dance floor or upper deck — until midnight, the choice is yours.</p>
+            <p>Şovun ardından geceyi ivme taşır — DJ devralır, dans pisti açılır. Sakinlik arayanlara üst güverte kendi keyfini sunar: içkinizi yudumlayın, Boğaz'ın renkli panoramasını izleyin; bolca fotoğraf çekmenizi öneririz. Dans pisti ya da üst güverte — gece yarısına kadar seçim sizin.</p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="Kapat">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
             <span class="info-divider"></span>
@@ -1915,15 +1929,15 @@
           </div>
         </div>
         <div class="info-tel">
-          <div class="info-label">Email:</div>
+          <div class="info-label">E-posta:</div>
           <div class="info-tel-row">
             <span class="info-val">reservations@luxurybosphorustour.com</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-packages">Packages <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-packages">Paketler <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">Şimdi Ayırt <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -1939,86 +1953,86 @@
       <img src="/data/full-hall.webp" alt="">
       <div class="ed-hero-veil"></div>
       <div class="ed-hero-text">
-        <div class="modal-eyebrow">FAQ · Practical</div>
-        <h2 class="modal-title">Frequently <span class="modal-script">asked</span></h2>
-        <p class="ed-hero-tagline">Departure, duration, payment, cancellation policy and frequently asked questions.</p>
+        <div class="modal-eyebrow">SSS · Pratik Bilgiler</div>
+        <h2 class="modal-title">Sıkça <span class="modal-script">sorulanlar</span></h2>
+        <p class="ed-hero-tagline">Kalkış, süre, ödeme, iptal politikası ve sık sorulan sorular.</p>
       </div>
     </div>
 
     <div class="ed-content">
       <dl class="info-rows">
-        <div class="info-row"><dt>Departure Point</dt><dd>Eminönü Pier</dd></div>
-        <div class="info-row"><dt>Door Opens</dt><dd>20:00</dd></div>
-        <div class="info-row"><dt>Departure</dt><dd>21:00 · daily</dd></div>
-        <div class="info-row"><dt>Duration</dt><dd>3 hours · ~00:00 return</dd></div>
-        <div class="info-row"><dt>Payment</dt><dd>On the boat · Cash (EUR/TRY/USD) or card</dd></div>
-        <div class="info-row"><dt>Cancellation</dt><dd>Free up to 2 hours before departure</dd></div>
-        <div class="info-row"><dt>Languages</dt><dd>14-language support (EN/TR/AR/RU/FR/DE/ES/IT/ZH/FA/PL/RO/BG/ID)</dd></div>
-        <div class="info-row"><dt>Age</dt><dd>All ages welcome</dd></div>
+        <div class="info-row"><dt>Kalkış Noktası</dt><dd>Eminönü İskelesi</dd></div>
+        <div class="info-row"><dt>Kapı Açılışı</dt><dd>20:00</dd></div>
+        <div class="info-row"><dt>Kalkış</dt><dd>21:00 · her gün</dd></div>
+        <div class="info-row"><dt>Süre</dt><dd>3 saat · ~00:00 dönüş</dd></div>
+        <div class="info-row"><dt>Ödeme</dt><dd>Teknede · Nakit (EUR/TRY/USD) veya kart</dd></div>
+        <div class="info-row"><dt>İptal</dt><dd>Kalkıştan 2 saat öncesine kadar ücretsiz</dd></div>
+        <div class="info-row"><dt>Diller</dt><dd>14 dilde destek (EN/TR/AR/RU/FR/DE/ES/IT/ZH/FA/PL/RO/BG/ID)</dd></div>
+        <div class="info-row"><dt>Yaş</dt><dd>Her yaştan misafir kabul edilir</dd></div>
       </dl>
 
       <div class="faq-section">
-        <div class="faq-head">Frequently Asked</div>
+        <div class="faq-head">Sıkça Sorulanlar</div>
         <div class="faq-row">
-          <div class="q">What tours do you offer?</div>
-          <div class="a">An evening Bosphorus cruise — we depart at 21:00 and return around midnight. On our three-deck vessel: full dinner, a Turkish night programme (whirling dervish, belly dance, folk, drums), DJ, and unlimited soft drinks. Departing from our pier at Eminönü.</div>
+          <div class="q">Hangi turları sunuyorsunuz?</div>
+          <div class="a">Akşam Boğaz turu — 21:00'da kalkış, gece yarısı civarında dönüş. Üç güverteli teknemizde: tam akşam yemeği, Türk gecesi programı (semazen, oryantal dans, halk oyunları, davul), DJ ve sınırsız meşrubat. Eminönü'ndeki iskelemizden kalkış.</div>
         </div>
         <div class="faq-row">
-          <div class="q">Are alcoholic drinks included?</div>
-          <div class="a">Soft drinks are included in all packages. For alcohol: an unlimited local package per person at +€15 (beer, rakı, gin, vodka, red & white wine). Imported drinks (champagne, whisky, cognac, etc.) are served at extra cost.</div>
+          <div class="q">Alkollü içecekler dahil mi?</div>
+          <div class="a">Meşrubatlar tüm paketlere dahildir. Alkol için: kişi başı +15 € ile sınırsız yerli paket (bira, rakı, cin, votka, kırmızı ve beyaz şarap). İthal içecekler (şampanya, viski, konyak vb.) ek ücretle servis edilir.</div>
         </div>
         <div class="faq-row">
-          <div class="q">Where does the cruise depart from and return to?</div>
-          <div class="a">We depart from our pier at Eminönü at 21:00 and return to the same point around midnight. Doors open at 20:00 — feel free to come earlier and enjoy the sunset from the pier.</div>
+          <div class="q">Tur nereden kalkar, nereye döner?</div>
+          <div class="a">Eminönü'ndeki iskelemizden 21:00'da kalkıyor, gece yarısı civarında aynı noktaya dönüyoruz. Kapılar 20:00'da açılır — erken gelip iskeleden günbatımının tadını çıkarabilirsiniz.</div>
         </div>
         <div class="faq-row">
-          <div class="q">What route does the cruise follow?</div>
-          <div class="a">Eminönü → Karaköy → Dolmabahçe → Çırağan → Ortaköy Mosque → Bosphorus Bridge → Bebek → Rumeli Fortress → FSM Bridge → Beylerbeyi → Üsküdar → Maiden's Tower (from afar) → Eminönü. The route may vary depending on weather and sea conditions.</div>
+          <div class="q">Tur hangi rotayı izliyor?</div>
+          <div class="a">Eminönü → Karaköy → Dolmabahçe → Çırağan → Ortaköy Camii → Boğaziçi Köprüsü → Bebek → Rumeli Hisarı → FSM Köprüsü → Beylerbeyi → Üsküdar → Kız Kulesi (uzaktan) → Eminönü. Hava ve deniz koşullarına bağlı olarak rota değişebilir.</div>
         </div>
         <div class="faq-row">
-          <div class="q">Are tables close to the stage?</div>
-          <div class="a">The panoramic windows of our salon offer clear Bosphorus views from every seat. The stage is positioned to be visible from all tables. VIP package guests are seated closest to the stage.</div>
+          <div class="q">Masalar sahneye yakın mı?</div>
+          <div class="a">Salonumuzun panoramik camları her oturma yerinden net Boğaz manzarası sunar. Sahne, tüm masalardan görünecek şekilde konumlandırılmıştır. VIP paket misafirleri sahneye en yakın oturtulur.</div>
         </div>
         <div class="faq-row">
-          <div class="q">What shows and entertainment are there?</div>
-          <div class="a">A live programme runs throughout the evening: whirling dervishes (a serene opening), Anatolian folk dances, drum ensemble, belly dance (the night's peak), and after dinner, a DJ performance. Concert-grade sound and lighting.</div>
+          <div class="q">Hangi şovlar ve eğlenceler var?</div>
+          <div class="a">Akşam boyunca canlı bir program akar: semazen (huzurlu açılış), Anadolu halk oyunları, davul ekibi, oryantal dans (gecenin doruğu) ve yemekten sonra DJ performansı. Konser düzeyinde ses ve ışık.</div>
         </div>
         <div class="faq-row">
-          <div class="q">Can I book for the same day?</div>
-          <div class="a">Yes — same-day bookings are possible up to 1 hour before departure (20:00). Message us on WhatsApp or Telegram and we'll check availability instantly.</div>
+          <div class="q">Aynı gün rezervasyon yapabilir miyim?</div>
+          <div class="a">Evet — aynı gün rezervasyonlar, kalkıştan 1 saat öncesine (20:00) kadar mümkün. WhatsApp veya Telegram'dan bize yazın, uygunluğu anında kontrol edelim.</div>
         </div>
         <div class="faq-row">
-          <div class="q">How do I pay?</div>
-          <div class="a">No prepayment is required. All payment is made on board. We accept cash (EUR, TRY, USD) and card.</div>
+          <div class="q">Ödeme nasıl yapılır?</div>
+          <div class="a">Ön ödeme gerekmiyor. Tüm ödeme teknede yapılır. Nakit (EUR, TRY, USD) ve kart kabul ediyoruz.</div>
         </div>
         <div class="faq-row">
-          <div class="q">Is hotel transfer available?</div>
-          <div class="a">Yes — hotel-to-pier-to-hotel transfer is available at +€5 per person. Before the tour, our driver collects you from your hotel and brings you to the pier; after the tour, the same driver waits at the pier and drops you back at your hotel. No need to plan transportation.</div>
+          <div class="q">Otel transferi var mı?</div>
+          <div class="a">Evet — kişi başı +5 € ile otel-iskele-otel transferi mevcuttur. Tur öncesinde sürücümüz sizi otelinizden alıp iskeleye bırakır; tur sonunda aynı sürücü iskelede sizi bekleyip otelinize geri götürür. Ulaşımı planlamanıza gerek yoktur.</div>
         </div>
         <div class="faq-row">
-          <div class="q">Can I cancel or change my reservation?</div>
-          <div class="a">Free cancellation is possible up to 2 hours before departure (until 19:00). Since there's no prepayment, the process is hassle-free — just send us a message.</div>
+          <div class="q">Rezervasyonumu iptal edebilir veya değiştirebilir miyim?</div>
+          <div class="a">Kalkıştan 2 saat öncesine kadar (19:00'a kadar) ücretsiz iptal mümkündür. Ön ödeme olmadığı için süreç son derece kolaydır — yalnızca bir mesaj atmanız yeterli.</div>
         </div>
         <div class="faq-row">
-          <div class="q">What happens in bad weather?</div>
-          <div class="a">The vessel has a covered salon, semi-open and open decks. In rain, the open deck closes while the salon and stage continue uninterrupted. The cruise runs regardless of weather conditions.</div>
+          <div class="q">Kötü havada ne olur?</div>
+          <div class="a">Teknemizde kapalı salon, yarı açık ve açık güverteler bulunur. Yağmurda açık güverte kapanır; salon ve sahne kesintisiz sürer. Hava koşullarından bağımsız olarak tur gerçekleşir.</div>
         </div>
         <div class="faq-row">
-          <div class="q">Is it suitable for all ages?</div>
-          <div class="a">Yes, the cruise is open to guests of all ages. Please contact our reservations team for child pricing and child-friendly menu options.</div>
+          <div class="q">Her yaşa uygun mu?</div>
+          <div class="a">Evet, tur her yaştan misafire açıktır. Çocuk fiyatları ve çocuk dostu menü seçenekleri için rezervasyon ekibimizle iletişime geçin.</div>
         </div>
         <div class="faq-row">
-          <div class="q">Can you arrange surprises for special occasions?</div>
-          <div class="a">Yes — for anniversaries, birthdays, marriage proposals and other special moments, we offer romantic-table, cake & champagne service and professional photography add-ons. You can add them from the Extras section or mention them at reservation.</div>
+          <div class="q">Özel günler için sürprizler düzenliyor musunuz?</div>
+          <div class="a">Evet — yıldönümleri, doğum günleri, evlilik teklifleri ve diğer özel anlar için romantik masa, pasta ve şampanya servisi ve profesyonel fotoğraf çekimi eklentileri sunuyoruz. Bunları Eklentiler bölümünden ekleyebilir veya rezervasyon sırasında bildirebilirsiniz.</div>
         </div>
       </div>
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="Kapat">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
             <span class="info-divider"></span>
@@ -2029,14 +2043,14 @@
           </div>
         </div>
         <div class="info-tel">
-          <div class="info-label">Email:</div>
+          <div class="info-label">E-posta:</div>
           <div class="info-tel-row">
             <span class="info-val">reservations@luxurybosphorustour.com</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">Şimdi Ayırt <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -2048,58 +2062,58 @@
   <div class="modal-frame editorial">
     <a href="#" class="modal-close" aria-label="Kapat">×</a>
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Privacy · Data Protection</div>
-      <h2 class="modal-title">Your privacy, <span class="modal-script">respected</span></h2>
-      <p class="ed-hero-tagline">How we collect, use, and protect your personal data — short, clear, no jargon.</p>
+      <div class="modal-eyebrow">Gizlilik · Veri Koruma</div>
+      <h2 class="modal-title">Gizliliğinize <span class="modal-script">saygılıyız</span></h2>
+      <p class="ed-hero-tagline">Kişisel verilerinizi nasıl topladığımız, kullandığımız ve koruduğumuz — kısa, açık, jargon yok.</p>
     </div>
     <div class="ed-content">
       <div class="legal-prose">
-        <h3>Who we are</h3>
-        <p>Luxury Bosphorus Tour ("we", "us") operates this site and the booking conversations on WhatsApp and Telegram. For any privacy-related question, message us through either channel.</p>
+        <h3>Biz kimiz</h3>
+        <p>Luxury Bosphorus Tour ("biz") bu siteyi ve WhatsApp ile Telegram üzerinden yürüyen rezervasyon yazışmalarını yönetir. Gizlilikle ilgili her türlü soru için iki kanaldan birinden bize yazabilirsiniz.</p>
 
-        <h3>What we collect</h3>
-        <p>When you reserve, we collect only what we need to confirm and operate your evening:</p>
+        <h3>Hangi verileri topluyoruz</h3>
+        <p>Rezervasyon yaptığınızda, yalnızca akşamınızı onaylamak ve yürütmek için ihtiyaç duyduklarımızı topluyoruz:</p>
         <ul>
-          <li>Your <strong>name</strong> and <strong>phone number</strong></li>
-          <li>The <strong>date</strong>, package, party size, and any add-ons you've chosen</li>
-          <li>Your <strong>hotel name / pickup address</strong> and optional room number — only when you request hotel transfer</li>
-          <li>Any free-text <strong>messages</strong> you send us</li>
+          <li><strong>Adınız</strong> ve <strong>telefon numaranız</strong></li>
+          <li>Seçtiğiniz <strong>tarih</strong>, paket, misafir sayısı ve eklentiler</li>
+          <li>Otel transferi istediğinizde — yalnızca o zaman — <strong>otel adınız / alış adresiniz</strong> ve isteğe bağlı oda numaranız</li>
+          <li>Bize gönderdiğiniz serbest metin <strong>mesajlar</strong></li>
         </ul>
-        <p>We do not ask for ID numbers, credit-card data, or any document. Payment is taken on board.</p>
+        <p>Kimlik numarası, kredi kartı bilgisi veya başka bir belge istemiyoruz. Ödeme teknede alınır.</p>
 
-        <h3>Why we collect it</h3>
+        <h3>Neden topluyoruz</h3>
         <ul>
-          <li>To confirm your reservation and hold your table</li>
-          <li>To coordinate hotel pickup, when applicable</li>
-          <li>To reach you with last-minute updates (weather, time changes)</li>
-          <li>To honour cancellation requests</li>
-        </ul>
-
-        <h3>Who we share it with</h3>
-        <p>Only with the staff who need it to deliver your evening:</p>
-        <ul>
-          <li><strong>Our transfer driver</strong>, if you've chosen hotel pickup — receives only your hotel / room and name</li>
-          <li><strong>Our reception team</strong> at the pier, to recognise your reservation</li>
-        </ul>
-        <p>We do not sell, rent, or trade your data. We do not pass anything to advertisers.</p>
-
-        <h3>Third-party services used on this site</h3>
-        <ul>
-          <li><strong>Google Fonts</strong> — for typography (no personal data is sent)</li>
-          <li><strong>OpenStreetMap</strong> — only when you search for your hotel; the search query is sent to OSM's Nominatim service to return results</li>
-          <li><strong>WhatsApp / Telegram</strong> — when you tap "Confirm via …" you continue the booking in their respective apps; their own privacy policies then apply</li>
+          <li>Rezervasyonunuzu onaylamak ve masanızı tutmak için</li>
+          <li>Otelden alış varsa koordinasyon için</li>
+          <li>Son dakika güncellemelerinde (hava, saat değişikliği) size ulaşmak için</li>
+          <li>İptal taleplerini yerine getirmek için</li>
         </ul>
 
-        <h3>How long we keep it</h3>
-        <p>Active booking conversations are kept while customer support remains useful — typically up to 12 months after your evening. After that, personal details are deleted.</p>
+        <h3>Kimlerle paylaşıyoruz</h3>
+        <p>Yalnızca akşamınızı kusursuz sunmak için bilmesi gereken ekiplerle:</p>
+        <ul>
+          <li>Otelden alış seçtiyseniz <strong>transfer sürücümüz</strong> — yalnızca otel / oda bilginiz ve adınızı alır</li>
+          <li>İskelede rezervasyonunuzu tanıyabilmek için <strong>resepsiyon ekibimiz</strong></li>
+        </ul>
+        <p>Verilerinizi satmıyor, kiralamıyor veya takas etmiyoruz. Hiçbir şeyi reklam verenlere iletmiyoruz.</p>
 
-        <h3>Your rights</h3>
-        <p>You can ask us to <strong>see</strong>, <strong>correct</strong>, or <strong>delete</strong> any data we hold about you. Message us on WhatsApp or Telegram and we'll process the request promptly.</p>
+        <h3>Bu sitede kullanılan üçüncü taraf hizmetleri</h3>
+        <ul>
+          <li><strong>Google Fonts</strong> — yazı tipleri için (kişisel veri gönderilmez)</li>
+          <li><strong>OpenStreetMap</strong> — yalnızca otelinizi aradığınızda; sonuçları getirmek için arama sorgusu OSM'nin Nominatim servisine iletilir</li>
+          <li><strong>WhatsApp / Telegram</strong> — "… ile Onayla"ya dokunduğunuzda rezervasyona ilgili uygulamada devam edersiniz; bundan sonra o uygulamanın gizlilik politikası geçerli olur</li>
+        </ul>
 
-        <h3>Cookies</h3>
-        <p>This site does not set tracking cookies. Your browser may locally cache fonts and map tiles for performance.</p>
+        <h3>Ne kadar süre saklıyoruz</h3>
+        <p>Aktif rezervasyon yazışmaları, müşteri desteği yararlı oldukça saklanır — genellikle akşamınızın ardından 12 aya kadar. Sonrasında kişisel ayrıntılar silinir.</p>
 
-        <p class="meta">Last updated · May 2026</p>
+        <h3>Haklarınız</h3>
+        <p>Sizinle ilgili tuttuğumuz her veriyi <strong>görmek</strong>, <strong>düzeltmek</strong> veya <strong>silmek</strong> için bizden talepte bulunabilirsiniz. WhatsApp veya Telegram'dan bize yazın, talebinizi hızla işleyelim.</p>
+
+        <h3>Çerezler</h3>
+        <p>Bu site izleme çerezi yerleştirmez. Tarayıcınız performans için yazı tiplerini ve harita karolarını yerelde önbelleğe alabilir.</p>
+
+        <p class="meta">Son güncelleme · Mayıs 2026</p>
       </div>
     </div>
   </div>
@@ -2111,43 +2125,43 @@
   <div class="modal-frame editorial">
     <a href="#" class="modal-close" aria-label="Kapat">×</a>
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Terms · Booking Conditions</div>
-      <h2 class="modal-title">Booking <span class="modal-script">terms</span></h2>
-      <p class="ed-hero-tagline">The basic rules of the evening — what we promise, what we ask in return.</p>
+      <div class="modal-eyebrow">Koşullar · Rezervasyon Şartları</div>
+      <h2 class="modal-title">Rezervasyon <span class="modal-script">koşulları</span></h2>
+      <p class="ed-hero-tagline">Akşamın temel kuralları — bizim verdiğimiz söz, karşılığında istediğimiz.</p>
     </div>
     <div class="ed-content">
       <div class="legal-prose">
-        <h3>1. Reservation</h3>
-        <p>A reservation is held when we confirm it on WhatsApp or Telegram and send you a confirmation message. We accept guests up to one hour before departure, subject to availability. <strong>No prepayment is required.</strong></p>
+        <h3>1. Rezervasyon</h3>
+        <p>Bir rezervasyon, WhatsApp veya Telegram üzerinden onayladığımızda ve size onay mesajı ilettiğimizde geçerli olur. Uygunluk şartıyla, kalkıştan bir saat öncesine kadar misafir kabul ediyoruz. <strong>Ön ödeme alınmaz.</strong></p>
 
-        <h3>2. Departure and duration</h3>
-        <p>Departure is at <strong>21:00</strong> from our pier at <strong>Eminönü</strong>. Doors open at <strong>20:00</strong> — please arrive in good time. The cruise runs for three hours and returns to the same pier around midnight.</p>
+        <h3>2. Kalkış ve süre</h3>
+        <p>Kalkış <strong>21:00</strong>'dadır; <strong>Eminönü</strong>'ndeki iskelemizden hareket eder. Kapılar <strong>20:00</strong>'da açılır — lütfen vaktinde gelin. Tur üç saat sürer ve gece yarısı civarında aynı iskeleye döner.</p>
 
-        <h3>3. Pricing and payment</h3>
-        <p>Prices shown on this site are valid at booking. Adults pay full price, kids aged 4–7 pay half, babies aged 0–3 are free. Add-ons (transfer, alcohol, romantic table) are calculated per booking. Payment is taken <strong>on board</strong> in cash (EUR, TRY, USD) or by card.</p>
+        <h3>3. Fiyatlandırma ve ödeme</h3>
+        <p>Bu sitede gösterilen fiyatlar rezervasyon anında geçerlidir. Yetişkinler tam fiyat öder, 4–7 yaş çocuklar yarım fiyat öder, 0–3 yaş bebekler ücretsizdir. Eklentiler (transfer, alkol, romantik masa) her rezervasyon için ayrı hesaplanır. Ödeme <strong>teknede</strong> nakit (EUR, TRY, USD) veya kart ile alınır.</p>
 
-        <h3>4. Hotel transfer</h3>
-        <p>If you choose pickup, our driver collects you at the hotel time we agree on WhatsApp. We need your hotel name and a confirmed pickup window. The same driver drops you back after the cruise.</p>
+        <h3>4. Otel transferi</h3>
+        <p>Otelden alış seçerseniz, WhatsApp üzerinden anlaştığımız saatte sürücümüz sizi otelinizden alır. Otel adınız ve onaylı bir alış aralığına ihtiyacımız var. Tur sonunda aynı sürücü sizi geri bırakır.</p>
 
-        <h3>5. Cancellation and changes</h3>
-        <p>Free cancellation is available up to <strong>2 hours before departure</strong>. See our <a href="#m-cancellation">Cancellation policy</a> for details.</p>
+        <h3>5. İptal ve değişiklik</h3>
+        <p><strong>Kalkıştan 2 saat öncesine</strong> kadar ücretsiz iptal mümkündür. Ayrıntılar için <a href="#m-cancellation">İptal politikamıza</a> bakın.</p>
 
-        <h3>6. Weather and sea conditions</h3>
-        <p>The cruise runs in almost all weather. In rare storm conditions the route may be shortened or the evening rescheduled — you are entitled to a free reschedule or to walk away with no charge.</p>
+        <h3>6. Hava ve deniz koşulları</h3>
+        <p>Tur neredeyse her hava koşulunda gerçekleşir. Nadir fırtınalı koşullarda rota kısaltılabilir veya akşam ertelenebilir — bu durumda ücretsiz erteleme veya hiçbir ücret ödemeden vazgeçme hakkınız vardır.</p>
 
-        <h3>7. Behaviour on board</h3>
-        <p>We welcome a lively evening, but we reserve the right to refuse boarding to anyone who is significantly intoxicated, behaves aggressively, or endangers other guests or crew. The captain's authority is final at sea.</p>
+        <h3>7. Tekne içinde davranış</h3>
+        <p>Hareketli bir akşamı destekliyoruz; ancak ileri derecede alkollü, saldırgan davranan veya diğer misafir ya da mürettebatın güvenliğini tehlikeye atan kişilerin tekneye binişini reddetme hakkımız saklıdır. Denizde kaptanın yetkisi nihaidir.</p>
 
-        <h3>8. Liability</h3>
-        <p>Operations are governed by Turkish maritime and consumer law. We carry full passenger insurance for the cruise.</p>
+        <h3>8. Sorumluluk</h3>
+        <p>Operasyonlar Türk denizcilik ve tüketici mevzuatına tabidir. Tur için tam yolcu sigortamız vardır.</p>
 
-        <h3>9. Photography and video</h3>
-        <p>You may photograph and film for personal use. If we want to publish any image that identifies guests, we will ask first.</p>
+        <h3>9. Fotoğraf ve video</h3>
+        <p>Kişisel kullanım için fotoğraf çekebilir ve video kaydedebilirsiniz. Misafirleri tanımlanabilir kılan bir görseli yayımlamak isterseniz, önce sorarız.</p>
 
-        <h3>10. Updates to these terms</h3>
-        <p>We may update these terms from time to time. The version published on this page at the time of your booking is the one that applies to you.</p>
+        <h3>10. Koşullarda güncelleme</h3>
+        <p>Bu koşulları zaman zaman güncelleyebiliriz. Rezervasyonunuz sırasında bu sayfada yayımda olan sürüm sizin için geçerlidir.</p>
 
-        <p class="meta">Last updated · May 2026</p>
+        <p class="meta">Son güncelleme · Mayıs 2026</p>
       </div>
     </div>
   </div>
@@ -2159,31 +2173,31 @@
   <div class="modal-frame editorial">
     <a href="#" class="modal-close" aria-label="Kapat">×</a>
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Cancellation · Refunds</div>
-      <h2 class="modal-title">Cancellation <span class="modal-script">policy</span></h2>
-      <p class="ed-hero-tagline">How free cancellation works and what happens in special cases.</p>
+      <div class="modal-eyebrow">İptal · İade</div>
+      <h2 class="modal-title">İptal <span class="modal-script">politikası</span></h2>
+      <p class="ed-hero-tagline">Ücretsiz iptalin nasıl işlediği ve özel durumlarda neler olduğu.</p>
     </div>
     <div class="ed-content">
       <div class="legal-prose">
-        <h3>Free cancellation</h3>
-        <p>Cancel for any reason — no questions, no fee — up to <strong>2 hours before departure</strong> (i.e. by 19:00 on the evening of your cruise). Since we don't take prepayment, there's nothing to refund and nothing to chase. Just message us.</p>
+        <h3>Ücretsiz iptal</h3>
+        <p>Herhangi bir sebeple — soru yok, ücret yok — <strong>kalkıştan 2 saat öncesine</strong> kadar iptal edebilirsiniz (yani turunuzun akşamı 19:00'a kadar). Ön ödeme almadığımız için iade edilecek bir şey ve takip edilecek bir borç yoktur. Sadece bize bir mesaj atın.</p>
 
-        <h3>How to cancel</h3>
-        <p>Reply to the WhatsApp or Telegram thread you used to book, or start a new message — name and date are enough for us to find your reservation. Confirmation arrives within minutes during operating hours.</p>
+        <h3>Nasıl iptal edilir</h3>
+        <p>Rezervasyon için kullandığınız WhatsApp veya Telegram konuşmasına cevap verin, ya da yeni bir mesaj başlatın — rezervasyonunuzu bulmak için ad ve tarih yeterli. Çalışma saatlerinde onay birkaç dakika içinde gelir.</p>
 
-        <h3>Inside the 2-hour window or no-show</h3>
-        <p>If you cancel after 19:00 or simply don't arrive, we don't chase a charge — but the table is held until departure and another guest cannot use it. Please send us a quick note when you can; it helps the table go to someone else.</p>
+        <h3>2 saatlik pencere içinde ya da gelmeme</h3>
+        <p>19:00'dan sonra iptal ederseniz ya da gelmezseniz, ücret talep etmeyiz — ancak masa kalkışa kadar size tutulur ve başka bir misafir kullanamaz. Mümkün olduğunda kısa bir mesaj atın; masanın başka birine geçmesine yardımcı olur.</p>
 
-        <h3>Weather or sea conditions</h3>
-        <p>If we cancel due to weather, captain's call, or vessel availability, we offer you either a <strong>free reschedule</strong> for any future evening within 6 months, or a full release if you've already paid anything in advance.</p>
+        <h3>Hava veya deniz koşulları</h3>
+        <p>Hava, kaptan kararı veya tekne uygunluğu nedeniyle biz iptal edersek, 6 ay içindeki herhangi bir akşam için <strong>ücretsiz erteleme</strong> sunarız; önceden ödediğiniz bir tutar varsa tam iade yaparız.</p>
 
-        <h3>Changes (date, party size, package)</h3>
-        <p>You can change your date, guest count, or package up to <strong>4 hours before departure</strong>, subject to availability. Date changes are free; upgrades pay the difference; downgrades follow the current published rates.</p>
+        <h3>Değişiklikler (tarih, kişi sayısı, paket)</h3>
+        <p>Tarihinizi, misafir sayınızı veya paketinizi <strong>kalkıştan 4 saat öncesine</strong> kadar, uygunluk şartıyla değiştirebilirsiniz. Tarih değişikliği ücretsizdir; yükseltmeler farkı öder; düşürmeler güncel yayımlanmış fiyatları izler.</p>
 
-        <h3>Refunds, if applicable</h3>
-        <p>Most evenings carry no prepayment, so refunds rarely apply. In the few cases where a deposit was taken (private yacht, large groups), refunds are made through the same channel as the payment within 5 working days of the cancellation request.</p>
+        <h3>Geçerli olduğunda iade</h3>
+        <p>Çoğu akşam ön ödeme almadığımız için iadeler nadiren söz konusu olur. Depozito alınan az sayıdaki durumda (özel yat, büyük gruplar), iadeler iptal talebinden itibaren 5 iş günü içinde ödemenin yapıldığı kanaldan gerçekleştirilir.</p>
 
-        <p class="meta">Last updated · May 2026</p>
+        <p class="meta">Son güncelleme · Mayıs 2026</p>
       </div>
     </div>
   </div>
@@ -2195,43 +2209,43 @@
     <a href="#" class="modal-close" aria-label="Kapat">×</a>
 
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Our Vessel · The Boat</div>
-      <h2 class="modal-title">Our Boat <span class="modal-script">on the Bosphorus</span></h2>
-      <p class="ed-hero-tagline">A premium three-deck Bosphorus cruise vessel — capacity, layout and what's where on board.</p>
+      <div class="modal-eyebrow">Teknemiz · Gemimiz</div>
+      <h2 class="modal-title">Teknemiz <span class="modal-script">Boğaz'da</span></h2>
+      <p class="ed-hero-tagline">Premium üç güverteli Boğaz turu teknesi — kapasite, yerleşim ve teknede neyin nerede olduğu.</p>
     </div>
 
     <div class="ed-content">
 
       <!-- SPECS -->
       <dl class="info-rows">
-        <div class="info-row"><dt>Capacity</dt><dd>500 guests across three decks</dd></div>
-        <div class="info-row"><dt>Decks</dt><dd>Main · Upper · Sky (open-air)</dd></div>
-        <div class="info-row"><dt>Pier</dt><dd>Eminönü · own pier</dd></div>
-        <div class="info-row"><dt>Departure</dt><dd>21:00 · daily</dd></div>
-        <div class="info-row"><dt>Duration</dt><dd>3 hours · ~00:00 return</dd></div>
-        <div class="info-row"><dt>Bars</dt><dd>2 (main deck + sky deck)</dd></div>
-        <div class="info-row"><dt>Stage</dt><dd>Concert-grade light &amp; sound</dd></div>
-        <div class="info-row"><dt>Accessibility</dt><dd>Step-free boarding · ramp on request</dd></div>
+        <div class="info-row"><dt>Kapasite</dt><dd>Üç güvertede toplam 500 misafir</dd></div>
+        <div class="info-row"><dt>Güverteler</dt><dd>Ana · Orta · Üst (açık hava)</dd></div>
+        <div class="info-row"><dt>İskele</dt><dd>Eminönü · kendi iskelemiz</dd></div>
+        <div class="info-row"><dt>Kalkış</dt><dd>21:00 · her gün</dd></div>
+        <div class="info-row"><dt>Süre</dt><dd>3 saat · ~00:00 dönüş</dd></div>
+        <div class="info-row"><dt>Barlar</dt><dd>2 (ana güverte + üst güverte)</dd></div>
+        <div class="info-row"><dt>Sahne</dt><dd>Konser düzeyinde ışık ve ses</dd></div>
+        <div class="info-row"><dt>Erişilebilirlik</dt><dd>Basamaksız biniş · talep üzerine rampa</dd></div>
       </dl>
 
       <!-- DECKS DETAIL -->
       <div class="menu-detail">
         <div class="menu-detail-head">
-          <div class="menu-detail-eyebrow">The decks</div>
-          <h3 class="menu-detail-title">Three decks, <em>three moods</em></h3>
-          <p class="menu-detail-intro">Each deck plays a different role across the evening — climate-controlled dining and stage downstairs, intimate window-side tables in the middle, an open-air dance floor and bar above.</p>
+          <div class="menu-detail-eyebrow">Güverteler</div>
+          <h3 class="menu-detail-title">Üç güverte, <em>üç farklı ruh hâli</em></h3>
+          <p class="menu-detail-intro">Her güverte akşam boyunca farklı bir rol oynar — aşağıda iklim kontrollü yemek alanı ve sahne, ortada cama yakın özel masalar, yukarıda açık hava dans pisti ve bar.</p>
         </div>
 
         <!-- 01 · MAIN DECK -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">01</span>
-            <span class="menu-block-name">Main Deck</span>
-            <span class="menu-block-count">Dining · Stage · Main bar</span>
+            <span class="menu-block-name">Ana Güverte</span>
+            <span class="menu-block-count">Yemek · Sahne · Ana bar</span>
           </div>
-          <p class="menu-block-desc">The heart of the cruise — full restaurant seating, the stage at the front, dance floor at the centre. This is where the Turkish night show runs, and where the main bar lives. Climate-controlled, with panoramic windows on both sides.</p>
+          <p class="menu-block-desc">Turun kalbi — tam restoran düzeni, önde sahne, ortada dans pisti. Türk gecesi şovu burada sahnelenir ve ana bar buradadır. İklim kontrollü, her iki yanda panoramik camlar.</p>
           <div class="menu-block-figure">
-            <img src="/data/full-hall.webp" alt="Main deck dining hall on a Bosphorus dinner cruise" loading="lazy">
+            <img src="/data/full-hall.webp" alt="Boğaz akşam yemekli tekne turunda ana güverte yemek salonu" loading="lazy">
           </div>
         </div>
 
@@ -2239,51 +2253,51 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">02</span>
-            <span class="menu-block-name">Upper Deck</span>
-            <span class="menu-block-count">Window-side dining · Quieter</span>
+            <span class="menu-block-name">Orta Güverte</span>
+            <span class="menu-block-count">Cama yakın yemek · Daha sakin</span>
           </div>
-          <p class="menu-block-desc">A lounge-style dining floor above the main deck — quieter, window-side tables with direct views over the strait, ideal for couples and small groups. Same menu, same show audio through concealed speakers, less crowd energy.</p>
+          <p class="menu-block-desc">Ana güvertenin üzerinde lounge tarzı bir yemek katı — daha sakin, Boğaz'a doğrudan bakan cama yakın masalarla, çiftler ve küçük gruplar için ideal. Aynı menü, gizli hoparlörlerden aynı şov sesi, daha az kalabalık enerjisi.</p>
         </div>
 
         <!-- 03 · SKY DECK -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">03</span>
-            <span class="menu-block-name">Sky Deck</span>
-            <span class="menu-block-count">Open-air · DJ · Lounge bar</span>
+            <span class="menu-block-name">Üst Güverte</span>
+            <span class="menu-block-count">Açık hava · DJ · Lounge bar</span>
           </div>
-          <p class="menu-block-desc">The top of the boat — open to the sky, with lounge seating, a second bar and the DJ booth. After the show, the night shifts here: dance floor, drinks under the stars, the Bosphorus on every side. Heating in cooler months.</p>
+          <p class="menu-block-desc">Teknenin en üstü — gökyüzüne açık, lounge oturma alanı, ikinci bir bar ve DJ kabini. Şovdan sonra gece buraya kayar: dans pisti, yıldızlar altında içecekler, her yanda Boğaz. Soğuk aylarda ısıtmalı.</p>
           <div class="menu-block-figure">
-            <img src="/data/dance-floor-crowd.webp" alt="Sky deck open-air dance floor on a Bosphorus dinner cruise after dark" loading="lazy">
+            <img src="/data/dance-floor-crowd.webp" alt="Geceleyin Boğaz akşam yemekli tekne turunda üst güverte açık hava dans pisti" loading="lazy">
           </div>
         </div>
 
-        <p class="menu-detail-foot">Boarding opens at 20:00 from our pier at Eminönü. The captain's authority is final at sea; we follow Turkish maritime law and carry full passenger insurance.</p>
+        <p class="menu-detail-foot">Biniş, Eminönü'ndeki iskelemizden 20:00'da başlar. Denizde kaptanın yetkisi nihaidir; Türk denizcilik mevzuatına uyuyor ve tam yolcu sigortası taşıyoruz.</p>
       </div>
 
       <!-- PHOTO STRIP -->
       <div class="photo-masonry">
-        <img src="/data/boat-night-bridge.webp" alt="The cruise vessel passing under the Bosphorus Bridge at night" loading="lazy">
-        <img src="/data/boat-pier-sunset.webp" alt="Bosphorus cruise boat at Eminönü pier before departure" loading="lazy">
-        <img src="/data/boat-night-drone.webp" alt="Aerial view of the cruise vessel on the Bosphorus at night" loading="lazy">
-        <img src="/data/dining-romantic-wide.webp" alt="Romantic table setting on the Bosphorus cruise" loading="lazy">
-        <img src="/data/happy-guests.webp" alt="Guests on board a Bosphorus dinner cruise" loading="lazy">
+        <img src="/data/boat-night-bridge.webp" alt="Gece Boğaziçi Köprüsü altından geçen tur teknemiz" loading="lazy">
+        <img src="/data/boat-pier-sunset.webp" alt="Kalkıştan önce Eminönü iskelesinde Boğaz turu teknesi" loading="lazy">
+        <img src="/data/boat-night-drone.webp" alt="Gece Boğaz'da tur teknesinin havadan görünümü" loading="lazy">
+        <img src="/data/dining-romantic-wide.webp" alt="Boğaz turunda romantik masa düzeni" loading="lazy">
+        <img src="/data/happy-guests.webp" alt="Boğaz akşam yemekli tekne turunda teknedeki misafirler" loading="lazy">
       </div>
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="Kapat">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-packages">Packages <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-packages">Paketler <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">Şimdi Ayırt <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -2291,23 +2305,23 @@
 
 <!-- ─────────── M-BOOK (4-Step Reservation Wizard) ─────────── -->
 <div class="modal" id="m-book">
-  <a href="#" class="modal-back" aria-label="Close"></a>
+  <a href="#" class="modal-back" aria-label="Kapat"></a>
   <div class="modal-frame wizard" role="dialog" aria-modal="true" aria-labelledby="wizTitle">
-    <a href="#" class="modal-close" aria-label="Close">×</a>
+    <a href="#" class="modal-close" aria-label="Kapat">×</a>
 
     <!-- HEAD -->
     <div class="wiz-head">
-      <div class="wiz-eyebrow">The Reservation</div>
-      <h2 class="wiz-title" id="wizTitle">Book your <span class="wiz-script">evening</span></h2>
+      <div class="wiz-eyebrow">Rezervasyon</div>
+      <h2 class="wiz-title" id="wizTitle">Akşamınızı <span class="wiz-script">ayırtın</span></h2>
 
       <div class="wiz-progress" id="wizProgress">
-        <div class="wiz-node active" data-n="1"><div class="wiz-dot">1</div><div class="wiz-lbl">Package</div></div>
+        <div class="wiz-node active" data-n="1"><div class="wiz-dot">1</div><div class="wiz-lbl">Paket</div></div>
         <div class="wiz-bar"></div>
-        <div class="wiz-node" data-n="2"><div class="wiz-dot">2</div><div class="wiz-lbl">Extras</div></div>
+        <div class="wiz-node" data-n="2"><div class="wiz-dot">2</div><div class="wiz-lbl">Eklentiler</div></div>
         <div class="wiz-bar"></div>
-        <div class="wiz-node" data-n="3"><div class="wiz-dot">3</div><div class="wiz-lbl">Details</div></div>
+        <div class="wiz-node" data-n="3"><div class="wiz-dot">3</div><div class="wiz-lbl">Bilgiler</div></div>
         <div class="wiz-bar"></div>
-        <div class="wiz-node" data-n="4"><div class="wiz-dot">4</div><div class="wiz-lbl">Confirm</div></div>
+        <div class="wiz-node" data-n="4"><div class="wiz-dot">4</div><div class="wiz-lbl">Onayla</div></div>
       </div>
     </div>
 
@@ -2317,68 +2331,68 @@
       <!-- STEP 1 — Package & Basics -->
       <div class="wiz-step active" data-step="1">
         <div class="wiz-section">
-          <span class="wiz-label">Package</span>
-          <p id="wizPkgWarn" class="wiz-warn">Please choose a package to continue.</p>
+          <span class="wiz-label">Paket</span>
+          <p id="wizPkgWarn" class="wiz-warn">Devam etmek için lütfen bir paket seçin.</p>
           <div class="wiz-pkgs">
             <button type="button" class="wiz-pkg" data-pkg="standard">
-              <span class="nm">Standard <span class="nm-sub">Menu</span></span>
-              <span class="pr"><span class="strike">€38</span><span class="now">€25</span><span class="per">per person</span></span>
-              <span class="ds">Multi-course dinner, soft drinks, Turkish night show.</span>
+              <span class="nm">Standart <span class="nm-sub">Menü</span></span>
+              <span class="pr"><span class="strike">€38</span><span class="now">€25</span><span class="per">kişi başı</span></span>
+              <span class="ds">Çok aşamalı akşam yemeği, meşrubatlar, Türk gecesi şovu.</span>
             </button>
             <button type="button" class="wiz-pkg" data-pkg="vip">
-              <span class="badge">Most Popular</span>
-              <span class="nm">VIP <span class="nm-sub">Menu</span></span>
-              <span class="pr"><span class="strike">€100</span><span class="now">€65</span><span class="per">per person</span></span>
-              <span class="ds">Premium meats, near-stage seating, elevated service.</span>
+              <span class="badge">En Çok Tercih Edilen</span>
+              <span class="nm">VIP <span class="nm-sub">Menü</span></span>
+              <span class="pr"><span class="strike">€100</span><span class="now">€65</span><span class="per">kişi başı</span></span>
+              <span class="ds">Premium etler, sahneye yakın oturum, yükseltilmiş servis.</span>
             </button>
           </div>
           <a class="wiz-view-link" href="#m-dinner">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-            Compare full menus
+            Tam menüleri karşılaştır
           </a>
         </div>
 
         <div class="wiz-section">
-          <span class="wiz-label">Date</span>
+          <span class="wiz-label">Tarih</span>
           <div class="wiz-date-wrap">
             <button type="button" class="wiz-date-btn" id="wizDateBtn" aria-haspopup="dialog" aria-expanded="false">
-              <span id="wizDateLabel" class="placeholder">Choose your evening</span>
+              <span id="wizDateLabel" class="placeholder">Akşamınızı seçin</span>
               <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></span>
             </button>
             <input type="hidden" id="wizDate" value="">
-            <div class="wiz-cal-pop" id="wizCalPop" role="dialog" aria-label="Calendar" style="display:none"></div>
+            <div class="wiz-cal-pop" id="wizCalPop" role="dialog" aria-label="Takvim" style="display:none"></div>
           </div>
         </div>
 
         <div class="wiz-section">
-          <span class="wiz-label">Guests</span>
-          <p id="wizAdultsWarn" class="wiz-warn">Please add at least one adult.</p>
+          <span class="wiz-label">Misafirler</span>
+          <p id="wizAdultsWarn" class="wiz-warn">Lütfen en az bir yetişkin ekleyin.</p>
           <div class="wiz-counters">
             <div class="wiz-counter">
-              <div class="lab">Adult <span class="age">Age 8+</span></div>
-              <div class="cap">Full price</div>
+              <div class="lab">Yetişkin <span class="age">8 yaş ve üzeri</span></div>
+              <div class="cap">Tam fiyat</div>
               <div class="ctrl">
-                <button type="button" data-counter="adults" data-delta="-1" aria-label="Decrease adults">−</button>
+                <button type="button" data-counter="adults" data-delta="-1" aria-label="Yetişkin sayısını azalt">−</button>
                 <span class="val" id="wizAdults">0</span>
-                <button type="button" data-counter="adults" data-delta="1" aria-label="Increase adults">+</button>
+                <button type="button" data-counter="adults" data-delta="1" aria-label="Yetişkin sayısını artır">+</button>
               </div>
             </div>
             <div class="wiz-counter">
-              <div class="lab">Kids <span class="age">Age 4–7</span></div>
-              <div class="cap">50% off</div>
+              <div class="lab">Çocuk <span class="age">4–7 yaş</span></div>
+              <div class="cap">%50 indirim</div>
               <div class="ctrl">
-                <button type="button" data-counter="kids" data-delta="-1" aria-label="Decrease kids">−</button>
+                <button type="button" data-counter="kids" data-delta="-1" aria-label="Çocuk sayısını azalt">−</button>
                 <span class="val" id="wizKids">0</span>
-                <button type="button" data-counter="kids" data-delta="1" aria-label="Increase kids">+</button>
+                <button type="button" data-counter="kids" data-delta="1" aria-label="Çocuk sayısını artır">+</button>
               </div>
             </div>
             <div class="wiz-counter">
-              <div class="lab">Baby <span class="age">Age 0–3</span></div>
-              <div class="cap">Free</div>
+              <div class="lab">Bebek <span class="age">0–3 yaş</span></div>
+              <div class="cap">Ücretsiz</div>
               <div class="ctrl">
-                <button type="button" data-counter="babies" data-delta="-1" aria-label="Decrease babies">−</button>
+                <button type="button" data-counter="babies" data-delta="-1" aria-label="Bebek sayısını azalt">−</button>
                 <span class="val" id="wizBabies">0</span>
-                <button type="button" data-counter="babies" data-delta="1" aria-label="Increase babies">+</button>
+                <button type="button" data-counter="babies" data-delta="1" aria-label="Bebek sayısını artır">+</button>
               </div>
             </div>
           </div>
@@ -2388,45 +2402,45 @@
       <!-- STEP 2 — Drinks, Transfer & Optional Add-on -->
       <div class="wiz-step" data-step="2">
         <div class="wiz-section">
-          <span class="wiz-label">Drinks & Transfer</span>
-          <p class="wiz-hint" style="margin-top:0;margin-bottom:10px">Both choices are required to continue.</p>
+          <span class="wiz-label">İçecekler ve Transfer</span>
+          <p class="wiz-hint" style="margin-top:0;margin-bottom:10px">Devam etmek için her iki seçim de zorunludur.</p>
 
           <div class="wiz-extra">
             <div class="info">
-              <div class="nm">Drink Option <span class="pr">Required</span></div>
-              <div class="ds">Soft drinks are included in every package. Add unlimited local alcohol for €15 per person — beer, rakı, gin, vodka, red &amp; white wine. Imported drinks at extra cost.</div>
-              <p id="wizAlcoholWarn" class="wiz-warn">Please choose a drink option.</p>
+              <div class="nm">İçecek Seçeneği <span class="pr">Zorunlu</span></div>
+              <div class="ds">Meşrubatlar her pakete dahildir. Kişi başı 15 € karşılığında sınırsız yerli alkol ekleyebilirsiniz — bira, rakı, cin, votka, kırmızı ve beyaz şarap. İthal içecekler ek ücretlidir.</div>
+              <p id="wizAlcoholWarn" class="wiz-warn">Lütfen bir içecek seçeneği seçin.</p>
             </div>
             <div class="tgl-row">
-              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="0">Soft Drinks</button>
-              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="1">+ Alcohol €15</button>
+              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="0">Meşrubat</button>
+              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="1">+ Alkol 15 €</button>
             </div>
           </div>
 
           <div class="wiz-extra">
             <div class="info">
-              <div class="nm">Pickup Option <span class="pr">Required</span></div>
-              <div class="ds">Self-coming to our pier at Eminönü, or door-to-door private transfer from your hotel for €5 per person (round-trip).</div>
-              <p id="wizTransferWarn" class="wiz-warn">Please choose a pickup option.</p>
+              <div class="nm">Alış Seçeneği <span class="pr">Zorunlu</span></div>
+              <div class="ds">Eminönü'ndeki iskelemize kendiniz gelin ya da kişi başı 5 € karşılığında otelden kapı önüne kadar özel transfer (gidiş-dönüş).</div>
+              <p id="wizTransferWarn" class="wiz-warn">Lütfen bir alış seçeneği seçin.</p>
             </div>
             <div class="tgl-row">
-              <button type="button" class="wiz-extra-btn" data-extra="transfer" data-val="0">Meet at Pier</button>
-              <button type="button" class="wiz-extra-btn" data-extra="transfer" data-val="1">+ Pickup €5</button>
+              <button type="button" class="wiz-extra-btn" data-extra="transfer" data-val="0">İskelede Buluş</button>
+              <button type="button" class="wiz-extra-btn" data-extra="transfer" data-val="1">+ Otel Alımı 5 €</button>
             </div>
           </div>
         </div>
 
         <div class="wiz-section">
-          <span class="wiz-label">Optional Add-on</span>
+          <span class="wiz-label">Opsiyonel Eklenti</span>
 
           <div class="wiz-extra">
             <div class="info">
-              <div class="nm">Romantic Table <span class="pr">+€15 / table</span></div>
-              <div class="ds">An elegant table dressed with candles and rose petals — perfect for proposals, anniversaries and first dates.</div>
+              <div class="nm">Romantik Masa <span class="pr">+15 € / masa</span></div>
+              <div class="ds">Mum ve gül yapraklarıyla hazırlanmış zarif bir masa — evlilik teklifleri, yıldönümleri ve ilk randevular için kusursuz.</div>
             </div>
             <div class="tgl-row">
-              <button type="button" class="wiz-extra-btn sel" data-extra="romantic" data-val="0">No</button>
-              <button type="button" class="wiz-extra-btn" data-extra="romantic" data-val="1">Yes</button>
+              <button type="button" class="wiz-extra-btn sel" data-extra="romantic" data-val="0">Hayır</button>
+              <button type="button" class="wiz-extra-btn" data-extra="romantic" data-val="1">Evet</button>
             </div>
           </div>
         </div>
@@ -2435,52 +2449,52 @@
       <!-- STEP 3 — Your Details -->
       <div class="wiz-step" data-step="3">
         <div class="wiz-section">
-          <span class="wiz-label">Guest Name</span>
-          <input type="text" id="wizName" class="wiz-input" placeholder="Full name" autocomplete="name">
-          <p id="wizNameWarn" class="wiz-warn">Please enter your name.</p>
+          <span class="wiz-label">Misafir Adı</span>
+          <input type="text" id="wizName" class="wiz-input" placeholder="Ad soyad" autocomplete="name">
+          <p id="wizNameWarn" class="wiz-warn">Lütfen adınızı girin.</p>
         </div>
 
         <div class="wiz-section">
-          <span class="wiz-label">Phone Number</span>
+          <span class="wiz-label">Telefon Numarası</span>
           <div class="wiz-phone-row" dir="ltr">
             <div class="wiz-cc-wrap">
               <button type="button" class="wiz-cc-btn" id="wizCcBtn" aria-haspopup="listbox" aria-expanded="false">
                 <img class="flag" id="wizCcFlag" src="" alt="">
-                <span class="code" id="wizCcLabel">Country</span>
+                <span class="code" id="wizCcLabel">Ülke</span>
                 <span class="chev">▼</span>
               </button>
               <input type="hidden" id="wizCc" value="">
               <div class="wiz-cc-drop" id="wizCcDrop" role="listbox">
-                <input type="text" class="wiz-cc-search" id="wizCcSearch" placeholder="Search country..." autocomplete="off">
+                <input type="text" class="wiz-cc-search" id="wizCcSearch" placeholder="Ülke ara..." autocomplete="off">
                 <ul class="wiz-cc-list" id="wizCcList"></ul>
               </div>
             </div>
-            <input type="tel" id="wizPhone" class="wiz-input" placeholder="Phone number" inputmode="numeric" autocomplete="tel-national">
+            <input type="tel" id="wizPhone" class="wiz-input" placeholder="Telefon numarası" inputmode="numeric" autocomplete="tel-national">
           </div>
-          <p class="wiz-hint">We will reach you on this number to confirm.</p>
-          <p id="wizPhoneWarn" class="wiz-warn">Please enter your phone number.</p>
+          <p class="wiz-hint">Onay için sizi bu numaradan arayacağız.</p>
+          <p id="wizPhoneWarn" class="wiz-warn">Lütfen telefon numaranızı girin.</p>
         </div>
 
         <div class="wiz-section" id="wizAddressWrap" style="display:none">
-          <span class="wiz-label">Pickup Location</span>
+          <span class="wiz-label">Alış Konumu</span>
           <div class="wiz-addr-search">
-            <input type="text" id="wizAddress" class="wiz-input" placeholder="Search hotel name or address…" autocomplete="off">
+            <input type="text" id="wizAddress" class="wiz-input" placeholder="Otel adı veya adres ara…" autocomplete="off">
             <span class="wiz-addr-loading" id="wizAddrLoading"></span>
             <ul class="wiz-addr-results" id="wizAddrResults" style="display:none"></ul>
           </div>
-          <p class="wiz-hint">Drag the marker if you need to fine-tune the location.</p>
+          <p class="wiz-hint">Konumu ince ayar yapmanız gerekiyorsa işaretçiyi sürükleyin.</p>
           <div class="wiz-map" id="wizMap"></div>
           <div style="margin-top:14px">
-            <span class="wiz-label" style="font-size:8px;letter-spacing:.28em;border:0;padding:0;margin-bottom:6px">Room Number</span>
-            <input type="text" id="wizRoom" class="wiz-input" placeholder="e.g. 507" maxlength="10">
-            <p class="wiz-hint">So our driver can find you. Leave empty if not yet checked in.</p>
+            <span class="wiz-label" style="font-size:8px;letter-spacing:.28em;border:0;padding:0;margin-bottom:6px">Oda Numarası</span>
+            <input type="text" id="wizRoom" class="wiz-input" placeholder="ör. 507" maxlength="10">
+            <p class="wiz-hint">Sürücümüzün sizi bulabilmesi için. Henüz giriş yapmadıysanız boş bırakın.</p>
           </div>
         </div>
 
         <div class="wiz-section">
-          <span class="wiz-label">Preferred Channel</span>
-          <p class="wiz-hint" style="margin-top:0;margin-bottom:4px">We'll confirm your reservation through this channel.</p>
-          <p id="wizChannelWarn" class="wiz-warn">Please choose a contact channel.</p>
+          <span class="wiz-label">Tercih Edilen Kanal</span>
+          <p class="wiz-hint" style="margin-top:0;margin-bottom:4px">Rezervasyonunuzu bu kanal üzerinden onaylayacağız.</p>
+          <p id="wizChannelWarn" class="wiz-warn">Lütfen bir iletişim kanalı seçin.</p>
           <div class="wiz-channels">
             <button type="button" class="wiz-ch" data-channel="whatsapp">
               <svg viewBox="0 0 32 32" fill="currentColor"><path d="M27.286 4.714C24.286 1.714 20.286 0 16 0 7.143 0 0 7.143 0 16c0 2.857.714 5.571 2.143 8L0 32l8.286-2.143C10.571 30.857 13.286 32 16 32c8.857 0 16-7.143 16-16 0-4.286-1.714-8.286-4.714-11.286zM16 29.286c-2.429 0-4.857-.714-7-2L8.5 27l-4.929 1.286 1.286-4.857-.286-.5C3.143 20.857 2.429 18.5 2.429 16c0-7.5 6.071-13.571 13.571-13.571 3.643 0 7 1.429 9.571 4 2.571 2.571 4 5.929 4 9.571 0 7.5-6.143 13.286-13.571 13.286zm7.357-10.143c-.357-.179-2.357-1.179-2.714-1.286-.357-.143-.643-.214-.929.214-.286.429-1.071 1.286-1.286 1.571-.214.286-.464.321-.821.107-.357-.179-1.5-.571-2.857-1.786-1.071-.964-1.786-2.143-2-2.5-.214-.357-.018-.554.143-.732.143-.143.357-.357.464-.536.107-.179.179-.286.286-.464.107-.179.054-.357-.018-.5-.071-.143-.929-2.214-1.286-3.036-.321-.821-.643-.679-.857-.679-.214-.018-.464-.018-.714-.018-.25 0-.643.089-.964.464-.357.357-1.286 1.214-1.286 2.964s1.286 3.429 1.464 3.679c.179.214 2.5 3.821 6.071 5.357.857.357 1.5.571 2.036.75.857.286 1.643.214 2.286.143.679-.107 2.143-.857 2.464-1.714.286-.857.286-1.571.179-1.714-.107-.143-.357-.214-.714-.393z"/></svg>
@@ -2496,43 +2510,43 @@
 
       <!-- STEP 4 — Review -->
       <div class="wiz-step" data-step="4">
-        <p class="wiz-hint" style="text-align:center;margin:0 0 14px">Review your reservation</p>
+        <p class="wiz-hint" style="text-align:center;margin:0 0 14px">Rezervasyonunuzu gözden geçirin</p>
 
         <div class="wiz-card">
           <div class="wiz-card-price">
             <span class="strike" id="wizCardWas">€0</span>
             <span class="now" id="wizCardNow">€0</span>
-            <span class="save">Saved 35%</span>
+            <span class="save">%35 indirim</span>
           </div>
           <div class="wiz-card-head">
             <span class="wiz-card-domain">luxurybosphorustour.com</span>
-            <div class="wiz-card-eb">Reservation Card</div>
-            <div class="wiz-card-title" id="wizSumPkg">Standard Cruise</div>
+            <div class="wiz-card-eb">Rezervasyon Kartı</div>
+            <div class="wiz-card-title" id="wizSumPkg">Standart Tur</div>
           </div>
           <div class="wiz-card-body">
             <dl class="wiz-rows">
-              <div class="wiz-row"><dt>Guest</dt><dd id="wizSumName">—</dd></div>
-              <div class="wiz-row"><dt>Phone</dt><dd id="wizSumPhone">—</dd></div>
-              <div class="wiz-row"><dt>Date</dt><dd id="wizSumDate">—</dd></div>
-              <div class="wiz-row"><dt>Guests</dt><dd id="wizSumGuests">—</dd></div>
-              <div class="wiz-row"><dt>Transfer</dt><dd id="wizSumTransfer">Meeting at pier</dd></div>
-              <div class="wiz-row"><dt>Channel</dt><dd id="wizSumChannel">—</dd></div>
-              <div class="wiz-row full" id="wizSumAddrRow" style="display:none"><dt>Pickup</dt><dd id="wizSumAddr">—</dd></div>
-              <div class="wiz-row full" id="wizSumExtraRow" style="display:none"><dt>Special</dt><dd id="wizSumExtras">—</dd></div>
+              <div class="wiz-row"><dt>Misafir</dt><dd id="wizSumName">—</dd></div>
+              <div class="wiz-row"><dt>Telefon</dt><dd id="wizSumPhone">—</dd></div>
+              <div class="wiz-row"><dt>Tarih</dt><dd id="wizSumDate">—</dd></div>
+              <div class="wiz-row"><dt>Misafirler</dt><dd id="wizSumGuests">—</dd></div>
+              <div class="wiz-row"><dt>Transfer</dt><dd id="wizSumTransfer">İskelede buluşma</dd></div>
+              <div class="wiz-row"><dt>Kanal</dt><dd id="wizSumChannel">—</dd></div>
+              <div class="wiz-row full" id="wizSumAddrRow" style="display:none"><dt>Alış</dt><dd id="wizSumAddr">—</dd></div>
+              <div class="wiz-row full" id="wizSumExtraRow" style="display:none"><dt>Özel</dt><dd id="wizSumExtras">—</dd></div>
             </dl>
 
             <div class="wiz-price-lines" id="wizPriceLines"></div>
           </div>
           <div class="wiz-card-total">
-            <span class="lab">Total</span>
+            <span class="lab">Toplam</span>
             <span class="val" id="wizSumTotal">€XX</span>
           </div>
         </div>
 
         <div class="wiz-trust">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Free cancellation 2hrs</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>No prepayment</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Pay on board</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>2 saat öncesine kadar ücretsiz iptal</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Ön ödeme yok</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Teknede ödeme</span>
         </div>
       </div>
 
@@ -2541,12 +2555,12 @@
     <!-- FOOT -->
     <div class="wiz-foot" id="wizFoot">
       <div class="wiz-foot-price" id="wizFootPrice" style="visibility:hidden">
-        <span class="lab">Estimate</span>
+        <span class="lab">Tahmini</span>
         <span class="val" id="wizFootTotal">€0</span>
       </div>
       <div class="wiz-foot-actions" id="wizFootActions">
-        <button type="button" class="wiz-btn wiz-btn-link" id="wizBack"><span class="arr">→</span> Back</button>
-        <button type="button" class="wiz-btn wiz-btn-gold" id="wizNext">Continue <span class="arr">→</span></button>
+        <button type="button" class="wiz-btn wiz-btn-link" id="wizBack"><span class="arr">→</span> Geri</button>
+        <button type="button" class="wiz-btn wiz-btn-gold" id="wizNext">Devam <span class="arr">→</span></button>
       </div>
     </div>
 
@@ -2565,12 +2579,25 @@
   const scriptEl    = document.getElementById('heroScript');
   const pillEl      = document.querySelector('.book-pill');
   const pillMain    = document.getElementById('bookPillMain');
-  const pillSub     = document.getElementById('bookPillSub');
+  const cdEl        = document.getElementById('bookCd');
+  const cdLabel     = document.getElementById('bookCdLabel');
+  const cdH         = document.getElementById('bookCdH');
+  const cdM         = document.getElementById('bookCdM');
+  const cdS         = document.getElementById('bookCdS');
   const countEls     = document.querySelectorAll('.js-booked-count');
   const bookedLabEls = document.querySelectorAll('.js-booked-lab');
   const setCount = (n) => countEls.forEach(el => el.textContent = n);
   const setLab   = (s) => bookedLabEls.forEach(el => el.textContent = s);
-  if (!scriptEl || !pillEl || !pillMain || !pillSub) return;
+  const pad2 = (n) => (n < 10 ? '0' + n : '' + n);
+  const setCd = (ms) => {
+    const h = Math.floor(ms / 3600000);
+    const m = Math.floor((ms % 3600000) / 60000);
+    const s = Math.floor((ms % 60000) / 1000);
+    cdH.textContent = h + 'sa';
+    cdM.textContent = pad2(m) + 'dk';
+    cdS.textContent = pad2(s) + 'sn';
+  };
+  if (!scriptEl || !pillEl || !pillMain || !cdEl) return;
 
   // Sun .. Sat
   const DOW_MULT = [1.4, 0.9, 0.95, 1.0, 1.1, 1.5, 1.7];
@@ -2617,17 +2644,19 @@
 
     if (isTomorrow){
       pillEl.classList.add('closed');
+      cdEl.classList.add('closed');
       scriptEl.textContent = 'yarın';
       pillMain.textContent = "Yarın Ayırt";
-      pillSub.textContent = "açılışa " + fmtCountdown(ms);
-      setLab("kişi yarınki tura ayrıldı");
+      cdLabel.textContent = "yarın kalkış";
     } else {
       pillEl.classList.remove('closed');
+      cdEl.classList.remove('closed');
       scriptEl.textContent = 'bu akşam';
       pillMain.textContent = "Bu Akşam Ayırt";
-      pillSub.textContent = "kapanışa " + fmtCountdown(ms);
-      setLab("kişi bu akşamki tura ayrıldı");
+      cdLabel.textContent = "kalkışa";
     }
+    setCd(ms);
+    setLab(isTomorrow ? "kişi yarınki tura ayrıldı" : "kişi bu akşamki tura ayrıldı");
     setCount(simulatedCount(now));
   }
   tick();
@@ -2682,25 +2711,25 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
   const PRICES = { standard:25, vip:65, alcohol:15, transfer:5, romantic:15, standardWas:38, vipWas:100 };
 
   const COUNTRIES = [
-    ['TR','Turkey','90','🇹🇷'],['US','United States','1','🇺🇸'],['GB','United Kingdom','44','🇬🇧'],
-    ['DE','Germany','49','🇩🇪'],['FR','France','33','🇫🇷'],['ES','Spain','34','🇪🇸'],
-    ['IT','Italy','39','🇮🇹'],['RU','Russia','7','🇷🇺'],['UA','Ukraine','380','🇺🇦'],
-    ['PL','Poland','48','🇵🇱'],['RO','Romania','40','🇷🇴'],['BG','Bulgaria','359','🇧🇬'],
-    ['NL','Netherlands','31','🇳🇱'],['BE','Belgium','32','🇧🇪'],['CH','Switzerland','41','🇨🇭'],
-    ['AT','Austria','43','🇦🇹'],['SE','Sweden','46','🇸🇪'],['NO','Norway','47','🇳🇴'],
-    ['DK','Denmark','45','🇩🇰'],['FI','Finland','358','🇫🇮'],['IE','Ireland','353','🇮🇪'],
-    ['PT','Portugal','351','🇵🇹'],['GR','Greece','30','🇬🇷'],['CZ','Czechia','420','🇨🇿'],
-    ['HU','Hungary','36','🇭🇺'],['SA','Saudi Arabia','966','🇸🇦'],['AE','United Arab Emirates','971','🇦🇪'],
-    ['QA','Qatar','974','🇶🇦'],['KW','Kuwait','965','🇰🇼'],['BH','Bahrain','973','🇧🇭'],
-    ['OM','Oman','968','🇴🇲'],['EG','Egypt','20','🇪🇬'],['MA','Morocco','212','🇲🇦'],
-    ['JO','Jordan','962','🇯🇴'],['LB','Lebanon','961','🇱🇧'],['IL','Israel','972','🇮🇱'],
-    ['IR','Iran','98','🇮🇷'],['IN','India','91','🇮🇳'],['PK','Pakistan','92','🇵🇰'],
-    ['CN','China','86','🇨🇳'],['JP','Japan','81','🇯🇵'],['KR','South Korea','82','🇰🇷'],
-    ['SG','Singapore','65','🇸🇬'],['MY','Malaysia','60','🇲🇾'],['ID','Indonesia','62','🇮🇩'],
-    ['TH','Thailand','66','🇹🇭'],['VN','Vietnam','84','🇻🇳'],['PH','Philippines','63','🇵🇭'],
-    ['AU','Australia','61','🇦🇺'],['NZ','New Zealand','64','🇳🇿'],['CA','Canada','1','🇨🇦'],
-    ['MX','Mexico','52','🇲🇽'],['BR','Brazil','55','🇧🇷'],['AR','Argentina','54','🇦🇷'],
-    ['ZA','South Africa','27','🇿🇦']
+    ['TR','Türkiye','90','🇹🇷'],['US','Amerika Birleşik Devletleri','1','🇺🇸'],['GB','Birleşik Krallık','44','🇬🇧'],
+    ['DE','Almanya','49','🇩🇪'],['FR','Fransa','33','🇫🇷'],['ES','İspanya','34','🇪🇸'],
+    ['IT','İtalya','39','🇮🇹'],['RU','Rusya','7','🇷🇺'],['UA','Ukrayna','380','🇺🇦'],
+    ['PL','Polonya','48','🇵🇱'],['RO','Romanya','40','🇷🇴'],['BG','Bulgaristan','359','🇧🇬'],
+    ['NL','Hollanda','31','🇳🇱'],['BE','Belçika','32','🇧🇪'],['CH','İsviçre','41','🇨🇭'],
+    ['AT','Avusturya','43','🇦🇹'],['SE','İsveç','46','🇸🇪'],['NO','Norveç','47','🇳🇴'],
+    ['DK','Danimarka','45','🇩🇰'],['FI','Finlandiya','358','🇫🇮'],['IE','İrlanda','353','🇮🇪'],
+    ['PT','Portekiz','351','🇵🇹'],['GR','Yunanistan','30','🇬🇷'],['CZ','Çekya','420','🇨🇿'],
+    ['HU','Macaristan','36','🇭🇺'],['SA','Suudi Arabistan','966','🇸🇦'],['AE','Birleşik Arap Emirlikleri','971','🇦🇪'],
+    ['QA','Katar','974','🇶🇦'],['KW','Kuveyt','965','🇰🇼'],['BH','Bahreyn','973','🇧🇭'],
+    ['OM','Umman','968','🇴🇲'],['EG','Mısır','20','🇪🇬'],['MA','Fas','212','🇲🇦'],
+    ['JO','Ürdün','962','🇯🇴'],['LB','Lübnan','961','🇱🇧'],['IL','İsrail','972','🇮🇱'],
+    ['IR','İran','98','🇮🇷'],['IN','Hindistan','91','🇮🇳'],['PK','Pakistan','92','🇵🇰'],
+    ['CN','Çin','86','🇨🇳'],['JP','Japonya','81','🇯🇵'],['KR','Güney Kore','82','🇰🇷'],
+    ['SG','Singapur','65','🇸🇬'],['MY','Malezya','60','🇲🇾'],['ID','Endonezya','62','🇮🇩'],
+    ['TH','Tayland','66','🇹🇭'],['VN','Vietnam','84','🇻🇳'],['PH','Filipinler','63','🇵🇭'],
+    ['AU','Avustralya','61','🇦🇺'],['NZ','Yeni Zelanda','64','🇳🇿'],['CA','Kanada','1','🇨🇦'],
+    ['MX','Meksika','52','🇲🇽'],['BR','Brezilya','55','🇧🇷'],['AR','Arjantin','54','🇦🇷'],
+    ['ZA','Güney Afrika','27','🇿🇦']
   ];
 
   const state = {
@@ -2765,17 +2794,17 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     const priceEl = $('wizFootPrice');
     if (state.step === 4){
       $('wizFootActions').innerHTML =
-        '<button type="button" class="wiz-btn wiz-btn-link" id="wizBack"><span class="arr">→</span> Back</button>'+
-        '<a class="wiz-btn wiz-btn-gold" id="wizSend" href="#" target="_blank">Confirm via '+
-          (state.channel === 'telegram' ? 'Telegram' : 'WhatsApp')+
+        '<button type="button" class="wiz-btn wiz-btn-link" id="wizBack"><span class="arr">→</span> Geri</button>'+
+        '<a class="wiz-btn wiz-btn-gold" id="wizSend" href="#" target="_blank">'+
+          (state.channel === 'telegram' ? 'Telegram ile Onayla' : 'WhatsApp ile Onayla')+
         ' <span class="arr">→</span></a>';
       priceEl.style.visibility = 'hidden';
       $('wizBack').onclick = () => showStep(3);
       $('wizSend').onclick = e => { e.preventDefault(); sendBooking(); };
     } else {
       $('wizFootActions').innerHTML =
-        '<button type="button" class="wiz-btn wiz-btn-link" id="wizBack"><span class="arr">→</span> Back</button>'+
-        '<button type="button" class="wiz-btn wiz-btn-gold" id="wizNext">Continue <span class="arr">→</span></button>';
+        '<button type="button" class="wiz-btn wiz-btn-link" id="wizBack"><span class="arr">→</span> Geri</button>'+
+        '<button type="button" class="wiz-btn wiz-btn-gold" id="wizNext">Devam <span class="arr">→</span></button>';
       $('wizBack').onclick = () => showStep(Math.max(1, state.step - 1));
       $('wizBack').style.visibility = state.step > 1 ? 'visible' : 'hidden';
       $('wizNext').onclick = onNext;
@@ -2897,33 +2926,33 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     if (!s) return '—';
     const d = new Date(s + 'T00:00:00');
     if (isNaN(d)) return s;
-    return d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+    return d.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
   }
 
   function updateSummary(){
     if (state.step !== 4) return;
     const t = calcTotal();
-    $('wizSumPkg').textContent = state.pkg === 'vip' ? 'VIP Cruise' : 'Standard Cruise';
+    $('wizSumPkg').textContent = state.pkg === 'vip' ? 'VIP Tur' : 'Standart Tur';
     $('wizCardWas').textContent = fmt(t.wasTotal);
     $('wizCardNow').textContent = fmt(t.total);
     $('wizSumName').textContent = state.name || '—';
     $('wizSumPhone').textContent = state.cc ? ('+'+state.cc+' '+state.phone) : (state.phone || '—');
     $('wizSumDate').textContent = fmtDate(state.date);
     const gp = [];
-    if (state.adults) gp.push(state.adults+' Adult'+(state.adults===1?'':'s'));
-    if (state.kids) gp.push(state.kids+' Kid'+(state.kids===1?'':'s'));
-    if (state.babies) gp.push(state.babies+' Bab'+(state.babies===1?'y':'ies'));
+    if (state.adults) gp.push(state.adults+' Yetişkin');
+    if (state.kids) gp.push(state.kids+' Çocuk');
+    if (state.babies) gp.push(state.babies+' Bebek');
     $('wizSumGuests').textContent = gp.join(' · ') || '—';
-    $('wizSumTransfer').textContent = state.transfer ? 'Hotel pickup & return' : 'Meeting at pier';
+    $('wizSumTransfer').textContent = state.transfer ? 'Otelden alış ve dönüş' : 'İskelede buluşma';
     $('wizSumChannel').textContent = state.channel ? (state.channel.charAt(0).toUpperCase()+state.channel.slice(1)) : '—';
     if (state.transfer && state.address){
       $('wizSumAddrRow').style.display = 'flex';
-      $('wizSumAddr').textContent = state.address + (state.room ? (' · Room '+state.room) : '');
+      $('wizSumAddr').textContent = state.address + (state.room ? (' · Oda '+state.room) : '');
     } else { $('wizSumAddrRow').style.display = 'none'; }
 
     const extras = [];
-    if (state.alcohol) extras.push('Unlimited alcohol');
-    if (state.romantic) extras.push('Romantic table');
+    if (state.alcohol) extras.push('Sınırsız alkol');
+    if (state.romantic) extras.push('Romantik masa');
     if (extras.length){
       $('wizSumExtraRow').style.display = 'flex';
       $('wizSumExtras').textContent = extras.join(' · ');
@@ -2931,38 +2960,38 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
 
     const lines = [];
     if (t.pp){
-      const pkgLbl = state.pkg==='vip'?'VIP':'Standard';
-      let detail = state.adults+' adult';
-      if (state.kids) detail += ' + '+state.kids+' kid (50%)';
-      if (state.babies) detail += ' + '+state.babies+' baby (free)';
-      lines.push(['Package · '+pkgLbl+' — '+detail, fmt(t.pkgTotal)]);
+      const pkgLbl = state.pkg==='vip'?'VIP':'Standart';
+      let detail = state.adults+' yetişkin';
+      if (state.kids) detail += ' + '+state.kids+' çocuk (%50)';
+      if (state.babies) detail += ' + '+state.babies+' bebek (ücretsiz)';
+      lines.push(['Paket · '+pkgLbl+' — '+detail, fmt(t.pkgTotal)]);
     }
-    if (t.alcoholTotal) lines.push(['Unlimited alcohol × '+state.adults, fmt(t.alcoholTotal)]);
-    if (t.transferTotal) lines.push(['Hotel transfer × '+t.transferHeadcount, fmt(t.transferTotal)]);
-    if (t.romanticTotal) lines.push(['Romantic table', fmt(t.romanticTotal)]);
+    if (t.alcoholTotal) lines.push(['Sınırsız alkol × '+state.adults, fmt(t.alcoholTotal)]);
+    if (t.transferTotal) lines.push(['Otel transferi × '+t.transferHeadcount, fmt(t.transferTotal)]);
+    if (t.romanticTotal) lines.push(['Romantik masa', fmt(t.romanticTotal)]);
     $('wizPriceLines').innerHTML = lines.map(l => '<div class="wiz-pl"><span>'+l[0]+'</span><b>'+l[1]+'</b></div>').join('');
     $('wizSumTotal').textContent = fmt(t.total);
   }
 
   function sendBooking(){
     const t = calcTotal();
-    let msg = 'Luxury Bosphorus Tour — Reservation Request%0A%0A';
-    msg += '• Package: '+(state.pkg==='vip'?'VIP':'Standard')+'%0A';
-    msg += '• Date: '+fmtDate(state.date)+'%0A';
+    let msg = 'Luxury Bosphorus Tour — Rezervasyon Talebi%0A%0A';
+    msg += '• Paket: '+(state.pkg==='vip'?'VIP':'Standart')+'%0A';
+    msg += '• Tarih: '+fmtDate(state.date)+'%0A';
     const gp = [];
-    if (state.adults) gp.push(state.adults+' adult'+(state.adults===1?'':'s'));
-    if (state.kids) gp.push(state.kids+' kid'+(state.kids===1?'':'s')+' (4-7)');
-    if (state.babies) gp.push(state.babies+' bab'+(state.babies===1?'y':'ies')+' (0-3)');
-    msg += '• Guests: '+gp.join(' + ')+'%0A';
-    if (state.alcohol) msg += '• Unlimited alcohol package%0A';
+    if (state.adults) gp.push(state.adults+' yetişkin');
+    if (state.kids) gp.push(state.kids+' çocuk (4-7)');
+    if (state.babies) gp.push(state.babies+' bebek (0-3)');
+    msg += '• Misafirler: '+gp.join(' + ')+'%0A';
+    if (state.alcohol) msg += '• Sınırsız alkol paketi%0A';
     if (state.transfer){
-      msg += '• Hotel transfer · '+state.address+(state.room?(' (Room '+state.room+')'):'')+'%0A';
+      msg += '• Otel transferi · '+state.address+(state.room?(' (Oda '+state.room+')'):'')+'%0A';
       if (state.lat && state.lon) msg += '  📍 https://maps.google.com/?q='+state.lat+','+state.lon+'%0A';
     }
-    if (state.romantic) msg += '• Romantic table setup%0A';
-    msg += '%0A• Name: '+state.name+'%0A';
-    msg += '• Phone: +'+state.cc+' '+state.phone+'%0A';
-    msg += '%0AEstimated total: '+fmt(t.total);
+    if (state.romantic) msg += '• Romantik masa düzeni%0A';
+    msg += '%0A• Ad: '+state.name+'%0A';
+    msg += '• Telefon: +'+state.cc+' '+state.phone+'%0A';
+    msg += '%0ATahmini toplam: '+fmt(t.total);
     const PHONE = '905555555555';
     let url;
     if (state.channel === 'telegram'){
@@ -3017,7 +3046,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
   function renderAddrResults(items){
     const ul = $('wizAddrResults');
     if (!items.length){
-      ul.innerHTML = '<li class="empty">No results — try a different name</li>';
+      ul.innerHTML = '<li class="empty">Sonuç yok — farklı bir ad deneyin</li>';
       ul.style.display = 'block';
       return;
     }
@@ -3057,7 +3086,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     spinner.classList.add('show');
     searchTimer = setTimeout(() => {
       const url = 'https://nominatim.openstreetmap.org/search?format=json&countrycodes=tr&limit=8&viewbox=28.5,41.3,29.5,40.8&bounded=1&q='+encodeURIComponent(q);
-      fetch(url, { headers: { 'Accept-Language': 'en' } })
+      fetch(url, { headers: { 'Accept-Language': 'tr' } })
         .then(r => r.json())
         .then(items => { if (seq === searchSeq) renderAddrResults(items); })
         .catch(() => { if (seq === searchSeq) renderAddrResults([]); })
@@ -3117,7 +3146,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
 
     function pad(n){ return String(n).padStart(2,'0'); }
     function isoOf(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
-    function fmtLabel(d){ return d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}); }
+    function fmtLabel(d){ return d.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'}); }
 
     function applySelection(){
       state.date = isoOf(selected);
@@ -3128,13 +3157,13 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
 
     function render(){
       const monthLabel = new Date(viewYear, viewMonth, 1)
-        .toLocaleDateString('en-GB',{month:'long',year:'numeric'});
+        .toLocaleDateString('tr-TR',{month:'long',year:'numeric'});
       let html = '<div class="wiz-cal-head">'+
-        '<button type="button" class="wiz-cal-nav" data-d="-1" aria-label="Previous month">‹</button>'+
+        '<button type="button" class="wiz-cal-nav" data-d="-1" aria-label="Önceki ay">‹</button>'+
         '<span class="wiz-cal-title">'+monthLabel+'</span>'+
-        '<button type="button" class="wiz-cal-nav" data-d="1" aria-label="Next month">›</button>'+
+        '<button type="button" class="wiz-cal-nav" data-d="1" aria-label="Sonraki ay">›</button>'+
         '</div><div class="wiz-cal-grid">';
-      ['Mo','Tu','We','Th','Fr','Sa','Su'].forEach(d => html += '<span class="wiz-cal-dow">'+d+'</span>');
+      ['Pzt','Sal','Çar','Per','Cum','Cmt','Paz'].forEach(d => html += '<span class="wiz-cal-dow">'+d+'</span>');
       const firstDow = new Date(viewYear, viewMonth, 1).getDay();
       const offset = (firstDow + 6) % 7;
       const daysInMonth = new Date(viewYear, viewMonth+1, 0).getDate();

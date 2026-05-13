@@ -54,7 +54,7 @@
 
   /* ─────────── nav ─────────── */
   nav{position:absolute;top:0;left:0;right:0;z-index:30;padding:38px 0 14px}
-  nav .row{display:flex;align-items:center;gap:14px}
+  nav .row{display:flex;align-items:flex-start;gap:14px}
   .brand{display:flex;align-items:center;gap:12px}
   .brand .glyph{width:36px;height:36px}
   .brand .name{display:flex;flex-direction:column;line-height:1.1}
@@ -67,15 +67,19 @@
   .menu a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--gold)}
   .menu a:hover{color:var(--gold)}
 
+  .book-wrap{display:inline-flex;flex-direction:column;align-items:flex-end;gap:6px}
   .book-pill{display:inline-flex;align-items:center;gap:11px;padding:9px 16px;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:.22em;text-transform:uppercase;border-radius:2px;transition:all .3s;text-decoration:none;line-height:1}
   .book-pill:hover{background:var(--gold);color:var(--bg)}
   .book-pill .ico{width:14px;height:14px;flex:none}
   .book-pill .bp-content{display:flex;flex-direction:column;align-items:flex-start;gap:3px;line-height:1.05}
   .book-pill .bp-main{font-weight:600;letter-spacing:.22em;font-size:10px}
-  .book-pill .bp-sub{font-size:12px;letter-spacing:.06em;color:var(--gold-bright);font-family:var(--serif);text-transform:none;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
-  .book-pill:hover .bp-sub{color:var(--bg);opacity:.85}
-  .book-pill.closed .bp-sub{color:var(--ink-soft)}
-  .book-pill:hover.closed .bp-sub{color:var(--bg)}
+  .book-cd{display:inline-flex;flex-direction:column;align-items:flex-end;gap:3px;padding-right:2px;line-height:1}
+  .book-cd .lab{font-family:var(--sans);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-muted)}
+  .book-cd .h-row{display:inline-flex;align-items:center;gap:4px}
+  .book-cd .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 2px rgba(201,169,97,.18);animation:tonightPulse 2.2s ease-in-out infinite;flex:none}
+  .book-cd .cd-h{font-family:var(--serif);font-size:20px;letter-spacing:.02em;color:var(--gold-bright);font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+  .book-cd .cd-m,.book-cd .cd-s{font-family:var(--serif);font-size:11px;letter-spacing:.08em;color:var(--gold-bright);font-weight:500;font-variant-numeric:tabular-nums}
+  .book-cd.closed .lab,.book-cd.closed .cd-h,.book-cd.closed .cd-m,.book-cd.closed .cd-s{color:var(--ink-soft)}
 
   @media(max-width:1180px){.menu{gap:24px}}
   @media(max-width:980px){.menu{display:none}}
@@ -134,7 +138,7 @@
 
   .hero-h1{margin:0;padding:0;font-weight:inherit;font-size:inherit;display:flex;flex-direction:column}
   .h-line{font-family:var(--serif);font-weight:400;color:var(--ink);letter-spacing:.04em;line-height:.95;text-transform:uppercase;display:block}
-  .h-small{font-size:clamp(18px,1.7vw,24px);font-weight:300;letter-spacing:.32em;color:var(--ink-muted);white-space:nowrap}
+  .h-small{font-size:clamp(18px,1.7vw,24px);font-weight:300;letter-spacing:.32em;color:var(--ink-muted);white-space:nowrap;margin-bottom:12px}
   @media(max-width:980px){.h-small{letter-spacing:.18em;font-size:16px}}
   @media(max-width:560px){.h-small{letter-spacing:.12em;font-size:13px}}
   .h-mega{font-family:var(--serif);font-weight:600;font-size:clamp(56px,7.5vw,108px);line-height:.86;letter-spacing:-.01em;color:var(--gold);text-transform:uppercase;margin:2px 0}
@@ -855,7 +859,7 @@
 
   /* Language picker — floating bottom-right, sits above the WhatsApp pill */
   .lang-picker{position:fixed;top:0;right:14px;bottom:auto;z-index:95;margin:0}
-  .book-pill{margin-left:auto;margin-right:14px}
+  .book-wrap{margin-left:auto;margin-right:-18px}
   .lang-btn{display:flex;align-items:center;gap:8px;background:rgba(7,7,11,.78);backdrop-filter:blur(8px);border:1px solid var(--gold-deep);color:var(--gold);padding:9px 13px;cursor:pointer;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:all .25s;line-height:1;box-shadow:0 6px 18px -6px rgba(0,0,0,.5)}
   .lang-btn:hover{background:rgba(15,15,21,.88);border-color:var(--gold)}
   .lang-btn .lang-flag{width:18px;height:auto;display:block;border:1px solid rgba(201,169,97,.3)}
@@ -872,7 +876,7 @@
   @media(max-width:560px){
     .lang-picker{top:0;right:10px}
     nav{padding:30px 0 14px}
-    .book-pill{margin-right:0}
+    .book-wrap{margin-right:-8px}
     .lang-btn{padding:7px 10px;font-size:9px;letter-spacing:.16em;gap:6px}
     .lang-btn .lang-flag{width:16px}
   }
@@ -989,13 +993,23 @@
           <li><a href="/tr/" lang="tr"><img src="https://flagcdn.com/w40/tr.png" alt=""><span class="name">Türkçe</span></a></li>
         </ul>
       </div>
-      <a class="book-pill" href="#m-book">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
-        <span class="bp-content">
-          <span class="bp-main" id="bookPillMain">Book Tonight</span>
-          <span class="bp-sub" id="bookPillSub">closes —</span>
+      <div class="book-wrap">
+        <a class="book-pill" href="#m-book">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          <span class="bp-content">
+            <span class="bp-main" id="bookPillMain">Book Tonight</span>
+          </span>
+        </a>
+        <span class="book-cd" id="bookCd">
+          <span class="lab" id="bookCdLabel">departs in</span>
+          <span class="h-row">
+            <span class="dot"></span>
+            <span class="cd-h" id="bookCdH">—</span>
+          </span>
+          <span class="cd-m" id="bookCdM">—</span>
+          <span class="cd-s" id="bookCdS">—</span>
         </span>
-      </a>
+      </div>
     </div>
   </nav>
 
@@ -1040,7 +1054,7 @@
 
       <!-- DEFAULT -->
       <div class="panel panel-default">
-        <div class="eyebrow">Istanbul · Nights on the Bosphorus</div>
+        <div class="eyebrow">Nights on the Bosphorus</div>
         <h1 class="hero-h1">
           <span class="h-line h-small">Istanbul · Turkish Night</span>
           <span class="h-line h-mega">Bosphorus</span>
@@ -2565,12 +2579,25 @@
   const scriptEl    = document.getElementById('heroScript');
   const pillEl      = document.querySelector('.book-pill');
   const pillMain    = document.getElementById('bookPillMain');
-  const pillSub     = document.getElementById('bookPillSub');
+  const cdEl        = document.getElementById('bookCd');
+  const cdLabel     = document.getElementById('bookCdLabel');
+  const cdH         = document.getElementById('bookCdH');
+  const cdM         = document.getElementById('bookCdM');
+  const cdS         = document.getElementById('bookCdS');
   const countEls     = document.querySelectorAll('.js-booked-count');
   const bookedLabEls = document.querySelectorAll('.js-booked-lab');
   const setCount = (n) => countEls.forEach(el => el.textContent = n);
   const setLab   = (s) => bookedLabEls.forEach(el => el.textContent = s);
-  if (!scriptEl || !pillEl || !pillMain || !pillSub) return;
+  const pad2 = (n) => (n < 10 ? '0' + n : '' + n);
+  const setCd = (ms) => {
+    const h = Math.floor(ms / 3600000);
+    const m = Math.floor((ms % 3600000) / 60000);
+    const s = Math.floor((ms % 60000) / 1000);
+    cdH.textContent = h + 'h';
+    cdM.textContent = pad2(m) + 'm';
+    cdS.textContent = pad2(s) + 's';
+  };
+  if (!scriptEl || !pillEl || !pillMain || !cdEl) return;
 
   // Sun .. Sat
   const DOW_MULT = [1.4, 0.9, 0.95, 1.0, 1.1, 1.5, 1.7];
@@ -2617,17 +2644,19 @@
 
     if (isTomorrow){
       pillEl.classList.add('closed');
+      cdEl.classList.add('closed');
       scriptEl.textContent = 'tomorrow';
       pillMain.textContent = "Book Tomorrow";
-      pillSub.textContent = "opens in " + fmtCountdown(ms);
-      setLab("guests booked tomorrow's cruise");
+      cdLabel.textContent = "opens in";
     } else {
       pillEl.classList.remove('closed');
+      cdEl.classList.remove('closed');
       scriptEl.textContent = 'tonight';
       pillMain.textContent = "Book Tonight";
-      pillSub.textContent = "closes " + fmtCountdown(ms);
-      setLab("guests booked tonight's cruise");
+      cdLabel.textContent = "departs in";
     }
+    setCd(ms);
+    setLab(isTomorrow ? "guests booked tomorrow's cruise" : "guests booked tonight's cruise");
     setCount(simulatedCount(now));
   }
   tick();
