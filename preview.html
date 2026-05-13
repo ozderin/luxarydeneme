@@ -2453,16 +2453,29 @@
   // Sun .. Sat
   const DOW_MULT = [1.4, 0.9, 0.95, 1.0, 1.1, 1.5, 1.7];
   const BASE_CAP = 80;
+  const DAY_MS = 24 * 3600 * 1000;
 
-  function simulatedCount(targetDate, hourFloat){
-    const cap = Math.floor(BASE_CAP * DOW_MULT[targetDate.getDay()]);
-    const MIN = 3;
-    if (hourFloat < 6)  return MIN;            // overnight: stays at floor, no zero
-    if (hourFloat >= 21) return cap;
-    // 06:00–21:00 = 15h window, S-curve interpolation
-    const progress = (hourFloat - 6) / 15;
-    const sCurve = 1 / (1 + Math.exp(-5 * (progress - 0.5)));
-    return Math.max(MIN, Math.floor(cap * sCurve));
+  // The relevant departure: tonight's 21:00 until 21:00 passes, then tomorrow's
+  function getTargetDeparture(now){
+    const target = new Date(now);
+    if (now.getHours() >= 21) target.setDate(target.getDate() + 1);
+    target.setHours(21, 0, 0, 0);
+    return target;
+  }
+
+  // Booking window for any given departure is the 24 hours leading up to
+  // it (i.e. opens at previous evening's 21:00, closes at departure 21:00).
+  // The count climbs along an S-curve through that 24h window, modulated by
+  // the target day's day-of-week multiplier. Right after 21:00 a fresh
+  // window opens for tomorrow and the count restarts from its floor.
+  function simulatedCount(now){
+    const target = getTargetDeparture(now);
+    const open = target.getTime() - DAY_MS;
+    const phase = Math.max(0, Math.min(1, (now.getTime() - open) / DAY_MS));
+    const cap = Math.floor(BASE_CAP * DOW_MULT[target.getDay()]);
+    const floor = Math.max(3, Math.floor(cap * 0.05));   // never under 3
+    const sCurve = 1 / (1 + Math.exp(-5 * (phase - 0.5)));
+    return Math.floor(floor + (cap - floor) * sCurve);
   }
 
   function fmtCountdown(ms){
@@ -2476,33 +2489,24 @@
 
   function tick(){
     const now = new Date();
-    const dep = new Date(now); dep.setHours(21, 0, 0, 0);
-    const ms = dep - now;
+    const target = getTargetDeparture(now);
+    const ms = target - now;
+    const isTomorrow = now.getHours() >= 21;
 
-    if (ms <= 0){
-      // After 21:00 — tonight's boat has departed
-      const tomorrow = new Date(now); tomorrow.setDate(tomorrow.getDate() + 1); tomorrow.setHours(21, 0, 0, 0);
+    if (isTomorrow){
       pillEl.classList.add('closed');
       scriptEl.textContent = 'tomorrow';
       pillMain.textContent = "Book Tomorrow";
-      pillSub.textContent = "opens in " + fmtCountdown(tomorrow - now);
-      // Tomorrow's bookings haven't started yet between 21:00 and midnight,
-      // and pre-09:00 they're still at 0 — the count climbs from sunrise.
-      const hourNow = now.getHours() + now.getMinutes() / 60;
-      const hourTomorrow = (hourNow >= 21) ? 0 : hourNow;
-      setCount(simulatedCount(tomorrow, hourTomorrow));
+      pillSub.textContent = "opens in " + fmtCountdown(ms);
       setLab("guests booked tomorrow's cruise");
-      return;
+    } else {
+      pillEl.classList.remove('closed');
+      scriptEl.textContent = 'tonight';
+      pillMain.textContent = "Book Tonight";
+      pillSub.textContent = "closes " + fmtCountdown(ms);
+      setLab("guests booked tonight's cruise");
     }
-
-    pillEl.classList.remove('closed');
-    scriptEl.textContent = 'tonight';
-    pillMain.textContent = "Book Tonight";
-    pillSub.textContent = "closes " + fmtCountdown(ms);
-
-    const hourFloat = now.getHours() + now.getMinutes() / 60;
-    setCount(simulatedCount(now, hourFloat));
-    setLab("guests booked tonight's cruise");
+    setCount(simulatedCount(now));
   }
   tick();
   setInterval(tick, 1000);
