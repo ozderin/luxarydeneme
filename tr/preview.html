@@ -279,40 +279,40 @@
     .modal-frame .btn{width:100%;justify-content:center}
   }
 
-  /* ─────────── VIDEO MODAL ─────────── */
-  /* Override the global modal padding/stretching for the video lightbox */
-  #m-video{padding:0;align-items:center;justify-content:center;background:rgba(7,7,11,.85);backdrop-filter:blur(8px)}
+  /* ─────────── VIDEO MODAL (BN pattern: max-w-3xl 16:9 lightbox) ─────────── */
+  #m-video{padding:16px;align-items:center;justify-content:center;background:rgba(0,0,0,.85);backdrop-filter:blur(4px)}
   .modal-frame.video{
-    width:min(90vw, calc(85vh * 16 / 9));
+    width:100%;
+    max-width:768px;
     aspect-ratio:16/9;
-    max-width:none;
     max-height:none;
     height:auto;
     padding:0;
     border:0;
     background:#000;
     overflow:hidden;
-    border-radius:4px;
-    box-shadow:0 30px 80px -20px rgba(0,0,0,.7);
+    border-radius:12px;
+    box-shadow:0 25px 50px -12px rgba(0,0,0,.6);
     margin:auto;
   }
   .modal-frame.video .modal-close{
     position:absolute;
-    top:-44px;
+    top:-40px;
     right:0;
-    background:rgba(7,7,11,.6);
-    backdrop-filter:blur(6px);
+    background:transparent;
+    border:0;
+    color:rgba(255,255,255,.85);
+    width:auto;
+    height:auto;
+    font-size:28px;
     z-index:6
   }
+  .modal-frame.video .modal-close:hover{color:#fff}
   .video-wrap{position:relative;width:100%;height:100%}
   .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
   @media(max-width:680px){
-    #m-video{padding:16px}
-    .modal-frame.video{
-      width:min(calc(100vw - 32px), calc(85vh * 16 / 9));
-      border-radius:2px
-    }
-    .modal-frame.video .modal-close{top:-40px;right:0;width:34px;height:34px;font-size:22px}
+    .modal-frame.video{border-radius:8px}
+    .modal-frame.video .modal-close{top:-36px;font-size:24px}
   }
 
   /* ─────────── EDITORIAL MODAL VARIANT ─────────── */
@@ -2719,8 +2719,8 @@
   setInterval(tick, 1000);
 })();
 
-/* Video lightbox — load YouTube iframe only while #m-video is open
-   so the video doesn't keep playing in the background after close. */
+/* Video lightbox (BN pattern) — load iframe only while #m-video is
+   open, lock body scroll while open, ESC closes. */
 (function videoModal(){
   const frame = document.getElementById('videoFrame');
   const url   = 'https://www.youtube.com/embed/QBB3ENbpYUM?autoplay=1&rel=0&modestbranding=1';
@@ -2728,11 +2728,19 @@
   const sync = () => {
     if (location.hash === '#m-video') {
       if (frame.src !== url) frame.src = url;
-    } else if (frame.src) {
-      frame.src = '';
+      document.body.style.overflow = 'hidden';
+    } else {
+      if (frame.src) frame.src = '';
+      document.body.style.overflow = '';
     }
   };
   window.addEventListener('hashchange', sync);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && location.hash === '#m-video') {
+      history.pushState('', document.title, location.pathname + location.search);
+      sync();
+    }
+  });
   sync();
 })();
 
