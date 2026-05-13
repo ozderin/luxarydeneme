@@ -804,19 +804,22 @@
 
   .pv{position:fixed;top:8px;right:8px;background:rgba(7,7,11,.7);color:var(--gold);padding:4px 9px;border:1px solid var(--gold-deep);font-size:8px;letter-spacing:.32em;text-transform:uppercase;z-index:80;backdrop-filter:blur(4px);pointer-events:none}
 
-  /* Floating bottom-right cluster: WhatsApp CTA above, language picker above it */
-  .wa-float{position:fixed;bottom:22px;right:22px;z-index:91;display:flex;align-items:center;gap:11px;background:#25D366;color:#fff;padding:11px 18px 11px 16px;border-radius:32px;text-decoration:none;font-family:var(--sans);box-shadow:0 8px 24px -6px rgba(0,0,0,.45);transition:transform .25s,box-shadow .25s}
-  .wa-float:hover{transform:translateY(-2px);box-shadow:0 12px 28px -6px rgba(0,0,0,.55)}
-  .wa-float svg{width:24px;height:24px;flex:none;fill:#fff}
-  .wa-float .wa-content{display:flex;flex-direction:column;line-height:1;gap:3px}
-  .wa-float .wa-main{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-  .wa-float .wa-status{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:400;letter-spacing:.04em;opacity:.92}
-  .wa-float .wa-status::before{content:"";width:7px;height:7px;border-radius:50%;background:#7BFFB3;box-shadow:0 0 0 2px rgba(255,255,255,.25);animation:waPulse 1.6s ease-in-out infinite}
+  /* Floating bottom-right cluster: WhatsApp CTA + language picker */
+  .wa-float{position:fixed;bottom:22px;right:22px;z-index:91;display:flex;align-items:center;gap:11px;background:transparent;color:#fff;padding:0;border:0;text-decoration:none;font-family:var(--sans);transition:transform .25s}
+  .wa-float:hover{transform:translateY(-2px)}
+  .wa-float .wa-icon-wrap{width:46px;height:46px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 8px 22px -6px rgba(0,0,0,.5);transition:box-shadow .25s}
+  .wa-float:hover .wa-icon-wrap{box-shadow:0 12px 28px -6px rgba(0,0,0,.6)}
+  .wa-float svg{width:22px;height:22px;fill:#fff}
+  .wa-float .wa-content{display:flex;flex-direction:column;line-height:1;gap:4px}
+  .wa-float .wa-main{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.55)}
+  .wa-float .wa-status{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:400;letter-spacing:.04em;color:rgba(255,255,255,.88);text-shadow:0 1px 3px rgba(0,0,0,.55)}
+  .wa-float .wa-status::before{content:"";width:7px;height:7px;border-radius:50%;background:#25D366;box-shadow:0 0 0 2px rgba(37,211,102,.25);animation:waPulse 1.6s ease-in-out infinite}
   @keyframes waPulse{0%,100%{opacity:1}50%{opacity:.55}}
   @media(max-width:560px){
-    .wa-float{bottom:16px;right:16px;padding:10px 14px 10px 12px;gap:9px}
-    .wa-float svg{width:22px;height:22px}
-    .wa-float .wa-main{font-size:11px;letter-spacing:.06em}
+    .wa-float{bottom:16px;right:16px;gap:9px}
+    .wa-float .wa-icon-wrap{width:42px;height:42px}
+    .wa-float svg{width:20px;height:20px}
+    .wa-float .wa-main{font-size:11px;letter-spacing:.08em}
     .wa-float .wa-status{font-size:9px}
   }
 
@@ -965,7 +968,9 @@
   </nav>
 
   <a class="wa-float" href="https://wa.me/905555555555" target="_blank" rel="noopener" aria-label="WhatsApp'tan bize yazın">
-    <svg viewBox="0 0 32 32"><path d="M27.286 4.714C24.286 1.714 20.286 0 16 0 7.143 0 0 7.143 0 16c0 2.857.714 5.571 2.143 8L0 32l8.286-2.143C10.571 30.857 13.286 32 16 32c8.857 0 16-7.143 16-16 0-4.286-1.714-8.286-4.714-11.286zM16 29.286c-2.429 0-4.857-.714-7-2L8.5 27l-4.929 1.286 1.286-4.857-.286-.5C3.143 20.857 2.429 18.5 2.429 16c0-7.5 6.071-13.571 13.571-13.571 3.643 0 7 1.429 9.571 4 2.571 2.571 4 5.929 4 9.571 0 7.5-6.143 13.286-13.571 13.286zm7.357-10.143c-.357-.179-2.357-1.179-2.714-1.286-.357-.143-.643-.214-.929.214-.286.429-1.071 1.286-1.286 1.571-.214.286-.464.321-.821.107-.357-.179-1.5-.571-2.857-1.786-1.071-.964-1.786-2.143-2-2.5-.214-.357-.018-.554.143-.732.143-.143.357-.357.464-.536.107-.179.179-.286.286-.464.107-.179.054-.357-.018-.5-.071-.143-.929-2.214-1.286-3.036-.321-.821-.643-.679-.857-.679-.214-.018-.464-.018-.714-.018-.25 0-.643.089-.964.464-.357.357-1.286 1.214-1.286 2.964s1.286 3.429 1.464 3.679c.179.214 2.5 3.821 6.071 5.357.857.357 1.5.571 2.036.75.857.286 1.643.214 2.286.143.679-.107 2.143-.857 2.464-1.714.286-.857.286-1.571.179-1.714-.107-.143-.357-.214-.714-.393z"/></svg>
+    <span class="wa-icon-wrap">
+      <svg viewBox="0 0 32 32"><path d="M27.286 4.714C24.286 1.714 20.286 0 16 0 7.143 0 0 7.143 0 16c0 2.857.714 5.571 2.143 8L0 32l8.286-2.143C10.571 30.857 13.286 32 16 32c8.857 0 16-7.143 16-16 0-4.286-1.714-8.286-4.714-11.286zM16 29.286c-2.429 0-4.857-.714-7-2L8.5 27l-4.929 1.286 1.286-4.857-.286-.5C3.143 20.857 2.429 18.5 2.429 16c0-7.5 6.071-13.571 13.571-13.571 3.643 0 7 1.429 9.571 4 2.571 2.571 4 5.929 4 9.571 0 7.5-6.143 13.286-13.571 13.286zm7.357-10.143c-.357-.179-2.357-1.179-2.714-1.286-.357-.143-.643-.214-.929.214-.286.429-1.071 1.286-1.286 1.571-.214.286-.464.321-.821.107-.357-.179-1.5-.571-2.857-1.786-1.071-.964-1.786-2.143-2-2.5-.214-.357-.018-.554.143-.732.143-.143.357-.357.464-.536.107-.179.179-.286.286-.464.107-.179.054-.357-.018-.5-.071-.143-.929-2.214-1.286-3.036-.321-.821-.643-.679-.857-.679-.214-.018-.464-.018-.714-.018-.25 0-.643.089-.964.464-.357.357-1.286 1.214-1.286 2.964s1.286 3.429 1.464 3.679c.179.214 2.5 3.821 6.071 5.357.857.357 1.5.571 2.036.75.857.286 1.643.214 2.286.143.679-.107 2.143-.857 2.464-1.714.286-.857.286-1.571.179-1.714-.107-.143-.357-.214-.714-.393z"/></svg>
+    </span>
     <span class="wa-content">
       <span class="wa-main">Bize Yaz</span>
       <span class="wa-status">Şu anda çevrimiçi</span>
