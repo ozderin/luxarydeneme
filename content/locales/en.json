@@ -1,6 +1,11 @@
 {
   "langCode": "en",
   "urlPath": "/",
+  "langDisplay": "EN",
+  "langFlag": "gb.png",
+  "langActiveEn": " class=\"active\"",
+  "langActiveTr": "",
+
   "meta": {
     "title": "Bosphorus Dinner Cruise Tonight from Eminönü — Turkish Night Show · From €25",
     "description": "Book tonight's 21:00 Bosphorus dinner cruise from Eminönü Pier — 10-min walk from Sultanahmet & Hagia Sophia. Turkish night show, multi-course menu, optional hotel transfer. Same-day booking up to 20:00. Adults from €25, kids 50% off, babies free.",
@@ -8,5 +13,132 @@
     "ogTitle": "Bosphorus Dinner Cruise Istanbul — Turkish Night Show",
     "ogDescription": "Three-hour luxury Bosphorus dinner cruise from Eminönü Pier. Turkish night show, multi-course menu, optional hotel transfer. From €25 per person.",
     "twitterDescription": "Three-hour luxury Bosphorus dinner cruise from Eminönü Pier. Turkish night show, multi-course menu, hotel transfer. From €25."
+  },
+
+  "nav": {
+    "brandTop": "Luxury Bosphorus",
+    "brandBot": "Tour · Istanbul",
+    "bookPill": "Book Tonight",
+    "bookCdLabel": "departs in",
+    "english": "English",
+    "turkish": "Türkçe"
+  },
+
+  "wa": {
+    "ariaLabel": "Message us on WhatsApp",
+    "main": "Message Us",
+    "status": "Online now"
+  },
+
+  "heroLeft": {
+    "programme":  { "h3": "The Programme", "p": "The night, hour by hour · 20:30 → 23:45" },
+    "packages":   { "h3": "Packages",      "p": "Standard and VIP menus, prices, what's included" },
+    "route":      { "h3": "Route",         "p": "Two bridges, palaces, Maiden's Tower — the illuminated Bosphorus" },
+    "faq":        { "h3": "FAQ",           "p": "Frequently asked questions and practical info" }
+  },
+
+  "panelHint": "Click the card for details →",
+  "ctaReserve": "Reserve",
+  "heroBooked": "guests booked tonight's cruise",
+
+  "heroPanels": {
+    "default": {
+      "eyebrow": "Nights on the Bosphorus",
+      "hSmall":  "Istanbul · Turkish Night",
+      "hMega":   "Bosphorus",
+      "hMid":    "Dinner Cruise",
+      "hScript": "tonight",
+      "lede":    "A three-hour Bosphorus dinner cruise departing from Eminönü Pier at 21:00 — multi-course menu, full Turkish night show (whirling dervish, belly dance, folk), open-air decks across Europe and Asia. Hotel transfer available, free cancellation.",
+      "ctaPrimary":   "Reserve Now",
+      "ctaSecondary": "View Programme",
+      "usps": [
+        "10-min walk from Sultanahmet",
+        "Unlimited Drinks",
+        "Live Programme"
+      ]
+    },
+    "dinner": {
+      "eyebrow": "Bosphorus Dinner Menu · Fine Dining",
+      "hSmall":  "Multi-course Turkish menu",
+      "hMega":   "Dinner",
+      "hMid":    "cruise menu",
+      "hScript": "after sunset",
+      "lede":    "A multi-course Bosphorus dinner cruise menu opening with classic Turkish meze, premium meats and fresh seafood. Vegetarian, vegan and gluten-free options prepared on board.",
+      "ctaPrimary": "View Menu"
+    },
+    "shows": {
+      "eyebrow": "Turkish Night Show on the Bosphorus",
+      "hSmall":  "Belly dance · Whirling dervish",
+      "hMega":   "Shows",
+      "hMid":    "live on the deck",
+      "hScript": "every night",
+      "lede":    "A live Turkish night show every evening — whirling dervish, belly dance, drum ensemble, Anatolian folk dances. Concert-grade stage lighting, full production, professional performers.",
+      "ctaPrimary": "View Programme"
+    },
+    "view": {
+      "eyebrow": "Bosphorus Night Cruise · Between Two Continents",
+      "hSmall":  "Bridges, palaces, Maiden's Tower",
+      "hMega":   "View",
+      "hMid":    "two continents",
+      "hScript": "after dark",
+      "lede":    "On a three-hour Bosphorus night cruise: Bosphorus Bridge, Fatih Bridge, Maiden's Tower, Dolmabahçe and Beylerbeyi Palaces, Ortaköy Mosque — the illuminated silhouettes of Europe and Asia.",
+      "ctaPrimary": "View Route"
+    },
+    "party": {
+      "eyebrow": "Bosphorus DJ Cruise · Open-Air Dance Floor",
+      "hSmall":  "DJ · Sky-deck dance floor",
+      "hMega":   "Party",
+      "hMid":    "on the upper deck",
+      "hScript": "until midnight",
+      "lede":    "A Bosphorus DJ cruise on the sky deck — professional sound and lighting, open-air dance floor. Latin, Deep House, R&B, vintage, commercial — a different theme every night, the same energy.",
+      "ctaPrimary": "Theme Calendar"
+    },
+    "boat": {
+      "eyebrow": "Our Vessel · Three Decks",
+      "hSmall":  "Capacity 500 · Eminönü pier",
+      "hMega":   "Our Boat",
+      "hMid":    "three decks",
+      "hScript": "on the strait",
+      "lede":    "A premium three-deck Bosphorus cruise vessel — enclosed dining and stage on the main deck, lounge dining upstairs, an open-air dance floor and bar on the sky deck. Departing nightly from our pier at Eminönü.",
+      "ctaPrimary": "Tour the boat"
+    }
+  },
+
+  "playVideo": {
+    "title": "Play video",
+    "label": "Play Video"
+  },
+
+  "heroFooter": {
+    "departure": "Departure",
+    "doorOpens": "Door Opens"
+  },
+
+  "experience": {
+    "label": "The Experience",
+    "items": [
+      { "name": "Dinner",   "sub": "Fine dining" },
+      { "name": "Shows",    "sub": "Turkish night" },
+      { "name": "View",     "sub": "Bosphorus view" },
+      { "name": "Party",    "sub": "DJ & dance" },
+      { "name": "Our Boat", "sub": "Three decks" }
+    ]
+  },
+
+  "footer": {
+    "desc": "Istanbul's premier evening dinner cruise. Three decks, an Anatolian programme, and the Bosphorus by night — every evening, a celebration.",
+    "reservations": "Reservations",
+    "openDaily": "Open daily · 24/7",
+    "tursabAgency": "Licensed Agency",
+    "tursabLicenceNo": "Licence No",
+    "weAccept": "We Accept",
+    "copyright": "© 2026 Luxury Bosphorus Tour · All evenings reserved.",
+    "legal": {
+      "cityGuide": "City Guide",
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "cancellation": "Cancellation"
+    }
   }
 }

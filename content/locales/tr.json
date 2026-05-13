@@ -1,6 +1,11 @@
 {
   "langCode": "tr",
   "urlPath": "/tr/",
+  "langDisplay": "TR",
+  "langFlag": "tr.png",
+  "langActiveEn": "",
+  "langActiveTr": " class=\"active\"",
+
   "meta": {
     "title": "Boğaz Akşam Yemekli Tekne Turu — Türk Gecesi Şovu · 25 €'dan",
     "description": "Bu akşam 21:00'da Eminönü'nden kalkan Boğaz akşam yemekli tekne turunu ayırtın — Sultanahmet ve Ayasofya'ya 10 dakika yürüyüş. Türk gecesi şovu, çok yemekli menü, opsiyonel otel transferi. Aynı gün rezervasyon 20:00'a kadar. Yetişkin 25 €'dan, çocuk %50 indirimli, bebek ücretsiz.",
@@ -8,5 +13,132 @@
     "ogTitle": "Boğaz Akşam Yemekli Tekne Turu İstanbul — Türk Gecesi Şovu",
     "ogDescription": "Eminönü iskelesinden kalkan üç saatlik lüks Boğaz akşam yemekli tekne turu. Türk gecesi şovu, çok aşamalı menü, opsiyonel otel transferi. Kişi başı 25 €'dan.",
     "twitterDescription": "Eminönü iskelesinden kalkan üç saatlik lüks Boğaz akşam yemekli tekne turu. Türk gecesi şovu, çok aşamalı menü, otel transferi. 25 €'dan."
+  },
+
+  "nav": {
+    "brandTop": "Luxury Bosphorus",
+    "brandBot": "Tour · Istanbul",
+    "bookPill": "Bu Akşam Ayırt",
+    "bookCdLabel": "kalkışa",
+    "english": "English",
+    "turkish": "Türkçe"
+  },
+
+  "wa": {
+    "ariaLabel": "WhatsApp'tan bize yazın",
+    "main": "Bize Yaz",
+    "status": "Şu anda çevrimiçi"
+  },
+
+  "heroLeft": {
+    "programme":  { "h3": "Program",   "p": "Akşam, saat saat · 20:30 → 23:45" },
+    "packages":   { "h3": "Paketler",  "p": "Standart ve VIP menüler, fiyatlar, neler dahil" },
+    "route":      { "h3": "Rota",      "p": "İki köprü, saraylar, Kız Kulesi — ışıklı Boğaz" },
+    "faq":        { "h3": "SSS",       "p": "Sıkça sorulan sorular ve pratik bilgiler" }
+  },
+
+  "panelHint": "Detaylar için karta tıkla →",
+  "ctaReserve": "Ayırt",
+  "heroBooked": "kişi bu akşamki tura ayrıldı",
+
+  "heroPanels": {
+    "default": {
+      "eyebrow": "Boğaz'da Akşamlar",
+      "hSmall":  "İstanbul · Türk Gecesi",
+      "hMega":   "Boğaz'da",
+      "hMid":    "Akşam Yemekli Tekne Turu",
+      "hScript": "bu akşam",
+      "lede":    "Eminönü iskelesinden 21:00'da kalkan üç saatlik Boğaz akşam yemekli tekne turu — çok yemekli menü, eksiksiz Türk gecesi şovu (semazen, oryantal dans, halk oyunları), Avrupa ve Asya yakaları boyunca açık güverte. Otel transferi opsiyonel, ücretsiz iptal.",
+      "ctaPrimary":   "Şimdi Ayırt",
+      "ctaSecondary": "Programı Gör",
+      "usps": [
+        "Sultanahmet'e 10 dk yürüyüş",
+        "Sınırsız İçecek",
+        "Canlı Program"
+      ]
+    },
+    "dinner": {
+      "eyebrow": "Boğaz Akşam Yemekli Menü",
+      "hSmall":  "Çok yemekli Türk menüsü",
+      "hMega":   "Yemek",
+      "hMid":    "tekne menüsü",
+      "hScript": "günbatımı sonrası",
+      "lede":    "Klasik Türk mezeleri, seçkin etler ve taze deniz ürünleriyle açılan çok yemekli bir Boğaz akşam yemekli tekne menüsü. Vejetaryen, vegan ve glutensiz seçenekler teknede hazırlanır.",
+      "ctaPrimary": "Menüyü Gör"
+    },
+    "shows": {
+      "eyebrow": "Boğaz'da Türk Gecesi Şovu",
+      "hSmall":  "Oryantal dans · Semazen",
+      "hMega":   "Şovlar",
+      "hMid":    "güvertede canlı",
+      "hScript": "her gece",
+      "lede":    "Her akşam canlı Türk gecesi şovu — semazen, oryantal dans, davul ekibi, Anadolu halk oyunları. Konser düzeyinde sahne ışıkları, tam prodüksiyon, profesyonel sanatçılar.",
+      "ctaPrimary": "Programı Gör"
+    },
+    "view": {
+      "eyebrow": "Boğaz Gece Turu · İki Kıta Arasında",
+      "hSmall":  "Köprüler, saraylar, Kız Kulesi",
+      "hMega":   "Manzara",
+      "hMid":    "iki kıta",
+      "hScript": "gecenin içinde",
+      "lede":    "Üç saatlik bir Boğaz gece turunda: Boğaziçi Köprüsü, Fatih Köprüsü, Kız Kulesi, Dolmabahçe ve Beylerbeyi Sarayları, Ortaköy Camii — Avrupa ve Asya'nın ışıklı siluetleri.",
+      "ctaPrimary": "Rotayı Gör"
+    },
+    "party": {
+      "eyebrow": "Boğaz DJ Turu · Açık Hava Dans Pisti",
+      "hSmall":  "DJ · Üst güverte dans pisti",
+      "hMega":   "Parti",
+      "hMid":    "üst güvertede",
+      "hScript": "gece yarısına kadar",
+      "lede":    "Üst güvertede Boğaz DJ turu — profesyonel ses ve ışık, açık hava dans pisti. Latin, Deep House, R&B, vintage, popüler — her gece farklı tema, aynı enerji.",
+      "ctaPrimary": "Tema Takvimi"
+    },
+    "boat": {
+      "eyebrow": "Teknemiz · Üç Güverte",
+      "hSmall":  "500 kişi kapasite · Eminönü iskelesi",
+      "hMega":   "Teknemiz",
+      "hMid":    "üç güverte",
+      "hScript": "Boğaz'da",
+      "lede":    "Premium üç güverteli Boğaz teknesi — ana güvertede kapalı yemek alanı ve sahne, orta güvertede lounge yemek alanı, üst güvertede açık hava dans pisti ve bar. Her akşam Eminönü iskelesinden kalkış.",
+      "ctaPrimary": "Tekneyi Gezdir"
+    }
+  },
+
+  "playVideo": {
+    "title": "Videoyu oynat",
+    "label": "Videoyu Oynat"
+  },
+
+  "heroFooter": {
+    "departure": "Kalkış",
+    "doorOpens": "Kapı Açılış"
+  },
+
+  "experience": {
+    "label": "Deneyim",
+    "items": [
+      { "name": "Yemek",    "sub": "Akşam yemeği" },
+      { "name": "Şovlar",   "sub": "Türk gecesi" },
+      { "name": "Manzara",  "sub": "Boğaz manzarası" },
+      { "name": "Parti",    "sub": "DJ & dans" },
+      { "name": "Teknemiz", "sub": "Üç güverte" }
+    ]
+  },
+
+  "footer": {
+    "desc": "İstanbul'un en seçkin akşam Boğaz yemek turu. Üç güverte, Anadolu programı ve gece Boğaz — her akşam bir kutlama.",
+    "reservations": "Rezervasyon",
+    "openDaily": "Her gün · 7/24",
+    "tursabAgency": "Belgeli Acente",
+    "tursabLicenceNo": "Belge No",
+    "weAccept": "Kabul Edilen Ödemeler",
+    "copyright": "© 2026 Luxury Bosphorus Tour · Tüm hakları saklıdır.",
+    "legal": {
+      "cityGuide": "Şehir Rehberi",
+      "blog": "Blog",
+      "privacy": "Gizlilik",
+      "terms": "Koşullar",
+      "cancellation": "İptal"
+    }
   }
 }

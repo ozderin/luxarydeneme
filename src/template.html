@@ -984,30 +984,30 @@
           <circle cx="30" cy="30" r="22" stroke="rgba(201,169,97,.3)"/>
         </svg>
         <span class="name">
-          <span class="top">Luxury Bosphorus</span>
-          <span class="bot">Tour · Istanbul</span>
+          <span class="top">{{nav.brandTop}}</span>
+          <span class="bot">{{nav.brandBot}}</span>
         </span>
       </a>
       <div class="lang-picker" id="langPicker">
         <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
-          <img class="lang-flag" src="https://flagcdn.com/w40/gb.png" alt="">
-          <span class="lang-code">EN</span>
+          <img class="lang-flag" src="https://flagcdn.com/w40/{{langFlag}}" alt="">
+          <span class="lang-code">{{langDisplay}}</span>
           <span class="chev">▾</span>
         </button>
         <ul class="lang-list" role="listbox">
-          <li><a href="/" lang="en" class="active"><img src="https://flagcdn.com/w40/gb.png" alt=""><span class="name">English</span></a></li>
-          <li><a href="/tr/" lang="tr"><img src="https://flagcdn.com/w40/tr.png" alt=""><span class="name">Türkçe</span></a></li>
+          <li><a href="/" lang="en"{{langActiveEn}}><img src="https://flagcdn.com/w40/gb.png" alt=""><span class="name">{{nav.english}}</span></a></li>
+          <li><a href="/tr/" lang="tr"{{langActiveTr}}><img src="https://flagcdn.com/w40/tr.png" alt=""><span class="name">{{nav.turkish}}</span></a></li>
         </ul>
       </div>
       <div class="book-wrap">
         <a class="book-pill" href="#m-book">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
           <span class="bp-content">
-            <span class="bp-main" id="bookPillMain">Book Tonight</span>
+            <span class="bp-main" id="bookPillMain">{{nav.bookPill}}</span>
           </span>
         </a>
         <span class="book-cd" id="bookCd">
-          <span class="lab" id="bookCdLabel">departs in</span>
+          <span class="lab" id="bookCdLabel">{{nav.bookCdLabel}}</span>
           <span class="h-row">
             <span class="dot"></span>
             <span class="cd-h" id="bookCdH">—</span>
@@ -1019,10 +1019,10 @@
     </div>
   </nav>
 
-  <a class="wa-float" href="https://wa.me/905555555555" target="_blank" rel="noopener" aria-label="Message us on WhatsApp">
+  <a class="wa-float" href="https://wa.me/{{config.contact.whatsapp}}" target="_blank" rel="noopener" aria-label="{{wa.ariaLabel}}">
     <span class="wa-content">
-      <span class="wa-main">Message Us</span>
-      <span class="wa-status">Online now</span>
+      <span class="wa-main">{{wa.main}}</span>
+      <span class="wa-status">{{wa.status}}</span>
     </span>
     <span class="wa-icon-wrap">
       <svg viewBox="0 0 32 32"><path d="M27.286 4.714C24.286 1.714 20.286 0 16 0 7.143 0 0 7.143 0 16c0 2.857.714 5.571 2.143 8L0 32l8.286-2.143C10.571 30.857 13.286 32 16 32c8.857 0 16-7.143 16-16 0-4.286-1.714-8.286-4.714-11.286zM16 29.286c-2.429 0-4.857-.714-7-2L8.5 27l-4.929 1.286 1.286-4.857-.286-.5C3.143 20.857 2.429 18.5 2.429 16c0-7.5 6.071-13.571 13.571-13.571 3.643 0 7 1.429 9.571 4 2.571 2.571 4 5.929 4 9.571 0 7.5-6.143 13.286-13.571 13.286zm7.357-10.143c-.357-.179-2.357-1.179-2.714-1.286-.357-.143-.643-.214-.929.214-.286.429-1.071 1.286-1.286 1.571-.214.286-.464.321-.821.107-.357-.179-1.5-.571-2.857-1.786-1.071-.964-1.786-2.143-2-2.5-.214-.357-.018-.554.143-.732.143-.143.357-.357.464-.536.107-.179.179-.286.286-.464.107-.179.054-.357-.018-.5-.071-.143-.929-2.214-1.286-3.036-.321-.821-.643-.679-.857-.679-.214-.018-.464-.018-.714-.018-.25 0-.643.089-.964.464-.357.357-1.286 1.214-1.286 2.964s1.286 3.429 1.464 3.679c.179.214 2.5 3.821 6.071 5.357.857.357 1.5.571 2.036.75.857.286 1.643.214 2.286.143.679-.107 2.143-.857 2.464-1.714.286-.857.286-1.571.179-1.714-.107-.143-.357-.214-.714-.393z"/></svg>
@@ -1035,23 +1035,23 @@
     <aside class="hero-side-left">
       <a class="ftc ft1" href="#m-flow">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        <h3>The Programme</h3>
-        <p>The night, hour by hour · 20:30 → 23:45</p>
+        <h3>{{heroLeft.programme.h3}}</h3>
+        <p>{{heroLeft.programme.p}}</p>
       </a>
       <a class="ftc ft2" href="#m-packages">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8L12 3l9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>
-        <h3>Packages</h3>
-        <p>Standard and VIP menus, prices, what's included</p>
+        <h3>{{heroLeft.packages.h3}}</h3>
+        <p>{{heroLeft.packages.p}}</p>
       </a>
       <a class="ftc ft3" href="#m-view">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2C8 6 8 10 12 14C16 10 16 6 12 2Z"/><circle cx="12" cy="9" r="2"/><path d="M5 22l3-7M19 22l-3-7M5 22h14"/></svg>
-        <h3>Route</h3>
-        <p>Two bridges, palaces, Maiden's Tower — the illuminated Bosphorus</p>
+        <h3>{{heroLeft.route.h3}}</h3>
+        <p>{{heroLeft.route.p}}</p>
       </a>
       <a class="ftc ft4" href="#m-info">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
-        <h3>FAQ</h3>
-        <p>Frequently asked questions and practical info</p>
+        <h3>{{heroLeft.faq.h3}}</h3>
+        <p>{{heroLeft.faq.p}}</p>
       </a>
     </aside>
 
@@ -1060,33 +1060,33 @@
 
       <!-- DEFAULT -->
       <div class="panel panel-default">
-        <div class="eyebrow">Nights on the Bosphorus</div>
+        <div class="eyebrow">{{heroPanels.default.eyebrow}}</div>
         <h1 class="hero-h1">
-          <span class="h-line h-small">Istanbul · Turkish Night</span>
-          <span class="h-line h-mega">Bosphorus</span>
-          <span class="h-line h-mid">Dinner Cruise <span class="h-script" id="heroScript">tonight</span></span>
+          <span class="h-line h-small">{{heroPanels.default.hSmall}}</span>
+          <span class="h-line h-mega">{{heroPanels.default.hMega}}</span>
+          <span class="h-line h-mid">{{heroPanels.default.hMid}} <span class="h-script" id="heroScript">{{heroPanels.default.hScript}}</span></span>
         </h1>
-        <p class="hero-lede">A three-hour Bosphorus dinner cruise departing from Eminönü Pier at 21:00 — multi-course menu, full Turkish night show (whirling dervish, belly dance, folk), open-air decks across Europe and Asia. Hotel transfer available, free cancellation.</p>
+        <p class="hero-lede">{{heroPanels.default.lede}}</p>
         <div class="hero-ctas">
-          <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
-          <a class="btn btn-ghost" href="#m-flow">View Programme <span class="arr">→</span></a>
+          <a class="btn btn-gold" href="#m-book">{{heroPanels.default.ctaPrimary}} <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#m-flow">{{heroPanels.default.ctaSecondary}} <span class="arr">→</span></a>
         </div>
         <div class="usps">
-          <span class="usp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.35-7-10a7 7 0 0 1 14 0c0 5.65-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg> 10-min walk from Sultanahmet</span>
-          <span class="usp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2h8l-1 7a3 3 0 0 1-6 0z"/><path d="M12 9v8"/><path d="M8 21h8"/></svg> Unlimited Drinks</span>
-          <span class="usp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V6l12-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Live Programme</span>
+          <span class="usp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.35-7-10a7 7 0 0 1 14 0c0 5.65-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg> {{heroPanels.default.usps.0}}</span>
+          <span class="usp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2h8l-1 7a3 3 0 0 1-6 0z"/><path d="M12 9v8"/><path d="M8 21h8"/></svg> {{heroPanels.default.usps.1}}</span>
+          <span class="usp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V6l12-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> {{heroPanels.default.usps.2}}</span>
         </div>
       </div>
 
       <!-- DINNER -->
       <div class="panel panel-dinner">
-        <div class="eyebrow">Bosphorus Dinner Menu · Fine Dining</div>
+        <div class="eyebrow">{{heroPanels.dinner.eyebrow}}</div>
         <h2 class="hero-h1">
-          <span class="h-line h-small">Multi-course Turkish menu</span>
-          <span class="h-line h-mega">Dinner</span>
-          <span class="h-line h-mid">cruise menu <span class="h-script">after sunset</span></span>
+          <span class="h-line h-small">{{heroPanels.dinner.hSmall}}</span>
+          <span class="h-line h-mega">{{heroPanels.dinner.hMega}}</span>
+          <span class="h-line h-mid">{{heroPanels.dinner.hMid}} <span class="h-script">{{heroPanels.dinner.hScript}}</span></span>
         </h2>
-        <p class="hero-lede">A multi-course Bosphorus dinner cruise menu opening with classic Turkish meze, premium meats and fresh seafood. Vegetarian, vegan and gluten-free options prepared on board.</p>
+        <p class="hero-lede">{{heroPanels.dinner.lede}}</p>
         <div class="panel-thumbs">
           <a href="#m-dinner"><img src="/data/full-hall.webp" alt="" loading="lazy"></a>
           <a href="#m-dinner"><img src="/data/steak-wine.webp" alt="" loading="lazy"></a>
@@ -1094,21 +1094,21 @@
           <a href="#m-dinner"><img src="/data/table-candle-glasses.webp" alt="" loading="lazy"></a>
         </div>
         <div class="hero-ctas">
-          <a class="btn btn-gold" href="#m-dinner">View Menu <span class="arr">→</span></a>
-          <a class="btn btn-ghost" href="#m-book">Reserve <span class="arr">→</span></a>
+          <a class="btn btn-gold" href="#m-dinner">{{heroPanels.dinner.ctaPrimary}} <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#m-book">{{ctaReserve}} <span class="arr">→</span></a>
         </div>
-        <div class="panel-hint">Click the card for details →</div>
+        <div class="panel-hint">{{panelHint}}</div>
       </div>
 
       <!-- SHOWS -->
       <div class="panel panel-shows">
-        <div class="eyebrow">Turkish Night Show on the Bosphorus</div>
+        <div class="eyebrow">{{heroPanels.shows.eyebrow}}</div>
         <h2 class="hero-h1">
-          <span class="h-line h-small">Belly dance · Whirling dervish</span>
-          <span class="h-line h-mega">Shows</span>
-          <span class="h-line h-mid">live on the deck <span class="h-script">every night</span></span>
+          <span class="h-line h-small">{{heroPanels.shows.hSmall}}</span>
+          <span class="h-line h-mega">{{heroPanels.shows.hMega}}</span>
+          <span class="h-line h-mid">{{heroPanels.shows.hMid}} <span class="h-script">{{heroPanels.shows.hScript}}</span></span>
         </h2>
-        <p class="hero-lede">A live Turkish night show every evening — whirling dervish, belly dance, drum ensemble, Anatolian folk dances. Concert-grade stage lighting, full production, professional performers.</p>
+        <p class="hero-lede">{{heroPanels.shows.lede}}</p>
         <div class="panel-thumbs">
           <a href="#m-shows"><img src="/data/whirling-dervish.webp" alt="" loading="lazy"></a>
           <a href="#m-shows"><img src="/data/belly-dance-blue.webp" alt="" loading="lazy"></a>
@@ -1116,21 +1116,21 @@
           <a href="#m-shows"><img src="/data/drummer-party.webp" alt="" loading="lazy"></a>
         </div>
         <div class="hero-ctas">
-          <a class="btn btn-gold" href="#m-shows">View Programme <span class="arr">→</span></a>
-          <a class="btn btn-ghost" href="#m-book">Reserve <span class="arr">→</span></a>
+          <a class="btn btn-gold" href="#m-shows">{{heroPanels.shows.ctaPrimary}} <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#m-book">{{ctaReserve}} <span class="arr">→</span></a>
         </div>
-        <div class="panel-hint">Click the card for details →</div>
+        <div class="panel-hint">{{panelHint}}</div>
       </div>
 
       <!-- VIEW -->
       <div class="panel panel-view">
-        <div class="eyebrow">Bosphorus Night Cruise · Between Two Continents</div>
+        <div class="eyebrow">{{heroPanels.view.eyebrow}}</div>
         <h2 class="hero-h1">
-          <span class="h-line h-small">Bridges, palaces, Maiden's Tower</span>
-          <span class="h-line h-mega">View</span>
-          <span class="h-line h-mid">two continents <span class="h-script">after dark</span></span>
+          <span class="h-line h-small">{{heroPanels.view.hSmall}}</span>
+          <span class="h-line h-mega">{{heroPanels.view.hMega}}</span>
+          <span class="h-line h-mid">{{heroPanels.view.hMid}} <span class="h-script">{{heroPanels.view.hScript}}</span></span>
         </h2>
-        <p class="hero-lede">On a three-hour Bosphorus night cruise: Bosphorus Bridge, Fatih Bridge, Maiden's Tower, Dolmabahçe and Beylerbeyi Palaces, Ortaköy Mosque — the illuminated silhouettes of Europe and Asia.</p>
+        <p class="hero-lede">{{heroPanels.view.lede}}</p>
         <div class="panel-thumbs">
           <a href="#m-view"><img src="/data/boat-night-bridge.webp" alt="" loading="lazy"></a>
           <a href="#m-view"><img src="/data/boat-night-drone.webp" alt="" loading="lazy"></a>
@@ -1138,21 +1138,21 @@
           <a href="#m-view"><img src="/data/couple-cheers-bridge.webp" alt="" loading="lazy"></a>
         </div>
         <div class="hero-ctas">
-          <a class="btn btn-gold" href="#m-view">View Route <span class="arr">→</span></a>
-          <a class="btn btn-ghost" href="#m-book">Reserve <span class="arr">→</span></a>
+          <a class="btn btn-gold" href="#m-view">{{heroPanels.view.ctaPrimary}} <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#m-book">{{ctaReserve}} <span class="arr">→</span></a>
         </div>
-        <div class="panel-hint">Click the card for details →</div>
+        <div class="panel-hint">{{panelHint}}</div>
       </div>
 
       <!-- PARTY -->
       <div class="panel panel-party">
-        <div class="eyebrow">Bosphorus DJ Cruise · Open-Air Dance Floor</div>
+        <div class="eyebrow">{{heroPanels.party.eyebrow}}</div>
         <h2 class="hero-h1">
-          <span class="h-line h-small">DJ · Sky-deck dance floor</span>
-          <span class="h-line h-mega">Party</span>
-          <span class="h-line h-mid">on the upper deck <span class="h-script">until midnight</span></span>
+          <span class="h-line h-small">{{heroPanels.party.hSmall}}</span>
+          <span class="h-line h-mega">{{heroPanels.party.hMega}}</span>
+          <span class="h-line h-mid">{{heroPanels.party.hMid}} <span class="h-script">{{heroPanels.party.hScript}}</span></span>
         </h2>
-        <p class="hero-lede">A Bosphorus DJ cruise on the sky deck — professional sound and lighting, open-air dance floor. Latin, Deep House, R&B, vintage, commercial — a different theme every night, the same energy.</p>
+        <p class="hero-lede">{{heroPanels.party.lede}}</p>
         <div class="panel-thumbs">
           <a href="#m-party"><img src="/data/dance-floor-crowd.webp" alt="" loading="lazy"></a>
           <a href="#m-party"><img src="/data/drummer-party.webp" alt="" loading="lazy"></a>
@@ -1160,21 +1160,21 @@
           <a href="#m-party"><img src="/data/friends-cheers.webp" alt="" loading="lazy"></a>
         </div>
         <div class="hero-ctas">
-          <a class="btn btn-gold" href="#m-party">Theme Calendar <span class="arr">→</span></a>
-          <a class="btn btn-ghost" href="#m-book">Reserve <span class="arr">→</span></a>
+          <a class="btn btn-gold" href="#m-party">{{heroPanels.party.ctaPrimary}} <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#m-book">{{ctaReserve}} <span class="arr">→</span></a>
         </div>
-        <div class="panel-hint">Click the card for details →</div>
+        <div class="panel-hint">{{panelHint}}</div>
       </div>
 
       <!-- OUR BOAT -->
       <div class="panel panel-boat">
-        <div class="eyebrow">Our Vessel · Three Decks</div>
+        <div class="eyebrow">{{heroPanels.boat.eyebrow}}</div>
         <h2 class="hero-h1">
-          <span class="h-line h-small">Capacity 500 · Eminönü pier</span>
-          <span class="h-line h-mega">Our Boat</span>
-          <span class="h-line h-mid">three decks <span class="h-script">on the strait</span></span>
+          <span class="h-line h-small">{{heroPanels.boat.hSmall}}</span>
+          <span class="h-line h-mega">{{heroPanels.boat.hMega}}</span>
+          <span class="h-line h-mid">{{heroPanels.boat.hMid}} <span class="h-script">{{heroPanels.boat.hScript}}</span></span>
         </h2>
-        <p class="hero-lede">A premium three-deck Bosphorus cruise vessel — enclosed dining and stage on the main deck, lounge dining upstairs, an open-air dance floor and bar on the sky deck. Departing nightly from our pier at Eminönü.</p>
+        <p class="hero-lede">{{heroPanels.boat.lede}}</p>
         <div class="panel-thumbs">
           <a href="#m-boat"><img src="/data/full-hall.webp" alt="" loading="lazy"></a>
           <a href="#m-boat"><img src="/data/dance-floor-crowd.webp" alt="" loading="lazy"></a>
@@ -1182,22 +1182,22 @@
           <a href="#m-boat"><img src="/data/boat-night-drone.webp" alt="" loading="lazy"></a>
         </div>
         <div class="hero-ctas">
-          <a class="btn btn-gold" href="#m-boat">Tour the boat <span class="arr">→</span></a>
-          <a class="btn btn-ghost" href="#m-book">Reserve <span class="arr">→</span></a>
+          <a class="btn btn-gold" href="#m-boat">{{heroPanels.boat.ctaPrimary}} <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#m-book">{{ctaReserve}} <span class="arr">→</span></a>
         </div>
-        <div class="panel-hint">Click the card for details →</div>
+        <div class="panel-hint">{{panelHint}}</div>
       </div>
 
     </div>
 
     <!-- Mobile-only booked count: sits below the play+social rail in mobile order -->
-    <p class="hero-booked hero-booked-mobile"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><strong class="js-booked-count">0</strong> <span class="js-booked-lab">guests booked tonight's cruise</span></p>
+    <p class="hero-booked hero-booked-mobile"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><strong class="js-booked-count">0</strong> <span class="js-booked-lab">{{heroBooked}}</span></p>
 
     <!-- RIGHT — play + social rail -->
     <aside class="hero-side-right">
-      <a class="play" href="#" title="Play video">
+      <a class="play" href="#" title="{{playVideo.title}}">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <span class="label">Play Video</span>
+        <span class="label">{{playVideo.label}}</span>
       </a>
       <div class="socials">
         <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
@@ -1209,20 +1209,20 @@
   </div>
 
   <!-- Desktop floating booked stat — right side of hero -->
-  <p class="hero-booked hero-booked-desktop"><strong class="js-booked-count">0</strong><span class="js-booked-lab">guests booked tonight's cruise</span></p>
+  <p class="hero-booked hero-booked-desktop"><strong class="js-booked-count">0</strong><span class="js-booked-lab">{{heroBooked}}</span></p>
 </section>
 
 <!-- ─────────── upcoming events strip ─────────── -->
 <section class="upcoming">
   <div class="wrap">
     <div class="up-row">
-      <div class="up-label">The Experience</div>
+      <div class="up-label">{{experience.label}}</div>
       <div class="events">
-        <a class="ev e1" href="#m-dinner"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">Dinner</div><div class="sub">Fine dining</div></div></a>
-        <a class="ev e2" href="#m-shows"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">Shows</div><div class="sub">Turkish night</div></div></a>
-        <a class="ev e3" href="#m-view"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">View</div><div class="sub">Bosphorus view</div></div></a>
-        <a class="ev e4" href="#m-party"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">Party</div><div class="sub">DJ & dance</div></div></a>
-        <a class="ev e5" href="#m-boat"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">Our Boat</div><div class="sub">Three decks</div></div></a>
+        <a class="ev e1" href="#m-dinner"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">{{experience.items.0.name}}</div><div class="sub">{{experience.items.0.sub}}</div></div></a>
+        <a class="ev e2" href="#m-shows"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">{{experience.items.1.name}}</div><div class="sub">{{experience.items.1.sub}}</div></div></a>
+        <a class="ev e3" href="#m-view"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">{{experience.items.2.name}}</div><div class="sub">{{experience.items.2.sub}}</div></div></a>
+        <a class="ev e4" href="#m-party"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">{{experience.items.3.name}}</div><div class="sub">{{experience.items.3.sub}}</div></div></a>
+        <a class="ev e5" href="#m-boat"><div class="bg"></div><div class="veil2"></div><div class="body"><div class="name">{{experience.items.4.name}}</div><div class="sub">{{experience.items.4.sub}}</div></div></a>
       </div>
     </div>
   </div>
@@ -1231,11 +1231,11 @@
 <!-- ─────────── footer bar ─────────── -->
 <footer>
   <div class="wrap row">
-    <div class="f-domain">luxurybosphorustour.com</div>
-    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Departure · <b>Eminönü</b></div>
-    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Door Opens · <b>20:00</b></div>
-    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.9 19.9 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.9 19.9 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg><b>+90 (XXX) XXX XX XX</b></div>
-    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg><b>info@luxurybosphorustour.com</b></div>
+    <div class="f-domain">{{config.domain}}</div>
+    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>{{heroFooter.departure}} · <b>{{config.departure.pier}}</b></div>
+    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>{{heroFooter.doorOpens}} · <b>{{config.departure.doorOpens}}</b></div>
+    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.9 19.9 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.9 19.9 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg><b>{{config.contact.phone}}</b></div>
+    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg><b>{{config.contact.email}}</b></div>
   </div>
 </footer>
 </div><!-- /.hero-section -->
@@ -1253,36 +1253,36 @@
             <path d="M16 38 Q 30 34, 44 38" stroke-linecap="round" opacity=".7"/>
             <path d="M14 44 Q 30 40, 46 44" stroke-linecap="round" opacity=".4"/>
           </svg>
-          <h4>Luxury Bosphorus Tour</h4>
+          <h4>{{config.brand}}</h4>
         </div>
-        <p>Istanbul's premier evening dinner cruise. Three decks, an Anatolian programme, and the Bosphorus by night — every evening, a celebration.</p>
+        <p>{{footer.desc}}</p>
       </div>
 
       <div class="footer-col footer-col-center">
-        <h5>Reservations</h5>
+        <h5>{{footer.reservations}}</h5>
         <ul>
-          <li><a href="tel:+90">+90 (XXX) XXX XX XX</a></li>
-          <li><a href="mailto:reservations@luxurybosphorustour.com">reservations@luxurybosphorustour.com</a></li>
+          <li><a href="tel:{{config.contact.phoneRaw}}">{{config.contact.phone}}</a></li>
+          <li><a href="mailto:{{config.contact.reservationEmail}}">{{config.contact.reservationEmail}}</a></li>
           <li><a href="#">WhatsApp</a></li>
           <li><a href="#">Telegram</a></li>
-          <li>Open daily · 24/7</li>
+          <li>{{footer.openDaily}}</li>
         </ul>
       </div>
 
       <div class="footer-col footer-trust">
-        <a class="trust-badge" href="https://www.tursab.org.tr/tr/ddsv" target="_blank" rel="noopener">
+        <a class="trust-badge" href="{{config.tursab.verifyUrl}}" target="_blank" rel="noopener">
           <div class="trust-col">
             <span class="trust-seal">TÜRSAB</span>
-            <span class="trust-cap">Licensed Agency</span>
+            <span class="trust-cap">{{footer.tursabAgency}}</span>
           </div>
           <span class="trust-sep"></span>
           <div class="trust-col">
-            <span class="trust-value">A-17672</span>
-            <span class="trust-cap">Licence No</span>
+            <span class="trust-value">{{config.tursab.number}}</span>
+            <span class="trust-cap">{{footer.tursabLicenceNo}}</span>
           </div>
         </a>
         <div class="trust-payments">
-          <span class="trust-label">We Accept</span>
+          <span class="trust-label">{{footer.weAccept}}</span>
           <div class="trust-icons">
             <span class="card" aria-label="Visa"><svg viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="32" rx="4" fill="#fff"/><path d="M19.5 21H17L18.7 11H21.2L19.5 21ZM15 11L12.6 18L12.3 16.5L11.4 12C11.4 12 11.3 11 10 11H6.1L6 11.2C6 11.2 7.5 11.5 9.2 12.5L11.4 21H14L18 11H15ZM34 21H36.5L34.3 11H32.3C31.2 11 30.9 11.8 30.9 11.8L27 21H29.5L30 19.5H33.1L33.4 21H34ZM30.7 17.5L32 13.5L32.7 17.5H30.7ZM27 14L27.3 12.2C27.3 12.2 26 11.8 24.6 11.8C23.1 11.8 20 12.5 20 15C20 17.3 23.5 17.3 23.5 18.5C23.5 19.7 20.5 19.4 19.2 18.5L18.9 20.4C18.9 20.4 20.2 21 22 21C23.8 21 27 20 27 17.5C27 15 23.5 14.7 23.5 13.7C23.5 12.7 25.7 12.8 27 14Z" fill="#1A1F71"/></svg></span>
             <span class="card" aria-label="Mastercard"><svg viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="32" rx="4" fill="#fff"/><circle cx="19" cy="16" r="8" fill="#EB001B"/><circle cx="29" cy="16" r="8" fill="#F79E1B"/><path d="M24 10.3a8 8 0 0 1 0 11.4 8 8 0 0 1 0-11.4Z" fill="#FF5F00"/></svg></span>
@@ -1297,7 +1297,7 @@
     <div class="footer-divider"></div>
 
     <div class="footer-bottom">
-      <div class="footer-copy">© 2026 Luxury Bosphorus Tour · All evenings reserved.</div>
+      <div class="footer-copy">{{footer.copyright}}</div>
       <div class="footer-social">
         <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l.5-4H13V7.5c0-1.1.3-1.8 1.9-1.8H17V2.2C16.6 2.1 15.4 2 14 2c-3 0-5 1.8-5 5.2V10H6v4h3v8h4z"/></svg></a>
@@ -1305,11 +1305,11 @@
         <a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M11.944 0C5.345 0 0 5.345 0 11.944c0 6.6 5.345 11.944 11.944 11.944 6.6 0 11.945-5.344 11.945-11.944C23.889 5.345 18.544 0 11.944 0zm5.804 8.135l-1.943 9.137c-.144.654-.534.815-1.082.508l-2.99-2.205-1.443 1.388c-.16.16-.293.293-.6.293l.214-3.04 5.535-5c.241-.213-.054-.334-.373-.121L8.18 14.213l-2.95-.92c-.64-.2-.654-.64.135-.948l11.527-4.443c.534-.193 1.001.121.826.918z"/></svg></a>
       </div>
       <div class="footer-legal">
-        <a href="/city-guide/">City Guide</a>
-        <a href="/blog/">Blog</a>
-        <a href="#m-privacy">Privacy</a>
-        <a href="#m-terms">Terms</a>
-        <a href="#m-cancellation">Cancellation</a>
+        <a href="/city-guide/">{{footer.legal.cityGuide}}</a>
+        <a href="/blog/">{{footer.legal.blog}}</a>
+        <a href="#m-privacy">{{footer.legal.privacy}}</a>
+        <a href="#m-terms">{{footer.legal.terms}}</a>
+        <a href="#m-cancellation">{{footer.legal.cancellation}}</a>
       </div>
     </div>
 
