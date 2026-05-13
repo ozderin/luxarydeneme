@@ -556,8 +556,8 @@
   .trust-payments{display:flex;align-items:center;gap:12px}
   .trust-payments .trust-label{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);font-family:var(--sans);font-weight:500}
   .trust-icons{display:flex;align-items:center;gap:6px}
-  .trust-icons .card{background:#fff;padding:3px 6px;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;height:28px;min-width:46px;border:1px solid rgba(201,169,97,.15)}
-  .trust-icons .card svg{height:18px;width:auto;display:block}
+  .trust-icons .card{display:inline-flex;align-items:center;justify-content:center;background:transparent;border:0;padding:0}
+  .trust-icons .card svg{height:28px;width:auto;display:block;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.25)}
   @media(max-width:560px){
     .footer-trust{flex-direction:column;align-items:flex-start;gap:14px}
     .trust-payments{width:100%;justify-content:flex-start;flex-wrap:wrap}
@@ -1255,10 +1255,10 @@
         <div class="trust-payments">
           <span class="trust-label">Kabul Edilen Ödemeler</span>
           <div class="trust-icons">
-            <span class="card" aria-label="Visa"><svg viewBox="0 0 48 16" xmlns="http://www.w3.org/2000/svg"><text x="24" y="13" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" font-style="italic" fill="#1A1F71">VISA</text></svg></span>
-            <span class="card" aria-label="Mastercard"><svg viewBox="0 0 36 22" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="11" r="8" fill="#EB001B"/><circle cx="22" cy="11" r="8" fill="#F79E1B"/><path d="M18 5a8 8 0 0 1 0 12 8 8 0 0 1 0-12z" fill="#FF5F00"/></svg></span>
-            <span class="card" aria-label="American Express"><svg viewBox="0 0 48 16" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="16" rx="2" fill="#006FCF"/><text x="24" y="11" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="8" fill="#fff">AMEX</text></svg></span>
-            <span class="card" aria-label="Troy"><svg viewBox="0 0 48 16" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="16" rx="2" fill="#00529C"/><text x="24" y="11" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="9" fill="#fff">TROY</text></svg></span>
+            <span class="card" aria-label="Visa"><svg viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="32" rx="4" fill="#fff"/><path d="M19.5 21H17L18.7 11H21.2L19.5 21ZM15 11L12.6 18L12.3 16.5L11.4 12C11.4 12 11.3 11 10 11H6.1L6 11.2C6 11.2 7.5 11.5 9.2 12.5L11.4 21H14L18 11H15ZM34 21H36.5L34.3 11H32.3C31.2 11 30.9 11.8 30.9 11.8L27 21H29.5L30 19.5H33.1L33.4 21H34ZM30.7 17.5L32 13.5L32.7 17.5H30.7ZM27 14L27.3 12.2C27.3 12.2 26 11.8 24.6 11.8C23.1 11.8 20 12.5 20 15C20 17.3 23.5 17.3 23.5 18.5C23.5 19.7 20.5 19.4 19.2 18.5L18.9 20.4C18.9 20.4 20.2 21 22 21C23.8 21 27 20 27 17.5C27 15 23.5 14.7 23.5 13.7C23.5 12.7 25.7 12.8 27 14Z" fill="#1A1F71"/></svg></span>
+            <span class="card" aria-label="Mastercard"><svg viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="32" rx="4" fill="#fff"/><circle cx="19" cy="16" r="8" fill="#EB001B"/><circle cx="29" cy="16" r="8" fill="#F79E1B"/><path d="M24 10.3a8 8 0 0 1 0 11.4 8 8 0 0 1 0-11.4Z" fill="#FF5F00"/></svg></span>
+            <span class="card" aria-label="American Express"><svg viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="32" rx="4" fill="#016FD0"/><text x="24" y="20" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-weight="900" font-size="10" fill="#fff" letter-spacing="0.4">AMEX</text></svg></span>
+            <span class="card" aria-label="Troy"><svg viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="32" rx="4" fill="#fff"/><text x="24" y="21" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-weight="900" font-style="italic" font-size="14" fill="#003D7A">troy</text></svg></span>
           </div>
         </div>
       </div>
