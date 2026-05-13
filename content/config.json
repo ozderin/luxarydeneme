@@ -1,0 +1,35 @@
+{
+  "brand": "Luxury Bosphorus Tour",
+  "domain": "luxurybosphorustour.com",
+  "baseUrl": "https://luxurybosphorustour.com",
+  "ogImage": "https://luxurybosphorustour.com/data/boat-night-bridge.webp",
+  "contact": {
+    "phone": "+90 (XXX) XXX XX XX",
+    "phoneRaw": "+90",
+    "email": "info@luxurybosphorustour.com",
+    "reservationEmail": "reservations@luxurybosphorustour.com",
+    "whatsapp": "905555555555",
+    "telegram": "905555555555"
+  },
+  "tursab": {
+    "number": "A-17672",
+    "verifyUrl": "https://www.tursab.org.tr/tr/ddsv"
+  },
+  "departure": {
+    "pier": "Eminönü",
+    "doorOpens": "20:00",
+    "boardingCutoff": "20:30",
+    "departure": "21:00",
+    "return": "23:45"
+  },
+  "prices": {
+    "currency": "EUR",
+    "currencySymbol": "€",
+    "discountPct": 35,
+    "standard": { "was": 38, "now": 25 },
+    "vip": { "was": 100, "now": 65 },
+    "transferPerPerson": 5,
+    "alcoholPerPerson": 15,
+    "tablePerTable": 15
+  }
+}
