@@ -212,6 +212,9 @@
     .panel-hint{display:none}
     .hero-side-right{order:2;flex-direction:row;gap:14px;height:auto;padding:6px 0;justify-content:center}
     .socials{flex-direction:row;margin-top:0}
+    .hero-booked-desktop{display:none}
+    .hero-booked-mobile{display:flex;justify-content:center;width:100%;order:3;margin:14px 0 0;text-align:center}
+    .hero-side-left{order:4}
     .upcoming{padding:14px 0}
     .up-row{grid-template-columns:1fr;gap:12px}
     /* horizontal-scroll events strip on mobile */
@@ -807,6 +810,7 @@
   .hero-when.closed .dot{background:var(--ink-soft);box-shadow:none;animation:none}
   .hero-when.closed strong{color:var(--ink)}
   .hero-booked{display:inline-flex;align-items:center;gap:8px;margin:8px 0 0;font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-muted);font-weight:500}
+  .hero-booked-mobile{display:none}
   .hero-booked .ico{width:14px;height:14px;color:var(--gold);flex:none}
   .hero-booked strong{color:var(--gold);font-weight:600;font-family:var(--serif);font-size:15px;text-transform:none;letter-spacing:.02em;margin-right:2px}
   @keyframes tonightPulse{0%,100%{opacity:1}50%{opacity:.45}}
@@ -940,7 +944,7 @@
           <span class="h-line h-mega">Bosphorus</span>
           <span class="h-line h-mid">Dinner Cruise <span class="h-script" id="heroScript">tonight</span></span>
         </h1>
-        <p class="hero-booked" id="heroBooked"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><strong id="heroBookedCount">0</strong> <span id="heroBookedLab">guests booked tonight's cruise</span></p>
+        <p class="hero-booked hero-booked-desktop"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><strong class="js-booked-count">0</strong> <span class="js-booked-lab">guests booked tonight's cruise</span></p>
         <p class="hero-lede">A three-hour Bosphorus dinner cruise departing from Eminönü Pier at 21:00 — multi-course menu, full Turkish night show (whirling dervish, belly dance, folk), open-air decks across Europe and Asia. Hotel transfer available, free cancellation.</p>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
@@ -1064,6 +1068,9 @@
       </div>
 
     </div>
+
+    <!-- Mobile-only booked count: sits below the play+social rail in mobile order -->
+    <p class="hero-booked hero-booked-mobile"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><strong class="js-booked-count">0</strong> <span class="js-booked-lab">guests booked tonight's cruise</span></p>
 
     <!-- RIGHT — play + social rail -->
     <aside class="hero-side-right">
@@ -2434,8 +2441,10 @@
   const pillEl      = document.querySelector('.book-pill');
   const pillMain    = document.getElementById('bookPillMain');
   const pillSub     = document.getElementById('bookPillSub');
-  const countEl     = document.getElementById('heroBookedCount');
-  const bookedLabEl = document.getElementById('heroBookedLab');
+  const countEls     = document.querySelectorAll('.js-booked-count');
+  const bookedLabEls = document.querySelectorAll('.js-booked-lab');
+  const setCount = (n) => countEls.forEach(el => el.textContent = n);
+  const setLab   = (s) => bookedLabEls.forEach(el => el.textContent = s);
   if (!scriptEl || !pillEl || !pillMain || !pillSub) return;
 
   // Sun .. Sat
@@ -2476,8 +2485,8 @@
       // and pre-09:00 they're still at 0 — the count climbs from sunrise.
       const hourNow = now.getHours() + now.getMinutes() / 60;
       const hourTomorrow = (hourNow >= 21) ? 0 : hourNow;
-      if (countEl)     countEl.textContent = simulatedCount(tomorrow, hourTomorrow);
-      if (bookedLabEl) bookedLabEl.textContent = "guests booked tomorrow's cruise";
+      setCount(simulatedCount(tomorrow, hourTomorrow));
+      setLab("guests booked tomorrow's cruise");
       return;
     }
 
@@ -2487,8 +2496,8 @@
     pillSub.textContent = "closes " + fmtCountdown(ms);
 
     const hourFloat = now.getHours() + now.getMinutes() / 60;
-    if (countEl)     countEl.textContent = simulatedCount(now, hourFloat);
-    if (bookedLabEl) bookedLabEl.textContent = "guests booked tonight's cruise";
+    setCount(simulatedCount(now, hourFloat));
+    setLab("guests booked tonight's cruise");
   }
   tick();
   setInterval(tick, 1000);
