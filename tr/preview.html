@@ -545,6 +545,25 @@
   .footer-social a:hover{color:var(--gold);transform:translateY(-1px)}
   .footer-social svg{width:18px;height:18px}
   .footer-legal{display:flex;flex-wrap:wrap;gap:14px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+  .footer-trust{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding:18px 0;border-bottom:1px solid var(--line-soft);margin-bottom:16px}
+  .trust-badge{display:inline-flex;align-items:center;gap:12px;padding:10px 16px;background:rgba(201,169,97,.05);border:1px solid rgba(201,169,97,.25)}
+  .trust-badge .trust-seal{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--gold);letter-spacing:.06em}
+  .trust-badge .trust-meta{display:flex;flex-direction:column;gap:2px;line-height:1.15}
+  .trust-badge .trust-label{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft);font-family:var(--sans);font-weight:500}
+  .trust-badge .trust-value{font-family:var(--sans);font-size:11px;color:var(--ink);letter-spacing:.04em;font-weight:500}
+  .trust-payments{display:flex;align-items:center;gap:14px}
+  .trust-payments .trust-label{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);font-family:var(--sans);font-weight:500}
+  .trust-icons{display:flex;align-items:center;gap:8px}
+  .trust-icons .card{height:26px;width:42px;border:1px solid rgba(201,169,97,.18);border-radius:3px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.96);font-family:Arial,sans-serif;font-weight:900;font-size:11px;letter-spacing:.02em}
+  .trust-icons .card.visa{color:#1A1F71;font-style:italic;letter-spacing:.04em}
+  .trust-icons .card.mc{padding:0;position:relative}
+  .trust-icons .card.mc::before{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:#EB001B;left:8px}
+  .trust-icons .card.mc::after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:#F79E1B;right:8px;mix-blend-mode:multiply}
+  .trust-icons .card.amex{background:#2E77BB;color:#fff;font-size:8px;letter-spacing:.04em}
+  @media(max-width:560px){
+    .footer-trust{flex-direction:column;align-items:flex-start;gap:14px}
+    .trust-payments{width:100%;justify-content:space-between}
+  }
   .footer-legal a{color:inherit;transition:color .25s;white-space:nowrap}
   .footer-legal a:hover{color:var(--gold)}
   @media(max-width:880px){
@@ -1222,6 +1241,25 @@
     </div>
 
     <div class="footer-divider"></div>
+
+    <div class="footer-trust">
+      <div class="trust-badge">
+        <span class="trust-seal">TÜRSAB</span>
+        <div class="trust-meta">
+          <span class="trust-label">Belgeli Acente</span>
+          <span class="trust-value">A-XXXXX</span>
+        </div>
+      </div>
+      <div class="trust-payments">
+        <span class="trust-label">Teknede Ödeme</span>
+        <div class="trust-icons">
+          <span class="card visa">VISA</span>
+          <span class="card mc" aria-label="Mastercard"></span>
+          <span class="card amex">AMEX</span>
+          <span class="card" style="background:transparent;color:var(--ink);font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border-color:var(--gold-deep)">Nakit</span>
+        </div>
+      </div>
+    </div>
 
     <div class="footer-bottom">
       <div class="footer-copy">© 2026 Luxury Bosphorus Tour · All evenings reserved.</div>
