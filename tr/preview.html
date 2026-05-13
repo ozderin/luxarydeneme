@@ -54,7 +54,7 @@
 
   /* ─────────── nav ─────────── */
   nav{position:absolute;top:0;left:0;right:0;z-index:30;padding:14px 0}
-  nav .row{display:flex;align-items:center;justify-content:space-between;gap:32px}
+  nav .row{display:flex;align-items:center;gap:14px}
   .brand{display:flex;align-items:center;gap:12px}
   .brand .glyph{width:36px;height:36px}
   .brand .name{display:flex;flex-direction:column;line-height:1.1}
@@ -804,8 +804,9 @@
 
   .pv{position:fixed;top:8px;right:8px;background:rgba(7,7,11,.7);color:var(--gold);padding:4px 9px;border:1px solid var(--gold-deep);font-size:8px;letter-spacing:.32em;text-transform:uppercase;z-index:80;backdrop-filter:blur(4px);pointer-events:none}
 
-  /* Language picker — nav, glued to the left of BOOK TONIGHT pill */
-  .lang-picker{position:relative;margin-left:auto;margin-right:10px}
+  /* Language picker — nav, next to the brand */
+  .lang-picker{position:relative;margin-right:0}
+  .book-pill{margin-left:auto}
   .lang-btn{display:flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--gold-deep);color:var(--gold);padding:7px 11px;cursor:pointer;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:all .25s;line-height:1}
   .lang-btn:hover{background:rgba(201,169,97,.06);border-color:var(--gold)}
   .lang-btn .lang-flag{width:18px;height:auto;display:block;border:1px solid rgba(201,169,97,.3)}
