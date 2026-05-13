@@ -2455,11 +2455,13 @@
 
   function simulatedCount(targetDate, hourFloat){
     const cap = Math.floor(BASE_CAP * DOW_MULT[targetDate.getDay()]);
-    if (hourFloat < 9)  return 0;
+    const MIN = 3;
+    if (hourFloat < 6)  return MIN;            // overnight: stays at floor, no zero
     if (hourFloat >= 21) return cap;
-    const progress = (hourFloat - 9) / 12;
-    const sCurve = 1 / (1 + Math.exp(-6 * (progress - 0.5)));
-    return Math.floor(cap * sCurve);
+    // 06:00–21:00 = 15h window, S-curve interpolation
+    const progress = (hourFloat - 6) / 15;
+    const sCurve = 1 / (1 + Math.exp(-5 * (progress - 0.5)));
+    return Math.max(MIN, Math.floor(cap * sCurve));
   }
 
   function fmtCountdown(ms){
