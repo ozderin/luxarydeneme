@@ -1320,17 +1320,17 @@
 <!-- ═══════════ MODALS ═══════════ -->
 
 <div class="modal" id="m-dinner">
-  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <a href="#" class="modal-back" aria-label="{{modalClose}}"></a>
   <div class="modal-frame editorial">
-    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
 
     <div class="ed-hero">
       <img src="/data/dining-romantic-wide.webp" alt="">
       <div class="ed-hero-veil"></div>
       <div class="ed-hero-text">
-        <div class="modal-eyebrow">Dinner · Fine Dining</div>
-        <h2 class="modal-title">Dinner <span class="modal-script">on the bosphorus</span></h2>
-        <p class="ed-hero-tagline">A three-hour evening, a multi-course menu — selected Turkish dishes served as the Bosphorus lights up.</p>
+        <div class="modal-eyebrow">{{modals.dinner.eyebrow}}</div>
+        <h2 class="modal-title">{{modals.dinner.title}} <span class="modal-script">{{modals.dinner.titleScript}}</span></h2>
+        <p class="ed-hero-tagline">{{modals.dinner.tagline}}</p>
       </div>
     </div>
 
@@ -1339,21 +1339,21 @@
       <!-- MENU IN DETAIL -->
       <div class="menu-detail">
         <div class="menu-detail-head">
-          <div class="menu-detail-eyebrow">What's on the menu</div>
-          <h3 class="menu-detail-title">Four courses, <em>served slowly</em></h3>
-          <p class="menu-detail-intro">A multi-course Turkish menu built around classic meze, a warm pastry, a generous main, and dessert. Standard and VIP follow the same arc — VIP differs in meze breadth and adds premium beef to the main course.</p>
+          <div class="menu-detail-eyebrow">{{modals.dinner.menuDetailEyebrow}}</div>
+          <h3 class="menu-detail-title">{{modals.dinner.menuDetailTitle1}} <em>{{modals.dinner.menuDetailTitle2}}</em></h3>
+          <p class="menu-detail-intro">{{modals.dinner.menuDetailIntro}}</p>
         </div>
 
         <!-- 01 · MEZE -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">01</span>
-            <span class="menu-block-name">Meze</span>
-            <span class="menu-block-count">Standard: 10 varieties · VIP: 15+ varieties</span>
+            <span class="menu-block-name">{{modals.dinner.block1Name}}</span>
+            <span class="menu-block-count">{{modals.dinner.block1Count}}</span>
           </div>
-          <p class="menu-block-desc">Cold Turkish appetisers served family-style at your table: hummus, ezme (spicy tomato), haydari (strained yoghurt with herbs), fava (broad bean), atom (yoghurt with chili butter), kısır (bulgur salad), yaprak sarması (stuffed vine leaves), çoban salatası, smoked aubergine, beetroot tarator. VIP extends the spread with seasonal specials, octopus and a wider seafood selection.</p>
+          <p class="menu-block-desc">{{modals.dinner.block1Desc}}</p>
           <div class="menu-block-figure">
-            <img src="/data/table-candle-glasses.webp" alt="Turkish meze spread served on a candlelit Bosphorus dinner cruise table" loading="lazy">
+            <img src="/data/table-candle-glasses.webp" alt="{{modals.dinner.block1Alt}}" loading="lazy">
           </div>
         </div>
 
@@ -1361,47 +1361,47 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">02</span>
-            <span class="menu-block-name">Warm starter</span>
-            <span class="menu-block-count">Same in both packages</span>
+            <span class="menu-block-name">{{modals.dinner.block2Name}}</span>
+            <span class="menu-block-count">{{modals.dinner.block2Count}}</span>
           </div>
-          <p class="menu-block-desc"><strong>Paçanga böreği</strong> — a crisp, fried filo pastry filled with beef pastırma (air-dried cured beef) and melted kashar cheese. A signature Turkish opener served hot, between meze and main.</p>
+          <p class="menu-block-desc">{{modals.dinner.block2Desc}}</p>
         </div>
 
         <!-- 03 · MAIN COURSE -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">03</span>
-            <span class="menu-block-name">Main course</span>
-            <span class="menu-block-count">Choose one · seasonal salad included</span>
+            <span class="menu-block-name">{{modals.dinner.block3Name}}</span>
+            <span class="menu-block-count">{{modals.dinner.block3Count}}</span>
           </div>
-          <p class="menu-block-desc">Each guest picks one main; partners can mix categories. Standard offers four choices below; VIP adds premium beef (tenderloin / ribeye) on top of the same four.</p>
+          <p class="menu-block-desc">{{modals.dinner.block3Desc}}</p>
           <div class="dish-grid">
             <div class="dish-card">
-              <span class="dish-cat">Meat</span>
-              <h4 class="dish-name">Grilled Meatballs</h4>
-              <p class="dish-desc">Hand-pressed beef and lamb köfte seasoned with cumin, parsley and onion. Served with smoked aubergine purée and grilled vegetables.</p>
+              <span class="dish-cat">{{modals.dinner.dish1Cat}}</span>
+              <h4 class="dish-name">{{modals.dinner.dish1Name}}</h4>
+              <p class="dish-desc">{{modals.dinner.dish1Desc}}</p>
             </div>
             <div class="dish-card vip">
-              <span class="dish-cat">Meat</span>
-              <h4 class="dish-name">Beef Tenderloin · Ribeye</h4>
-              <p class="dish-desc">Cut to order from premium Turkish beef, grilled to your preferred doneness and rested. Served with butter-roasted potatoes and a peppercorn jus.</p>
-              <img class="dish-ph" src="/data/steak-wine.webp" alt="VIP main course on Bosphorus dinner cruise — grilled beef with red wine" loading="lazy">
+              <span class="dish-cat">{{modals.dinner.dish2Cat}}</span>
+              <h4 class="dish-name">{{modals.dinner.dish2Name}}</h4>
+              <p class="dish-desc">{{modals.dinner.dish2Desc}}</p>
+              <img class="dish-ph" src="/data/steak-wine.webp" alt="{{modals.dinner.dish2Alt}}" loading="lazy">
             </div>
             <div class="dish-card">
-              <span class="dish-cat">Chicken</span>
-              <h4 class="dish-name">Grilled Chicken Breast</h4>
-              <p class="dish-desc">Marinated overnight in olive oil, lemon and herbs, then grilled to order. Served with seasonal roasted vegetables and yoghurt sauce.</p>
-              <img class="dish-ph" src="/data/chicken-wine.webp" alt="Grilled chicken main course served with wine on Bosphorus dinner cruise" loading="lazy">
+              <span class="dish-cat">{{modals.dinner.dish3Cat}}</span>
+              <h4 class="dish-name">{{modals.dinner.dish3Name}}</h4>
+              <p class="dish-desc">{{modals.dinner.dish3Desc}}</p>
+              <img class="dish-ph" src="/data/chicken-wine.webp" alt="{{modals.dinner.dish3Alt}}" loading="lazy">
             </div>
             <div class="dish-card">
-              <span class="dish-cat">Fish</span>
-              <h4 class="dish-name">Salmon · Sea Bream</h4>
-              <p class="dish-desc">Pan-seared catch of the day with olive oil, lemon and Mediterranean herbs. Served with garlic potatoes and grilled greens.</p>
+              <span class="dish-cat">{{modals.dinner.dish4Cat}}</span>
+              <h4 class="dish-name">{{modals.dinner.dish4Name}}</h4>
+              <p class="dish-desc">{{modals.dinner.dish4Desc}}</p>
             </div>
             <div class="dish-card">
-              <span class="dish-cat">Vegetarian</span>
-              <h4 class="dish-name">Falafel Platter</h4>
-              <p class="dish-desc">Crispy chickpea falafel with bulgur pilaf, sautéed seasonal vegetables, roasted potatoes and crispy onion rings. Vegan on request.</p>
+              <span class="dish-cat">{{modals.dinner.dish5Cat}}</span>
+              <h4 class="dish-name">{{modals.dinner.dish5Name}}</h4>
+              <p class="dish-desc">{{modals.dinner.dish5Desc}}</p>
             </div>
           </div>
         </div>
@@ -1410,13 +1410,13 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">04</span>
-            <span class="menu-block-name">Dessert</span>
-            <span class="menu-block-count">Same in both packages</span>
+            <span class="menu-block-name">{{modals.dinner.block4Name}}</span>
+            <span class="menu-block-count">{{modals.dinner.block4Count}}</span>
           </div>
-          <p class="menu-block-desc"><strong>Ice cream cake</strong> — layered vanilla, chocolate and pistachio finished with a warm syrup drizzle. Served as the night turns to the show's final act, before coffee and tea service.</p>
+          <p class="menu-block-desc">{{modals.dinner.block4Desc}}</p>
         </div>
 
-        <p class="menu-detail-foot">Unlimited soft drinks (water, cola, juice) included in both packages. Unlimited local alcohol available as a +€15 add-on; imported spirits at extra cost. Dietary needs (vegetarian, vegan, gluten-free) handled on board — let us know on booking.</p>
+        <p class="menu-detail-foot">{{modals.dinner.menuFoot}}</p>
       </div>
 
       <div class="photo-masonry">
@@ -1429,10 +1429,10 @@
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="{{modalClose}}">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">{{ctaBar.reservations}}</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
             <span class="info-divider"></span>
@@ -1443,15 +1443,15 @@
           </div>
         </div>
         <div class="info-tel">
-          <div class="info-label">Email:</div>
+          <div class="info-label">{{ctaBar.email}}</div>
           <div class="info-tel-row">
             <span class="info-val">reservations@luxurybosphorustour.com</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-packages">Packages <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-packages">{{ctaBar.btnPackages}} <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">{{ctaBar.btnReserve}} <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -1459,14 +1459,14 @@
 
 <!-- M-PACKAGES -->
 <div class="modal" id="m-packages">
-  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <a href="#" class="modal-back" aria-label="{{modalClose}}"></a>
   <div class="modal-frame editorial">
-    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
 
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Packages · Pricing</div>
-      <h2 class="modal-title">Standard & VIP <span class="modal-script">menus</span></h2>
-      <p class="ed-hero-tagline">Two packages, four optional add-ons. Choose what fits your evening — no hidden fees, payment on board.</p>
+      <div class="modal-eyebrow">{{modals.packages.eyebrow}}</div>
+      <h2 class="modal-title">{{modals.packages.title}} <span class="modal-script">{{modals.packages.titleScript}}</span></h2>
+      <p class="ed-hero-tagline">{{modals.packages.tagline}}</p>
     </div>
 
     <div class="ed-content">
@@ -1475,148 +1475,148 @@
 
         <!-- STANDARD -->
         <div class="pkg">
-          <div class="pkg-eyebrow">Standard Menu</div>
-          <div class="pkg-name">Standard</div>
-          <div class="pkg-price"><span class="strike">€38</span><span class="now">€25</span><span class="per">/ person</span></div>
-          <p class="pkg-desc">3-hour Bosphorus evening cruise, multi-course menu and unlimited soft drinks. Departing Eminönü Pier at 21:00.</p>
+          <div class="pkg-eyebrow">{{modals.packages.standardEyebrow}}</div>
+          <div class="pkg-name">{{modals.packages.standardName}}</div>
+          <div class="pkg-price"><span class="strike">€38</span><span class="now">€25</span><span class="per">{{modals.packages.perPerson}}</span></div>
+          <p class="pkg-desc">{{modals.packages.standardDesc}}</p>
           <div class="pkg-tags">
-            <span class="pkg-tag">3hr · 21:00</span>
-            <span class="pkg-tag">Eminönü departure</span>
-            <span class="pkg-tag">Taxes included</span>
+            <span class="pkg-tag">{{modals.packages.tag1}}</span>
+            <span class="pkg-tag">{{modals.packages.tagStandard2}}</span>
+            <span class="pkg-tag">{{modals.packages.tagTaxes}}</span>
           </div>
-          <div class="pkg-included">What's Included</div>
+          <div class="pkg-included">{{modals.packages.included}}</div>
           <ul class="pkg-list">
-            <li>10 varieties of Turkish meze</li>
-            <li>Warm appetizer: paçanga böreği (beef pastırma & kashar cheese)</li>
-            <li><span>Main course + seasonal salad — choose one:<br>
-<span class="cat">Meat:</span> meatball<br>
-<span class="cat">Chicken:</span> grilled chicken<br>
-<span class="cat">Fish:</span> salmon · sea bream<br>
-<span class="cat">Vegetarian:</span> falafel platter (potatoes, bulgur pilaf, sautéed vegetables, onion rings)</span></li>
-            <li>Dessert: ice cream cake</li>
-            <li>Unlimited soft drinks (water, cola, juice)</li>
+            <li>{{modals.packages.standardItem1}}</li>
+            <li>{{modals.packages.itemWarmStarter}}</li>
+            <li><span>{{modals.packages.mainCourseLabel}}<br>
+<span class="cat">{{modals.packages.catMeat}}</span> {{modals.packages.standardMeatVal}}<br>
+<span class="cat">{{modals.packages.catChicken}}</span> {{modals.packages.chickenVal}}<br>
+<span class="cat">{{modals.packages.catFish}}</span> {{modals.packages.fishVal}}<br>
+<span class="cat">{{modals.packages.catVeg}}</span> {{modals.packages.standardVegVal}}</span></li>
+            <li>{{modals.packages.itemDessert}}</li>
+            <li>{{modals.packages.itemSoftDrinks}}</li>
           </ul>
-          <a class="pkg-cta" href="#m-book" data-preselect="standard">Reserve Standard →</a>
+          <a class="pkg-cta" href="#m-book" data-preselect="standard">{{modals.packages.reserveStandard}}</a>
         </div>
 
         <!-- VIP -->
         <div class="pkg popular">
-          <div class="pkg-badge">Most Popular</div>
-          <div class="pkg-eyebrow">VIP Menu</div>
-          <div class="pkg-name">VIP</div>
-          <div class="pkg-price"><span class="strike">€100</span><span class="now">€65</span><span class="per">/ person</span></div>
-          <p class="pkg-desc">An elevated evening with premium meat selections, traditional spread meze service, and a private table near the stage.</p>
+          <div class="pkg-badge">{{modals.packages.vipBadge}}</div>
+          <div class="pkg-eyebrow">{{modals.packages.vipEyebrow}}</div>
+          <div class="pkg-name">{{modals.packages.vipName}}</div>
+          <div class="pkg-price"><span class="strike">€100</span><span class="now">€65</span><span class="per">{{modals.packages.perPerson}}</span></div>
+          <p class="pkg-desc">{{modals.packages.vipDesc}}</p>
           <div class="pkg-tags">
-            <span class="pkg-tag">3hr · 21:00</span>
-            <span class="pkg-tag">Near the stage</span>
-            <span class="pkg-tag">Taxes included</span>
+            <span class="pkg-tag">{{modals.packages.tag1}}</span>
+            <span class="pkg-tag">{{modals.packages.tagVip2}}</span>
+            <span class="pkg-tag">{{modals.packages.tagTaxes}}</span>
           </div>
-          <div class="pkg-included">What's Included</div>
+          <div class="pkg-included">{{modals.packages.included}}</div>
           <ul class="pkg-list">
-            <li>15+ varieties of Turkish meze · traditional spread service</li>
-            <li>Warm appetizer: paçanga böreği (beef pastırma & kashar cheese)</li>
-            <li><span>Main course + seasonal salad — choose one:<br>
-<span class="cat">Meat:</span> meatball · <strong>beef tenderloin · ribeye</strong><br>
-<span class="cat">Chicken:</span> grilled chicken<br>
-<span class="cat">Fish:</span> salmon · sea bream<br>
-<span class="cat">Vegetarian:</span> falafel platter</span></li>
-            <li>Dessert: ice cream cake</li>
-            <li>Unlimited soft drinks (water, cola, juice)</li>
+            <li>{{modals.packages.vipItem1}}</li>
+            <li>{{modals.packages.itemWarmStarter}}</li>
+            <li><span>{{modals.packages.mainCourseLabel}}<br>
+<span class="cat">{{modals.packages.catMeat}}</span> {{modals.packages.vipMeatVal}}<br>
+<span class="cat">{{modals.packages.catChicken}}</span> {{modals.packages.chickenVal}}<br>
+<span class="cat">{{modals.packages.catFish}}</span> {{modals.packages.fishVal}}<br>
+<span class="cat">{{modals.packages.catVeg}}</span> {{modals.packages.vipVegVal}}</span></li>
+            <li>{{modals.packages.itemDessert}}</li>
+            <li>{{modals.packages.itemSoftDrinks}}</li>
           </ul>
-          <a class="pkg-cta" href="#m-book" data-preselect="vip">Reserve VIP →</a>
+          <a class="pkg-cta" href="#m-book" data-preselect="vip">{{modals.packages.reserveVip}}</a>
         </div>
 
       </div>
 
       <!-- OPTIONAL EXTRAS -->
       <div class="extras" id="extras-section">
-        <div class="extras-head">Optional Extras</div>
+        <div class="extras-head">{{modals.packages.extrasHead}}</div>
         <div class="extras-list">
           <div class="extras-item">
             <span class="plus">+</span>
             <div class="body">
-              <div class="name">Hotel Transfer <span class="price">+€5 / person</span></div>
-              <div class="desc">Before the cruise, our driver collects you from your hotel and brings you to the pier. After the evening, the same driver is waiting to take you back. No need to plan transportation — handled both ways.</div>
+              <div class="name">{{modals.packages.extra1Name}} <span class="price">{{modals.packages.extra1Price}}</span></div>
+              <div class="desc">{{modals.packages.extra1Desc}}</div>
             </div>
           </div>
           <div class="extras-item">
             <span class="plus">+</span>
             <div class="body">
-              <div class="name">Alcohol Package <span class="price">+€15 / person</span></div>
-              <div class="desc">Beer · Rakı · Gin · Vodka · Red &amp; White Wine — unlimited, included in the package.<br>Imported drinks (champagne, whisky, cognac, etc.) available at extra cost.</div>
+              <div class="name">{{modals.packages.extra2Name}} <span class="price">{{modals.packages.extra2Price}}</span></div>
+              <div class="desc">{{modals.packages.extra2Desc}}</div>
             </div>
           </div>
           <div class="extras-item">
             <span class="plus">+</span>
             <div class="body">
-              <div class="name">Romantic Table <span class="price">+€15 / table</span></div>
-              <div class="desc">An elegant table dressed with candles and rose petals. Perfect for marriage proposals, first dates, anniversaries and special occasions.</div>
+              <div class="name">{{modals.packages.extra3Name}} <span class="price">{{modals.packages.extra3Price}}</span></div>
+              <div class="desc">{{modals.packages.extra3Desc}}</div>
             </div>
           </div>
           <div class="extras-item">
             <span class="plus">+</span>
             <div class="body">
-              <div class="name">Professional Photography <span class="price">Ask on board</span></div>
-              <div class="desc">An on-board photographer captures your evening on the Bosphorus — turn moments into lasting memories. Ask our photo team for current prices and packages.</div>
+              <div class="name">{{modals.packages.extra4Name}} <span class="price">{{modals.packages.extra4Price}}</span></div>
+              <div class="desc">{{modals.packages.extra4Desc}}</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="ed-dietary">
-        Meat <span class="sep">·</span> Chicken <span class="sep">·</span> Fish <span class="sep">·</span> Vegetarian
+        {{modals.packages.dietary}}
       </div>
 
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="{{modalClose}}">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">{{ctaBar.reservations}}</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-dinner">View Menu <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-dinner">{{ctaBar.btnViewMenu}} <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">{{ctaBar.btnReserve}} <span class="arr">→</span></a>
       </div>
     </div>
   </div>
 </div>
 
 <div class="modal" id="m-shows">
-  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <a href="#" class="modal-back" aria-label="{{modalClose}}"></a>
   <div class="modal-frame editorial">
-    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
 
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Turkish Night Show · Live on Stage</div>
-      <h2 class="modal-title">Shows <span class="modal-script">every night</span></h2>
-      <p class="ed-hero-tagline">A four-act Turkish night programme, performed live every evening between dinner and the DJ — concert-grade lighting, professional performers, no interval.</p>
+      <div class="modal-eyebrow">{{modals.shows.eyebrow}}</div>
+      <h2 class="modal-title">{{modals.shows.title}} <span class="modal-script">{{modals.shows.titleScript}}</span></h2>
+      <p class="ed-hero-tagline">{{modals.shows.tagline}}</p>
     </div>
 
     <div class="ed-content">
 
       <div class="menu-detail">
         <div class="menu-detail-head">
-          <div class="menu-detail-eyebrow">The programme · hour by hour</div>
-          <h3 class="menu-detail-title">Four acts, <em>back to back</em></h3>
-          <p class="menu-detail-intro">Performances run from roughly 21:30 to 22:30, while dinner continues at your table. Each act flows into the next — from the serenity of the opening dervish to the energetic peak of the belly dance.</p>
+          <div class="menu-detail-eyebrow">{{modals.shows.menuDetailEyebrow}}</div>
+          <h3 class="menu-detail-title">{{modals.shows.menuDetailTitle1}} <em>{{modals.shows.menuDetailTitle2}}</em></h3>
+          <p class="menu-detail-intro">{{modals.shows.menuDetailIntro}}</p>
         </div>
 
         <!-- 01 · WHIRLING DERVISH -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">01</span>
-            <span class="menu-block-name">Whirling Dervish</span>
-            <span class="menu-block-count">Opens the night · ~21:30</span>
+            <span class="menu-block-name">{{modals.shows.block1Name}}</span>
+            <span class="menu-block-count">{{modals.shows.block1Count}}</span>
           </div>
-          <p class="menu-block-desc">The serene opening of the evening — a Mevlevi <strong>sema</strong>. The dervish spins in white robes around a central axis, one hand turned to the sky, one to the earth. Originating in 13th-century Konya with the poet Rumi, the dance is both spiritual ritual and theatrical art. A slow, contemplative start before the night builds in energy.</p>
+          <p class="menu-block-desc">{{modals.shows.block1Desc}}</p>
           <div class="menu-block-figure">
-            <img src="/data/whirling-dervish.webp" alt="Whirling dervish performance on a Bosphorus dinner cruise — Mevlevi sema" loading="lazy">
+            <img src="/data/whirling-dervish.webp" alt="{{modals.shows.block1Alt}}" loading="lazy">
           </div>
         </div>
 
@@ -1624,12 +1624,12 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">02</span>
-            <span class="menu-block-name">Anatolian Folk Dance</span>
-            <span class="menu-block-count">~21:50</span>
+            <span class="menu-block-name">{{modals.shows.block2Name}}</span>
+            <span class="menu-block-count">{{modals.shows.block2Count}}</span>
           </div>
-          <p class="menu-block-desc">A folk dance company in regional costumes performs across Anatolia's cultural map — Black Sea <strong>horon</strong>, Aegean <strong>zeybek</strong>, eastern <strong>halay</strong>. Energetic, percussive, accompanied by traditional Anatolian instruments. The cultural breadth of Turkey in fifteen minutes.</p>
+          <p class="menu-block-desc">{{modals.shows.block2Desc}}</p>
           <div class="menu-block-figure">
-            <img src="/data/folk-dance.webp" alt="Anatolian folk dance company performing on Bosphorus dinner cruise deck" loading="lazy">
+            <img src="/data/folk-dance.webp" alt="{{modals.shows.block2Alt}}" loading="lazy">
           </div>
         </div>
 
@@ -1637,12 +1637,12 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">03</span>
-            <span class="menu-block-name">Drum Ensemble</span>
-            <span class="menu-block-count">~22:10</span>
+            <span class="menu-block-name">{{modals.shows.block3Name}}</span>
+            <span class="menu-block-count">{{modals.shows.block3Count}}</span>
           </div>
-          <p class="menu-block-desc">A professional percussion ensemble takes the deck — <strong>davul</strong>, <strong>darbuka</strong> and <strong>bendir</strong> layered over each other in driving rhythms. The room's energy lifts; this is where the night turns from observation to participation, guests clapping along, lights washing across the deck.</p>
+          <p class="menu-block-desc">{{modals.shows.block3Desc}}</p>
           <div class="menu-block-figure">
-            <img src="/data/drummer-party.webp" alt="Live drum ensemble performance on Bosphorus dinner cruise" loading="lazy">
+            <img src="/data/drummer-party.webp" alt="{{modals.shows.block3Alt}}" loading="lazy">
           </div>
         </div>
 
@@ -1650,87 +1650,87 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">04</span>
-            <span class="menu-block-name">Belly Dance</span>
-            <span class="menu-block-count">The night's peak · ~22:30</span>
+            <span class="menu-block-name">{{modals.shows.block4Name}}</span>
+            <span class="menu-block-count">{{modals.shows.block4Count}}</span>
           </div>
-          <p class="menu-block-desc">The evening's centrepiece — a professional belly dancer's full routine, weaving between tables and the stage. Bright sequined costumes, expressive choreography, audience moments with guests pulled gently into the dance. The kind of moment guests photograph and remember for years.</p>
+          <p class="menu-block-desc">{{modals.shows.block4Desc}}</p>
           <div class="menu-block-figure">
-            <img src="/data/belly-dance-blue.webp" alt="Belly dance performance on Bosphorus dinner cruise — the night's peak" loading="lazy">
+            <img src="/data/belly-dance-blue.webp" alt="{{modals.shows.block4Alt}}" loading="lazy">
           </div>
         </div>
 
-        <p class="menu-detail-foot">After the four acts, the DJ takes the deck until midnight (see <a href="#m-party">Party</a>). All performers are professionally trained, with full-time stage and music careers — concert-grade lighting and sound across the main deck.</p>
+        <p class="menu-detail-foot">{{modals.shows.menuFoot}}</p>
       </div>
 
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="{{modalClose}}">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">{{ctaBar.reservations}}</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-packages">Packages <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-packages">{{ctaBar.btnPackages}} <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">{{ctaBar.btnReserve}} <span class="arr">→</span></a>
       </div>
     </div>
   </div>
 </div>
 
 <div class="modal" id="m-view">
-  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <a href="#" class="modal-back" aria-label="{{modalClose}}"></a>
   <div class="modal-frame editorial">
-    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
 
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">View · Between Two Continents</div>
-      <h2 class="modal-title">View <span class="modal-script">after dark</span></h2>
-      <p class="ed-hero-tagline">A three-hour cruise across Europe and Asia — bridges, palaces and the illuminated silhouette of Istanbul.</p>
+      <div class="modal-eyebrow">{{modals.view.eyebrow}}</div>
+      <h2 class="modal-title">{{modals.view.title}} <span class="modal-script">{{modals.view.titleScript}}</span></h2>
+      <p class="ed-hero-tagline">{{modals.view.tagline}}</p>
     </div>
 
     <div class="ed-content">
 
       <!-- highlight photo strip -->
       <div class="photo-masonry">
-        <img src="/data/boat-night-bridge.webp" alt="Bosphorus Bridge illuminated at night on a Bosphorus dinner cruise" loading="lazy">
-        <img src="/data/a2.webp" alt="Dolmabahçe Palace from the water on a Bosphorus night cruise" loading="lazy">
-        <img src="/data/3.webp" alt="Ortaköy Mosque on the Bosphorus shore at night" loading="lazy">
-        <img src="/data/boat-night-drone.webp" alt="Aerial view of the Bosphorus and Istanbul shoreline at night" loading="lazy">
-        <img src="/data/couple-cheers-bridge.webp" alt="Couple under the Bosphorus Bridge on a dinner cruise" loading="lazy">
+        <img src="/data/boat-night-bridge.webp" alt="{{modals.view.photo1Alt}}" loading="lazy">
+        <img src="/data/a2.webp" alt="{{modals.view.photo2Alt}}" loading="lazy">
+        <img src="/data/3.webp" alt="{{modals.view.photo3Alt}}" loading="lazy">
+        <img src="/data/boat-night-drone.webp" alt="{{modals.view.photo4Alt}}" loading="lazy">
+        <img src="/data/couple-cheers-bridge.webp" alt="{{modals.view.photo5Alt}}" loading="lazy">
       </div>
 
       <div class="route-map">
-        <div class="route-map-title">The Three-Hour Route</div>
+        <div class="route-map-title">{{modals.view.routeTitle}}</div>
         <div class="route-stops">
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-pier-sunset.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Eminönü</div><div class="route-stop-side">Departure</div></div></summary><div class="route-balloon">Heart of the historic peninsula, where the Bosphorus meets the Golden Horn. Our evening begins here, at our pier with Galata Tower across the water.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/a1.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Karaköy</div><div class="route-stop-side">European</div></div></summary><div class="route-balloon">Once Galata's harbour, today a vibrant district of European-era architecture, art galleries and waterfront cafés.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/a2.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Dolmabahçe Palace</div><div class="route-stop-side">European</div></div></summary><div class="route-balloon">Sultan Abdülmecid's grand baroque palace, opened in 1856 — the seat of Ottoman power for the empire's final decades.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/2.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Çırağan Palace</div><div class="route-stop-side">European</div></div></summary><div class="route-balloon">The last imperial palace, built for Sultan Abdülaziz in 1871. Today, a luxury hotel rising directly from the strait.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/3.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Ortaköy Mosque</div><div class="route-stop-side">European</div></div></summary><div class="route-balloon">An iconic baroque-revival mosque (1856) whose marble façade is mirrored in the Bosphorus — postcard of Istanbul.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-night-bridge.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Bosphorus Bridge</div><div class="route-stop-side">Bridge</div></div></summary><div class="route-balloon">The first bridge to span the strait, opened in 1973. Two continents joined overhead — illuminated nightly in changing colours.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/4.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Bebek</div><div class="route-stop-side">European</div></div></summary><div class="route-balloon">A storied European bay, famed for its waterfront mansions, cafés and elegant promenade — Istanbul's calm corner.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/5.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Rumeli Fortress</div><div class="route-stop-side">European</div></div></summary><div class="route-balloon">Built in just four months in 1452 by Mehmed II — the fortress that sealed Constantinople's fate before the conquest.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-night-drone.webp')"></div><div class="route-stop-text"><div class="route-stop-name">FSM Bridge</div><div class="route-stop-side">Mid-point</div></div></summary><div class="route-balloon">The strait's second bridge (1988), named for Mehmed the Conqueror. Mid-point of the cruise — we turn here for the Asian shore.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/6.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Beylerbeyi Palace</div><div class="route-stop-side">Asian</div></div></summary><div class="route-balloon">The summer palace of the Ottoman sultans (1865), where royal guests were received on the Asian shore.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/8.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Üsküdar</div><div class="route-stop-side">Asian</div></div></summary><div class="route-balloon">The Asian heart of Istanbul — ancient Chrysopolis. Mihrimah Sultan Mosque, narrow streets and time-worn quaysides.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/10.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Maiden's Tower</div><div class="route-stop-side">From afar</div></div></summary><div class="route-balloon">A legendary 18th-century tower at the heart of the strait. We pass close enough to see it lit, far enough to keep its mystery.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/couple-cheers-bridge.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Eminönü</div><div class="route-stop-side">Arrival</div></div></summary><div class="route-balloon">Back to where the evening began — the pier, the city, the night closing in. Three hours, two continents, one Bosphorus.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-pier-sunset.webp')"></div><div class="route-stop-text"><div class="route-stop-name">{{modals.view.stop1Name}}</div><div class="route-stop-side">{{modals.view.stop1Side}}</div></div></summary><div class="route-balloon">{{modals.view.stop1Desc}}</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/a1.webp')"></div><div class="route-stop-text"><div class="route-stop-name">{{modals.view.stop2Name}}</div><div class="route-stop-side">{{modals.view.stop2Side}}</div></div></summary><div class="route-balloon">{{modals.view.stop2Desc}}</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/a2.webp')"></div><div class="route-stop-text"><div class="route-stop-name">{{modals.view.stop3Name}}</div><div class="route-stop-side">{{modals.view.stop3Side}}</div></div></summary><div class="route-balloon">{{modals.view.stop3Desc}}</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/2.webp')"></div><div class="route-stop-text"><div class="route-stop-name">{{modals.view.stop4Name}}</div><div class="route-stop-side">{{modals.view.stop4Side}}</div></div></summary><div class="route-balloon">{{modals.view.stop4Desc}}</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/3.webp')"></div><div class="route-stop-text"><div class="route-stop-name">{{modals.view.stop5Name}}</div><div class="route-stop-side">{{modals.view.stop5Side}}</div></div></summary><div class="route-balloon">{{modals.view.stop5Desc}}</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-night-bridge.webp')"></div><div class="route-stop-text"><div class="route-stop-name">{{modals.view.stop6Name}}</div><div class="route-stop-side">{{modals.view.stop6Side}}</div></div></summary><div class="route-balloon">{{modals.view.stop6Desc}}</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/4.webp')"></div><div class="route-stop-text"><div class="route-stop-name">{{modals.view.stop7Name}}</div><div class="route-stop-side">{{modals.view.stop7Side}}</div></div></summary><div class="route-balloon">{{modals.view.stop7Desc}}</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/5.webp')"></div><div class="route-stop-text"><div class="route-stop-name">{{modals.view.stop8Name}}</div><div class="route-stop-side">{{modals.view.stop8Side}}</div></div></summary><div class="route-balloon">{{modals.view.stop8Desc}}</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-night-drone.webp')"></div><div class="route-stop-text"><div class="route-stop-name">{{modals.view.stop9Name}}</div><div class="route-stop-side">{{modals.view.stop9Side}}</div></div></summary><div class="route-balloon">{{modals.view.stop9Desc}}</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/6.webp')"></div><div class="route-stop-text"><div class="route-stop-name">{{modals.view.stop10Name}}</div><div class="route-stop-side">{{modals.view.stop10Side}}</div></div></summary><div class="route-balloon">{{modals.view.stop10Desc}}</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/8.webp')"></div><div class="route-stop-text"><div class="route-stop-name">{{modals.view.stop11Name}}</div><div class="route-stop-side">{{modals.view.stop11Side}}</div></div></summary><div class="route-balloon">{{modals.view.stop11Desc}}</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/10.webp')"></div><div class="route-stop-text"><div class="route-stop-name">{{modals.view.stop12Name}}</div><div class="route-stop-side">{{modals.view.stop12Side}}</div></div></summary><div class="route-balloon">{{modals.view.stop12Desc}}</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/couple-cheers-bridge.webp')"></div><div class="route-stop-text"><div class="route-stop-name">{{modals.view.stop13Name}}</div><div class="route-stop-side">{{modals.view.stop13Side}}</div></div></summary><div class="route-balloon">{{modals.view.stop13Desc}}</div></details>
         </div>
       </div>
 
-      <p class="ed-narrative">On the European side: Dolmabahçe Palace, Çırağan, Ortaköy Mosque, the 15 July Martyrs Bridge in red light. On the Asian side: Beylerbeyi Palace, Kuzguncuk houses, Anadolu Hisarı. At the midpoint, the Fatih Sultan Mehmet Bridge; on the return, Maiden's Tower and the Topkapı silhouette.</p>
+      <p class="ed-narrative">{{modals.view.narrative}}</p>
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="{{modalClose}}">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">{{ctaBar.reservations}}</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
             <span class="info-divider"></span>
@@ -1741,60 +1741,60 @@
           </div>
         </div>
         <div class="info-tel">
-          <div class="info-label">Email:</div>
+          <div class="info-label">{{ctaBar.email}}</div>
           <div class="info-tel-row">
             <span class="info-val">reservations@luxurybosphorustour.com</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-info">FAQ <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-info">{{ctaBar.btnFaq}} <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">{{ctaBar.btnReserve}} <span class="arr">→</span></a>
       </div>
     </div>
   </div>
 </div>
 
 <div class="modal" id="m-party">
-  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <a href="#" class="modal-back" aria-label="{{modalClose}}"></a>
   <div class="modal-frame editorial">
-    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
 
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Party · DJ &amp; Dance Floor</div>
-      <h2 class="modal-title">Party <span class="modal-script">under the stars</span></h2>
-      <p class="ed-hero-tagline">After the Turkish night show, the party shifts to the sky deck — open-air, a resident DJ, dancing under the Bosphorus stars until midnight.</p>
+      <div class="modal-eyebrow">{{modals.party.eyebrow}}</div>
+      <h2 class="modal-title">{{modals.party.title}} <span class="modal-script">{{modals.party.titleScript}}</span></h2>
+      <p class="ed-hero-tagline">{{modals.party.tagline}}</p>
     </div>
 
     <div class="ed-content">
 
       <div class="menu-detail">
         <div class="menu-detail-head">
-          <div class="menu-detail-eyebrow">After the show</div>
-          <h3 class="menu-detail-title">A real party, <em>without the show-off</em></h3>
-          <p class="menu-detail-intro">No celebrity DJ acts and no laser theatre — just an open-air dance floor on the sky deck, a resident DJ who reads the crowd, and a Bosphorus skyline as backdrop. Dance if you like; the lounge deck stays calm if you don't.</p>
+          <div class="menu-detail-eyebrow">{{modals.party.menuDetailEyebrow}}</div>
+          <h3 class="menu-detail-title">{{modals.party.menuDetailTitle1}} <em>{{modals.party.menuDetailTitle2}}</em></h3>
+          <p class="menu-detail-intro">{{modals.party.menuDetailIntro}}</p>
         </div>
 
         <!-- 01 · THE SHIFT -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">01</span>
-            <span class="menu-block-name">The shift</span>
-            <span class="menu-block-count">~22:30 · After the belly dance</span>
+            <span class="menu-block-name">{{modals.party.block1Name}}</span>
+            <span class="menu-block-count">{{modals.party.block1Count}}</span>
           </div>
-          <p class="menu-block-desc">As the four-act Turkish night show closes with the belly dance, the lights change and the DJ takes the deck. Dinner service quietens; coffee and drinks continue. Anyone ready to dance moves up to the sky deck — those who prefer to linger over a drink stay at their table.</p>
+          <p class="menu-block-desc">{{modals.party.block1Desc}}</p>
         </div>
 
         <!-- 02 · THE SKY DECK -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">02</span>
-            <span class="menu-block-name">The sky deck</span>
-            <span class="menu-block-count">Open-air · second bar</span>
+            <span class="menu-block-name">{{modals.party.block2Name}}</span>
+            <span class="menu-block-count">{{modals.party.block2Count}}</span>
           </div>
-          <p class="menu-block-desc">The top of the boat opens to the sky — dance floor in the centre, lounge seating around the edge, the second bar serving cocktails and the Bosphorus on every side. In warmer months the breeze does the cooling; in winter the deck is heated.</p>
+          <p class="menu-block-desc">{{modals.party.block2Desc}}</p>
           <div class="menu-block-figure">
-            <img src="/data/dance-floor-crowd.webp" alt="Sky-deck dance floor on a Bosphorus dinner cruise after the Turkish night show" loading="lazy">
+            <img src="/data/dance-floor-crowd.webp" alt="{{modals.party.block2Alt}}" loading="lazy">
           </div>
         </div>
 
@@ -1802,60 +1802,60 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">03</span>
-            <span class="menu-block-name">The DJ</span>
-            <span class="menu-block-count">Resident · reads the crowd</span>
+            <span class="menu-block-name">{{modals.party.block3Name}}</span>
+            <span class="menu-block-count">{{modals.party.block3Count}}</span>
           </div>
-          <p class="menu-block-desc">A resident DJ — professional, well practised on this floor, with full sound and lighting at hand. The set leans into whatever the room wants on the night: a young couple's evening reads different to a friends-of-six birthday. No name on a marquee; we'd rather over-deliver than over-promise.</p>
+          <p class="menu-block-desc">{{modals.party.block3Desc}}</p>
         </div>
 
         <!-- 04 · THE WEEK -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">04</span>
-            <span class="menu-block-name">Theme by night</span>
-            <span class="menu-block-count">Loose, never strict</span>
+            <span class="menu-block-name">{{modals.party.block4Name}}</span>
+            <span class="menu-block-count">{{modals.party.block4Count}}</span>
           </div>
-          <p class="menu-block-desc">A rough weekly cadence we keep to — but the DJ always adapts to the crowd:</p>
+          <p class="menu-block-desc">{{modals.party.block4Desc}}</p>
           <ul class="theme-list">
-            <li><strong>Monday</strong> · Latin warm-up</li>
-            <li><strong>Tuesday</strong> · Deep house</li>
-            <li><strong>Wednesday</strong> · 90s &amp; vintage hits</li>
-            <li><strong>Thursday</strong> · R&amp;B</li>
-            <li><strong>Friday</strong> · Commercial hits</li>
-            <li><strong>Saturday</strong> · Open format · the crowd decides</li>
-            <li><strong>Sunday</strong> · Lounge — slower, jazzier</li>
+            <li>{{modals.party.theme1}}</li>
+            <li>{{modals.party.theme2}}</li>
+            <li>{{modals.party.theme3}}</li>
+            <li>{{modals.party.theme4}}</li>
+            <li>{{modals.party.theme5}}</li>
+            <li>{{modals.party.theme6}}</li>
+            <li>{{modals.party.theme7}}</li>
           </ul>
           <div class="menu-block-figure">
-            <img src="/data/happy-guests.webp" alt="Guests dancing on a Bosphorus dinner cruise after midnight" loading="lazy">
+            <img src="/data/happy-guests.webp" alt="{{modals.party.block4Alt}}" loading="lazy">
           </div>
         </div>
 
-        <p class="menu-detail-foot">Private charters available for birthdays, bachelor / bachelorette parties and corporate events — message us on WhatsApp or Telegram for a custom evening. The DJ booth can host a guest DJ if you bring one.</p>
+        <p class="menu-detail-foot">{{modals.party.menuFoot}}</p>
       </div>
 
       <!-- PHOTO STRIP -->
       <div class="photo-masonry">
-        <img src="/data/dance-floor-crowd.webp" alt="Open-air dance floor on the Bosphorus cruise sky deck" loading="lazy">
-        <img src="/data/friends-cheers.webp" alt="Friends toasting drinks on a Bosphorus dinner cruise" loading="lazy">
-        <img src="/data/cocktails-neon.webp" alt="Cocktails on a Bosphorus cruise after dark" loading="lazy">
-        <img src="/data/couple-cheers-bridge.webp" alt="Couple under the Bosphorus Bridge during the party" loading="lazy">
-        <img src="/data/happy-guests.webp" alt="Guests enjoying the party on a Bosphorus cruise" loading="lazy">
+        <img src="/data/dance-floor-crowd.webp" alt="{{modals.party.photo1Alt}}" loading="lazy">
+        <img src="/data/friends-cheers.webp" alt="{{modals.party.photo2Alt}}" loading="lazy">
+        <img src="/data/cocktails-neon.webp" alt="{{modals.party.photo3Alt}}" loading="lazy">
+        <img src="/data/couple-cheers-bridge.webp" alt="{{modals.party.photo4Alt}}" loading="lazy">
+        <img src="/data/happy-guests.webp" alt="{{modals.party.photo5Alt}}" loading="lazy">
       </div>
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="{{modalClose}}">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">{{ctaBar.reservations}}</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-packages">Packages <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-packages">{{ctaBar.btnPackages}} <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">{{ctaBar.btnReserve}} <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -1863,71 +1863,71 @@
 
 <!-- M-FLOW (The Evening) -->
 <div class="modal" id="m-flow">
-  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <a href="#" class="modal-back" aria-label="{{modalClose}}"></a>
   <div class="modal-frame editorial">
-    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
 
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">The Programme · Hour by Hour</div>
-      <h2 class="modal-title">An evening, <span class="modal-script">step by step</span></h2>
-      <p class="ed-hero-tagline">From a 21:00 departure at Eminönü Pier to a midnight return — the full Bosphorus arc.</p>
+      <div class="modal-eyebrow">{{modals.flow.eyebrow}}</div>
+      <h2 class="modal-title">{{modals.flow.title}} <span class="modal-script">{{modals.flow.titleScript}}</span></h2>
+      <p class="ed-hero-tagline">{{modals.flow.tagline}}</p>
     </div>
 
     <div class="ed-content">
       <div class="flow-stages">
         <div class="flow-stage">
-          <span class="stage-tag">Begin</span>
+          <span class="stage-tag">{{modals.flow.stage1Tag}}</span>
           <img class="ph" src="/data/boat-pier-sunset.webp" alt="" loading="lazy">
           <div class="body">
             <div class="head-row">
-              <h4>Welcome</h4>
-              <div class="time">20:30</div>
+              <h4>{{modals.flow.stage1Title}}</h4>
+              <div class="time">{{modals.flow.stage1Time}}</div>
             </div>
-            <p>Doors open at 20:00. Our pier at Eminönü looks out from the historic peninsula onto one of the Bosphorus's most beautiful vistas — framed by the silhouette of Galata Tower. If time allows, watching the sunset from the boat's deck is a pleasure of its own. Once aboard, your reservation is confirmed and, at your private table, the evening opens with our exquisite meze service.</p>
+            <p>{{modals.flow.stage1Desc}}</p>
           </div>
-          <button type="button" class="flow-stage-next" aria-label="Next stage">↓</button>
+          <button type="button" class="flow-stage-next" aria-label="{{modals.flow.nextAria}}">↓</button>
         </div>
         <div class="flow-stage">
           <img class="ph" src="/data/dining-romantic-wide.webp" alt="" loading="lazy">
           <div class="body">
             <div class="head-row">
-              <h4>Dinner</h4>
-              <div class="time">21:00</div>
+              <h4>{{modals.flow.stage2Title}}</h4>
+              <div class="time">{{modals.flow.stage2Time}}</div>
             </div>
-            <p>While you enjoy a variety of seasonal mezes and drinks, your main course is served alongside a seasonal salad. On one side, the Bosphorus's unmatched view; on the other, the stage programme — savour your meal, take in the show, drift into the view; the evening unfolds at the tempo you choose.</p>
+            <p>{{modals.flow.stage2Desc}}</p>
           </div>
-          <button type="button" class="flow-stage-next" aria-label="Next stage">↓</button>
+          <button type="button" class="flow-stage-next" aria-label="{{modals.flow.nextAria}}">↓</button>
         </div>
         <div class="flow-stage">
           <img class="ph" src="/data/whirling-dervish.webp" alt="" loading="lazy">
           <div class="body">
             <div class="head-row">
-              <h4>The Show</h4>
-              <div class="time">21:30</div>
+              <h4>{{modals.flow.stage3Title}}</h4>
+              <div class="time">{{modals.flow.stage3Time}}</div>
             </div>
-            <p>The stage opens with the serenity of a whirling dervish — Anatolian folk dances and a drum ensemble lift the night's energy, climaxing in belly dance. As your dinner continues, a four-act Anatolian evening unfolds before you, all from your table.</p>
+            <p>{{modals.flow.stage3Desc}}</p>
           </div>
-          <button type="button" class="flow-stage-next" aria-label="Next stage">↓</button>
+          <button type="button" class="flow-stage-next" aria-label="{{modals.flow.nextAria}}">↓</button>
         </div>
         <div class="flow-stage">
-          <span class="stage-tag">Finale</span>
+          <span class="stage-tag">{{modals.flow.stage4Tag}}</span>
           <img class="ph" src="/data/dance-floor-crowd.webp" alt="" loading="lazy">
           <div class="body">
             <div class="head-row">
-              <h4>DJ Party</h4>
-              <div class="time">22:30</div>
+              <h4>{{modals.flow.stage4Title}}</h4>
+              <div class="time">{{modals.flow.stage4Time}}</div>
             </div>
-            <p>After the show, momentum carries the night forward — the DJ takes over and the dance floor opens. For those seeking calm, the upper deck offers its own pleasure: sip your drink and take in the Bosphorus's colourful panorama; we recommend plenty of photographs. Dance floor or upper deck — until midnight, the choice is yours.</p>
+            <p>{{modals.flow.stage4Desc}}</p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="{{modalClose}}">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">{{ctaBar.reservations}}</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
             <span class="info-divider"></span>
@@ -1938,15 +1938,15 @@
           </div>
         </div>
         <div class="info-tel">
-          <div class="info-label">Email:</div>
+          <div class="info-label">{{ctaBar.email}}</div>
           <div class="info-tel-row">
             <span class="info-val">reservations@luxurybosphorustour.com</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-packages">Packages <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-packages">{{ctaBar.btnPackages}} <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">{{ctaBar.btnReserve}} <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -1954,94 +1954,94 @@
 
 <!-- M-INFO (Practical) -->
 <div class="modal" id="m-info">
-  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <a href="#" class="modal-back" aria-label="{{modalClose}}"></a>
   <div class="modal-frame editorial">
-    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
 
     <div class="ed-hero">
       <img src="/data/full-hall.webp" alt="">
       <div class="ed-hero-veil"></div>
       <div class="ed-hero-text">
-        <div class="modal-eyebrow">FAQ · Practical</div>
-        <h2 class="modal-title">Frequently <span class="modal-script">asked</span></h2>
-        <p class="ed-hero-tagline">Departure, duration, payment, cancellation policy and frequently asked questions.</p>
+        <div class="modal-eyebrow">{{modals.info.eyebrow}}</div>
+        <h2 class="modal-title">{{modals.info.title}} <span class="modal-script">{{modals.info.titleScript}}</span></h2>
+        <p class="ed-hero-tagline">{{modals.info.tagline}}</p>
       </div>
     </div>
 
     <div class="ed-content">
       <dl class="info-rows">
-        <div class="info-row"><dt>Departure Point</dt><dd>Eminönü Pier</dd></div>
-        <div class="info-row"><dt>Door Opens</dt><dd>20:00</dd></div>
-        <div class="info-row"><dt>Departure</dt><dd>21:00 · daily</dd></div>
-        <div class="info-row"><dt>Duration</dt><dd>3 hours · ~00:00 return</dd></div>
-        <div class="info-row"><dt>Payment</dt><dd>On the boat · Cash (EUR/TRY/USD) or card</dd></div>
-        <div class="info-row"><dt>Cancellation</dt><dd>Free up to 2 hours before departure</dd></div>
-        <div class="info-row"><dt>Languages</dt><dd>14-language support (EN/TR/AR/RU/FR/DE/ES/IT/ZH/FA/PL/RO/BG/ID)</dd></div>
-        <div class="info-row"><dt>Age</dt><dd>All ages welcome</dd></div>
+        <div class="info-row"><dt>{{modals.info.row1Dt}}</dt><dd>{{modals.info.row1Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.info.row2Dt}}</dt><dd>{{modals.info.row2Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.info.row3Dt}}</dt><dd>{{modals.info.row3Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.info.row4Dt}}</dt><dd>{{modals.info.row4Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.info.row5Dt}}</dt><dd>{{modals.info.row5Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.info.row6Dt}}</dt><dd>{{modals.info.row6Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.info.row7Dt}}</dt><dd>{{modals.info.row7Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.info.row8Dt}}</dt><dd>{{modals.info.row8Dd}}</dd></div>
       </dl>
 
       <div class="faq-section">
-        <div class="faq-head">Frequently Asked</div>
+        <div class="faq-head">{{modals.info.faqHead}}</div>
         <div class="faq-row">
-          <div class="q">What tours do you offer?</div>
-          <div class="a">An evening Bosphorus cruise — we depart at 21:00 and return around midnight. On our three-deck vessel: full dinner, a Turkish night programme (whirling dervish, belly dance, folk, drums), DJ, and unlimited soft drinks. Departing from our pier at Eminönü.</div>
+          <div class="q">{{modals.info.faq1Q}}</div>
+          <div class="a">{{modals.info.faq1A}}</div>
         </div>
         <div class="faq-row">
-          <div class="q">Are alcoholic drinks included?</div>
-          <div class="a">Soft drinks are included in all packages. For alcohol: an unlimited local package per person at +€15 (beer, rakı, gin, vodka, red & white wine). Imported drinks (champagne, whisky, cognac, etc.) are served at extra cost.</div>
+          <div class="q">{{modals.info.faq2Q}}</div>
+          <div class="a">{{modals.info.faq2A}}</div>
         </div>
         <div class="faq-row">
-          <div class="q">Where does the cruise depart from and return to?</div>
-          <div class="a">We depart from our pier at Eminönü at 21:00 and return to the same point around midnight. Doors open at 20:00 — feel free to come earlier and enjoy the sunset from the pier.</div>
+          <div class="q">{{modals.info.faq3Q}}</div>
+          <div class="a">{{modals.info.faq3A}}</div>
         </div>
         <div class="faq-row">
-          <div class="q">What route does the cruise follow?</div>
-          <div class="a">Eminönü → Karaköy → Dolmabahçe → Çırağan → Ortaköy Mosque → Bosphorus Bridge → Bebek → Rumeli Fortress → FSM Bridge → Beylerbeyi → Üsküdar → Maiden's Tower (from afar) → Eminönü. The route may vary depending on weather and sea conditions.</div>
+          <div class="q">{{modals.info.faq4Q}}</div>
+          <div class="a">{{modals.info.faq4A}}</div>
         </div>
         <div class="faq-row">
-          <div class="q">Are tables close to the stage?</div>
-          <div class="a">The panoramic windows of our salon offer clear Bosphorus views from every seat. The stage is positioned to be visible from all tables. VIP package guests are seated closest to the stage.</div>
+          <div class="q">{{modals.info.faq5Q}}</div>
+          <div class="a">{{modals.info.faq5A}}</div>
         </div>
         <div class="faq-row">
-          <div class="q">What shows and entertainment are there?</div>
-          <div class="a">A live programme runs throughout the evening: whirling dervishes (a serene opening), Anatolian folk dances, drum ensemble, belly dance (the night's peak), and after dinner, a DJ performance. Concert-grade sound and lighting.</div>
+          <div class="q">{{modals.info.faq6Q}}</div>
+          <div class="a">{{modals.info.faq6A}}</div>
         </div>
         <div class="faq-row">
-          <div class="q">Can I book for the same day?</div>
-          <div class="a">Yes — same-day bookings are possible up to 1 hour before departure (20:00). Message us on WhatsApp or Telegram and we'll check availability instantly.</div>
+          <div class="q">{{modals.info.faq7Q}}</div>
+          <div class="a">{{modals.info.faq7A}}</div>
         </div>
         <div class="faq-row">
-          <div class="q">How do I pay?</div>
-          <div class="a">No prepayment is required. All payment is made on board. We accept cash (EUR, TRY, USD) and card.</div>
+          <div class="q">{{modals.info.faq8Q}}</div>
+          <div class="a">{{modals.info.faq8A}}</div>
         </div>
         <div class="faq-row">
-          <div class="q">Is hotel transfer available?</div>
-          <div class="a">Yes — hotel-to-pier-to-hotel transfer is available at +€5 per person. Before the tour, our driver collects you from your hotel and brings you to the pier; after the tour, the same driver waits at the pier and drops you back at your hotel. No need to plan transportation.</div>
+          <div class="q">{{modals.info.faq9Q}}</div>
+          <div class="a">{{modals.info.faq9A}}</div>
         </div>
         <div class="faq-row">
-          <div class="q">Can I cancel or change my reservation?</div>
-          <div class="a">Free cancellation is possible up to 2 hours before departure (until 19:00). Since there's no prepayment, the process is hassle-free — just send us a message.</div>
+          <div class="q">{{modals.info.faq10Q}}</div>
+          <div class="a">{{modals.info.faq10A}}</div>
         </div>
         <div class="faq-row">
-          <div class="q">What happens in bad weather?</div>
-          <div class="a">The vessel has a covered salon, semi-open and open decks. In rain, the open deck closes while the salon and stage continue uninterrupted. The cruise runs regardless of weather conditions.</div>
+          <div class="q">{{modals.info.faq11Q}}</div>
+          <div class="a">{{modals.info.faq11A}}</div>
         </div>
         <div class="faq-row">
-          <div class="q">Is it suitable for all ages?</div>
-          <div class="a">Yes, the cruise is open to guests of all ages. Please contact our reservations team for child pricing and child-friendly menu options.</div>
+          <div class="q">{{modals.info.faq12Q}}</div>
+          <div class="a">{{modals.info.faq12A}}</div>
         </div>
         <div class="faq-row">
-          <div class="q">Can you arrange surprises for special occasions?</div>
-          <div class="a">Yes — for anniversaries, birthdays, marriage proposals and other special moments, we offer romantic-table, cake & champagne service and professional photography add-ons. You can add them from the Extras section or mention them at reservation.</div>
+          <div class="q">{{modals.info.faq13Q}}</div>
+          <div class="a">{{modals.info.faq13A}}</div>
         </div>
       </div>
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="{{modalClose}}">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">{{ctaBar.reservations}}</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
             <span class="info-divider"></span>
@@ -2052,14 +2052,14 @@
           </div>
         </div>
         <div class="info-tel">
-          <div class="info-label">Email:</div>
+          <div class="info-label">{{ctaBar.email}}</div>
           <div class="info-tel-row">
             <span class="info-val">reservations@luxurybosphorustour.com</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">{{ctaBar.btnReserve}} <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -2067,62 +2067,62 @@
 
 <!-- M-PRIVACY -->
 <div class="modal" id="m-privacy">
-  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <a href="#" class="modal-back" aria-label="{{modalClose}}"></a>
   <div class="modal-frame editorial">
-    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Privacy · Data Protection</div>
-      <h2 class="modal-title">Your privacy, <span class="modal-script">respected</span></h2>
-      <p class="ed-hero-tagline">How we collect, use, and protect your personal data — short, clear, no jargon.</p>
+      <div class="modal-eyebrow">{{modals.privacy.eyebrow}}</div>
+      <h2 class="modal-title">{{modals.privacy.title}} <span class="modal-script">{{modals.privacy.titleScript}}</span></h2>
+      <p class="ed-hero-tagline">{{modals.privacy.tagline}}</p>
     </div>
     <div class="ed-content">
       <div class="legal-prose">
-        <h3>Who we are</h3>
-        <p>Luxury Bosphorus Tour ("we", "us") operates this site and the booking conversations on WhatsApp and Telegram. For any privacy-related question, message us through either channel.</p>
+        <h3>{{modals.privacy.h1}}</h3>
+        <p>{{modals.privacy.p1}}</p>
 
-        <h3>What we collect</h3>
-        <p>When you reserve, we collect only what we need to confirm and operate your evening:</p>
+        <h3>{{modals.privacy.h2}}</h3>
+        <p>{{modals.privacy.p2}}</p>
         <ul>
-          <li>Your <strong>name</strong> and <strong>phone number</strong></li>
-          <li>The <strong>date</strong>, package, party size, and any add-ons you've chosen</li>
-          <li>Your <strong>hotel name / pickup address</strong> and optional room number — only when you request hotel transfer</li>
-          <li>Any free-text <strong>messages</strong> you send us</li>
+          <li>{{modals.privacy.li1}}</li>
+          <li>{{modals.privacy.li2}}</li>
+          <li>{{modals.privacy.li3}}</li>
+          <li>{{modals.privacy.li4}}</li>
         </ul>
-        <p>We do not ask for ID numbers, credit-card data, or any document. Payment is taken on board.</p>
+        <p>{{modals.privacy.p3}}</p>
 
-        <h3>Why we collect it</h3>
+        <h3>{{modals.privacy.h3}}</h3>
         <ul>
-          <li>To confirm your reservation and hold your table</li>
-          <li>To coordinate hotel pickup, when applicable</li>
-          <li>To reach you with last-minute updates (weather, time changes)</li>
-          <li>To honour cancellation requests</li>
-        </ul>
-
-        <h3>Who we share it with</h3>
-        <p>Only with the staff who need it to deliver your evening:</p>
-        <ul>
-          <li><strong>Our transfer driver</strong>, if you've chosen hotel pickup — receives only your hotel / room and name</li>
-          <li><strong>Our reception team</strong> at the pier, to recognise your reservation</li>
-        </ul>
-        <p>We do not sell, rent, or trade your data. We do not pass anything to advertisers.</p>
-
-        <h3>Third-party services used on this site</h3>
-        <ul>
-          <li><strong>Google Fonts</strong> — for typography (no personal data is sent)</li>
-          <li><strong>OpenStreetMap</strong> — only when you search for your hotel; the search query is sent to OSM's Nominatim service to return results</li>
-          <li><strong>WhatsApp / Telegram</strong> — when you tap "Confirm via …" you continue the booking in their respective apps; their own privacy policies then apply</li>
+          <li>{{modals.privacy.li5}}</li>
+          <li>{{modals.privacy.li6}}</li>
+          <li>{{modals.privacy.li7}}</li>
+          <li>{{modals.privacy.li8}}</li>
         </ul>
 
-        <h3>How long we keep it</h3>
-        <p>Active booking conversations are kept while customer support remains useful — typically up to 12 months after your evening. After that, personal details are deleted.</p>
+        <h3>{{modals.privacy.h4}}</h3>
+        <p>{{modals.privacy.p4}}</p>
+        <ul>
+          <li>{{modals.privacy.li9}}</li>
+          <li>{{modals.privacy.li10}}</li>
+        </ul>
+        <p>{{modals.privacy.p5}}</p>
 
-        <h3>Your rights</h3>
-        <p>You can ask us to <strong>see</strong>, <strong>correct</strong>, or <strong>delete</strong> any data we hold about you. Message us on WhatsApp or Telegram and we'll process the request promptly.</p>
+        <h3>{{modals.privacy.h5}}</h3>
+        <ul>
+          <li>{{modals.privacy.li11}}</li>
+          <li>{{modals.privacy.li12}}</li>
+          <li>{{modals.privacy.li13}}</li>
+        </ul>
 
-        <h3>Cookies</h3>
-        <p>This site does not set tracking cookies. Your browser may locally cache fonts and map tiles for performance.</p>
+        <h3>{{modals.privacy.h6}}</h3>
+        <p>{{modals.privacy.p6}}</p>
 
-        <p class="meta">Last updated · May 2026</p>
+        <h3>{{modals.privacy.h7}}</h3>
+        <p>{{modals.privacy.p7}}</p>
+
+        <h3>{{modals.privacy.h8}}</h3>
+        <p>{{modals.privacy.p8}}</p>
+
+        <p class="meta">{{modals.privacy.meta}}</p>
       </div>
     </div>
   </div>
@@ -2130,47 +2130,47 @@
 
 <!-- M-TERMS -->
 <div class="modal" id="m-terms">
-  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <a href="#" class="modal-back" aria-label="{{modalClose}}"></a>
   <div class="modal-frame editorial">
-    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Terms · Booking Conditions</div>
-      <h2 class="modal-title">Booking <span class="modal-script">terms</span></h2>
-      <p class="ed-hero-tagline">The basic rules of the evening — what we promise, what we ask in return.</p>
+      <div class="modal-eyebrow">{{modals.terms.eyebrow}}</div>
+      <h2 class="modal-title">{{modals.terms.title}} <span class="modal-script">{{modals.terms.titleScript}}</span></h2>
+      <p class="ed-hero-tagline">{{modals.terms.tagline}}</p>
     </div>
     <div class="ed-content">
       <div class="legal-prose">
-        <h3>1. Reservation</h3>
-        <p>A reservation is held when we confirm it on WhatsApp or Telegram and send you a confirmation message. We accept guests up to one hour before departure, subject to availability. <strong>No prepayment is required.</strong></p>
+        <h3>{{modals.terms.h1}}</h3>
+        <p>{{modals.terms.p1}}</p>
 
-        <h3>2. Departure and duration</h3>
-        <p>Departure is at <strong>21:00</strong> from our pier at <strong>Eminönü</strong>. Doors open at <strong>20:00</strong> — please arrive in good time. The cruise runs for three hours and returns to the same pier around midnight.</p>
+        <h3>{{modals.terms.h2}}</h3>
+        <p>{{modals.terms.p2}}</p>
 
-        <h3>3. Pricing and payment</h3>
-        <p>Prices shown on this site are valid at booking. Adults pay full price, kids aged 4–7 pay half, babies aged 0–3 are free. Add-ons (transfer, alcohol, romantic table) are calculated per booking. Payment is taken <strong>on board</strong> in cash (EUR, TRY, USD) or by card.</p>
+        <h3>{{modals.terms.h3}}</h3>
+        <p>{{modals.terms.p3}}</p>
 
-        <h3>4. Hotel transfer</h3>
-        <p>If you choose pickup, our driver collects you at the hotel time we agree on WhatsApp. We need your hotel name and a confirmed pickup window. The same driver drops you back after the cruise.</p>
+        <h3>{{modals.terms.h4}}</h3>
+        <p>{{modals.terms.p4}}</p>
 
-        <h3>5. Cancellation and changes</h3>
-        <p>Free cancellation is available up to <strong>2 hours before departure</strong>. See our <a href="#m-cancellation">Cancellation policy</a> for details.</p>
+        <h3>{{modals.terms.h5}}</h3>
+        <p>{{modals.terms.p5}}</p>
 
-        <h3>6. Weather and sea conditions</h3>
-        <p>The cruise runs in almost all weather. In rare storm conditions the route may be shortened or the evening rescheduled — you are entitled to a free reschedule or to walk away with no charge.</p>
+        <h3>{{modals.terms.h6}}</h3>
+        <p>{{modals.terms.p6}}</p>
 
-        <h3>7. Behaviour on board</h3>
-        <p>We welcome a lively evening, but we reserve the right to refuse boarding to anyone who is significantly intoxicated, behaves aggressively, or endangers other guests or crew. The captain's authority is final at sea.</p>
+        <h3>{{modals.terms.h7}}</h3>
+        <p>{{modals.terms.p7}}</p>
 
-        <h3>8. Liability</h3>
-        <p>Operations are governed by Turkish maritime and consumer law. We carry full passenger insurance for the cruise.</p>
+        <h3>{{modals.terms.h8}}</h3>
+        <p>{{modals.terms.p8}}</p>
 
-        <h3>9. Photography and video</h3>
-        <p>You may photograph and film for personal use. If we want to publish any image that identifies guests, we will ask first.</p>
+        <h3>{{modals.terms.h9}}</h3>
+        <p>{{modals.terms.p9}}</p>
 
-        <h3>10. Updates to these terms</h3>
-        <p>We may update these terms from time to time. The version published on this page at the time of your booking is the one that applies to you.</p>
+        <h3>{{modals.terms.h10}}</h3>
+        <p>{{modals.terms.p10}}</p>
 
-        <p class="meta">Last updated · May 2026</p>
+        <p class="meta">{{modals.terms.meta}}</p>
       </div>
     </div>
   </div>
@@ -2178,83 +2178,83 @@
 
 <!-- M-CANCELLATION -->
 <div class="modal" id="m-cancellation">
-  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <a href="#" class="modal-back" aria-label="{{modalClose}}"></a>
   <div class="modal-frame editorial">
-    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Cancellation · Refunds</div>
-      <h2 class="modal-title">Cancellation <span class="modal-script">policy</span></h2>
-      <p class="ed-hero-tagline">How free cancellation works and what happens in special cases.</p>
+      <div class="modal-eyebrow">{{modals.cancellation.eyebrow}}</div>
+      <h2 class="modal-title">{{modals.cancellation.title}} <span class="modal-script">{{modals.cancellation.titleScript}}</span></h2>
+      <p class="ed-hero-tagline">{{modals.cancellation.tagline}}</p>
     </div>
     <div class="ed-content">
       <div class="legal-prose">
-        <h3>Free cancellation</h3>
-        <p>Cancel for any reason — no questions, no fee — up to <strong>2 hours before departure</strong> (i.e. by 19:00 on the evening of your cruise). Since we don't take prepayment, there's nothing to refund and nothing to chase. Just message us.</p>
+        <h3>{{modals.cancellation.h1}}</h3>
+        <p>{{modals.cancellation.p1}}</p>
 
-        <h3>How to cancel</h3>
-        <p>Reply to the WhatsApp or Telegram thread you used to book, or start a new message — name and date are enough for us to find your reservation. Confirmation arrives within minutes during operating hours.</p>
+        <h3>{{modals.cancellation.h2}}</h3>
+        <p>{{modals.cancellation.p2}}</p>
 
-        <h3>Inside the 2-hour window or no-show</h3>
-        <p>If you cancel after 19:00 or simply don't arrive, we don't chase a charge — but the table is held until departure and another guest cannot use it. Please send us a quick note when you can; it helps the table go to someone else.</p>
+        <h3>{{modals.cancellation.h3}}</h3>
+        <p>{{modals.cancellation.p3}}</p>
 
-        <h3>Weather or sea conditions</h3>
-        <p>If we cancel due to weather, captain's call, or vessel availability, we offer you either a <strong>free reschedule</strong> for any future evening within 6 months, or a full release if you've already paid anything in advance.</p>
+        <h3>{{modals.cancellation.h4}}</h3>
+        <p>{{modals.cancellation.p4}}</p>
 
-        <h3>Changes (date, party size, package)</h3>
-        <p>You can change your date, guest count, or package up to <strong>4 hours before departure</strong>, subject to availability. Date changes are free; upgrades pay the difference; downgrades follow the current published rates.</p>
+        <h3>{{modals.cancellation.h5}}</h3>
+        <p>{{modals.cancellation.p5}}</p>
 
-        <h3>Refunds, if applicable</h3>
-        <p>Most evenings carry no prepayment, so refunds rarely apply. In the few cases where a deposit was taken (private yacht, large groups), refunds are made through the same channel as the payment within 5 working days of the cancellation request.</p>
+        <h3>{{modals.cancellation.h6}}</h3>
+        <p>{{modals.cancellation.p6}}</p>
 
-        <p class="meta">Last updated · May 2026</p>
+        <p class="meta">{{modals.cancellation.meta}}</p>
       </div>
     </div>
   </div>
 </div>
 
 <div class="modal" id="m-boat">
-  <a href="#" class="modal-back" aria-label="Kapat"></a>
+  <a href="#" class="modal-back" aria-label="{{modalClose}}"></a>
   <div class="modal-frame editorial">
-    <a href="#" class="modal-close" aria-label="Kapat">×</a>
+    <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
 
     <div class="ed-flat-head">
-      <div class="modal-eyebrow">Our Vessel · The Boat</div>
-      <h2 class="modal-title">Our Boat <span class="modal-script">on the Bosphorus</span></h2>
-      <p class="ed-hero-tagline">A premium three-deck Bosphorus cruise vessel — capacity, layout and what's where on board.</p>
+      <div class="modal-eyebrow">{{modals.boat.eyebrow}}</div>
+      <h2 class="modal-title">{{modals.boat.title}} <span class="modal-script">{{modals.boat.titleScript}}</span></h2>
+      <p class="ed-hero-tagline">{{modals.boat.tagline}}</p>
     </div>
 
     <div class="ed-content">
 
       <!-- SPECS -->
       <dl class="info-rows">
-        <div class="info-row"><dt>Capacity</dt><dd>500 guests across three decks</dd></div>
-        <div class="info-row"><dt>Decks</dt><dd>Main · Upper · Sky (open-air)</dd></div>
-        <div class="info-row"><dt>Pier</dt><dd>Eminönü · own pier</dd></div>
-        <div class="info-row"><dt>Departure</dt><dd>21:00 · daily</dd></div>
-        <div class="info-row"><dt>Duration</dt><dd>3 hours · ~00:00 return</dd></div>
-        <div class="info-row"><dt>Bars</dt><dd>2 (main deck + sky deck)</dd></div>
-        <div class="info-row"><dt>Stage</dt><dd>Concert-grade light &amp; sound</dd></div>
-        <div class="info-row"><dt>Accessibility</dt><dd>Step-free boarding · ramp on request</dd></div>
+        <div class="info-row"><dt>{{modals.boat.spec1Dt}}</dt><dd>{{modals.boat.spec1Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.boat.spec2Dt}}</dt><dd>{{modals.boat.spec2Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.boat.spec3Dt}}</dt><dd>{{modals.boat.spec3Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.boat.spec4Dt}}</dt><dd>{{modals.boat.spec4Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.boat.spec5Dt}}</dt><dd>{{modals.boat.spec5Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.boat.spec6Dt}}</dt><dd>{{modals.boat.spec6Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.boat.spec7Dt}}</dt><dd>{{modals.boat.spec7Dd}}</dd></div>
+        <div class="info-row"><dt>{{modals.boat.spec8Dt}}</dt><dd>{{modals.boat.spec8Dd}}</dd></div>
       </dl>
 
       <!-- DECKS DETAIL -->
       <div class="menu-detail">
         <div class="menu-detail-head">
-          <div class="menu-detail-eyebrow">The decks</div>
-          <h3 class="menu-detail-title">Three decks, <em>three moods</em></h3>
-          <p class="menu-detail-intro">Each deck plays a different role across the evening — climate-controlled dining and stage downstairs, intimate window-side tables in the middle, an open-air dance floor and bar above.</p>
+          <div class="menu-detail-eyebrow">{{modals.boat.menuDetailEyebrow}}</div>
+          <h3 class="menu-detail-title">{{modals.boat.menuDetailTitle1}} <em>{{modals.boat.menuDetailTitle2}}</em></h3>
+          <p class="menu-detail-intro">{{modals.boat.menuDetailIntro}}</p>
         </div>
 
         <!-- 01 · MAIN DECK -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">01</span>
-            <span class="menu-block-name">Main Deck</span>
-            <span class="menu-block-count">Dining · Stage · Main bar</span>
+            <span class="menu-block-name">{{modals.boat.block1Name}}</span>
+            <span class="menu-block-count">{{modals.boat.block1Count}}</span>
           </div>
-          <p class="menu-block-desc">The heart of the cruise — full restaurant seating, the stage at the front, dance floor at the centre. This is where the Turkish night show runs, and where the main bar lives. Climate-controlled, with panoramic windows on both sides.</p>
+          <p class="menu-block-desc">{{modals.boat.block1Desc}}</p>
           <div class="menu-block-figure">
-            <img src="/data/full-hall.webp" alt="Main deck dining hall on a Bosphorus dinner cruise" loading="lazy">
+            <img src="/data/full-hall.webp" alt="{{modals.boat.block1Alt}}" loading="lazy">
           </div>
         </div>
 
@@ -2262,51 +2262,51 @@
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">02</span>
-            <span class="menu-block-name">Upper Deck</span>
-            <span class="menu-block-count">Window-side dining · Quieter</span>
+            <span class="menu-block-name">{{modals.boat.block2Name}}</span>
+            <span class="menu-block-count">{{modals.boat.block2Count}}</span>
           </div>
-          <p class="menu-block-desc">A lounge-style dining floor above the main deck — quieter, window-side tables with direct views over the strait, ideal for couples and small groups. Same menu, same show audio through concealed speakers, less crowd energy.</p>
+          <p class="menu-block-desc">{{modals.boat.block2Desc}}</p>
         </div>
 
         <!-- 03 · SKY DECK -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">03</span>
-            <span class="menu-block-name">Sky Deck</span>
-            <span class="menu-block-count">Open-air · DJ · Lounge bar</span>
+            <span class="menu-block-name">{{modals.boat.block3Name}}</span>
+            <span class="menu-block-count">{{modals.boat.block3Count}}</span>
           </div>
-          <p class="menu-block-desc">The top of the boat — open to the sky, with lounge seating, a second bar and the DJ booth. After the show, the night shifts here: dance floor, drinks under the stars, the Bosphorus on every side. Heating in cooler months.</p>
+          <p class="menu-block-desc">{{modals.boat.block3Desc}}</p>
           <div class="menu-block-figure">
-            <img src="/data/dance-floor-crowd.webp" alt="Sky deck open-air dance floor on a Bosphorus dinner cruise after dark" loading="lazy">
+            <img src="/data/dance-floor-crowd.webp" alt="{{modals.boat.block3Alt}}" loading="lazy">
           </div>
         </div>
 
-        <p class="menu-detail-foot">Boarding opens at 20:00 from our pier at Eminönü. The captain's authority is final at sea; we follow Turkish maritime law and carry full passenger insurance.</p>
+        <p class="menu-detail-foot">{{modals.boat.menuFoot}}</p>
       </div>
 
       <!-- PHOTO STRIP -->
       <div class="photo-masonry">
-        <img src="/data/boat-night-bridge.webp" alt="The cruise vessel passing under the Bosphorus Bridge at night" loading="lazy">
-        <img src="/data/boat-pier-sunset.webp" alt="Bosphorus cruise boat at Eminönü pier before departure" loading="lazy">
-        <img src="/data/boat-night-drone.webp" alt="Aerial view of the cruise vessel on the Bosphorus at night" loading="lazy">
-        <img src="/data/dining-romantic-wide.webp" alt="Romantic table setting on the Bosphorus cruise" loading="lazy">
-        <img src="/data/happy-guests.webp" alt="Guests on board a Bosphorus dinner cruise" loading="lazy">
+        <img src="/data/boat-night-bridge.webp" alt="{{modals.boat.photo1Alt}}" loading="lazy">
+        <img src="/data/boat-pier-sunset.webp" alt="{{modals.boat.photo2Alt}}" loading="lazy">
+        <img src="/data/boat-night-drone.webp" alt="{{modals.boat.photo3Alt}}" loading="lazy">
+        <img src="/data/dining-romantic-wide.webp" alt="{{modals.boat.photo4Alt}}" loading="lazy">
+        <img src="/data/happy-guests.webp" alt="{{modals.boat.photo5Alt}}" loading="lazy">
       </div>
     </div>
 
     <div class="ed-cta-bar">
-      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <a href="#" class="cta-close" aria-label="{{modalClose}}">×</a>
       <div class="info">
         <div class="info-tel">
-          <div class="info-label">Reservations:</div>
+          <div class="info-label">{{ctaBar.reservations}}</div>
           <div class="info-tel-row">
             <span class="info-val">+90 (XXX) XXX XX XX</span>
           </div>
         </div>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-ghost" href="#m-packages">Packages <span class="arr">→</span></a>
-        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#m-packages">{{ctaBar.btnPackages}} <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">{{ctaBar.btnReserve}} <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -2314,23 +2314,23 @@
 
 <!-- ─────────── M-BOOK (4-Step Reservation Wizard) ─────────── -->
 <div class="modal" id="m-book">
-  <a href="#" class="modal-back" aria-label="Close"></a>
+  <a href="#" class="modal-back" aria-label="{{modalClose}}"></a>
   <div class="modal-frame wizard" role="dialog" aria-modal="true" aria-labelledby="wizTitle">
-    <a href="#" class="modal-close" aria-label="Close">×</a>
+    <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
 
     <!-- HEAD -->
     <div class="wiz-head">
-      <div class="wiz-eyebrow">The Reservation</div>
-      <h2 class="wiz-title" id="wizTitle">Book your <span class="wiz-script">evening</span></h2>
+      <div class="wiz-eyebrow">{{wizard.eyebrow}}</div>
+      <h2 class="wiz-title" id="wizTitle">{{wizard.title}} <span class="wiz-script">{{wizard.titleScript}}</span></h2>
 
       <div class="wiz-progress" id="wizProgress">
-        <div class="wiz-node active" data-n="1"><div class="wiz-dot">1</div><div class="wiz-lbl">Package</div></div>
+        <div class="wiz-node active" data-n="1"><div class="wiz-dot">1</div><div class="wiz-lbl">{{wizard.stepLabel1}}</div></div>
         <div class="wiz-bar"></div>
-        <div class="wiz-node" data-n="2"><div class="wiz-dot">2</div><div class="wiz-lbl">Extras</div></div>
+        <div class="wiz-node" data-n="2"><div class="wiz-dot">2</div><div class="wiz-lbl">{{wizard.stepLabel2}}</div></div>
         <div class="wiz-bar"></div>
-        <div class="wiz-node" data-n="3"><div class="wiz-dot">3</div><div class="wiz-lbl">Details</div></div>
+        <div class="wiz-node" data-n="3"><div class="wiz-dot">3</div><div class="wiz-lbl">{{wizard.stepLabel3}}</div></div>
         <div class="wiz-bar"></div>
-        <div class="wiz-node" data-n="4"><div class="wiz-dot">4</div><div class="wiz-lbl">Confirm</div></div>
+        <div class="wiz-node" data-n="4"><div class="wiz-dot">4</div><div class="wiz-lbl">{{wizard.stepLabel4}}</div></div>
       </div>
     </div>
 
@@ -2340,68 +2340,68 @@
       <!-- STEP 1 — Package & Basics -->
       <div class="wiz-step active" data-step="1">
         <div class="wiz-section">
-          <span class="wiz-label">Package</span>
-          <p id="wizPkgWarn" class="wiz-warn">Please choose a package to continue.</p>
+          <span class="wiz-label">{{wizard.sec1PackageLabel}}</span>
+          <p id="wizPkgWarn" class="wiz-warn">{{wizard.sec1PkgWarn}}</p>
           <div class="wiz-pkgs">
             <button type="button" class="wiz-pkg" data-pkg="standard">
-              <span class="nm">Standard <span class="nm-sub">Menu</span></span>
-              <span class="pr"><span class="strike">€38</span><span class="now">€25</span><span class="per">per person</span></span>
-              <span class="ds">Multi-course dinner, soft drinks, Turkish night show.</span>
+              <span class="nm">{{wizard.sec1StandardName}} <span class="nm-sub">{{wizard.sec1MenuSub}}</span></span>
+              <span class="pr"><span class="strike">€38</span><span class="now">€25</span><span class="per">{{wizard.sec1PerPerson}}</span></span>
+              <span class="ds">{{wizard.sec1StandardDesc}}</span>
             </button>
             <button type="button" class="wiz-pkg" data-pkg="vip">
-              <span class="badge">Most Popular</span>
-              <span class="nm">VIP <span class="nm-sub">Menu</span></span>
-              <span class="pr"><span class="strike">€100</span><span class="now">€65</span><span class="per">per person</span></span>
-              <span class="ds">Premium meats, near-stage seating, elevated service.</span>
+              <span class="badge">{{wizard.sec1VipBadge}}</span>
+              <span class="nm">{{wizard.sec1VipName}} <span class="nm-sub">{{wizard.sec1MenuSub}}</span></span>
+              <span class="pr"><span class="strike">€100</span><span class="now">€65</span><span class="per">{{wizard.sec1PerPerson}}</span></span>
+              <span class="ds">{{wizard.sec1VipDesc}}</span>
             </button>
           </div>
           <a class="wiz-view-link" href="#m-dinner">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-            Compare full menus
+            {{wizard.sec1CompareMenus}}
           </a>
         </div>
 
         <div class="wiz-section">
-          <span class="wiz-label">Date</span>
+          <span class="wiz-label">{{wizard.sec1DateLabel}}</span>
           <div class="wiz-date-wrap">
             <button type="button" class="wiz-date-btn" id="wizDateBtn" aria-haspopup="dialog" aria-expanded="false">
-              <span id="wizDateLabel" class="placeholder">Choose your evening</span>
+              <span id="wizDateLabel" class="placeholder">{{wizard.sec1DatePlaceholder}}</span>
               <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></span>
             </button>
             <input type="hidden" id="wizDate" value="">
-            <div class="wiz-cal-pop" id="wizCalPop" role="dialog" aria-label="Calendar" style="display:none"></div>
+            <div class="wiz-cal-pop" id="wizCalPop" role="dialog" aria-label="{{wizard.calendarAria}}" style="display:none"></div>
           </div>
         </div>
 
         <div class="wiz-section">
-          <span class="wiz-label">Guests</span>
-          <p id="wizAdultsWarn" class="wiz-warn">Please add at least one adult.</p>
+          <span class="wiz-label">{{wizard.sec1GuestsLabel}}</span>
+          <p id="wizAdultsWarn" class="wiz-warn">{{wizard.sec1AdultsWarn}}</p>
           <div class="wiz-counters">
             <div class="wiz-counter">
-              <div class="lab">Adult <span class="age">Age 8+</span></div>
-              <div class="cap">Full price</div>
+              <div class="lab">{{wizard.sec1AdultsLab}} <span class="age">{{wizard.sec1AdultsAge}}</span></div>
+              <div class="cap">{{wizard.sec1AdultsCap}}</div>
               <div class="ctrl">
-                <button type="button" data-counter="adults" data-delta="-1" aria-label="Decrease adults">−</button>
+                <button type="button" data-counter="adults" data-delta="-1" aria-label="{{wizard.sec1DecAdults}}">−</button>
                 <span class="val" id="wizAdults">0</span>
-                <button type="button" data-counter="adults" data-delta="1" aria-label="Increase adults">+</button>
+                <button type="button" data-counter="adults" data-delta="1" aria-label="{{wizard.sec1IncAdults}}">+</button>
               </div>
             </div>
             <div class="wiz-counter">
-              <div class="lab">Kids <span class="age">Age 4–7</span></div>
-              <div class="cap">50% off</div>
+              <div class="lab">{{wizard.sec1KidsLab}} <span class="age">{{wizard.sec1KidsAge}}</span></div>
+              <div class="cap">{{wizard.sec1KidsCap}}</div>
               <div class="ctrl">
-                <button type="button" data-counter="kids" data-delta="-1" aria-label="Decrease kids">−</button>
+                <button type="button" data-counter="kids" data-delta="-1" aria-label="{{wizard.sec1DecKids}}">−</button>
                 <span class="val" id="wizKids">0</span>
-                <button type="button" data-counter="kids" data-delta="1" aria-label="Increase kids">+</button>
+                <button type="button" data-counter="kids" data-delta="1" aria-label="{{wizard.sec1IncKids}}">+</button>
               </div>
             </div>
             <div class="wiz-counter">
-              <div class="lab">Baby <span class="age">Age 0–3</span></div>
-              <div class="cap">Free</div>
+              <div class="lab">{{wizard.sec1BabyLab}} <span class="age">{{wizard.sec1BabyAge}}</span></div>
+              <div class="cap">{{wizard.sec1BabyCap}}</div>
               <div class="ctrl">
-                <button type="button" data-counter="babies" data-delta="-1" aria-label="Decrease babies">−</button>
+                <button type="button" data-counter="babies" data-delta="-1" aria-label="{{wizard.sec1DecBabies}}">−</button>
                 <span class="val" id="wizBabies">0</span>
-                <button type="button" data-counter="babies" data-delta="1" aria-label="Increase babies">+</button>
+                <button type="button" data-counter="babies" data-delta="1" aria-label="{{wizard.sec1IncBabies}}">+</button>
               </div>
             </div>
           </div>
@@ -2411,45 +2411,45 @@
       <!-- STEP 2 — Drinks, Transfer & Optional Add-on -->
       <div class="wiz-step" data-step="2">
         <div class="wiz-section">
-          <span class="wiz-label">Drinks & Transfer</span>
-          <p class="wiz-hint" style="margin-top:0;margin-bottom:10px">Both choices are required to continue.</p>
+          <span class="wiz-label">{{wizard.sec2DrinksTransferLabel}}</span>
+          <p class="wiz-hint" style="margin-top:0;margin-bottom:10px">{{wizard.sec2BothRequired}}</p>
 
           <div class="wiz-extra">
             <div class="info">
-              <div class="nm">Drink Option <span class="pr">Required</span></div>
-              <div class="ds">Soft drinks are included in every package. Add unlimited local alcohol for €15 per person — beer, rakı, gin, vodka, red &amp; white wine. Imported drinks at extra cost.</div>
-              <p id="wizAlcoholWarn" class="wiz-warn">Please choose a drink option.</p>
+              <div class="nm">{{wizard.sec2DrinkName}} <span class="pr">{{wizard.sec2Required}}</span></div>
+              <div class="ds">{{wizard.sec2DrinkDesc}}</div>
+              <p id="wizAlcoholWarn" class="wiz-warn">{{wizard.sec2AlcoholWarn}}</p>
             </div>
             <div class="tgl-row">
-              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="0">Soft Drinks</button>
-              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="1">+ Alcohol €15</button>
+              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="0">{{wizard.sec2BtnSoft}}</button>
+              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="1">{{wizard.sec2BtnAlcohol}}</button>
             </div>
           </div>
 
           <div class="wiz-extra">
             <div class="info">
-              <div class="nm">Pickup Option <span class="pr">Required</span></div>
-              <div class="ds">Self-coming to our pier at Eminönü, or door-to-door private transfer from your hotel for €5 per person (round-trip).</div>
-              <p id="wizTransferWarn" class="wiz-warn">Please choose a pickup option.</p>
+              <div class="nm">{{wizard.sec2PickupName}} <span class="pr">{{wizard.sec2Required}}</span></div>
+              <div class="ds">{{wizard.sec2PickupDesc}}</div>
+              <p id="wizTransferWarn" class="wiz-warn">{{wizard.sec2TransferWarn}}</p>
             </div>
             <div class="tgl-row">
-              <button type="button" class="wiz-extra-btn" data-extra="transfer" data-val="0">Meet at Pier</button>
-              <button type="button" class="wiz-extra-btn" data-extra="transfer" data-val="1">+ Pickup €5</button>
+              <button type="button" class="wiz-extra-btn" data-extra="transfer" data-val="0">{{wizard.sec2BtnPier}}</button>
+              <button type="button" class="wiz-extra-btn" data-extra="transfer" data-val="1">{{wizard.sec2BtnPickup}}</button>
             </div>
           </div>
         </div>
 
         <div class="wiz-section">
-          <span class="wiz-label">Optional Add-on</span>
+          <span class="wiz-label">{{wizard.sec2OptionalLabel}}</span>
 
           <div class="wiz-extra">
             <div class="info">
-              <div class="nm">Romantic Table <span class="pr">+€15 / table</span></div>
-              <div class="ds">An elegant table dressed with candles and rose petals — perfect for proposals, anniversaries and first dates.</div>
+              <div class="nm">{{wizard.sec2RomanticName}} <span class="pr">{{wizard.sec2RomanticPrice}}</span></div>
+              <div class="ds">{{wizard.sec2RomanticDesc}}</div>
             </div>
             <div class="tgl-row">
-              <button type="button" class="wiz-extra-btn sel" data-extra="romantic" data-val="0">No</button>
-              <button type="button" class="wiz-extra-btn" data-extra="romantic" data-val="1">Yes</button>
+              <button type="button" class="wiz-extra-btn sel" data-extra="romantic" data-val="0">{{wizard.sec2BtnNo}}</button>
+              <button type="button" class="wiz-extra-btn" data-extra="romantic" data-val="1">{{wizard.sec2BtnYes}}</button>
             </div>
           </div>
         </div>
@@ -2458,60 +2458,60 @@
       <!-- STEP 3 — Your Details -->
       <div class="wiz-step" data-step="3">
         <div class="wiz-section">
-          <span class="wiz-label">Guest Name</span>
-          <input type="text" id="wizName" class="wiz-input" placeholder="Full name" autocomplete="name">
-          <p id="wizNameWarn" class="wiz-warn">Please enter your name.</p>
+          <span class="wiz-label">{{wizard.sec3NameLabel}}</span>
+          <input type="text" id="wizName" class="wiz-input" placeholder="{{wizard.sec3NamePh}}" autocomplete="name">
+          <p id="wizNameWarn" class="wiz-warn">{{wizard.sec3NameWarn}}</p>
         </div>
 
         <div class="wiz-section">
-          <span class="wiz-label">Phone Number</span>
+          <span class="wiz-label">{{wizard.sec3PhoneLabel}}</span>
           <div class="wiz-phone-row" dir="ltr">
             <div class="wiz-cc-wrap">
               <button type="button" class="wiz-cc-btn" id="wizCcBtn" aria-haspopup="listbox" aria-expanded="false">
                 <img class="flag" id="wizCcFlag" src="" alt="">
-                <span class="code" id="wizCcLabel">Country</span>
+                <span class="code" id="wizCcLabel">{{wizard.sec3PhoneCountryFallback}}</span>
                 <span class="chev">▼</span>
               </button>
               <input type="hidden" id="wizCc" value="">
               <div class="wiz-cc-drop" id="wizCcDrop" role="listbox">
-                <input type="text" class="wiz-cc-search" id="wizCcSearch" placeholder="Search country..." autocomplete="off">
+                <input type="text" class="wiz-cc-search" id="wizCcSearch" placeholder="{{wizard.sec3PhoneSearchPh}}" autocomplete="off">
                 <ul class="wiz-cc-list" id="wizCcList"></ul>
               </div>
             </div>
-            <input type="tel" id="wizPhone" class="wiz-input" placeholder="Phone number" inputmode="numeric" autocomplete="tel-national">
+            <input type="tel" id="wizPhone" class="wiz-input" placeholder="{{wizard.sec3PhonePh}}" inputmode="numeric" autocomplete="tel-national">
           </div>
-          <p class="wiz-hint">We will reach you on this number to confirm.</p>
-          <p id="wizPhoneWarn" class="wiz-warn">Please enter your phone number.</p>
+          <p class="wiz-hint">{{wizard.sec3PhoneHint}}</p>
+          <p id="wizPhoneWarn" class="wiz-warn">{{wizard.sec3PhoneWarn}}</p>
         </div>
 
         <div class="wiz-section" id="wizAddressWrap" style="display:none">
-          <span class="wiz-label">Pickup Location</span>
+          <span class="wiz-label">{{wizard.sec3PickupLabel}}</span>
           <div class="wiz-addr-search">
-            <input type="text" id="wizAddress" class="wiz-input" placeholder="Search hotel name or address…" autocomplete="off">
+            <input type="text" id="wizAddress" class="wiz-input" placeholder="{{wizard.sec3PickupPh}}" autocomplete="off">
             <span class="wiz-addr-loading" id="wizAddrLoading"></span>
             <ul class="wiz-addr-results" id="wizAddrResults" style="display:none"></ul>
           </div>
-          <p class="wiz-hint">Drag the marker if you need to fine-tune the location.</p>
+          <p class="wiz-hint">{{wizard.sec3PickupHint}}</p>
           <div class="wiz-map" id="wizMap"></div>
           <div style="margin-top:14px">
-            <span class="wiz-label" style="font-size:10px;letter-spacing:.28em;border:0;padding:0;margin-bottom:6px">Room Number</span>
-            <input type="text" id="wizRoom" class="wiz-input" placeholder="e.g. 507" maxlength="10">
-            <p class="wiz-hint">So our driver can find you. Leave empty if not yet checked in.</p>
+            <span class="wiz-label" style="font-size:10px;letter-spacing:.28em;border:0;padding:0;margin-bottom:6px">{{wizard.sec3RoomLabel}}</span>
+            <input type="text" id="wizRoom" class="wiz-input" placeholder="{{wizard.sec3RoomPh}}" maxlength="10">
+            <p class="wiz-hint">{{wizard.sec3RoomHint}}</p>
           </div>
         </div>
 
         <div class="wiz-section">
-          <span class="wiz-label">Preferred Channel</span>
-          <p class="wiz-hint" style="margin-top:0;margin-bottom:4px">We'll confirm your reservation through this channel.</p>
-          <p id="wizChannelWarn" class="wiz-warn">Please choose a contact channel.</p>
+          <span class="wiz-label">{{wizard.sec3ChannelLabel}}</span>
+          <p class="wiz-hint" style="margin-top:0;margin-bottom:4px">{{wizard.sec3ChannelHint}}</p>
+          <p id="wizChannelWarn" class="wiz-warn">{{wizard.sec3ChannelWarn}}</p>
           <div class="wiz-channels">
             <button type="button" class="wiz-ch" data-channel="whatsapp">
               <svg viewBox="0 0 32 32" fill="currentColor"><path d="M27.286 4.714C24.286 1.714 20.286 0 16 0 7.143 0 0 7.143 0 16c0 2.857.714 5.571 2.143 8L0 32l8.286-2.143C10.571 30.857 13.286 32 16 32c8.857 0 16-7.143 16-16 0-4.286-1.714-8.286-4.714-11.286zM16 29.286c-2.429 0-4.857-.714-7-2L8.5 27l-4.929 1.286 1.286-4.857-.286-.5C3.143 20.857 2.429 18.5 2.429 16c0-7.5 6.071-13.571 13.571-13.571 3.643 0 7 1.429 9.571 4 2.571 2.571 4 5.929 4 9.571 0 7.5-6.143 13.286-13.571 13.286zm7.357-10.143c-.357-.179-2.357-1.179-2.714-1.286-.357-.143-.643-.214-.929.214-.286.429-1.071 1.286-1.286 1.571-.214.286-.464.321-.821.107-.357-.179-1.5-.571-2.857-1.786-1.071-.964-1.786-2.143-2-2.5-.214-.357-.018-.554.143-.732.143-.143.357-.357.464-.536.107-.179.179-.286.286-.464.107-.179.054-.357-.018-.5-.071-.143-.929-2.214-1.286-3.036-.321-.821-.643-.679-.857-.679-.214-.018-.464-.018-.714-.018-.25 0-.643.089-.964.464-.357.357-1.286 1.214-1.286 2.964s1.286 3.429 1.464 3.679c.179.214 2.5 3.821 6.071 5.357.857.357 1.5.571 2.036.75.857.286 1.643.214 2.286.143.679-.107 2.143-.857 2.464-1.714.286-.857.286-1.571.179-1.714-.107-.143-.357-.214-.714-.393z"/></svg>
-              <span class="lab">WhatsApp</span>
+              <span class="lab">{{wizard.jsWhatsapp}}</span>
             </button>
             <button type="button" class="wiz-ch" data-channel="telegram">
               <svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>
-              <span class="lab">Telegram</span>
+              <span class="lab">{{wizard.jsTelegram}}</span>
             </button>
           </div>
         </div>
@@ -2519,43 +2519,43 @@
 
       <!-- STEP 4 — Review -->
       <div class="wiz-step" data-step="4">
-        <p class="wiz-hint" style="text-align:center;margin:0 0 14px">Review your reservation</p>
+        <p class="wiz-hint" style="text-align:center;margin:0 0 14px">{{wizard.sec4Review}}</p>
 
         <div class="wiz-card">
           <div class="wiz-card-price">
             <span class="strike" id="wizCardWas">€0</span>
             <span class="now" id="wizCardNow">€0</span>
-            <span class="save">Saved 35%</span>
+            <span class="save">{{wizard.sec4Saved}}</span>
           </div>
           <div class="wiz-card-head">
             <span class="wiz-card-domain">luxurybosphorustour.com</span>
-            <div class="wiz-card-eb">Reservation Card</div>
-            <div class="wiz-card-title" id="wizSumPkg">Standard Cruise</div>
+            <div class="wiz-card-eb">{{wizard.sec4CardEyebrow}}</div>
+            <div class="wiz-card-title" id="wizSumPkg">{{wizard.sec4CardTitleDefault}}</div>
           </div>
           <div class="wiz-card-body">
             <dl class="wiz-rows">
-              <div class="wiz-row"><dt>Guest</dt><dd id="wizSumName">—</dd></div>
-              <div class="wiz-row"><dt>Phone</dt><dd id="wizSumPhone">—</dd></div>
-              <div class="wiz-row"><dt>Date</dt><dd id="wizSumDate">—</dd></div>
-              <div class="wiz-row"><dt>Guests</dt><dd id="wizSumGuests">—</dd></div>
-              <div class="wiz-row"><dt>Transfer</dt><dd id="wizSumTransfer">Meeting at pier</dd></div>
-              <div class="wiz-row"><dt>Channel</dt><dd id="wizSumChannel">—</dd></div>
-              <div class="wiz-row full" id="wizSumAddrRow" style="display:none"><dt>Pickup</dt><dd id="wizSumAddr">—</dd></div>
-              <div class="wiz-row full" id="wizSumExtraRow" style="display:none"><dt>Special</dt><dd id="wizSumExtras">—</dd></div>
+              <div class="wiz-row"><dt>{{wizard.sec4DtGuest}}</dt><dd id="wizSumName">—</dd></div>
+              <div class="wiz-row"><dt>{{wizard.sec4DtPhone}}</dt><dd id="wizSumPhone">—</dd></div>
+              <div class="wiz-row"><dt>{{wizard.sec4DtDate}}</dt><dd id="wizSumDate">—</dd></div>
+              <div class="wiz-row"><dt>{{wizard.sec4DtGuests}}</dt><dd id="wizSumGuests">—</dd></div>
+              <div class="wiz-row"><dt>{{wizard.sec4DtTransfer}}</dt><dd id="wizSumTransfer">{{wizard.sec4TransferDefault}}</dd></div>
+              <div class="wiz-row"><dt>{{wizard.sec4DtChannel}}</dt><dd id="wizSumChannel">—</dd></div>
+              <div class="wiz-row full" id="wizSumAddrRow" style="display:none"><dt>{{wizard.sec4DtPickup}}</dt><dd id="wizSumAddr">—</dd></div>
+              <div class="wiz-row full" id="wizSumExtraRow" style="display:none"><dt>{{wizard.sec4DtSpecial}}</dt><dd id="wizSumExtras">—</dd></div>
             </dl>
 
             <div class="wiz-price-lines" id="wizPriceLines"></div>
           </div>
           <div class="wiz-card-total">
-            <span class="lab">Total</span>
+            <span class="lab">{{wizard.sec4Total}}</span>
             <span class="val" id="wizSumTotal">€XX</span>
           </div>
         </div>
 
         <div class="wiz-trust">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Free cancellation 2hrs</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>No prepayment</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Pay on board</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>{{wizard.sec4TrustCancellation}}</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>{{wizard.sec4TrustNoPrepay}}</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>{{wizard.sec4TrustOnBoard}}</span>
         </div>
       </div>
 
@@ -2564,12 +2564,12 @@
     <!-- FOOT -->
     <div class="wiz-foot" id="wizFoot">
       <div class="wiz-foot-price" id="wizFootPrice" style="visibility:hidden">
-        <span class="lab">Estimate</span>
+        <span class="lab">{{wizard.footEstimate}}</span>
         <span class="val" id="wizFootTotal">€0</span>
       </div>
       <div class="wiz-foot-actions" id="wizFootActions">
-        <button type="button" class="wiz-btn wiz-btn-link" id="wizBack"><span class="arr">→</span> Back</button>
-        <button type="button" class="wiz-btn wiz-btn-gold" id="wizNext">Continue <span class="arr">→</span></button>
+        <button type="button" class="wiz-btn wiz-btn-link" id="wizBack"><span class="arr">→</span> {{wizard.btnBack}}</button>
+        <button type="button" class="wiz-btn wiz-btn-gold" id="wizNext">{{wizard.btnContinue}} <span class="arr">→</span></button>
       </div>
     </div>
 
@@ -2602,9 +2602,9 @@
     const h = Math.floor(ms / 3600000);
     const m = Math.floor((ms % 3600000) / 60000);
     const s = Math.floor((ms % 60000) / 1000);
-    cdH.textContent = h + 'h';
-    cdM.textContent = pad2(m) + 'm';
-    cdS.textContent = pad2(s) + 's';
+    cdH.textContent = h + '{{wizard.jsCdHourSuffix}}';
+    cdM.textContent = pad2(m) + '{{wizard.jsCdMinSuffix}}';
+    cdS.textContent = pad2(s) + '{{wizard.jsCdSecSuffix}}';
   };
   if (!scriptEl || !pillEl || !pillMain || !cdEl) return;
 
@@ -2640,9 +2640,9 @@
     const h = Math.floor(ms / 3600000);
     const m = Math.floor((ms % 3600000) / 60000);
     const s = Math.floor((ms % 60000) / 1000);
-    if (h > 0) return h + 'h ' + m + 'm ' + s + 's';
-    if (m > 0) return m + 'm ' + s + 's';
-    return s + 's';
+    if (h > 0) return h + '{{wizard.jsCdHourSuffix}} ' + m + '{{wizard.jsCdMinSuffix}} ' + s + '{{wizard.jsCdSecSuffix}}';
+    if (m > 0) return m + '{{wizard.jsCdMinSuffix}} ' + s + '{{wizard.jsCdSecSuffix}}';
+    return s + '{{wizard.jsCdSecSuffix}}';
   }
 
   function tick(){
@@ -2654,18 +2654,18 @@
     if (isTomorrow){
       pillEl.classList.add('closed');
       cdEl.classList.add('closed');
-      scriptEl.textContent = 'tomorrow';
-      pillMain.textContent = "Book Tomorrow";
-      cdLabel.textContent = "opens in";
+      scriptEl.textContent = '{{wizard.jsTomorrowScript}}';
+      pillMain.textContent = "{{wizard.jsBookTomorrow}}";
+      cdLabel.textContent = "{{wizard.jsOpensIn}}";
     } else {
       pillEl.classList.remove('closed');
       cdEl.classList.remove('closed');
-      scriptEl.textContent = 'tonight';
-      pillMain.textContent = "Book Tonight";
-      cdLabel.textContent = "departs in";
+      scriptEl.textContent = '{{wizard.jsTonightScript}}';
+      pillMain.textContent = "{{wizard.jsBookTonight}}";
+      cdLabel.textContent = "{{wizard.jsDepartsIn}}";
     }
     setCd(ms);
-    setLab(isTomorrow ? "guests booked tomorrow's cruise" : "guests booked tonight's cruise");
+    setLab(isTomorrow ? "{{wizard.jsLabBookedTomorrow}}" : "{{wizard.jsLabBookedTonight}}");
     setCount(simulatedCount(now));
   }
   tick();
@@ -2720,25 +2720,8 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
   const PRICES = { standard:25, vip:65, alcohol:15, transfer:5, romantic:15, standardWas:38, vipWas:100 };
 
   const COUNTRIES = [
-    ['TR','Turkey','90','🇹🇷'],['US','United States','1','🇺🇸'],['GB','United Kingdom','44','🇬🇧'],
-    ['DE','Germany','49','🇩🇪'],['FR','France','33','🇫🇷'],['ES','Spain','34','🇪🇸'],
-    ['IT','Italy','39','🇮🇹'],['RU','Russia','7','🇷🇺'],['UA','Ukraine','380','🇺🇦'],
-    ['PL','Poland','48','🇵🇱'],['RO','Romania','40','🇷🇴'],['BG','Bulgaria','359','🇧🇬'],
-    ['NL','Netherlands','31','🇳🇱'],['BE','Belgium','32','🇧🇪'],['CH','Switzerland','41','🇨🇭'],
-    ['AT','Austria','43','🇦🇹'],['SE','Sweden','46','🇸🇪'],['NO','Norway','47','🇳🇴'],
-    ['DK','Denmark','45','🇩🇰'],['FI','Finland','358','🇫🇮'],['IE','Ireland','353','🇮🇪'],
-    ['PT','Portugal','351','🇵🇹'],['GR','Greece','30','🇬🇷'],['CZ','Czechia','420','🇨🇿'],
-    ['HU','Hungary','36','🇭🇺'],['SA','Saudi Arabia','966','🇸🇦'],['AE','United Arab Emirates','971','🇦🇪'],
-    ['QA','Qatar','974','🇶🇦'],['KW','Kuwait','965','🇰🇼'],['BH','Bahrain','973','🇧🇭'],
-    ['OM','Oman','968','🇴🇲'],['EG','Egypt','20','🇪🇬'],['MA','Morocco','212','🇲🇦'],
-    ['JO','Jordan','962','🇯🇴'],['LB','Lebanon','961','🇱🇧'],['IL','Israel','972','🇮🇱'],
-    ['IR','Iran','98','🇮🇷'],['IN','India','91','🇮🇳'],['PK','Pakistan','92','🇵🇰'],
-    ['CN','China','86','🇨🇳'],['JP','Japan','81','🇯🇵'],['KR','South Korea','82','🇰🇷'],
-    ['SG','Singapore','65','🇸🇬'],['MY','Malaysia','60','🇲🇾'],['ID','Indonesia','62','🇮🇩'],
-    ['TH','Thailand','66','🇹🇭'],['VN','Vietnam','84','🇻🇳'],['PH','Philippines','63','🇵🇭'],
-    ['AU','Australia','61','🇦🇺'],['NZ','New Zealand','64','🇳🇿'],['CA','Canada','1','🇨🇦'],
-    ['MX','Mexico','52','🇲🇽'],['BR','Brazil','55','🇧🇷'],['AR','Argentina','54','🇦🇷'],
-    ['ZA','South Africa','27','🇿🇦']
+    {{#each wizard.jsCountries}}['{{this.0}}','{{this.1}}','{{this.2}}','{{this.3}}'],
+    {{/each}}
   ];
 
   const state = {
@@ -2803,17 +2786,17 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     const priceEl = $('wizFootPrice');
     if (state.step === 4){
       $('wizFootActions').innerHTML =
-        '<button type="button" class="wiz-btn wiz-btn-link" id="wizBack"><span class="arr">→</span> Back</button>'+
-        '<a class="wiz-btn wiz-btn-gold" id="wizSend" href="#" target="_blank">Confirm via '+
-          (state.channel === 'telegram' ? 'Telegram' : 'WhatsApp')+
+        '<button type="button" class="wiz-btn wiz-btn-link" id="wizBack"><span class="arr">→</span> {{wizard.btnBack}}</button>'+
+        '<a class="wiz-btn wiz-btn-gold" id="wizSend" href="#" target="_blank">'+
+          (state.channel === 'telegram' ? '{{wizard.jsConfirmTelegram}}' : '{{wizard.jsConfirmWhatsapp}}')+
         ' <span class="arr">→</span></a>';
       priceEl.style.visibility = 'hidden';
       $('wizBack').onclick = () => showStep(3);
       $('wizSend').onclick = e => { e.preventDefault(); sendBooking(); };
     } else {
       $('wizFootActions').innerHTML =
-        '<button type="button" class="wiz-btn wiz-btn-link" id="wizBack"><span class="arr">→</span> Back</button>'+
-        '<button type="button" class="wiz-btn wiz-btn-gold" id="wizNext">Continue <span class="arr">→</span></button>';
+        '<button type="button" class="wiz-btn wiz-btn-link" id="wizBack"><span class="arr">→</span> {{wizard.btnBack}}</button>'+
+        '<button type="button" class="wiz-btn wiz-btn-gold" id="wizNext">{{wizard.btnContinue}} <span class="arr">→</span></button>';
       $('wizBack').onclick = () => showStep(Math.max(1, state.step - 1));
       $('wizBack').style.visibility = state.step > 1 ? 'visible' : 'hidden';
       $('wizNext').onclick = onNext;
@@ -2935,33 +2918,33 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     if (!s) return '—';
     const d = new Date(s + 'T00:00:00');
     if (isNaN(d)) return s;
-    return d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+    return d.toLocaleDateString('{{wizard.jsLocale}}',{day:'numeric',month:'{{wizard.jsMonthOpt}}',year:'numeric'});
   }
 
   function updateSummary(){
     if (state.step !== 4) return;
     const t = calcTotal();
-    $('wizSumPkg').textContent = state.pkg === 'vip' ? 'VIP Cruise' : 'Standard Cruise';
+    $('wizSumPkg').textContent = state.pkg === 'vip' ? '{{wizard.jsPkgVipName}}' : '{{wizard.jsPkgStandardName}}';
     $('wizCardWas').textContent = fmt(t.wasTotal);
     $('wizCardNow').textContent = fmt(t.total);
     $('wizSumName').textContent = state.name || '—';
     $('wizSumPhone').textContent = state.cc ? ('+'+state.cc+' '+state.phone) : (state.phone || '—');
     $('wizSumDate').textContent = fmtDate(state.date);
     const gp = [];
-    if (state.adults) gp.push(state.adults+' Adult'+(state.adults===1?'':'s'));
-    if (state.kids) gp.push(state.kids+' Kid'+(state.kids===1?'':'s'));
-    if (state.babies) gp.push(state.babies+' Bab'+(state.babies===1?'y':'ies'));
+    if (state.adults) gp.push(state.adults+' '+(state.adults===1?'{{wizard.jsGuestAdult}}':'{{wizard.jsGuestAdults}}'));
+    if (state.kids) gp.push(state.kids+' '+(state.kids===1?'{{wizard.jsGuestKid}}':'{{wizard.jsGuestKids}}'));
+    if (state.babies) gp.push(state.babies+' '+(state.babies===1?'{{wizard.jsGuestBaby}}':'{{wizard.jsGuestBabies}}'));
     $('wizSumGuests').textContent = gp.join(' · ') || '—';
-    $('wizSumTransfer').textContent = state.transfer ? 'Hotel pickup & return' : 'Meeting at pier';
+    $('wizSumTransfer').textContent = state.transfer ? '{{wizard.jsTransferHotel}}' : '{{wizard.jsTransferPier}}';
     $('wizSumChannel').textContent = state.channel ? (state.channel.charAt(0).toUpperCase()+state.channel.slice(1)) : '—';
     if (state.transfer && state.address){
       $('wizSumAddrRow').style.display = 'flex';
-      $('wizSumAddr').textContent = state.address + (state.room ? (' · Room '+state.room) : '');
+      $('wizSumAddr').textContent = state.address + (state.room ? (' · {{wizard.jsRoomPrefix}} '+state.room) : '');
     } else { $('wizSumAddrRow').style.display = 'none'; }
 
     const extras = [];
-    if (state.alcohol) extras.push('Unlimited alcohol');
-    if (state.romantic) extras.push('Romantic table');
+    if (state.alcohol) extras.push('{{wizard.jsExtraAlcohol}}');
+    if (state.romantic) extras.push('{{wizard.jsExtraRomantic}}');
     if (extras.length){
       $('wizSumExtraRow').style.display = 'flex';
       $('wizSumExtras').textContent = extras.join(' · ');
@@ -2969,38 +2952,38 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
 
     const lines = [];
     if (t.pp){
-      const pkgLbl = state.pkg==='vip'?'VIP':'Standard';
-      let detail = state.adults+' adult';
-      if (state.kids) detail += ' + '+state.kids+' kid (50%)';
-      if (state.babies) detail += ' + '+state.babies+' baby (free)';
-      lines.push(['Package · '+pkgLbl+' — '+detail, fmt(t.pkgTotal)]);
+      const pkgLbl = state.pkg==='vip'?'{{wizard.jsLineVip}}':'{{wizard.jsLineStandard}}';
+      let detail = state.adults+' {{wizard.jsLineAdult}}';
+      if (state.kids) detail += ' + '+state.kids+' {{wizard.jsLineKid}}';
+      if (state.babies) detail += ' + '+state.babies+' {{wizard.jsLineBaby}}';
+      lines.push(['{{wizard.jsLinePkg}} · '+pkgLbl+' — '+detail, fmt(t.pkgTotal)]);
     }
-    if (t.alcoholTotal) lines.push(['Unlimited alcohol × '+state.adults, fmt(t.alcoholTotal)]);
-    if (t.transferTotal) lines.push(['Hotel transfer × '+t.transferHeadcount, fmt(t.transferTotal)]);
-    if (t.romanticTotal) lines.push(['Romantic table', fmt(t.romanticTotal)]);
+    if (t.alcoholTotal) lines.push(['{{wizard.jsLineAlcohol}} × '+state.adults, fmt(t.alcoholTotal)]);
+    if (t.transferTotal) lines.push(['{{wizard.jsLineTransfer}} × '+t.transferHeadcount, fmt(t.transferTotal)]);
+    if (t.romanticTotal) lines.push(['{{wizard.jsLineRomantic}}', fmt(t.romanticTotal)]);
     $('wizPriceLines').innerHTML = lines.map(l => '<div class="wiz-pl"><span>'+l[0]+'</span><b>'+l[1]+'</b></div>').join('');
     $('wizSumTotal').textContent = fmt(t.total);
   }
 
   function sendBooking(){
     const t = calcTotal();
-    let msg = 'Luxury Bosphorus Tour — Reservation Request%0A%0A';
-    msg += '• Package: '+(state.pkg==='vip'?'VIP':'Standard')+'%0A';
-    msg += '• Date: '+fmtDate(state.date)+'%0A';
+    let msg = '{{wizard.jsMsgHeader}}%0A%0A';
+    msg += '• {{wizard.jsMsgPackage}}: '+(state.pkg==='vip'?'{{wizard.jsLineVip}}':'{{wizard.jsLineStandard}}')+'%0A';
+    msg += '• {{wizard.jsMsgDate}}: '+fmtDate(state.date)+'%0A';
     const gp = [];
-    if (state.adults) gp.push(state.adults+' adult'+(state.adults===1?'':'s'));
-    if (state.kids) gp.push(state.kids+' kid'+(state.kids===1?'':'s')+' (4-7)');
-    if (state.babies) gp.push(state.babies+' bab'+(state.babies===1?'y':'ies')+' (0-3)');
-    msg += '• Guests: '+gp.join(' + ')+'%0A';
-    if (state.alcohol) msg += '• Unlimited alcohol package%0A';
+    if (state.adults) gp.push(state.adults+' '+(state.adults===1?'{{wizard.jsMsgAdult}}':'{{wizard.jsMsgAdults}}'));
+    if (state.kids) gp.push(state.kids+' '+(state.kids===1?'{{wizard.jsMsgKid}}':'{{wizard.jsMsgKidsSuffix}}')+' {{wizard.jsMsgKidsRange}}');
+    if (state.babies) gp.push(state.babies+' '+(state.babies===1?'{{wizard.jsMsgBaby}}':'{{wizard.jsMsgBabies}}')+' {{wizard.jsMsgBabiesRange}}');
+    msg += '• {{wizard.jsMsgGuests}}: '+gp.join(' + ')+'%0A';
+    if (state.alcohol) msg += '• {{wizard.jsMsgAlcoholLine}}%0A';
     if (state.transfer){
-      msg += '• Hotel transfer · '+state.address+(state.room?(' (Room '+state.room+')'):'')+'%0A';
+      msg += '• {{wizard.jsMsgTransferLine}} · '+state.address+(state.room?(' ({{wizard.jsMsgRoom}} '+state.room+')'):'')+'%0A';
       if (state.lat && state.lon) msg += '  📍 https://maps.google.com/?q='+state.lat+','+state.lon+'%0A';
     }
-    if (state.romantic) msg += '• Romantic table setup%0A';
-    msg += '%0A• Name: '+state.name+'%0A';
-    msg += '• Phone: +'+state.cc+' '+state.phone+'%0A';
-    msg += '%0AEstimated total: '+fmt(t.total);
+    if (state.romantic) msg += '• {{wizard.jsMsgRomanticLine}}%0A';
+    msg += '%0A• {{wizard.jsMsgName}}: '+state.name+'%0A';
+    msg += '• {{wizard.jsMsgPhone}}: +'+state.cc+' '+state.phone+'%0A';
+    msg += '%0A{{wizard.jsMsgTotal}}: '+fmt(t.total);
     const PHONE = '905555555555';
     let url;
     if (state.channel === 'telegram'){
@@ -3055,7 +3038,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
   function renderAddrResults(items){
     const ul = $('wizAddrResults');
     if (!items.length){
-      ul.innerHTML = '<li class="empty">No results — try a different name</li>';
+      ul.innerHTML = '<li class="empty">{{wizard.jsAddrEmpty}}</li>';
       ul.style.display = 'block';
       return;
     }
@@ -3095,7 +3078,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     spinner.classList.add('show');
     searchTimer = setTimeout(() => {
       const url = 'https://nominatim.openstreetmap.org/search?format=json&countrycodes=tr&limit=8&viewbox=28.5,41.3,29.5,40.8&bounded=1&q='+encodeURIComponent(q);
-      fetch(url, { headers: { 'Accept-Language': 'en' } })
+      fetch(url, { headers: { 'Accept-Language': '{{wizard.jsAddrLang}}' } })
         .then(r => r.json())
         .then(items => { if (seq === searchSeq) renderAddrResults(items); })
         .catch(() => { if (seq === searchSeq) renderAddrResults([]); })
@@ -3155,7 +3138,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
 
     function pad(n){ return String(n).padStart(2,'0'); }
     function isoOf(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
-    function fmtLabel(d){ return d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}); }
+    function fmtLabel(d){ return d.toLocaleDateString('{{wizard.jsLocale}}',{day:'numeric',month:'{{wizard.jsMonthOpt}}',year:'numeric'}); }
 
     function applySelection(){
       state.date = isoOf(selected);
@@ -3166,13 +3149,13 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
 
     function render(){
       const monthLabel = new Date(viewYear, viewMonth, 1)
-        .toLocaleDateString('en-GB',{month:'long',year:'numeric'});
+        .toLocaleDateString('{{wizard.jsLocale}}',{month:'{{wizard.jsCalMonthOpt}}',year:'numeric'});
       let html = '<div class="wiz-cal-head">'+
-        '<button type="button" class="wiz-cal-nav" data-d="-1" aria-label="Previous month">‹</button>'+
+        '<button type="button" class="wiz-cal-nav" data-d="-1" aria-label="{{wizard.jsCalPrevAria}}">‹</button>'+
         '<span class="wiz-cal-title">'+monthLabel+'</span>'+
-        '<button type="button" class="wiz-cal-nav" data-d="1" aria-label="Next month">›</button>'+
+        '<button type="button" class="wiz-cal-nav" data-d="1" aria-label="{{wizard.jsCalNextAria}}">›</button>'+
         '</div><div class="wiz-cal-grid">';
-      ['Mo','Tu','We','Th','Fr','Sa','Su'].forEach(d => html += '<span class="wiz-cal-dow">'+d+'</span>');
+      [{{#each wizard.jsDow}}'{{this}}',{{/each}}].forEach(d => html += '<span class="wiz-cal-dow">'+d+'</span>');
       const firstDow = new Date(viewYear, viewMonth, 1).getDay();
       const offset = (firstDow + 6) % 7;
       const daysInMonth = new Date(viewYear, viewMonth+1, 0).getDate();
