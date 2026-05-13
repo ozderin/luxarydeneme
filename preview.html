@@ -64,9 +64,15 @@
   .menu a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--gold)}
   .menu a:hover{color:var(--gold)}
 
-  .book-pill{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:.28em;text-transform:uppercase;border-radius:2px;transition:all .3s}
+  .book-pill{display:inline-flex;align-items:center;gap:11px;padding:9px 16px;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:.22em;text-transform:uppercase;border-radius:2px;transition:all .3s;text-decoration:none;line-height:1}
   .book-pill:hover{background:var(--gold);color:var(--bg)}
-  .book-pill .ico{width:13px;height:13px;flex:none}
+  .book-pill .ico{width:14px;height:14px;flex:none}
+  .book-pill .bp-content{display:flex;flex-direction:column;align-items:flex-start;gap:3px;line-height:1.05}
+  .book-pill .bp-main{font-weight:600;letter-spacing:.22em;font-size:10px}
+  .book-pill .bp-sub{font-size:9px;letter-spacing:.06em;color:var(--gold-bright);font-family:var(--serif);text-transform:none;font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .book-pill:hover .bp-sub{color:var(--bg);opacity:.85}
+  .book-pill.closed .bp-sub{color:var(--ink-soft)}
+  .book-pill:hover.closed .bp-sub{color:var(--bg)}
 
   @media(max-width:1180px){.menu{gap:24px}}
   @media(max-width:980px){.menu{display:none}}
@@ -887,7 +893,10 @@
       </a>
       <a class="book-pill" href="#m-book">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
-        BOOK NOW
+        <span class="bp-content">
+          <span class="bp-main" id="bookPillMain">Book Tonight</span>
+          <span class="bp-sub" id="bookPillSub">closes —</span>
+        </span>
       </a>
     </div>
   </nav>
@@ -929,7 +938,6 @@
           <span class="h-line h-mega">Bosphorus</span>
           <span class="h-line h-mid">Dinner Cruise <span class="h-script" id="heroScript">tonight</span></span>
         </h1>
-        <p class="hero-when" id="heroWhen"><span class="dot"></span><span id="heroWhenLab">Booking closes in</span> <strong id="heroWhenTime">—</strong></p>
         <p class="hero-booked" id="heroBooked"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><strong id="heroBookedCount">0</strong> <span id="heroBookedLab">guests booked tonight's cruise</span></p>
         <p class="hero-lede">A three-hour Bosphorus dinner cruise departing from Eminönü Pier at 21:00 — multi-course menu, full Turkish night show (whirling dervish, belly dance, folk), open-air decks across Europe and Asia. Hotel transfer available, free cancellation.</p>
         <div class="hero-ctas">
@@ -2422,12 +2430,12 @@
    same number, so it never jitters between page loads. */
 (function tonightCountdown(){
   const scriptEl    = document.getElementById('heroScript');
-  const whenEl      = document.getElementById('heroWhen');
-  const labEl       = document.getElementById('heroWhenLab');
-  const timeEl      = document.getElementById('heroWhenTime');
+  const pillEl      = document.querySelector('.book-pill');
+  const pillMain    = document.getElementById('bookPillMain');
+  const pillSub     = document.getElementById('bookPillSub');
   const countEl     = document.getElementById('heroBookedCount');
   const bookedLabEl = document.getElementById('heroBookedLab');
-  if (!scriptEl || !whenEl || !labEl || !timeEl) return;
+  if (!scriptEl || !pillEl || !pillMain || !pillSub) return;
 
   // Sun .. Sat
   const DOW_MULT = [1.4, 0.9, 0.95, 1.0, 1.1, 1.5, 1.7];
@@ -2459,10 +2467,10 @@
     if (ms <= 0){
       // After 21:00 — tonight's boat has departed
       const tomorrow = new Date(now); tomorrow.setDate(tomorrow.getDate() + 1); tomorrow.setHours(21, 0, 0, 0);
-      whenEl.classList.add('closed');
+      pillEl.classList.add('closed');
       scriptEl.textContent = 'tomorrow';
-      labEl.textContent = "Tomorrow's 21:00 opens in";
-      timeEl.textContent = fmtCountdown(tomorrow - now);
+      pillMain.textContent = "Book Tomorrow";
+      pillSub.textContent = "opens in " + fmtCountdown(tomorrow - now);
       // Tomorrow's bookings haven't started yet between 21:00 and midnight,
       // and pre-09:00 they're still at 0 — the count climbs from sunrise.
       const hourNow = now.getHours() + now.getMinutes() / 60;
@@ -2472,10 +2480,10 @@
       return;
     }
 
-    whenEl.classList.remove('closed');
+    pillEl.classList.remove('closed');
     scriptEl.textContent = 'tonight';
-    labEl.textContent = "Booking closes in";
-    timeEl.textContent = fmtCountdown(ms);
+    pillMain.textContent = "Book Tonight";
+    pillSub.textContent = "closes " + fmtCountdown(ms);
 
     const hourFloat = now.getHours() + now.getMinutes() / 60;
     if (countEl)     countEl.textContent = simulatedCount(now, hourFloat);
