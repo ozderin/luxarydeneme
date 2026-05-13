@@ -805,7 +805,7 @@
   .pv{position:fixed;top:8px;right:8px;background:rgba(7,7,11,.7);color:var(--gold);padding:4px 9px;border:1px solid var(--gold-deep);font-size:8px;letter-spacing:.32em;text-transform:uppercase;z-index:80;backdrop-filter:blur(4px);pointer-events:none}
 
   /* Floating bottom-right cluster: WhatsApp CTA + language picker */
-  .wa-float{position:fixed;bottom:22px;right:22px;z-index:91;display:flex;align-items:center;gap:11px;background:transparent;color:#fff;padding:0;border:0;text-decoration:none;font-family:var(--sans);transition:transform .25s}
+  .wa-float{position:fixed;bottom:22px;left:22px;z-index:91;display:flex;align-items:center;gap:11px;background:transparent;color:#fff;padding:0;border:0;text-decoration:none;font-family:var(--sans);transition:transform .25s}
   .wa-float:hover{transform:translateY(-2px)}
   .wa-float .wa-icon-wrap{width:46px;height:46px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 8px 22px -6px rgba(0,0,0,.5);transition:box-shadow .25s}
   .wa-float:hover .wa-icon-wrap{box-shadow:0 12px 28px -6px rgba(0,0,0,.6)}
@@ -816,7 +816,7 @@
   .wa-float .wa-status::before{content:"";width:7px;height:7px;border-radius:50%;background:#25D366;box-shadow:0 0 0 2px rgba(37,211,102,.25);animation:waPulse 1.6s ease-in-out infinite}
   @keyframes waPulse{0%,100%{opacity:1}50%{opacity:.55}}
   @media(max-width:560px){
-    .wa-float{bottom:16px;right:16px;gap:9px}
+    .wa-float{bottom:16px;left:16px;gap:9px}
     .wa-float .wa-icon-wrap{width:42px;height:42px}
     .wa-float svg{width:20px;height:20px}
     .wa-float .wa-main{font-size:11px;letter-spacing:.08em}
@@ -824,7 +824,7 @@
   }
 
   /* Language picker — floating bottom-right, sits above the WhatsApp pill */
-  .lang-picker{position:fixed;bottom:90px;right:22px;z-index:90;margin:0}
+  .lang-picker{position:fixed;bottom:22px;right:22px;z-index:90;margin:0}
   .book-pill{margin-left:auto}
   .lang-btn{display:flex;align-items:center;gap:8px;background:rgba(7,7,11,.78);backdrop-filter:blur(8px);border:1px solid var(--gold-deep);color:var(--gold);padding:9px 13px;cursor:pointer;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:all .25s;line-height:1;box-shadow:0 6px 18px -6px rgba(0,0,0,.5)}
   .lang-btn:hover{background:rgba(15,15,21,.88);border-color:var(--gold)}
@@ -840,7 +840,7 @@
   .lang-list a span.name{flex:1}
   .lang-list a.active::after{content:"●";color:var(--gold);font-size:8px;margin-left:auto}
   @media(max-width:560px){
-    .lang-picker{bottom:78px;right:16px}
+    .lang-picker{bottom:16px;right:16px}
     .lang-btn{padding:7px 10px;font-size:9px;letter-spacing:.16em;gap:6px}
     .lang-btn .lang-flag{width:16px}
   }
