@@ -430,6 +430,9 @@
   .flow-stage .time{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--gold);line-height:1;margin:0;flex-shrink:0}
   .flow-stage .time::before{content:"—";color:var(--gold-deep);margin-right:12px;font-weight:300;opacity:.6;font-size:20px}
   .flow-stage p{font-size:13px;color:var(--ink-muted);line-height:1.65}
+  .flow-stage-next{display:none;position:absolute;left:50%;bottom:-19px;transform:translateX(-50%);width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--bg);border:0;font-family:var(--sans);font-size:18px;font-weight:700;line-height:1;cursor:pointer;z-index:20;box-shadow:0 0 0 4px var(--bg-2);align-items:center;justify-content:center;transition:background .25s,transform .15s;padding:0}
+  .flow-stage-next:hover{background:var(--gold-bright)}
+  .flow-stage-next:active{transform:translateX(-50%) translateY(1px)}
 
   /* Info grid (m-info) */
   .info-rows{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;margin-bottom:40px}
@@ -452,17 +455,8 @@
     .flow-stages .flow-stage{grid-column:auto;grid-row:auto}
     /* hide all desktop directional arrows */
     .flow-stages .flow-stage::after{display:none}
-    /* mobile: down arrow under all non-last cards */
-    .flow-stages .flow-stage:not(:last-child)::after{
-      display:flex;
-      content:"↓";
-      right:auto;
-      top:auto;
-      left:50%;
-      bottom:-19px;
-      transform:translateX(-50%);
-      font-size:17px;
-    }
+    /* mobile: real clickable button replaces the decorative arrow */
+    .flow-stages .flow-stage:not(:last-child) .flow-stage-next{display:flex}
     .info-rows{grid-template-columns:1fr;gap:0}
   }
 
@@ -1368,6 +1362,7 @@
             </div>
             <p>Doors open at 20:00. Our pier at Eminönü looks out from the historic peninsula onto one of the Bosphorus's most beautiful vistas — framed by the silhouette of Galata Tower. If time allows, watching the sunset from the boat's deck is a pleasure of its own. Once aboard, your reservation is confirmed and, at your private table, the evening opens with our exquisite meze service.</p>
           </div>
+          <button type="button" class="flow-stage-next" aria-label="Next stage">↓</button>
         </div>
         <div class="flow-stage">
           <img class="ph" src="data/dining-romantic-wide.webp" alt="" loading="lazy">
@@ -1378,6 +1373,7 @@
             </div>
             <p>While you enjoy a variety of seasonal mezes and drinks, your main course is served alongside a seasonal salad. On one side, the Bosphorus's unmatched view; on the other, the stage programme — savour your meal, take in the show, drift into the view; the evening unfolds at the tempo you choose.</p>
           </div>
+          <button type="button" class="flow-stage-next" aria-label="Next stage">↓</button>
         </div>
         <div class="flow-stage">
           <img class="ph" src="data/whirling-dervish.webp" alt="" loading="lazy">
@@ -1388,6 +1384,7 @@
             </div>
             <p>The stage opens with the serenity of a whirling dervish — Anatolian folk dances and a drum ensemble lift the night's energy, climaxing in belly dance. As your dinner continues, a four-act Anatolian evening unfolds before you, all from your table.</p>
           </div>
+          <button type="button" class="flow-stage-next" aria-label="Next stage">↓</button>
         </div>
         <div class="flow-stage">
           <span class="stage-tag">Finale</span>
@@ -1976,6 +1973,17 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+/* Programme modal: mobile next-stage scroll button */
+document.querySelectorAll('.flow-stage-next').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const next = btn.closest('.flow-stage').nextElementSibling;
+    if (next && next.classList.contains('flow-stage')){
+      next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
 <script>
 (function(){
   const PRICES = { standard:25, vip:65, alcohol:15, transfer:5, romantic:15, standardWas:38, vipWas:100 };
