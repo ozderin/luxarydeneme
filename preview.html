@@ -817,6 +817,9 @@
   .dish-card .dish-desc{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;margin:0}
   .dish-card .dish-ph{width:calc(100% + 40px);margin-left:-20px;margin-right:-20px;margin-top:8px;height:140px;object-fit:cover;display:block;border-top:1px solid rgba(201,169,97,.15)}
   .menu-detail-foot{font-family:var(--sans);font-size:12px;color:var(--ink-soft);line-height:1.6;text-align:center;font-style:italic;margin-top:8px}
+  .theme-list{list-style:none;padding:0;margin:0 0 14px;display:grid;grid-template-columns:repeat(2,1fr);gap:6px 18px}
+  .theme-list li{font-family:var(--sans);font-size:13px;color:var(--ink-muted);padding:6px 0;line-height:1.45}
+  .theme-list li strong{color:var(--gold);font-weight:600;margin-right:10px;display:inline-block;min-width:78px;letter-spacing:.04em}
   @media(max-width:680px){
     .menu-detail-title{font-size:24px}
     .menu-block-head{gap:10px}
@@ -824,6 +827,7 @@
     .menu-block-count{margin-left:0;width:100%}
     .dish-grid{grid-template-columns:1fr;gap:14px}
     .dish-card .dish-ph{height:160px}
+    .theme-list{grid-template-columns:1fr}
   }
 
   /* Legal prose (Privacy / Terms / Cancellation modals) */
@@ -1575,20 +1579,107 @@
 
 <div class="modal" id="m-party">
   <a href="#" class="modal-back" aria-label="Kapat"></a>
-  <div class="modal-frame">
+  <div class="modal-frame editorial">
     <a href="#" class="modal-close" aria-label="Kapat">×</a>
-    <div class="modal-eyebrow">Party · DJ & Dans</div>
-    <h2 class="modal-title">Party <span class="modal-script">until midnight</span></h2>
-    <p class="modal-desc">After dinner the upper deck transforms into a dance floor. Professional DJ booth, concert-grade sound and lighting, laser show. A different theme every night of the week: Monday Latin, Tuesday Deep House, Wednesday Vintage 90s, Thursday R&B, Friday Commercial Hits, Saturday open format. Private charters available for birthdays, bachelor / bachelorette parties and corporate events.</p>
-    <div class="modal-gallery">
-      <img src="data/dance-floor-crowd.webp" alt="" loading="lazy">
-      <img src="data/drummer-party.webp" alt="" loading="lazy">
-      <img src="data/happy-guests.webp" alt="" loading="lazy">
-      <img src="data/friends-cheers.webp" alt="" loading="lazy">
-      <img src="data/cocktails-neon.webp" alt="" loading="lazy">
-      <img src="data/a2.webp" alt="" loading="lazy">
+
+    <div class="ed-flat-head">
+      <div class="modal-eyebrow">Party · DJ &amp; Dance Floor</div>
+      <h2 class="modal-title">Party <span class="modal-script">under the stars</span></h2>
+      <p class="ed-hero-tagline">After the Turkish night show, the party shifts to the sky deck — open-air, a resident DJ, dancing under the Bosphorus stars until midnight.</p>
     </div>
-    <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+
+    <div class="ed-content">
+
+      <div class="menu-detail">
+        <div class="menu-detail-head">
+          <div class="menu-detail-eyebrow">After the show</div>
+          <h3 class="menu-detail-title">A real party, <em>without the show-off</em></h3>
+          <p class="menu-detail-intro">No celebrity DJ acts and no laser theatre — just an open-air dance floor on the sky deck, a resident DJ who reads the crowd, and a Bosphorus skyline as backdrop. Dance if you like; the lounge deck stays calm if you don't.</p>
+        </div>
+
+        <!-- 01 · THE SHIFT -->
+        <div class="menu-block">
+          <div class="menu-block-head">
+            <span class="menu-block-step">01</span>
+            <span class="menu-block-name">The shift</span>
+            <span class="menu-block-count">~22:30 · After the belly dance</span>
+          </div>
+          <p class="menu-block-desc">As the four-act Turkish night show closes with the belly dance, the lights change and the DJ takes the deck. Dinner service quietens; coffee and drinks continue. Anyone ready to dance moves up to the sky deck — those who prefer to linger over a drink stay at their table.</p>
+        </div>
+
+        <!-- 02 · THE SKY DECK -->
+        <div class="menu-block">
+          <div class="menu-block-head">
+            <span class="menu-block-step">02</span>
+            <span class="menu-block-name">The sky deck</span>
+            <span class="menu-block-count">Open-air · second bar</span>
+          </div>
+          <p class="menu-block-desc">The top of the boat opens to the sky — dance floor in the centre, lounge seating around the edge, the second bar serving cocktails and the Bosphorus on every side. In warmer months the breeze does the cooling; in winter the deck is heated.</p>
+          <div class="menu-block-figure">
+            <img src="data/dance-floor-crowd.webp" alt="Sky-deck dance floor on a Bosphorus dinner cruise after the Turkish night show" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 03 · RESIDENT DJ -->
+        <div class="menu-block">
+          <div class="menu-block-head">
+            <span class="menu-block-step">03</span>
+            <span class="menu-block-name">The DJ</span>
+            <span class="menu-block-count">Resident · reads the crowd</span>
+          </div>
+          <p class="menu-block-desc">A resident DJ — professional, well practised on this floor, with full sound and lighting at hand. The set leans into whatever the room wants on the night: a young couple's evening reads different to a friends-of-six birthday. No name on a marquee; we'd rather over-deliver than over-promise.</p>
+        </div>
+
+        <!-- 04 · THE WEEK -->
+        <div class="menu-block">
+          <div class="menu-block-head">
+            <span class="menu-block-step">04</span>
+            <span class="menu-block-name">Theme by night</span>
+            <span class="menu-block-count">Loose, never strict</span>
+          </div>
+          <p class="menu-block-desc">A rough weekly cadence we keep to — but the DJ always adapts to the crowd:</p>
+          <ul class="theme-list">
+            <li><strong>Monday</strong> · Latin warm-up</li>
+            <li><strong>Tuesday</strong> · Deep house</li>
+            <li><strong>Wednesday</strong> · 90s &amp; vintage hits</li>
+            <li><strong>Thursday</strong> · R&amp;B</li>
+            <li><strong>Friday</strong> · Commercial hits</li>
+            <li><strong>Saturday</strong> · Open format · the crowd decides</li>
+            <li><strong>Sunday</strong> · Lounge — slower, jazzier</li>
+          </ul>
+          <div class="menu-block-figure">
+            <img src="data/happy-guests.webp" alt="Guests dancing on a Bosphorus dinner cruise after midnight" loading="lazy">
+          </div>
+        </div>
+
+        <p class="menu-detail-foot">Private charters available for birthdays, bachelor / bachelorette parties and corporate events — message us on WhatsApp or Telegram for a custom evening. The DJ booth can host a guest DJ if you bring one.</p>
+      </div>
+
+      <!-- PHOTO STRIP -->
+      <div class="photo-masonry">
+        <img src="data/dance-floor-crowd.webp" alt="Open-air dance floor on the Bosphorus cruise sky deck" loading="lazy">
+        <img src="data/friends-cheers.webp" alt="Friends toasting drinks on a Bosphorus dinner cruise" loading="lazy">
+        <img src="data/cocktails-neon.webp" alt="Cocktails on a Bosphorus cruise after dark" loading="lazy">
+        <img src="data/couple-cheers-bridge.webp" alt="Couple under the Bosphorus Bridge during the party" loading="lazy">
+        <img src="data/happy-guests.webp" alt="Guests enjoying the party on a Bosphorus cruise" loading="lazy">
+      </div>
+    </div>
+
+    <div class="ed-cta-bar">
+      <a href="#" class="cta-close" aria-label="Close">×</a>
+      <div class="info">
+        <div class="info-tel">
+          <div class="info-label">Reservations:</div>
+          <div class="info-tel-row">
+            <span class="info-val">+90 (XXX) XXX XX XX</span>
+          </div>
+        </div>
+      </div>
+      <div class="cta-btns">
+        <a class="btn btn-ghost" href="#m-packages">Packages <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#m-book">Reserve Now <span class="arr">→</span></a>
+      </div>
+    </div>
   </div>
 </div>
 
