@@ -805,7 +805,8 @@
   .pv{position:fixed;top:8px;right:8px;background:rgba(7,7,11,.7);color:var(--gold);padding:4px 9px;border:1px solid var(--gold-deep);font-size:8px;letter-spacing:.32em;text-transform:uppercase;z-index:80;backdrop-filter:blur(4px);pointer-events:none}
 
   /* Floating bottom-right cluster: WhatsApp CTA + language picker */
-  .wa-float{position:fixed;bottom:22px;right:22px;z-index:91;display:flex;align-items:center;gap:11px;background:transparent;color:#fff;padding:0;border:0;text-decoration:none;font-family:var(--sans);transition:transform .25s}
+  .wa-float{position:fixed;bottom:22px;right:22px;z-index:91;display:flex;align-items:center;gap:11px;background:transparent;color:#fff;padding:0;border:0;text-decoration:none;font-family:var(--sans);transition:transform .25s, opacity .3s ease}
+  .wa-float.hide{opacity:0;pointer-events:none;transform:translateY(12px)}
   .wa-float .wa-content{align-items:flex-end;text-align:right;margin-top:22px}
   .wa-float:hover{transform:translateY(-2px)}
   .wa-float .wa-icon-wrap{width:46px;height:46px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 8px 22px -6px rgba(0,0,0,.5);transition:box-shadow .25s}
@@ -2578,6 +2579,17 @@
   }
   tick();
   setInterval(tick, 1000);
+})();
+
+/* Hide WhatsApp float when the footer enters the viewport */
+(function waHideOnFooter(){
+  const wa = document.querySelector('.wa-float');
+  const footer = document.querySelector('footer');
+  if (!wa || !footer || !('IntersectionObserver' in window)) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => wa.classList.toggle('hide', e.isIntersecting));
+  }, { threshold: 0.05 });
+  obs.observe(footer);
 })();
 
 /* Language picker dropdown */
