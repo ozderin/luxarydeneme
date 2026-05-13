@@ -804,14 +804,14 @@
 
   .pv{position:fixed;top:8px;right:8px;background:rgba(7,7,11,.7);color:var(--gold);padding:4px 9px;border:1px solid var(--gold-deep);font-size:8px;letter-spacing:.32em;text-transform:uppercase;z-index:80;backdrop-filter:blur(4px);pointer-events:none}
 
-  /* Language picker — nav, next to the brand */
-  .lang-picker{position:relative;margin-right:0}
+  /* Language picker — floating bottom-right, opens upward */
+  .lang-picker{position:fixed;bottom:22px;right:22px;z-index:90;margin:0}
   .book-pill{margin-left:auto}
-  .lang-btn{display:flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--gold-deep);color:var(--gold);padding:7px 11px;cursor:pointer;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:all .25s;line-height:1}
-  .lang-btn:hover{background:rgba(201,169,97,.06);border-color:var(--gold)}
+  .lang-btn{display:flex;align-items:center;gap:8px;background:rgba(7,7,11,.78);backdrop-filter:blur(8px);border:1px solid var(--gold-deep);color:var(--gold);padding:9px 13px;cursor:pointer;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:all .25s;line-height:1;box-shadow:0 6px 18px -6px rgba(0,0,0,.5)}
+  .lang-btn:hover{background:rgba(15,15,21,.88);border-color:var(--gold)}
   .lang-btn .lang-flag{width:18px;height:auto;display:block;border:1px solid rgba(201,169,97,.3)}
   .lang-btn .chev{font-size:8px;color:var(--gold-deep);line-height:1}
-  .lang-list{display:none;position:absolute;top:calc(100% + 4px);right:0;min-width:170px;background:var(--bg-2);border:1px solid var(--gold-deep);padding:0;margin:0;list-style:none;z-index:60;box-shadow:0 8px 24px -8px rgba(0,0,0,.6)}
+  .lang-list{display:none;position:absolute;top:auto;bottom:calc(100% + 6px);right:0;min-width:170px;background:var(--bg-2);border:1px solid var(--gold-deep);padding:0;margin:0;list-style:none;z-index:60;box-shadow:0 -8px 24px -8px rgba(0,0,0,.6)}
   .lang-list.show{display:block}
   .lang-list a{display:flex;align-items:center;gap:11px;padding:10px 14px;color:var(--ink);text-decoration:none;font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;transition:background .2s,color .2s;border-bottom:1px solid rgba(201,169,97,.1)}
   .lang-list li:last-child a{border-bottom:0}
@@ -821,8 +821,8 @@
   .lang-list a span.name{flex:1}
   .lang-list a.active::after{content:"●";color:var(--gold);font-size:8px;margin-left:auto}
   @media(max-width:560px){
-    .lang-picker{margin-right:8px}
-    .lang-btn{padding:5px 9px;font-size:9px;letter-spacing:.16em;gap:6px}
+    .lang-picker{bottom:16px;right:16px}
+    .lang-btn{padding:7px 10px;font-size:9px;letter-spacing:.16em;gap:6px}
     .lang-btn .lang-flag{width:16px}
   }
 
