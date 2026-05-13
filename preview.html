@@ -526,7 +526,7 @@
   /* preview banner */
   /* ─────────── SITE FOOTER (full) ─────────── */
   .site-footer{background:var(--bg-2);padding:64px 0 24px;color:var(--ink-muted);position:relative;flex:none;border-top:1px solid rgba(201,169,97,.18)}
-  .footer-grid{display:grid;grid-template-columns:2fr 1.5fr;gap:48px;margin-bottom:44px}
+  .footer-grid{display:grid;grid-template-columns:1.7fr 1.2fr 1.6fr;gap:48px;margin-bottom:44px;align-items:start}
   .footer-col h4{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--ink);margin-bottom:14px;letter-spacing:.02em;line-height:1.2}
   .footer-col h5{font-family:var(--sans);font-weight:500;font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(201,169,97,.2)}
   .footer-col p{font-size:13px;line-height:1.7;color:var(--ink-muted);max-width:38ch}
@@ -545,7 +545,7 @@
   .footer-social a:hover{color:var(--gold);transform:translateY(-1px)}
   .footer-social svg{width:18px;height:18px}
   .footer-legal{display:flex;flex-wrap:wrap;gap:14px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
-  .footer-trust{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding:18px 0;border-bottom:1px solid var(--line-soft);margin-bottom:16px}
+  .footer-trust{display:flex;flex-direction:column;align-items:flex-start;gap:18px;padding:0;border-bottom:0;margin-bottom:0}
   .trust-badge{display:inline-flex;align-items:center;gap:14px;padding:10px 18px;background:rgba(201,169,97,.05);border:1px solid rgba(201,169,97,.25);text-decoration:none;transition:border-color .25s,background .25s}
   .trust-badge:hover{border-color:var(--gold);background:rgba(201,169,97,.1)}
   .trust-badge .trust-col{display:flex;flex-direction:column;gap:3px;line-height:1.15;text-align:center}
@@ -570,7 +570,7 @@
   .footer-legal a:hover{color:var(--gold)}
   @media(max-width:880px){
     .site-footer{padding:44px 0 24px}
-    .footer-grid{grid-template-columns:1fr 1fr;gap:36px;margin-bottom:36px}
+    .footer-grid{grid-template-columns:1fr;gap:36px;margin-bottom:36px}
     .footer-col p{max-width:none}
     .footer-bottom{flex-direction:column;align-items:center;gap:14px;text-align:center}
     .footer-bottom .footer-social{justify-content:center}
@@ -1240,32 +1240,32 @@
         </ul>
       </div>
 
+      <div class="footer-col footer-trust">
+        <a class="trust-badge" href="https://www.tursab.org.tr/tr/ddsv" target="_blank" rel="noopener">
+          <div class="trust-col">
+            <span class="trust-seal">TÜRSAB</span>
+            <span class="trust-cap">Association of Turkish Travel Agencies</span>
+          </div>
+          <span class="trust-sep"></span>
+          <div class="trust-col">
+            <span class="trust-value">A-XXXXX</span>
+            <span class="trust-cap">Licence No</span>
+          </div>
+        </a>
+        <div class="trust-payments">
+          <span class="trust-label">We Accept</span>
+          <div class="trust-icons">
+            <span class="card" aria-label="Visa"><svg viewBox="0 0 48 16" xmlns="http://www.w3.org/2000/svg"><text x="24" y="13" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" font-style="italic" fill="#1A1F71">VISA</text></svg></span>
+            <span class="card" aria-label="Mastercard"><svg viewBox="0 0 36 22" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="11" r="8" fill="#EB001B"/><circle cx="22" cy="11" r="8" fill="#F79E1B"/><path d="M18 5a8 8 0 0 1 0 12 8 8 0 0 1 0-12z" fill="#FF5F00"/></svg></span>
+            <span class="card" aria-label="American Express"><svg viewBox="0 0 48 16" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="16" rx="2" fill="#006FCF"/><text x="24" y="11" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="8" fill="#fff">AMEX</text></svg></span>
+            <span class="card" aria-label="Troy"><svg viewBox="0 0 48 16" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="16" rx="2" fill="#00529C"/><text x="24" y="11" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="9" fill="#fff">TROY</text></svg></span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class="footer-divider"></div>
-
-    <div class="footer-trust">
-      <a class="trust-badge" href="https://www.tursab.org.tr/tr/ddsv" target="_blank" rel="noopener">
-        <div class="trust-col">
-          <span class="trust-seal">TÜRSAB</span>
-          <span class="trust-cap">Association of Turkish Travel Agencies</span>
-        </div>
-        <span class="trust-sep"></span>
-        <div class="trust-col">
-          <span class="trust-value">A-XXXXX</span>
-          <span class="trust-cap">Licence No</span>
-        </div>
-      </a>
-      <div class="trust-payments">
-        <span class="trust-label">We Accept</span>
-        <div class="trust-icons">
-          <span class="card" aria-label="Visa"><svg viewBox="0 0 48 16" xmlns="http://www.w3.org/2000/svg"><text x="24" y="13" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="13" font-style="italic" fill="#1A1F71">VISA</text></svg></span>
-          <span class="card" aria-label="Mastercard"><svg viewBox="0 0 36 22" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="11" r="8" fill="#EB001B"/><circle cx="22" cy="11" r="8" fill="#F79E1B"/><path d="M18 5a8 8 0 0 1 0 12 8 8 0 0 1 0-12z" fill="#FF5F00"/></svg></span>
-          <span class="card" aria-label="American Express"><svg viewBox="0 0 48 16" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="16" rx="2" fill="#006FCF"/><text x="24" y="11" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="8" fill="#fff">AMEX</text></svg></span>
-          <span class="card" aria-label="Troy"><svg viewBox="0 0 48 16" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="16" rx="2" fill="#00529C"/><text x="24" y="11" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="9" fill="#fff">TROY</text></svg></span>
-        </div>
-      </div>
-    </div>
 
     <div class="footer-bottom">
       <div class="footer-copy">© 2026 Luxury Bosphorus Tour · All evenings reserved.</div>
