@@ -2581,15 +2581,16 @@
   setInterval(tick, 1000);
 })();
 
-/* Hide WhatsApp float when the footer enters the viewport */
+/* Hide WhatsApp float when the very bottom of the footer (copyright +
+   social + legal row) enters the viewport — re-appears on scroll up */
 (function waHideOnFooter(){
   const wa = document.querySelector('.wa-float');
-  const footer = document.querySelector('footer');
-  if (!wa || !footer || !('IntersectionObserver' in window)) return;
+  const bottom = document.querySelector('.footer-bottom');
+  if (!wa || !bottom || !('IntersectionObserver' in window)) return;
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => wa.classList.toggle('hide', e.isIntersecting));
-  }, { threshold: 0.05 });
-  obs.observe(footer);
+  }, { threshold: 0.1 });
+  obs.observe(bottom);
 })();
 
 /* Language picker dropdown */
