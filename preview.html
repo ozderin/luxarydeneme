@@ -804,21 +804,25 @@
 
   .pv{position:fixed;top:8px;right:8px;background:rgba(7,7,11,.7);color:var(--gold);padding:4px 9px;border:1px solid var(--gold-deep);font-size:8px;letter-spacing:.32em;text-transform:uppercase;z-index:80;backdrop-filter:blur(4px);pointer-events:none}
 
-  /* Language picker — nav, between brand and BOOK TONIGHT pill */
-  .lang-picker{position:relative;margin-left:auto;margin-right:14px}
-  .lang-btn{display:flex;align-items:center;gap:7px;background:transparent;border:1px solid var(--gold-deep);color:var(--gold);padding:8px 12px;cursor:pointer;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:all .25s;line-height:1}
+  /* Language picker — nav, glued to the left of BOOK TONIGHT pill */
+  .lang-picker{position:relative;margin-left:auto;margin-right:10px}
+  .lang-btn{display:flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--gold-deep);color:var(--gold);padding:7px 11px;cursor:pointer;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:all .25s;line-height:1}
   .lang-btn:hover{background:rgba(201,169,97,.06);border-color:var(--gold)}
+  .lang-btn .lang-flag{width:18px;height:auto;display:block;border:1px solid rgba(201,169,97,.3)}
   .lang-btn .chev{font-size:8px;color:var(--gold-deep);line-height:1}
-  .lang-list{display:none;position:absolute;top:calc(100% + 4px);right:0;min-width:150px;background:var(--bg-2);border:1px solid var(--gold-deep);padding:0;margin:0;list-style:none;z-index:60;box-shadow:0 8px 24px -8px rgba(0,0,0,.6)}
+  .lang-list{display:none;position:absolute;top:calc(100% + 4px);right:0;min-width:170px;background:var(--bg-2);border:1px solid var(--gold-deep);padding:0;margin:0;list-style:none;z-index:60;box-shadow:0 8px 24px -8px rgba(0,0,0,.6)}
   .lang-list.show{display:block}
-  .lang-list a{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;color:var(--ink);text-decoration:none;font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;transition:background .2s,color .2s;border-bottom:1px solid rgba(201,169,97,.1)}
+  .lang-list a{display:flex;align-items:center;gap:11px;padding:10px 14px;color:var(--ink);text-decoration:none;font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;transition:background .2s,color .2s;border-bottom:1px solid rgba(201,169,97,.1)}
   .lang-list li:last-child a{border-bottom:0}
   .lang-list a:hover{background:rgba(201,169,97,.08);color:var(--gold)}
-  .lang-list a.active{color:var(--gold)}
-  .lang-list a.active::after{content:"●";color:var(--gold);font-size:8px}
+  .lang-list a.active{color:var(--gold);background:rgba(201,169,97,.06)}
+  .lang-list a img{width:20px;height:auto;border:1px solid rgba(201,169,97,.2);flex:none}
+  .lang-list a span.name{flex:1}
+  .lang-list a.active::after{content:"●";color:var(--gold);font-size:8px;margin-left:auto}
   @media(max-width:560px){
-    .lang-picker{margin-right:10px}
-    .lang-btn{padding:6px 10px;font-size:9px;letter-spacing:.18em}
+    .lang-picker{margin-right:8px}
+    .lang-btn{padding:5px 9px;font-size:9px;letter-spacing:.16em;gap:6px}
+    .lang-btn .lang-flag{width:16px}
   }
 
   /* Tonight countdown — lives directly under the hero h1 */
@@ -924,12 +928,13 @@
       </a>
       <div class="lang-picker" id="langPicker">
         <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <img class="lang-flag" src="https://flagcdn.com/w40/gb.png" alt="">
           <span class="lang-code">EN</span>
           <span class="chev">▾</span>
         </button>
         <ul class="lang-list" role="listbox">
-          <li><a href="/" lang="en" class="active">English<span class="flag">EN</span></a></li>
-          <li><a href="/tr/" lang="tr">Türkçe<span class="flag">TR</span></a></li>
+          <li><a href="/" lang="en" class="active"><img src="https://flagcdn.com/w40/gb.png" alt=""><span class="name">English</span></a></li>
+          <li><a href="/tr/" lang="tr"><img src="https://flagcdn.com/w40/tr.png" alt=""><span class="name">Türkçe</span></a></li>
         </ul>
       </div>
       <a class="book-pill" href="#m-book">
