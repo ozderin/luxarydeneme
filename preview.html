@@ -24,7 +24,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Allura&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <style>
   :root{
     --bg:#07070B;
@@ -629,7 +628,10 @@
   }
 
   /* ─────────── BOOKING WIZARD MODAL ─────────── */
-  .modal-frame.wizard{max-width:560px;padding:0;border:0;border-top:2px solid var(--gold-deep);background:var(--bg-2);overflow:hidden;display:flex;flex-direction:column;max-height:92vh}
+  /* Wizard opens as a bottom-sheet (slides up from below) on every screen */
+  #m-book{align-items:flex-end;justify-content:center;padding:0}
+  .modal-frame.wizard{max-width:720px;width:100%;padding:0;border:0;border-top:2px solid var(--gold-deep);background:var(--bg-2);overflow:hidden;display:flex;flex-direction:column;max-height:92vh;border-radius:16px 16px 0 0;margin:0 auto;animation:wizSheetUp .42s cubic-bezier(.16,.84,.44,1)}
+  @keyframes wizSheetUp{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
   .modal-frame.wizard .modal-close{top:14px;right:14px;background:rgba(7,7,11,.6);backdrop-filter:blur(6px);z-index:6}
   .wiz-head{padding:30px 36px 10px;flex:none}
   .wiz-eyebrow{font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:14px}
@@ -693,13 +695,28 @@
   .wiz-addr-loading{position:absolute;right:0;top:14px;width:14px;height:14px;border:2px solid rgba(201,169,97,.2);border-top-color:var(--gold);border-radius:50%;animation:wizSpin .8s linear infinite;display:none}
   .wiz-addr-loading.show{display:block}
   @keyframes wizSpin{to{transform:rotate(360deg)}}
-  .wiz-map{height:220px;border:1px solid var(--gold-deep);margin-top:12px;background:var(--bg-2);display:none}
+  .wiz-map{height:220px;border:1px solid var(--gold-deep);margin-top:12px;background:var(--bg-2);display:none;overflow:hidden}
   .wiz-map.show{display:block}
-  .wiz-map .leaflet-tile{filter:saturate(.55) brightness(.78) contrast(1.05)}
-  .wiz-map .leaflet-control-attribution{background:rgba(15,15,21,.85);color:var(--ink-soft);font-size:9px}
-  .wiz-map .leaflet-control-attribution a{color:var(--gold)}
-  .wiz-map .leaflet-bar a{background:var(--bg-2);color:var(--gold);border-color:var(--gold-deep)}
-  .wiz-map .leaflet-bar a:hover{background:var(--bg-3)}
+
+  /* Transfer zone validation message (Madde 4) */
+  .wiz-zone-msg{margin-top:8px;font-size:11px;line-height:1.5;font-family:var(--sans);padding:8px 12px;border-radius:3px;letter-spacing:.02em}
+  .wiz-zone-msg.ok{background:rgba(123,184,127,.08);border-left:2px solid #7bb87f;color:#9bd0a1}
+  .wiz-zone-msg.ok .verify{color:var(--ink-muted);font-size:10px;display:block;margin-top:3px}
+  .wiz-zone-msg.bad{background:rgba(215,122,120,.08);border-left:2px solid #d77a78;color:#e89c9a}
+  .wiz-zone-cta{display:block;width:100%;margin-top:10px;padding:10px 14px;background:var(--gold);color:var(--bg);border:0;font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;cursor:pointer;border-radius:2px;transition:background .25s;text-align:center}
+  .wiz-zone-cta:hover{background:var(--gold-bright)}
+  .wiz-zone-block{background:rgba(215,122,120,.06);border-left:2px solid #d77a78;padding:12px 14px;margin-top:6px;border-radius:3px}
+  .wiz-zone-block .title{color:#e89c9a;font-family:var(--sans);font-size:12px;font-weight:600;margin-bottom:6px}
+  .wiz-zone-block .body{color:var(--ink-muted);font-size:11px;line-height:1.55;margin-bottom:10px}
+
+  /* Google Maps Places Autocomplete dropdown — dark theme */
+  .pac-container{background:var(--bg-2);border:1px solid var(--gold-deep);border-top:0;font-family:var(--sans);box-shadow:0 8px 24px -8px rgba(0,0,0,.6);z-index:1200}
+  .pac-item{padding:10px 14px;border-top:1px solid rgba(201,169,97,.08);color:var(--ink);font-size:13px;cursor:pointer}
+  .pac-item:first-child{border-top:0}
+  .pac-item:hover,.pac-item-selected{background:rgba(201,169,97,.08)}
+  .pac-item-query{color:var(--ink);font-size:13px}
+  .pac-matched{color:var(--gold-bright);font-weight:600}
+  .pac-icon{filter:invert(75%) sepia(30%) saturate(500%) hue-rotate(10deg)}
   .wiz-input:focus{outline:0;border-bottom-color:var(--gold)}
   .wiz-input::placeholder{color:var(--ink-soft)}
   /* Custom date picker (upward popup) */
@@ -748,18 +765,39 @@
   .wiz-toggle{display:grid;grid-template-columns:1fr 1fr;gap:8px}
   .wiz-tgl{padding:11px 14px;border:1px solid var(--line-soft);background:transparent;color:var(--ink-muted);font-size:10px;letter-spacing:.26em;text-transform:uppercase;cursor:pointer;transition:all .2s;font-family:var(--sans);font-weight:500}
   .wiz-tgl:hover{border-color:rgba(201,169,97,.5);color:var(--ink)}
-  .wiz-tgl.sel{border-color:var(--gold);background:rgba(201,169,97,.08);color:var(--gold)}
+  .wiz-tgl.sel{border-color:var(--gold);background:rgba(201,169,97,.12);color:var(--gold-bright);font-weight:600}
+
+  /* drink per-adult counter block (Madde 3) */
+  .wiz-drink-block{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+  .wiz-drink-block:last-of-type{border-bottom:0}
+  .wiz-drink-head{margin-bottom:8px}
+  .wiz-drink-head .nm{font-family:var(--serif);font-size:16px;font-weight:500;color:var(--ink);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .wiz-drink-head .nm .pr{color:var(--gold);font-weight:600;font-size:11px;font-family:var(--sans);letter-spacing:.18em;text-transform:uppercase}
+  .wiz-drink-head .ds{font-size:11px;color:var(--ink-muted);line-height:1.55;margin-top:4px}
+  .wiz-drink-row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:10px 0;border-top:1px solid var(--line-soft)}
+  .wiz-drink-row .info .nm{font-family:var(--serif);font-size:14px;font-weight:500;color:var(--ink);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .wiz-drink-row .info .pr{color:var(--gold);font-weight:600;font-size:15px;font-family:var(--serif);letter-spacing:.02em}
+  .wiz-drink-row .info .ds{font-size:10px;color:var(--ink-muted);line-height:1.5;margin-top:2px}
+  .wiz-drink-row .ctrl{display:flex;align-items:center;gap:10px}
+  .wiz-drink-row .ctrl button{width:28px;height:28px;border-radius:50%;border:1px solid var(--gold-deep);color:var(--gold);font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center;background:transparent;transition:all .2s;font-family:var(--sans);font-weight:300;padding:0;cursor:pointer}
+  .wiz-drink-row .ctrl button:hover{border-color:var(--gold);background:rgba(201,169,97,.08)}
+  .wiz-drink-row .ctrl .val{font-family:var(--serif);font-size:22px;color:var(--ink);font-weight:600;min-width:24px;text-align:center;font-variant-numeric:tabular-nums}
+  .wiz-drink-total{text-align:right;font-size:11px;color:var(--ink-muted);margin-top:8px;font-family:var(--sans);font-weight:500;letter-spacing:.02em}
+  .wiz-drink-total.complete{color:#7bb87f}
+  .wiz-alcohol-count{margin-top:10px;padding:12px 16px;background:rgba(201,169,97,.04);border-left:2px solid var(--gold-deep);border-radius:0 4px 4px 0;animation:wizDrinkReveal .35s ease}
+  .wiz-alcohol-count .wiz-drink-row{border-top:0;padding-top:0;padding-bottom:6px}
+  @keyframes wizDrinkReveal{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
 
   /* extras list */
   .wiz-extra{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line-soft)}
   .wiz-extra:last-child{border-bottom:0}
   .wiz-extra .info .nm{font-family:var(--serif);font-size:16px;font-weight:500;color:var(--ink);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-  .wiz-extra .info .pr{color:var(--gold);font-weight:600;font-size:13px;font-family:var(--serif)}
+  .wiz-extra .info .pr{color:var(--gold);font-weight:600;font-size:15px;font-family:var(--serif);letter-spacing:.02em}
   .wiz-extra .info .ds{font-size:11px;color:var(--ink-muted);line-height:1.55;margin-top:4px}
   .wiz-extra .tgl-row{display:flex;gap:6px;align-self:start}
   .wiz-extra-btn{padding:7px 14px;border:1px solid var(--line-soft);background:transparent;color:var(--ink-soft);font-size:9px;letter-spacing:.26em;text-transform:uppercase;cursor:pointer;transition:all .2s;font-family:var(--sans);font-weight:500;min-width:54px}
   .wiz-extra-btn:hover{border-color:rgba(201,169,97,.5);color:var(--ink)}
-  .wiz-extra-btn.sel{border-color:var(--gold);background:rgba(201,169,97,.1);color:var(--gold)}
+  .wiz-extra-btn.sel{border-color:var(--gold);background:rgba(201,169,97,.14);color:var(--gold-bright);font-weight:600}
 
   /* country phone combobox */
   .wiz-phone-row{display:flex;gap:10px;align-items:flex-end}
@@ -794,15 +832,21 @@
   /* reservation summary card (Step 4) */
   .wiz-card{background:linear-gradient(180deg,rgba(201,169,97,.03),rgba(15,15,21,.6));border:1px solid var(--gold-deep);padding:0;position:relative;margin-bottom:20px}
   .wiz-card::before{content:"";position:absolute;inset:5px;border:1px solid rgba(201,169,97,.15);pointer-events:none}
-  .wiz-card-head{padding:18px 24px 14px;border-bottom:1px dashed rgba(201,169,97,.35);text-align:center;position:relative;z-index:1}
-  .wiz-card-domain{position:absolute;top:8px;right:12px;font-family:var(--sans);font-size:8px;letter-spacing:.14em;color:var(--gold-deep);font-weight:500;z-index:2}
+  .wiz-card-head{padding:14px 24px 12px;border-bottom:1px dashed rgba(201,169,97,.35);text-align:center;position:relative;z-index:1}
+  .wiz-card-brand{display:inline-flex;align-items:center;gap:7px;margin-bottom:10px}
+  .wiz-card-brand svg{width:18px;height:18px;color:var(--gold);flex:none}
+  .wiz-card-brand .wm{display:flex;flex-direction:column;line-height:1;font-family:var(--sans);text-align:left}
+  .wiz-card-brand .wm-top{font-family:var(--serif);font-size:11px;font-weight:600;letter-spacing:.22em;color:var(--ink);text-transform:uppercase}
+  .wiz-card-brand .wm-bot{font-size:7px;letter-spacing:.42em;color:var(--gold);text-transform:uppercase;margin-top:2px}
+  .wiz-card-eb{font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;font-family:var(--sans);font-weight:500}
+  .wiz-card-url{display:block;margin-top:6px;font-family:var(--sans);font-size:9px;letter-spacing:.16em;color:var(--gold-deep);font-weight:500}
   .wiz-card-eb{font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-family:var(--sans);font-weight:500}
   .wiz-card-title{font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);text-transform:uppercase;letter-spacing:.01em;line-height:1}
-  .wiz-card-body{padding:16px 24px 56px;position:relative;z-index:1}
-  .wiz-card-price{position:absolute;bottom:14px;left:18px;display:flex;flex-direction:column;align-items:flex-start;line-height:1;z-index:2}
+  .wiz-card-body{padding:16px 24px 18px;position:relative;z-index:1}
+  .wiz-card-price{display:flex;flex-direction:column;align-items:flex-start;line-height:1;margin-top:14px;padding-top:14px;border-top:1px dashed rgba(201,169,97,.25)}
   .wiz-card-price .strike{font-family:var(--serif);font-size:13px;color:var(--ink-soft);text-decoration:line-through;text-decoration-color:rgba(201,169,97,.45);margin-bottom:3px}
   .wiz-card-price .now{font-family:var(--serif);font-size:24px;color:var(--gold);font-weight:600}
-  .wiz-card-price .save{font-family:var(--sans);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-top:4px}
+  .wiz-card-price .save{font-family:var(--sans);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-top:4px}
   .wiz-rows{display:grid;grid-template-columns:1fr 1fr;gap:12px 22px;margin-bottom:8px}
   .wiz-row{display:flex;flex-direction:column;gap:2px}
   .wiz-row dt{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
@@ -840,7 +884,7 @@
   .wiz-final .wiz-btn{justify-content:center;width:100%;padding:14px 22px;font-size:11px}
 
   @media(max-width:680px){
-    .modal-frame.wizard{max-width:100%;max-height:100dvh;height:100dvh;border-top:0}
+    .modal-frame.wizard{max-width:100%;max-height:100dvh;height:100dvh;border-top:0;border-radius:0}
     .wiz-head{padding:24px 20px 14px}
     .wiz-body{padding:6px 20px 18px}
     .wiz-foot{padding:12px 20px}
@@ -2403,7 +2447,7 @@
               <span class="ds">Premium meats, near-stage seating, elevated service.</span>
             </button>
           </div>
-          <a class="wiz-view-link" href="#m-dinner">
+          <a class="wiz-view-link" href="#m-packages">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
             Compare full menus
           </a>
@@ -2465,19 +2509,35 @@
 
           <div class="wiz-extra">
             <div class="info">
-              <div class="nm">Drink Option <span class="pr">Required</span></div>
-              <div class="ds">Soft drinks are included in every package. Add unlimited local alcohol for €15 per person — beer, rakı, gin, vodka, red &amp; white wine. Imported drinks at extra cost.</div>
-              <p id="wizAlcoholWarn" class="wiz-warn">Please choose a drink option.</p>
+              <div class="nm">Unlimited Alcohol <span class="pr">+€15 / adult</span></div>
+              <div class="ds">Soft drinks are included for every guest. Adults can add the unlimited alcohol package — beer, rakı, gin, vodka, red &amp; white wine — for €15 each. Imported drinks at extra cost.</div>
+              <p id="wizAlcoholWarn" class="wiz-warn">Please choose whether to add the alcohol package.</p>
             </div>
             <div class="tgl-row">
-              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="0">Soft Drinks</button>
-              <button type="button" class="wiz-extra-btn" data-extra="alcohol" data-val="1">+ Alcohol €15</button>
+              <button type="button" class="wiz-extra-btn" data-extra="alcoholOpt" data-val="0">No, just soft drinks</button>
+              <button type="button" class="wiz-extra-btn" data-extra="alcoholOpt" data-val="1">Yes, add alcohol</button>
             </div>
+          </div>
+
+          <div class="wiz-alcohol-count" id="wizAlcoholCount" style="display:none">
+            <div class="wiz-drink-row">
+              <div class="info">
+                <div class="nm">How many adults want alcohol?</div>
+                <div class="ds">+€15 per adult on the package. The rest enjoy soft drinks (included).</div>
+                <p id="wizAlcoholCountWarn" class="wiz-warn">Please select at least one adult for the alcohol package.</p>
+              </div>
+              <div class="ctrl">
+                <button type="button" data-drink="alcohol" data-delta="-1" aria-label="Decrease">−</button>
+                <span class="val" id="wizDrinkAlcohol">0</span>
+                <button type="button" data-drink="alcohol" data-delta="1" aria-label="Increase">+</button>
+              </div>
+            </div>
+            <p id="wizDrinkSummary" class="wiz-drink-total"></p>
           </div>
 
           <div class="wiz-extra">
             <div class="info">
-              <div class="nm">Pickup Option <span class="pr">Required</span></div>
+              <div class="nm">Pickup Option <span class="pr">+€10 / person</span></div>
               <div class="ds">Self-coming to our pier at Eminönü, or door-to-door private transfer from your hotel for €10 per person (round-trip).</div>
               <p id="wizTransferWarn" class="wiz-warn">Please choose a pickup option.</p>
             </div>
@@ -2536,11 +2596,8 @@
 
         <div class="wiz-section" id="wizAddressWrap" style="display:none">
           <span class="wiz-label">Pickup Location</span>
-          <div class="wiz-addr-search">
-            <input type="text" id="wizAddress" class="wiz-input" placeholder="Search hotel name or address…" autocomplete="off">
-            <span class="wiz-addr-loading" id="wizAddrLoading"></span>
-            <ul class="wiz-addr-results" id="wizAddrResults" style="display:none"></ul>
-          </div>
+          <input type="text" id="wizAddress" class="wiz-input" placeholder="Search hotel name or address…" autocomplete="off">
+          <div id="wizTransferZoneMsg" class="wiz-zone-msg" style="display:none"></div>
           <p class="wiz-hint">Drag the marker if you need to fine-tune the location.</p>
           <div class="wiz-map" id="wizMap"></div>
           <div style="margin-top:14px">
@@ -2572,15 +2629,22 @@
         <p class="wiz-hint" style="text-align:center;margin:0 0 14px">Review your reservation</p>
 
         <div class="wiz-card">
-          <div class="wiz-card-price">
-            <span class="strike" id="wizCardWas">€0</span>
-            <span class="now" id="wizCardNow">€0</span>
-            <span class="save">Saved 35%</span>
-          </div>
           <div class="wiz-card-head">
-            <span class="wiz-card-domain">luxurybosphorustour.com</span>
+            <span class="wiz-card-brand" aria-label="Luxury Bosphorus Tour">
+              <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.6">
+                <circle cx="30" cy="30" r="22"/>
+                <path d="M22 32 Q 30 24, 38 32" stroke-linecap="round"/>
+                <path d="M16 38 Q 30 34, 44 38" stroke-linecap="round" opacity=".7"/>
+                <path d="M14 44 Q 30 40, 46 44" stroke-linecap="round" opacity=".4"/>
+              </svg>
+              <span class="wm">
+                <span class="wm-top">Luxury Bosphorus</span>
+                <span class="wm-bot">Tour · Istanbul</span>
+              </span>
+            </span>
             <div class="wiz-card-eb">Reservation Card</div>
             <div class="wiz-card-title" id="wizSumPkg">Standard Cruise</div>
+            <span class="wiz-card-url">luxurybosphorustour.com</span>
           </div>
           <div class="wiz-card-body">
             <dl class="wiz-rows">
@@ -2595,6 +2659,12 @@
             </dl>
 
             <div class="wiz-price-lines" id="wizPriceLines"></div>
+
+            <div class="wiz-card-price">
+              <span class="strike" id="wizCardWas">€0</span>
+              <span class="now" id="wizCardNow">€0</span>
+              <span class="save">Saved 35%</span>
+            </div>
           </div>
           <div class="wiz-card-total">
             <span class="lab">Total</span>
@@ -2626,7 +2696,17 @@
   </div>
 </div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+/* Queue + flag for Google Maps callback so the order of inline-script-vs-Maps-load
+   doesn't matter. The IIFE below replaces window.initWizMap with the real handler. */
+window.__initWizMapQueue = [];
+window.initWizMap = function(){
+  window.__gmapsReady = true;
+  window.__initWizMapQueue.forEach(fn => { try { fn(); } catch(e){ console.error(e); } });
+  window.__initWizMapQueue = [];
+};
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD3EG7YLMI6xQWZsPtICZIoVIJVGGgtQw&libraries=places&callback=initWizMap" async defer></script>
 <script>
 /* Tonight countdown + simulated booked count.
    Countdown runs to the 21:00 departure; after that, switches to
@@ -2850,12 +2930,33 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     ['BR','Brazil','55','🇧🇷'],
     ['AR','Argentina','54','🇦🇷'],
     ['ZA','South Africa','27','🇿🇦'],
+    ['AL','Albania','355','🇦🇱'],
+    ['AZ','Azerbaijan','994','🇦🇿'],
+    ['BA','Bosnia and Herzegovina','387','🇧🇦'],
+    ['BD','Bangladesh','880','🇧🇩'],
+    ['CO','Colombia','57','🇨🇴'],
+    ['CY','Cyprus','357','🇨🇾'],
+    ['DZ','Algeria','213','🇩🇿'],
+    ['GE','Georgia','995','🇬🇪'],
+    ['HK','Hong Kong','852','🇭🇰'],
+    ['HR','Croatia','385','🇭🇷'],
+    ['IQ','Iraq','964','🇮🇶'],
+    ['KE','Kenya','254','🇰🇪'],
+    ['KZ','Kazakhstan','7','🇰🇿'],
+    ['LK','Sri Lanka','94','🇱🇰'],
+    ['MK','North Macedonia','389','🇲🇰'],
+    ['NG','Nigeria','234','🇳🇬'],
+    ['RS','Serbia','381','🇷🇸'],
+    ['TN','Tunisia','216','🇹🇳'],
+    ['TW','Taiwan','886','🇹🇼'],
+    ['UZ','Uzbekistan','998','🇺🇿'],
+    ['XK','Kosovo','383','🇽🇰'],
     
   ];
 
   const state = {
     step:1, pkg:null, date:'', adults:0, kids:0, babies:0,
-    alcohol:null, transfer:null, romantic:0,
+    alcoholOpt:null, drinks:{alcohol:0}, transfer:null, romantic:0,
     name:'', cc:'', phone:'', address:'', lat:null, lon:null, room:'', channel:''
   };
 
@@ -2870,7 +2971,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     const ppWas = state.pkg === 'vip' ? PRICES.vipWas : (state.pkg === 'standard' ? PRICES.standardWas : 0);
     const pkgTotal = pp * state.adults + (pp * 0.5) * state.kids;
     const pkgWasTotal = ppWas * state.adults + (ppWas * 0.5) * state.kids;
-    const alcoholTotal = state.alcohol ? PRICES.alcohol * state.adults : 0;
+    const alcoholTotal = PRICES.alcohol * (state.drinks.alcohol || 0);
     const headcount = state.adults + state.kids + state.babies;
     const transferHeadcount = state.adults + state.kids;
     const transferTotal = state.transfer ? PRICES.transfer * transferHeadcount : 0;
@@ -2898,14 +2999,20 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     renderProgress();
     renderFoot();
     updateSummary();
+    if (n === 2){
+      renderDrinkSummary();
+      // Keep alcohol counter visibility in sync with choice
+      const countCard = $('wizAlcoholCount');
+      if (countCard) countCard.style.display = state.alcoholOpt === 1 ? '' : 'none';
+    }
     $('wizBack').style.visibility = n > 1 ? 'visible' : 'hidden';
     const body = document.querySelector('.wiz-body');
     if (body) body.scrollTop = 0;
     if (n === 3 && state.transfer){
       setTimeout(() => {
+        setupAutocomplete();
         initMap();
         if (state.lat && state.lon) placeMarker(state.lat, state.lon);
-        else if (map) map.invalidateSize();
       }, 80);
     }
   }
@@ -2950,6 +3057,45 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     state[name] = Math.max(min, Math.min(max, state[name] + delta));
     $('wiz' + name.charAt(0).toUpperCase() + name.slice(1)).textContent = state[name];
     if (name === 'adults' && state.adults > 0) $('wizAdultsWarn').classList.remove('show');
+    if (name === 'adults'){
+      // clamp alcohol count to adults
+      if (state.drinks.alcohol > state.adults) state.drinks.alcohol = state.adults;
+      if ($('wizDrinkAlcohol')) $('wizDrinkAlcohol').textContent = state.drinks.alcohol;
+      renderDrinkSummary();
+    }
+    renderFoot();
+  }
+
+  function renderDrinkSummary(){
+    const el = $('wizDrinkSummary');
+    if (!el) return;
+    const alcohol = state.drinks.alcohol || 0;
+    const adults = state.adults;
+    if (alcohol === 0){
+      el.textContent = '';
+      el.classList.remove('complete');
+      return;
+    }
+    if (alcohol === adults){
+      el.textContent = '✓ All adults on alcohol package';
+      el.classList.add('complete');
+    } else {
+      el.textContent = alcohol + ' / ' + adults + ' adults on alcohol package';
+      el.classList.remove('complete');
+    }
+  }
+
+  function changeDrink(type, delta){
+    // Only "alcohol" supported now — soft is auto (adults - alcohol)
+    if (type !== 'alcohol') return;
+    const cur = state.drinks.alcohol || 0;
+    const next = cur + delta;
+    if (next < 0) return;
+    if (next > state.adults) return;
+    state.drinks.alcohol = next;
+    $('wizDrinkAlcohol').textContent = next;
+    if (next > 0) $('wizAlcoholCountWarn').classList.remove('show');
+    renderDrinkSummary();
     renderFoot();
   }
 
@@ -2958,10 +3104,46 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     all('[data-extra="'+name+'"]').forEach(b => {
       b.classList.toggle('sel', +b.dataset.val === val);
     });
-    if (name === 'alcohol'){ $('wizAlcoholWarn').classList.remove('show'); }
+    if (name === 'alcoholOpt'){
+      $('wizAlcoholWarn').classList.remove('show');
+      const countCard = $('wizAlcoholCount');
+      if (val){
+        // Yes: reveal counter, user must add adults manually (default 0)
+        countCard.style.display = '';
+      } else {
+        // No: hide counter, zero alcohol
+        countCard.style.display = 'none';
+        state.drinks.alcohol = 0;
+        $('wizDrinkAlcohol').textContent = '0';
+        $('wizAlcoholCountWarn').classList.remove('show');
+      }
+      renderDrinkSummary();
+    }
     if (name === 'transfer'){
       $('wizTransferWarn').classList.remove('show');
+      $('wizTransferWarn').innerHTML = 'Please choose a pickup option.'; // reset to default text
       $('wizAddressWrap').style.display = val ? 'block' : 'none';
+      // Cutoff check: today + ≥18:00 → soft block, switch transfer back to null
+      if (val && !isTransferTimeAvailable(state.date)){
+        state.transfer = null;
+        all('[data-extra="transfer"]').forEach(b => b.classList.remove('sel'));
+        $('wizAddressWrap').style.display = 'none';
+        const warn = $('wizTransferWarn');
+        warn.innerHTML = `<div class="wiz-zone-block">`+
+          `<div class="title">⏰ Today's transfer window closed</div>`+
+          `<div class="body">Today's hotel transfer closed at 18:00. You can still join the cruise by reaching Eminönü Pier on your own by 20:30.</div>`+
+          `<button type="button" class="wiz-zone-cta" id="wizTimeBlockedAction">I will come to Eminönü myself</button>`+
+          `</div>`;
+        warn.classList.add('show');
+        setTimeout(() => {
+          const btn = $('wizTimeBlockedAction');
+          if (btn) btn.addEventListener('click', () => {
+            warn.classList.remove('show');
+            warn.innerHTML = `Please choose a pickup option.`;
+            toggleExtra('transfer', 0); // user accepts "come myself"
+          });
+        }, 0);
+      }
     }
     renderFoot();
   }
@@ -3024,7 +3206,16 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     }
     if (state.step === 2){
       let ok = true;
-      if (state.alcohol === null){ $('wizAlcoholWarn').classList.add('show'); ok = false; } else { $('wizAlcoholWarn').classList.remove('show'); }
+      if (state.alcoholOpt === null){
+        $('wizAlcoholWarn').classList.add('show'); ok = false;
+      } else {
+        $('wizAlcoholWarn').classList.remove('show');
+        if (state.alcoholOpt === 1 && (state.drinks.alcohol || 0) < 1){
+          $('wizAlcoholCountWarn').classList.add('show'); ok = false;
+        } else {
+          $('wizAlcoholCountWarn').classList.remove('show');
+        }
+      }
       if (state.transfer === null){ $('wizTransferWarn').classList.add('show'); ok = false; } else { $('wizTransferWarn').classList.remove('show'); }
       if (!ok){ focusFirstError(false); return; }
       showStep(3); return;
@@ -3040,6 +3231,18 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
       if (!state.cc){ $('wizCcWarn').classList.add('show'); ok = false; } else { $('wizCcWarn').classList.remove('show'); }
       if (!phone){ $('wizPhoneWarn').classList.add('show'); ok = false; } else { $('wizPhoneWarn').classList.remove('show'); }
       if (!state.channel){ $('wizChannelWarn').classList.add('show'); ok = false; } else { $('wizChannelWarn').classList.remove('show'); }
+      // Transfer-specific checks (only if transfer = Yes)
+      if (state.transfer){
+        if (state.address && !state.lat){
+          // User typed but never picked from autocomplete
+          renderZoneMsg(false);
+          ok = false;
+        } else if (state.address && state.lat && !detectTransferZone(state.address)){
+          // Picked a location outside our zones — soft block via continue button
+          renderZoneMsg(false);
+          ok = false;
+        }
+      }
       if (!ok){ focusFirstError(true); return; }
       showStep(4); return;
     }
@@ -3075,7 +3278,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     } else { $('wizSumAddrRow').style.display = 'none'; }
 
     const extras = [];
-    if (state.alcohol) extras.push('Unlimited alcohol');
+    if (state.drinks.alcohol > 0) extras.push('Unlimited alcohol × '+state.drinks.alcohol);
     if (state.romantic) extras.push('Romantic table');
     if (extras.length){
       $('wizSumExtraRow').style.display = 'flex';
@@ -3090,7 +3293,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
       if (state.babies) detail += ' + '+state.babies+' baby (free)';
       lines.push(['Package · '+pkgLbl+' — '+detail, fmt(t.pkgTotal)]);
     }
-    if (t.alcoholTotal) lines.push(['Unlimited alcohol × '+state.adults, fmt(t.alcoholTotal)]);
+    if (t.alcoholTotal) lines.push(['Unlimited alcohol × '+state.drinks.alcohol, fmt(t.alcoholTotal)]);
     if (t.transferTotal) lines.push(['Hotel transfer × '+t.transferHeadcount, fmt(t.transferTotal)]);
     if (t.romanticTotal) lines.push(['Romantic table', fmt(t.romanticTotal)]);
     $('wizPriceLines').innerHTML = lines.map(l => '<div class="wiz-pl"><span>'+l[0]+'</span><b>'+l[1]+'</b></div>').join('');
@@ -3107,7 +3310,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     if (state.kids) gp.push(state.kids+' '+(state.kids===1?'kid':'kids')+' (4-7)');
     if (state.babies) gp.push(state.babies+' '+(state.babies===1?'baby':'babies')+' (0-3)');
     msg += '• Guests: '+gp.join(' + ')+'%0A';
-    if (state.alcohol) msg += '• Unlimited alcohol package%0A';
+    if (state.drinks.alcohol > 0) msg += '• Unlimited alcohol package × '+state.drinks.alcohol+'%0A';
     if (state.transfer){
       msg += '• Hotel transfer · '+state.address+(state.room?(' (Room '+state.room+')'):'')+'%0A';
       if (state.lat && state.lon) msg += '  📍 https://maps.google.com/?q='+state.lat+','+state.lon+'%0A';
@@ -3126,96 +3329,156 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     window.open(url,'_blank');
   }
 
-  /* ---- Pickup map (Leaflet + Nominatim autocomplete) ---- */
-  let map = null, marker = null;
-  let searchTimer = null, searchSeq = 0;
-  const ISTANBUL_CENTER = [41.0082, 28.9784];
+  /* ---- Pickup map + Places Autocomplete (Google Maps) + Transfer Zone (BN pattern) ---- */
+  let map = null, marker = null, autocomplete = null, autocompleteBound = false;
+  const ISTANBUL_CENTER = { lat: 41.0082, lng: 28.9784 };
+
+  // Transfer zone list comes from build-time config
+  const TRANSFER_ZONES = ['Beşiktaş','Sütlüce','Sirkeci','Topkapı','Taksim','Eminönü','Kağıthane','Fatih','Laleli','Sultanahmet','Sultan Ahmet','Ortaköy','Beyoğlu','Hilton Istanbul Bosphorus',];
+
+  function detectTransferZone(address){
+    if (!address) return false;
+    const upper = String(address).toUpperCase();
+    return TRANSFER_ZONES.some(kw => upper.includes(kw.toUpperCase()));
+  }
+
+  function isTransferTimeAvailable(dateValue){
+    if (!dateValue) return true;
+    const todayIst = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Istanbul' });
+    if (dateValue !== todayIst) return true;
+    const hourIst = Number(new Intl.DateTimeFormat('en-GB',
+      { hour: '2-digit', hour12: false, timeZone: 'Europe/Istanbul' }).format(new Date()));
+    return Number.isFinite(hourIst) ? hourIst < 18 : true;
+  }
 
   function initMap(){
-    if (map || typeof L === 'undefined') return;
-    L.Icon.Default.mergeOptions({
-      iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-      iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-      shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png'
-    });
+    if (map) return;
+    if (typeof google === 'undefined' || !google.maps) return;
     const el = $('wizMap');
+    if (!el) return;
     el.classList.add('show');
-    map = L.map(el, { scrollWheelZoom: false }).setView(ISTANBUL_CENTER, 11);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-    setTimeout(() => map.invalidateSize(), 100);
+    map = new google.maps.Map(el, {
+      center: ISTANBUL_CENTER,
+      zoom: 11,
+      disableDefaultUI: true,
+      zoomControl: true,
+      gestureHandling: 'cooperative'
+    });
   }
 
-  function placeMarker(lat, lon){
+  function placeMarker(lat, lng){
     initMap();
     if (!map) return;
-    const ll = [lat, lon];
-    map.setView(ll, 15);
-    if (marker){ marker.setLatLng(ll); }
-    else {
-      marker = L.marker(ll, { draggable: true }).addTo(map);
-      marker.on('dragend', () => {
-        const p = marker.getLatLng();
-        state.lat = p.lat; state.lon = p.lng;
+    // Always re-show the map container in case it was hidden by an earlier edit
+    const el = $('wizMap');
+    if (el) el.classList.add('show');
+    // Map exists but container was display:none — force re-layout so tiles paint
+    setTimeout(() => { if (map) google.maps.event.trigger(map, 'resize'); }, 50);
+    const pos = { lat, lng };
+    map.setCenter(pos);
+    map.setZoom(15);
+    if (marker){
+      marker.setPosition(pos);
+    } else {
+      marker = new google.maps.Marker({
+        position: pos,
+        map: map,
+        draggable: true,
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 10,
+          fillColor: '#C9A961',
+          fillOpacity: 1,
+          strokeColor: '#F4EFE6',
+          strokeWeight: 2
+        }
+      });
+      marker.addListener('dragend', () => {
+        const p = marker.getPosition();
+        state.lat = p.lat();
+        state.lon = p.lng();
       });
     }
   }
 
-  function escHtml(s){
-    return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function renderZoneMsg(allowed){
+    const el = $('wizTransferZoneMsg');
+    if (!el) return;
+    if (allowed){
+      el.className = 'wiz-zone-msg ok';
+      el.innerHTML = '<span>✓ Transfer is available for this area</span>'+
+        '<span class="verify">📍 Please verify your location on the map</span>';
+      el.style.display = 'block';
+    } else {
+      el.className = 'wiz-zone-msg bad';
+      el.innerHTML = '<div>✕ We do not offer transfer service to this area</div>'+
+        '<button type="button" class="wiz-zone-cta" id="wizZoneContinue">Continue without transfer · I will come myself</button>';
+      el.style.display = 'block';
+      const btn = $('wizZoneContinue');
+      if (btn) btn.addEventListener('click', continueWithoutTransfer);
+    }
   }
 
-  function renderAddrResults(items){
-    const ul = $('wizAddrResults');
-    if (!items.length){
-      ul.innerHTML = '<li class="empty">No results — try a different name</li>';
-      ul.style.display = 'block';
-      return;
-    }
-    ul.innerHTML = items.map(it => {
-      const parts = (it.display_name||'').split(', ');
-      const main = parts[0];
-      const sub = parts.slice(1, 3).join(', ');
-      return '<li data-lat="'+it.lat+'" data-lon="'+it.lon+'" data-name="'+escHtml(it.display_name)+'">'+
-        '<div class="lbl">'+escHtml(main)+'</div>'+
-        '<div class="sub">'+escHtml(sub)+'</div>'+
-      '</li>';
-    }).join('');
-    ul.style.display = 'block';
-    Array.from(ul.children).forEach(li => {
-      if (!li.dataset.lat) return;
-      li.addEventListener('click', () => {
-        state.address = li.dataset.name;
-        state.lat = parseFloat(li.dataset.lat);
-        state.lon = parseFloat(li.dataset.lon);
-        $('wizAddress').value = li.dataset.name;
-        ul.style.display = 'none';
-        placeMarker(state.lat, state.lon);
-      });
+  function hideZoneMsg(){
+    const el = $('wizTransferZoneMsg');
+    if (el){ el.style.display = 'none'; el.innerHTML = ''; }
+  }
+
+  function continueWithoutTransfer(){
+    // Force transfer to "No" and clear address state
+    toggleExtra('transfer', 0);
+    state.address = ''; state.lat = null; state.lon = null;
+    if ($('wizAddress')) $('wizAddress').value = '';
+    if ($('wizRoom')) $('wizRoom').value = '';
+    hideZoneMsg();
+    const mapEl = $('wizMap');
+    if (mapEl) mapEl.classList.remove('show');
+    renderFoot();
+  }
+
+  function setupAutocomplete(){
+    if (autocompleteBound) return;
+    const input = $('wizAddress');
+    if (!input || typeof google === 'undefined' || !google.maps || !google.maps.places) return;
+    autocomplete = new google.maps.places.Autocomplete(input, {
+      types: ['establishment', 'geocode'],
+      componentRestrictions: { country: 'tr' },
+      fields: ['formatted_address', 'name', 'geometry', 'types']
     });
+    let lastPickAt = 0;
+    autocomplete.addListener('place_changed', () => {
+      const place = autocomplete.getPlace();
+      if (!place || !place.geometry || !place.geometry.location) return;
+      const fullAddress = ((place.name || '') + ' ' + (place.formatted_address || '')).trim();
+      const display = place.name ? (place.name + ' — ' + (place.formatted_address || '')) : (place.formatted_address || fullAddress);
+      lastPickAt = Date.now(); // mark this moment so the imminent `input` event from value-set is ignored
+      input.value = display;
+      state.address = display;
+      state.lat = place.geometry.location.lat();
+      state.lon = place.geometry.location.lng();
+      placeMarker(state.lat, state.lon);
+      renderZoneMsg(detectTransferZone(fullAddress));
+    });
+    // Manual edits invalidate the picked coords — but ignore the programmatic
+    // `input` event that fires right after Google sets the field on selection.
+    input.addEventListener('input', () => {
+      if (Date.now() - lastPickAt < 300) return;
+      if (state.lat){
+        state.lat = null; state.lon = null;
+      }
+      hideZoneMsg();
+      const mapEl = $('wizMap');
+      if (mapEl) mapEl.classList.remove('show');
+    });
+    autocompleteBound = true;
   }
 
-  function searchAddress(q){
-    clearTimeout(searchTimer);
-    const seq = ++searchSeq;
-    const ul = $('wizAddrResults');
-    const spinner = $('wizAddrLoading');
-    if (q.length < 3){
-      ul.style.display = 'none';
-      spinner.classList.remove('show');
-      return;
-    }
-    spinner.classList.add('show');
-    searchTimer = setTimeout(() => {
-      const url = 'https://nominatim.openstreetmap.org/search?format=json&countrycodes=tr&limit=8&viewbox=28.5,41.3,29.5,40.8&bounded=1&q='+encodeURIComponent(q);
-      fetch(url, { headers: { 'Accept-Language': 'en' } })
-        .then(r => r.json())
-        .then(items => { if (seq === searchSeq) renderAddrResults(items); })
-        .catch(() => { if (seq === searchSeq) renderAddrResults([]); })
-        .finally(() => { if (seq === searchSeq) spinner.classList.remove('show'); });
-    }, 450);
+  // If Google Maps already loaded before this IIFE ran (raced ahead), set up
+  // autocomplete now. Otherwise queue it for the deferred callback.
+  if (window.__gmapsReady){
+    setupAutocomplete();
+  } else if (Array.isArray(window.__initWizMapQueue)){
+    window.__initWizMapQueue.push(setupAutocomplete);
   }
 
   /* ---- Wire events ---- */
@@ -3223,6 +3486,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     all('.wiz-pkg').forEach(b => b.addEventListener('click', () => selectPackage(b.dataset.pkg)));
     all('[data-counter]').forEach(b => b.addEventListener('click', () => changeCounter(b.dataset.counter, +b.dataset.delta)));
     all('[data-extra]').forEach(b => b.addEventListener('click', () => toggleExtra(b.dataset.extra, +b.dataset.val)));
+    all('[data-drink]').forEach(b => b.addEventListener('click', () => changeDrink(b.dataset.drink, +b.dataset.delta)));
     all('.wiz-ch').forEach(b => b.addEventListener('click', () => selectChannel(b.dataset.channel)));
     setupDatePicker();
     $('wizNext').addEventListener('click', onNext);
@@ -3233,7 +3497,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
       if ($('wizCcDrop').classList.contains('show')) closeCcDrop(); else openCcDrop();
     });
     $('wizCcSearch').addEventListener('input', e => renderCountries(e.target.value));
-    $('wizAddress').addEventListener('input', e => searchAddress(e.target.value));
+    // wizAddress is wired up by setupAutocomplete() — no manual search handler needed
 
     /* Inline blur/input validation (BN pattern): hide warning the moment the
        field becomes valid; show it on blur if still empty. */
@@ -3251,7 +3515,6 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     });
     document.addEventListener('click', e => {
       if (!e.target.closest('.wiz-cc-wrap')) closeCcDrop();
-      if (!e.target.closest('.wiz-addr-search')) $('wizAddrResults').style.display = 'none';
     });
 
     /* pre-select from data-preselect on Reserve Standard / VIP */

@@ -22,6 +22,17 @@
     "departure": "21:00",
     "return": "23:45"
   },
+  "transfer": {
+    "cutoffHour": 18,
+    "zones": [
+      "Beşiktaş", "Sütlüce", "Sirkeci", "Topkapı", "Taksim",
+      "Eminönü", "Kağıthane", "Fatih", "Laleli",
+      "Sultanahmet", "Sultan Ahmet",
+      "Ortaköy", "Beyoğlu",
+      "Hilton Istanbul Bosphorus"
+    ]
+  },
+  "googleMapsApiKey": "AIzaSyCD3EG7YLMI6xQWZsPtICZIoVIJVGGgtQw",
   "video": {
     "heroEmbed": "https://www.youtube.com/embed/QBB3ENbpYUM?autoplay=1&rel=0&modestbranding=1"
   },
