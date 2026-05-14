@@ -125,6 +125,19 @@
     ]
   },
 
+  "findUs": {
+    "title": "Find the Pier",
+    "subtitle": "Where the evening begins — our private pier on the historic peninsula.",
+    "tip1Title": "10-min walk",
+    "tip1Body": "From Sultanahmet & Hagia Sophia",
+    "tip2Title": "2-min walk",
+    "tip2Body": "To Eminönü tram stop (T1 line)",
+    "tip3Title": "5-min walk",
+    "tip3Body": "To Sirkeci Marmaray station",
+    "openMaps": "Open in Google Maps",
+    "directions": "Get directions"
+  },
+
   "footer": {
     "desc": "Istanbul's premier evening dinner cruise. Three decks, an Anatolian programme, and the Bosphorus by night — every evening, a celebration.",
     "reservations": "Reservations",

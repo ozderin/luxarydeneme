@@ -125,6 +125,19 @@
     ]
   },
 
+  "findUs": {
+    "title": "İskeleyi Bulun",
+    "subtitle": "Akşamın başladığı yer — tarihi yarımadadaki özel iskelemiz.",
+    "tip1Title": "10 dk yürüyüş",
+    "tip1Body": "Sultanahmet ve Ayasofya'dan",
+    "tip2Title": "2 dk yürüyüş",
+    "tip2Body": "Eminönü tramvay durağına (T1 hattı)",
+    "tip3Title": "5 dk yürüyüş",
+    "tip3Body": "Sirkeci Marmaray istasyonuna",
+    "openMaps": "Google Maps'te Aç",
+    "directions": "Yol tarifi al"
+  },
+
   "footer": {
     "desc": "İstanbul'un en seçkin akşam Boğaz yemek turu. Üç güverte, Anadolu programı ve gece Boğaz — her akşam bir kutlama.",
     "reservations": "Rezervasyon",

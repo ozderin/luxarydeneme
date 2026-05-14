@@ -22,6 +22,12 @@
     "departure": "21:00",
     "return": "23:45"
   },
+  "pier": {
+    "address": "İstanbul Sirkeci, Hobyar, 34112 Sirkeci/İstanbul",
+    "lat": 41.0150,
+    "lng": 28.9770,
+    "googleMapsUrl": "https://maps.app.goo.gl/ipEvR1hcDyZfo1YQ6"
+  },
   "transfer": {
     "cutoffHour": 18,
     "zones": [
