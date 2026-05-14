@@ -656,8 +656,9 @@
   .wiz-section:last-child{margin-bottom:6px}
   .wiz-label{font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(201,169,97,.25);display:block}
   .wiz-hint{font-size:11px;color:var(--ink-soft);line-height:1.5;margin-top:6px;font-family:var(--sans)}
-  .wiz-warn{font-size:10px;letter-spacing:.06em;color:#d77a78;margin:6px 0 0;display:none;font-family:var(--sans)}
-  .wiz-warn.show{display:block}
+  .wiz-warn{font-size:10px;letter-spacing:.06em;color:#d77a78;margin:6px 0 0;display:none;font-family:var(--sans);font-weight:500}
+  .wiz-warn.show{display:block;animation:wizWarnPulse 1.4s ease-in-out infinite}
+  @keyframes wizWarnPulse{0%,100%{opacity:1}50%{opacity:.45}}
 
   /* package cards */
   .wiz-pkgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -2410,6 +2411,7 @@
 
         <div class="wiz-section">
           <span class="wiz-label">{{wizard.sec1DateLabel}}</span>
+          <p id="wizDateWarn" class="wiz-warn">{{wizard.sec1DateWarn}}</p>
           <div class="wiz-date-wrap">
             <button type="button" class="wiz-date-btn" id="wizDateBtn" aria-haspopup="dialog" aria-expanded="false">
               <span id="wizDateLabel" class="placeholder">{{wizard.sec1DatePlaceholder}}</span>
@@ -2528,6 +2530,7 @@
             <input type="tel" id="wizPhone" class="wiz-input" placeholder="{{wizard.sec3PhonePh}}" inputmode="numeric" autocomplete="tel-national">
           </div>
           <p class="wiz-hint">{{wizard.sec3PhoneHint}}</p>
+          <p id="wizCcWarn" class="wiz-warn">{{wizard.sec3CcWarn}}</p>
           <p id="wizPhoneWarn" class="wiz-warn">{{wizard.sec3PhoneWarn}}</p>
         </div>
 
@@ -2933,6 +2936,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
           $('wizCcFlag').classList.add('show');
           $('wizCcLabel').textContent = '+'+c[2];
           $('wizCcLabel').classList.add('sel');
+          $('wizCcWarn').classList.remove('show');
           closeCcDrop();
         });
         ul.appendChild(li);
@@ -2958,15 +2962,16 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
   function onNext(){
     if (state.step === 1){
       let ok = true;
-      if (!state.pkg){ $('wizPkgWarn').classList.add('show'); ok = false; }
-      if (state.adults < 1){ $('wizAdultsWarn').classList.add('show'); ok = false; }
+      if (!state.pkg){ $('wizPkgWarn').classList.add('show'); ok = false; } else { $('wizPkgWarn').classList.remove('show'); }
+      if (!state.date){ $('wizDateWarn').classList.add('show'); ok = false; } else { $('wizDateWarn').classList.remove('show'); }
+      if (state.adults < 1){ $('wizAdultsWarn').classList.add('show'); ok = false; } else { $('wizAdultsWarn').classList.remove('show'); }
       if (!ok){ focusFirstError(false); return; }
       showStep(2); return;
     }
     if (state.step === 2){
       let ok = true;
-      if (state.alcohol === null){ $('wizAlcoholWarn').classList.add('show'); ok = false; }
-      if (state.transfer === null){ $('wizTransferWarn').classList.add('show'); ok = false; }
+      if (state.alcohol === null){ $('wizAlcoholWarn').classList.add('show'); ok = false; } else { $('wizAlcoholWarn').classList.remove('show'); }
+      if (state.transfer === null){ $('wizTransferWarn').classList.add('show'); ok = false; } else { $('wizTransferWarn').classList.remove('show'); }
       if (!ok){ focusFirstError(false); return; }
       showStep(3); return;
     }
@@ -2978,8 +2983,9 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
       state.address = $('wizAddress').value.trim();
       state.room = $('wizRoom').value.trim();
       if (!name){ $('wizNameWarn').classList.add('show'); ok = false; } else { $('wizNameWarn').classList.remove('show'); }
+      if (!state.cc){ $('wizCcWarn').classList.add('show'); ok = false; } else { $('wizCcWarn').classList.remove('show'); }
       if (!phone){ $('wizPhoneWarn').classList.add('show'); ok = false; } else { $('wizPhoneWarn').classList.remove('show'); }
-      if (!state.channel){ $('wizChannelWarn').classList.add('show'); ok = false; }
+      if (!state.channel){ $('wizChannelWarn').classList.add('show'); ok = false; } else { $('wizChannelWarn').classList.remove('show'); }
       if (!ok){ focusFirstError(true); return; }
       showStep(4); return;
     }
@@ -3174,6 +3180,21 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     });
     $('wizCcSearch').addEventListener('input', e => renderCountries(e.target.value));
     $('wizAddress').addEventListener('input', e => searchAddress(e.target.value));
+
+    /* Inline blur/input validation (BN pattern): hide warning the moment the
+       field becomes valid; show it on blur if still empty. */
+    $('wizName').addEventListener('input', e => {
+      if (e.target.value.trim()) $('wizNameWarn').classList.remove('show');
+    });
+    $('wizName').addEventListener('blur', e => {
+      $('wizNameWarn').classList.toggle('show', !e.target.value.trim());
+    });
+    $('wizPhone').addEventListener('input', e => {
+      if (e.target.value.trim()) $('wizPhoneWarn').classList.remove('show');
+    });
+    $('wizPhone').addEventListener('blur', e => {
+      $('wizPhoneWarn').classList.toggle('show', !e.target.value.trim());
+    });
     document.addEventListener('click', e => {
       if (!e.target.closest('.wiz-cc-wrap')) closeCcDrop();
       if (!e.target.closest('.wiz-addr-search')) $('wizAddrResults').style.display = 'none';
@@ -3217,6 +3238,8 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
       hidden.value = state.date;
       lbl.textContent = fmtLabel(selected);
       lbl.classList.remove('placeholder');
+      const warn = document.getElementById('wizDateWarn');
+      if (warn) warn.classList.remove('show');
     }
 
     function render(){
