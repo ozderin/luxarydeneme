@@ -31,7 +31,7 @@
     "discountPct": 35,
     "standard": { "was": 38, "now": 25 },
     "vip": { "was": 100, "now": 65 },
-    "transferPerPerson": 5,
+    "transferPerPerson": 10,
     "alcoholPerPerson": 15,
     "tablePerTable": 15
   }
