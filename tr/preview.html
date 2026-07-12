@@ -14,13 +14,13 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Boğaz Akşam Yemekli Tekne Turu İstanbul — Türk Gecesi Şovu">
 <meta property="og:description" content="Eminönü iskelesinden kalkan üç saatlik lüks Boğaz akşam yemekli tekne turu. Türk gecesi şovu, çok aşamalı menü, opsiyonel otel transferi. Kişi başı 25 €'dan.">
-<meta property="og:image" content="https://luxurybosphorustour.com/data/boat-night-bridge.webp">
+<meta property="og:image" content="https://luxurybosphorustour.com/data/01-aerial/bosphorus-cruise-aerial-1.jpg">
 <meta property="og:url" content="https://luxurybosphorustour.com/tr/">
 <meta property="og:site_name" content="Luxury Bosphorus Tour">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Boğaz Akşam Yemekli Tekne Turu İstanbul — Türk Gecesi Şovu">
 <meta name="twitter:description" content="Eminönü iskelesinden kalkan üç saatlik lüks Boğaz akşam yemekli tekne turu. Türk gecesi şovu, çok aşamalı menü, otel transferi. 25 €'dan.">
-<meta name="twitter:image" content="https://luxurybosphorustour.com/data/boat-night-bridge.webp">
+<meta name="twitter:image" content="https://luxurybosphorustour.com/data/01-aerial/bosphorus-cruise-aerial-1.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Allura&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -53,8 +53,9 @@
   @media(max-width:680px){.wrap{padding:0 18px}}
 
   /* ─────────── nav ─────────── */
-  nav{position:absolute;top:0;left:0;right:0;z-index:30;padding:38px 0 14px}
-  nav .row{display:flex;align-items:flex-start;gap:14px}
+  nav{position:absolute;top:0;left:0;right:0;z-index:30;padding:20px 0 14px;pointer-events:none}
+  nav .row{display:flex;align-items:flex-start;gap:14px;pointer-events:none}
+  nav .brand, nav .book-wrap, nav .lang-picker{pointer-events:auto}
   .brand{display:flex;align-items:center;gap:12px}
   .brand .glyph{width:36px;height:36px}
   .brand .name{display:flex;flex-direction:column;line-height:1.1}
@@ -88,7 +89,7 @@
   /* ─────────── HERO (flex:1, fills viewport) ─────────── */
   .hero{position:relative;overflow:hidden;flex:1;min-height:0;display:flex;flex-direction:column}
   .hero-section{height:100vh;display:flex;flex-direction:column;overflow:hidden;flex:none}
-  .hero-bg{position:absolute;inset:0;z-index:0;background:url('/data/boat-night-bridge.webp') center 18%/cover no-repeat #050608}
+  .hero-bg{position:absolute;inset:0;z-index:0;background:url('/data/01-aerial/bosphorus-cruise-aerial-1.jpg') center 18%/cover no-repeat #050608}
   .hero-bg::before{
     content:"";position:absolute;inset:0;
     background:
@@ -101,23 +102,23 @@
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='2'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
   .veil{position:absolute;inset:0;z-index:3;background:linear-gradient(90deg, rgba(7,7,11,.75) 0%, rgba(7,7,11,.45) 28%, rgba(7,7,11,.2) 55%, transparent 80%);pointer-events:none}
 
-  .hero-grid{position:relative;z-index:4;flex:1;min-height:0;display:grid;grid-template-columns:280px 1fr 96px;gap:32px;padding:64px 32px 12px;align-items:center}
+  .hero-grid{position:relative;z-index:4;flex:1;min-height:0;display:grid;grid-template-columns:280px 1fr 96px;gap:32px;padding:88px 32px 12px;align-items:center}
   @media(max-width:1180px){.hero-grid{grid-template-columns:240px 1fr 80px;gap:20px}}
 
   /* left column — feature cards */
   .hero-side-left{display:flex;flex-direction:column;gap:8px;height:100%;padding-top:8px;padding-bottom:0;justify-content:center}
   .ftc{position:relative;border:1px solid var(--line-soft);background:#0E0E14;padding:14px 18px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;transition:all .3s;flex:1;min-height:0;text-decoration:none;color:inherit}
-  .ftc::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;opacity:.65;transition:opacity .35s, transform .8s ease}
-  .ftc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(7,7,11,.15) 0%, rgba(7,7,11,.55) 55%, rgba(7,7,11,.92) 100%);z-index:1}
+  .ftc::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;opacity:.65;transition:opacity .35s, transform .8s ease;pointer-events:none}
+  .ftc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(7,7,11,.15) 0%, rgba(7,7,11,.55) 55%, rgba(7,7,11,.92) 100%);z-index:1;pointer-events:none}
   .ftc:hover{border-color:var(--gold)}
   .ftc:hover::before{opacity:.85;transform:scale(1.04)}
   .ftc .icon{width:18px;height:18px;color:var(--gold);margin-bottom:8px;position:relative;z-index:2}
   .ftc h3{position:relative;z-index:2;font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
   .ftc p{position:relative;z-index:2;font-size:11px;color:var(--ink-muted);line-height:1.4}
-  .ftc.ft1::before{background-image:url('/data/boat-pier-sunset.webp')}
-  .ftc.ft2::before{background-image:url('/data/dining-romantic-wide.webp')}
-  .ftc.ft3::before{background-image:url('/data/boat-night-bridge.webp')}
-  .ftc.ft4::before{background-image:url('/data/boat-night-drone.webp')}
+  .ftc.ft1::before{background-image:url('/data/02-boat-exterior/bosphorus-cruise-boat-night-14.jpg');background-position:center 75%}
+  .ftc.ft2::before{background-image:url('/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-15.jpg')}
+  .ftc.ft3::before{background-image:url('/data/manzara/bosphorus-bridge-istanbul-night.jpg')}
+  .ftc.ft4::before{background-image:url('/data/01-aerial/bosphorus-cruise-aerial-3.jpg')}
 
   /* merkez — hero text + panel system */
   .hero-center{position:relative;display:flex;flex-direction:column;justify-content:center;height:100%;padding-top:20px}
@@ -192,11 +193,11 @@
   .ev .name .accent{font-family:var(--script);font-weight:400;color:var(--gold-bright);font-size:1.3em;text-transform:none;letter-spacing:0}
   .ev .sub{font-family:var(--sans);font-weight:300;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
 
-  .ev.e1 .bg{background-image:url('/data/steak-wine.webp')}
-  .ev.e2 .bg{background-image:url('/data/whirling-dervish.webp')}
-  .ev.e3 .bg{background-image:url('/data/boat-night-drone.webp')}
-  .ev.e4 .bg{background-image:url('/data/friends-cheers.webp')}
-  .ev.e5 .bg{background-image:url('/data/boat-night-bridge.webp')}
+  .ev.e1 .bg{background-image:url('/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-24.jpg')}
+  .ev.e2 .bg{background-image:url('/data/08-performers-dervish/whirling-dervish-bosphorus-cruise-1.jpg')}
+  .ev.e3 .bg{background-image:url('/data/manzara/dolmabahce-palace-bosphorus-night.jpg')}
+  .ev.e4 .bg{background-image:url('/data/10-party-guests/bosphorus-night-cruise-party-23.jpg')}
+  .ev.e5 .bg{background-image:url('/data/01-aerial/bosphorus-cruise-aerial-1.jpg')}
 
   /* ─────────── footer bar ─────────── */
   footer{flex:none;background:var(--bg);border-top:1px solid var(--line-soft);padding:10px 0}
@@ -343,8 +344,21 @@
 
   /* Package cards (Standard / VIP) */
   .packages{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px}
-  .pkg{position:relative;border:1px solid var(--line-soft);background:linear-gradient(180deg,rgba(201,169,97,.03),rgba(15,15,21,.6));padding:32px 30px;display:flex;flex-direction:column}
+  .pkg{position:relative;border:1px solid var(--line-soft);background:linear-gradient(180deg,rgba(201,169,97,.03),rgba(15,15,21,.6));padding:32px 30px;display:flex;flex-direction:column;overflow:hidden}
+  .pkg::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;opacity:.18;z-index:0;pointer-events:none;transition:opacity .35s}
+  .pkg:hover::before{opacity:.28}
+  .pkg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,11,.55) 0%,rgba(7,7,11,.85) 100%);z-index:1;pointer-events:none}
+  .pkg > *{position:relative;z-index:2}
+  .pkg:not(.popular)::before{background-image:url('/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-33.jpg')}
+  .pkg.popular::before{background-image:url('/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-24.jpg')}
+  .pkg.popular::after{background:linear-gradient(180deg,rgba(201,169,97,.08) 0%,rgba(7,7,11,.88) 100%)}
   .pkg.popular{border-color:var(--gold);box-shadow:0 0 0 1px rgba(201,169,97,.25), 0 18px 40px -20px rgba(201,169,97,.18)}
+
+  /* Modal-wide background for packages — bg sticks to viewport while content scrolls */
+  #m-packages .modal-frame.editorial{position:relative;background:var(--bg-2)}
+  #m-packages .modal-frame.editorial::before{content:"";position:sticky;top:0;left:0;display:block;height:100vh;margin-bottom:-100vh;background:linear-gradient(180deg,rgba(7,7,11,.78) 0%,rgba(7,7,11,.92) 100%),url('/data/01-aerial/bosphorus-cruise-aerial-2.jpg') center/cover no-repeat;opacity:1;z-index:0;pointer-events:none}
+  #m-packages .modal-frame.editorial > *:not(.modal-close){position:relative;z-index:1}
+  #m-packages .modal-frame.editorial .modal-close{z-index:5}
   .pkg-badge{position:absolute;top:-1px;right:-1px;background:var(--gold);color:var(--bg);font-size:9px;letter-spacing:.32em;text-transform:uppercase;padding:7px 14px;font-weight:600}
   .pkg-eyebrow{font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
   .pkg-name{font-family:var(--serif);font-weight:600;font-size:30px;color:var(--ink);letter-spacing:-.01em;line-height:1;margin-bottom:14px;text-transform:uppercase}
@@ -488,6 +502,9 @@
   }
   .flow-stage:hover{border-color:var(--gold)}
   .flow-stage .ph{width:100%;height:160px;object-fit:cover;display:block;position:relative}
+  .flow-stage .ph-split{display:grid;grid-template-columns:1fr 1fr;gap:2px;height:160px;position:relative}
+  .flow-stage .ph-split .ph{height:100%;width:100%}
+  .flow-stage:nth-child(3) .ph-split .ph:first-child{object-position:center top}
   .stage-tag{position:absolute;top:16px;left:16px;z-index:5;font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);background:rgba(7,7,11,.7);backdrop-filter:blur(6px);padding:9px 16px 8px;border:1px solid rgba(201,169,97,.5);line-height:1}
   .flow-stage:nth-child(4) .stage-tag{left:auto;right:16px}
   .flow-stage .body{padding:18px 22px 22px}
@@ -1005,7 +1022,7 @@
 
   /* Language picker — floating bottom-right, sits above the WhatsApp pill */
   .lang-picker{position:fixed;top:0;right:14px;bottom:auto;z-index:95;margin:0}
-  .book-wrap{margin-left:auto;margin-right:-18px}
+  .book-wrap{margin-left:auto;margin-right:-18px;margin-top:30px}
   .lang-btn{display:flex;align-items:center;gap:8px;background:rgba(7,7,11,.78);backdrop-filter:blur(8px);border:1px solid var(--gold-deep);color:var(--gold);padding:9px 13px;cursor:pointer;font-family:var(--sans);font-size:9px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:all .25s;line-height:1;box-shadow:0 6px 18px -6px rgba(0,0,0,.5)}
   .lang-btn:hover{background:rgba(15,15,21,.88);border-color:var(--gold)}
   .lang-btn .lang-flag{width:18px;height:auto;display:block;border:1px solid rgba(201,169,97,.3)}
@@ -1022,7 +1039,7 @@
   @media(max-width:560px){
     .lang-picker{top:0;right:10px}
     nav{padding:30px 0 14px}
-    .book-wrap{margin-right:-8px}
+    .book-wrap{margin-right:-8px;margin-top:34px}
     .lang-btn{padding:7px 10px;font-size:9px;letter-spacing:.16em;gap:6px}
     .lang-btn .lang-flag{width:16px}
   }
@@ -1165,7 +1182,7 @@
     </div>
   </nav>
 
-  <a class="wa-float" href="https://wa.me/905555555555" target="_blank" rel="noopener" aria-label="WhatsApp'tan bize yazın">
+  <a class="wa-float" href="https://wa.me/905321777115" target="_blank" rel="noopener" aria-label="WhatsApp'tan bize yazın">
     <span class="wa-content">
       <span class="wa-main">Bize Yaz</span>
       <span class="wa-status">Şu anda çevrimiçi</span>
@@ -1234,10 +1251,10 @@
         </h2>
         <p class="hero-lede">Klasik Türk mezeleri, seçkin etler ve taze deniz ürünleriyle açılan çok yemekli bir Boğaz akşam yemekli tekne menüsü. Vejetaryen, vegan ve glutensiz seçenekler teknede hazırlanır.</p>
         <div class="panel-thumbs">
-          <a href="#m-dinner"><img src="/data/full-hall.webp" alt="" loading="lazy"></a>
-          <a href="#m-dinner"><img src="/data/steak-wine.webp" alt="" loading="lazy"></a>
-          <a href="#m-dinner"><img src="/data/chicken-wine.webp" alt="" loading="lazy"></a>
-          <a href="#m-dinner"><img src="/data/table-candle-glasses.webp" alt="" loading="lazy"></a>
+          <a href="#m-dinner"><img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-1.jpg" alt="" loading="lazy"></a>
+          <a href="#m-dinner"><img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-24.jpg" alt="" loading="lazy"></a>
+          <a href="#m-dinner"><img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-33.jpg" alt="" loading="lazy"></a>
+          <a href="#m-dinner"><img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-5.jpg" alt="" loading="lazy"></a>
         </div>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="#m-dinner">Menüyü Gör <span class="arr">→</span></a>
@@ -1256,10 +1273,10 @@
         </h2>
         <p class="hero-lede">Her akşam canlı Türk gecesi şovu — semazen, oryantal dans, davul ekibi, Anadolu halk oyunları. Konser düzeyinde sahne ışıkları, tam prodüksiyon, profesyonel sanatçılar.</p>
         <div class="panel-thumbs">
-          <a href="#m-shows"><img src="/data/whirling-dervish.webp" alt="" loading="lazy"></a>
-          <a href="#m-shows"><img src="/data/belly-dance-blue.webp" alt="" loading="lazy"></a>
-          <a href="#m-shows"><img src="/data/folk-dance.webp" alt="" loading="lazy"></a>
-          <a href="#m-shows"><img src="/data/drummer-party.webp" alt="" loading="lazy"></a>
+          <a href="#m-shows"><img src="/data/08-performers-dervish/whirling-dervish-bosphorus-cruise-1.jpg" alt="" loading="lazy"></a>
+          <a href="#m-shows"><img src="/data/07-performers-belly/belly-dance-bosphorus-night-cruise-1.jpg" alt="" loading="lazy"></a>
+          <a href="#m-shows"><img src="/data/06-performers-folk/anatolian-folk-dance-bosphorus-cruise-1.jpg" alt="" loading="lazy"></a>
+          <a href="#m-shows"><img src="/data/06-performers-folk/anatolian-folk-dance-bosphorus-cruise-2.jpg" alt="" loading="lazy"></a>
         </div>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="#m-shows">Programı Gör <span class="arr">→</span></a>
@@ -1278,10 +1295,10 @@
         </h2>
         <p class="hero-lede">Üç saatlik bir Boğaz gece turunda: Boğaziçi Köprüsü, Fatih Köprüsü, Kız Kulesi, Dolmabahçe ve Beylerbeyi Sarayları, Ortaköy Camii — Avrupa ve Asya'nın ışıklı siluetleri.</p>
         <div class="panel-thumbs">
-          <a href="#m-view"><img src="/data/boat-night-bridge.webp" alt="" loading="lazy"></a>
-          <a href="#m-view"><img src="/data/boat-night-drone.webp" alt="" loading="lazy"></a>
-          <a href="#m-view"><img src="/data/boat-pier-sunset.webp" alt="" loading="lazy"></a>
-          <a href="#m-view"><img src="/data/couple-cheers-bridge.webp" alt="" loading="lazy"></a>
+          <a href="#m-view"><img src="/data/manzara/dolmabahce-palace-bosphorus-night.jpg" alt="" loading="lazy"></a>
+          <a href="#m-view"><img src="/data/manzara/ortakoy-mosque-bosphorus-cruise.jpg" alt="" loading="lazy"></a>
+          <a href="#m-view"><img src="/data/manzara/bosphorus-bridge-istanbul-night.jpg" alt="" loading="lazy"></a>
+          <a href="#m-view"><img src="/data/manzara/rumeli-hisari-bosphorus-night.jpg" alt="" loading="lazy"></a>
         </div>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="#m-view">Rotayı Gör <span class="arr">→</span></a>
@@ -1300,10 +1317,10 @@
         </h2>
         <p class="hero-lede">Üst güvertede Boğaz DJ turu — profesyonel ses ve ışık, açık hava dans pisti. Latin, Deep House, R&B, vintage, popüler — her gece farklı tema, aynı enerji.</p>
         <div class="panel-thumbs">
-          <a href="#m-party"><img src="/data/dance-floor-crowd.webp" alt="" loading="lazy"></a>
-          <a href="#m-party"><img src="/data/drummer-party.webp" alt="" loading="lazy"></a>
-          <a href="#m-party"><img src="/data/happy-guests.webp" alt="" loading="lazy"></a>
-          <a href="#m-party"><img src="/data/friends-cheers.webp" alt="" loading="lazy"></a>
+          <a href="#m-party"><img src="/data/10-party-guests/bosphorus-night-cruise-party-1.jpg" alt="" loading="lazy"></a>
+          <a href="#m-party"><img src="/data/06-performers-folk/anatolian-folk-dance-bosphorus-cruise-2.jpg" alt="" loading="lazy"></a>
+          <a href="#m-party"><img src="/data/10-party-guests/bosphorus-night-cruise-party-5.jpg" alt="" loading="lazy"></a>
+          <a href="#m-party"><img src="/data/10-party-guests/bosphorus-night-cruise-party-7.jpg" alt="" loading="lazy"></a>
         </div>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="#m-party">Tema Takvimi <span class="arr">→</span></a>
@@ -1322,10 +1339,10 @@
         </h2>
         <p class="hero-lede">Premium üç güverteli Boğaz teknesi — ana güvertede kapalı yemek alanı ve sahne, orta güvertede lounge yemek alanı, üst güvertede açık hava dans pisti ve bar. Her akşam Eminönü iskelesinden kalkış.</p>
         <div class="panel-thumbs">
-          <a href="#m-boat"><img src="/data/full-hall.webp" alt="" loading="lazy"></a>
-          <a href="#m-boat"><img src="/data/dance-floor-crowd.webp" alt="" loading="lazy"></a>
-          <a href="#m-boat"><img src="/data/boat-pier-sunset.webp" alt="" loading="lazy"></a>
-          <a href="#m-boat"><img src="/data/boat-night-drone.webp" alt="" loading="lazy"></a>
+          <a href="#m-boat"><img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-1.jpg" alt="" loading="lazy"></a>
+          <a href="#m-boat"><img src="/data/10-party-guests/bosphorus-night-cruise-party-1.jpg" alt="" loading="lazy"></a>
+          <a href="#m-boat"><img src="/data/01-aerial/bosphorus-cruise-aerial-2.jpg" alt="" loading="lazy"></a>
+          <a href="#m-boat"><img src="/data/01-aerial/bosphorus-cruise-aerial-3.jpg" alt="" loading="lazy"></a>
         </div>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="#m-boat">Tekneyi Gezdir <span class="arr">→</span></a>
@@ -1380,7 +1397,7 @@
     <div class="f-domain">luxurybosphorustour.com</div>
     <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kalkış · <b>Eminönü</b></div>
     <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Kapı Açılış · <b>20:00</b></div>
-    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.9 19.9 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.9 19.9 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg><b>+90 (XXX) XXX XX XX</b></div>
+    <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.9 19.9 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.9 19.9 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg><b>+90 532 177 7115</b></div>
     <div class="f-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg><b>info@luxurybosphorustour.com</b></div>
   </div>
 </footer>
@@ -1450,7 +1467,7 @@
       <div class="footer-col footer-col-center">
         <h5>Rezervasyon</h5>
         <ul>
-          <li><a href="tel:+90">+90 (XXX) XXX XX XX</a></li>
+          <li><a href="tel:+905321777115">+90 532 177 7115</a></li>
           <li><a href="mailto:reservations@luxurybosphorustour.com">reservations@luxurybosphorustour.com</a></li>
           <li><a href="#">WhatsApp</a></li>
           <li><a href="#">Telegram</a></li>
@@ -1524,7 +1541,7 @@
     <a href="#" class="modal-close" aria-label="Kapat">×</a>
 
     <div class="ed-hero">
-      <img src="/data/dining-romantic-wide.webp" alt="">
+      <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-15.jpg" alt="" style="object-position:center 35%">
       <div class="ed-hero-veil"></div>
       <div class="ed-hero-text">
         <div class="modal-eyebrow">Akşam Yemeği · Seçkin Mutfak</div>
@@ -1540,19 +1557,19 @@
         <div class="menu-detail-head">
           <div class="menu-detail-eyebrow">Menüde neler var</div>
           <h3 class="menu-detail-title">Dört kap, <em>sakince servis edilir</em></h3>
-          <p class="menu-detail-intro">Klasik mezeler, sıcak bir börek, cömert bir ana yemek ve tatlı etrafında kurgulanmış çok aşamalı bir Türk menüsü. Standart ve VIP aynı akışı izler — VIP, meze çeşitliliğinde genişler ve ana yemeğe premium dana eti ekler.</p>
+          <p class="menu-detail-intro">Klasik mezeler, sıcak bir başlangıç, ızgara bir ana yemek ve tatlıyla kurgulanmış çok aşamalı bir Türk menüsü. Standart ve VIP aynı akışı izler — VIP, meze sofrasını genişletir, üç ek sıcak başlangıç ekler, ana yemeğe antrikot (ızgara) getirir ve tatlıda baklavaya taze meyve tabağı ekler.</p>
         </div>
 
         <!-- 01 · MEZE -->
         <div class="menu-block">
           <div class="menu-block-head">
             <span class="menu-block-step">01</span>
-            <span class="menu-block-name">Meze</span>
-            <span class="menu-block-count">Standart: 10 çeşit · VIP: 15+ çeşit</span>
+            <span class="menu-block-name">Ordev · Soğuk başlangıçlar</span>
+            <span class="menu-block-count">Standart: 8 çeşit · VIP: 12 çeşit</span>
           </div>
-          <p class="menu-block-desc">Masanıza paylaşımlı olarak gelen soğuk Türk mezeleri: humus, ezme (acılı domates), haydari (otlu süzme yoğurt), fava, atom (acı tereyağlı yoğurt), kısır, yaprak sarması, çoban salatası, közlenmiş patlıcan, pancar tarator. VIP, mevsimlik özel tabakları, ahtapot ve daha geniş deniz ürünleri seçkisiyle sofrayı zenginleştirir.</p>
+          <p class="menu-block-desc">Masaya paylaşımlı tabak olarak servis edilir. <strong>Standart (8):</strong> domates ve salatalık, beyaz peynir, kısır, haydari, fava, pembe sultan, patates salatası, mevsim salatası. <strong>VIP (12):</strong> Standart sofraya yaprak sarması, biberli peynir, çiğ köfte ve hamsi eklenir.</p>
           <div class="menu-block-figure">
-            <img src="/data/table-candle-glasses.webp" alt="Mum ışığında Boğaz akşam yemekli tekne turu masasında servis edilen Türk meze sofrası" loading="lazy">
+            <img src="/data/04-food-meze/turkish-meze-bosphorus-cruise-1.jpg" alt="Mum ışığında Boğaz akşam yemekli tekne turu masasında servis edilen Türk meze sofrası" loading="lazy" style="object-position:center 35%">
           </div>
         </div>
 
@@ -1561,9 +1578,9 @@
           <div class="menu-block-head">
             <span class="menu-block-step">02</span>
             <span class="menu-block-name">Sıcak başlangıç</span>
-            <span class="menu-block-count">Her iki pakette de aynı</span>
+            <span class="menu-block-count">Standart: 1 · VIP: 4 çeşit</span>
           </div>
-          <p class="menu-block-desc"><strong>Paçanga böreği</strong> — pastırma ve eriyen kaşar peyniriyle doldurulmuş, çıtır çıtır kızartılmış yufka böreği. Mezelerle ana yemek arasında sıcak servis edilen, klasikleşmiş bir Türk başlangıcı.</p>
+          <p class="menu-block-desc"><strong>Standart:</strong> kalem böreği — ince puro biçimli, çıtır kızarmış yufka böreği. <strong>VIP:</strong> küçük bir sıcak tabak — kalem böreği, karides pane, falafel ve çıtır soğan halkaları; meze ile ana yemek arasında servis edilir.</p>
         </div>
 
         <!-- 03 · MAIN COURSE -->
@@ -1571,36 +1588,36 @@
           <div class="menu-block-head">
             <span class="menu-block-step">03</span>
             <span class="menu-block-name">Ana yemek</span>
-            <span class="menu-block-count">Birini seçin · mevsim salatası dahildir</span>
+            <span class="menu-block-count">Standart: 4 seçenek · VIP: 5 seçenek · garnitürler dahildir</span>
           </div>
-          <p class="menu-block-desc">Her misafir bir ana yemek seçer; aynı masadakiler farklı kategorilerden tercih yapabilir. Standart pakette aşağıdaki dört seçenek; VIP, aynı dört seçeneğe ek olarak premium dana eti (bonfile / antrikot) sunar.</p>
+          <p class="menu-block-desc">Her misafir bir ana yemek seçer; aynı masadakiler farklı kategorilerden tercih yapabilir. Tüm ana yemekler pilav, püre, ızgara domates ve biber eşliğinde servis edilir. <strong>Standart:</strong> köfte, piliç, somon veya karışık ızgara. <strong>VIP:</strong> aynı dört seçeneğe antrikot (ızgara) eklenir.</p>
           <div class="dish-grid">
             <div class="dish-card">
               <span class="dish-cat">Et</span>
               <h4 class="dish-name">Izgara Köfte</h4>
-              <p class="dish-desc">Kimyon, maydanoz ve soğanla harmanlanmış el yapımı dana ve kuzu köftesi. Közlenmiş patlıcan püresi ve ızgara sebzelerle servis edilir.</p>
+              <p class="dish-desc">El yapımı dana ve kuzu köftesi, ızgaraya alınır. Pilav, püre, ızgara domates ve biber eşliğinde servis edilir.</p>
             </div>
             <div class="dish-card vip">
-              <span class="dish-cat">Et</span>
-              <h4 class="dish-name">Dana Bonfile · Antrikot</h4>
-              <p class="dish-desc">Premium Türk danasından siparişe göre kesilir, istediğiniz pişme derecesinde ızgara yapılır ve dinlendirilir. Tereyağında soteleme patates ve karabiber sosuyla servis edilir.</p>
-              <img class="dish-ph" src="/data/steak-wine.webp" alt="Boğaz akşam yemekli tekne turunda VIP ana yemek — kırmızı şarapla ızgara dana eti" loading="lazy">
+              <span class="dish-cat">VIP · Et</span>
+              <h4 class="dish-name">Antrikot · Izgara</h4>
+              <p class="dish-desc">Premium Türk danası antrikot, istediğiniz pişme derecesinde ızgaralanır ve dinlendirilir. Pilav, püre, ızgara domates ve biber eşliğinde servis edilir. Sadece VIP pakette.</p>
+              <img class="dish-ph" src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-24.jpg" alt="Boğaz akşam yemekli tekne turunda VIP ana yemek — antrikot ızgara" loading="lazy">
             </div>
             <div class="dish-card">
               <span class="dish-cat">Tavuk</span>
-              <h4 class="dish-name">Izgara Tavuk Göğsü</h4>
-              <p class="dish-desc">Zeytinyağı, limon ve otlarla bir gece marine edilir, siparişe göre ızgaralanır. Mevsim fırın sebzeleri ve yoğurt sosuyla servis edilir.</p>
-              <img class="dish-ph" src="/data/chicken-wine.webp" alt="Boğaz akşam yemekli tekne turunda şarapla servis edilen ızgara tavuk ana yemeği" loading="lazy">
+              <h4 class="dish-name">Izgara Piliç</h4>
+              <p class="dish-desc">Marine edilmiş piliç göğsü, ızgaraya alınır. Pilav, püre, ızgara domates ve biber eşliğinde servis edilir.</p>
+              <img class="dish-ph" src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-33.jpg" alt="Boğaz akşam yemekli tekne turunda servis edilen ızgara piliç" loading="lazy">
             </div>
             <div class="dish-card">
               <span class="dish-cat">Balık</span>
-              <h4 class="dish-name">Somon · Çipura</h4>
-              <p class="dish-desc">Günün tazesi, zeytinyağı, limon ve Akdeniz otlarıyla tavada mühürlenir. Sarımsaklı patates ve ızgara yeşilliklerle servis edilir.</p>
+              <h4 class="dish-name">Izgara Somon</h4>
+              <p class="dish-desc">Somon fileto, zeytinyağı, limon ve Akdeniz otlarıyla ızgaralanır. Pilav, püre, ızgara domates ve biber eşliğinde servis edilir.</p>
             </div>
             <div class="dish-card">
-              <span class="dish-cat">Vejetaryen</span>
-              <h4 class="dish-name">Falafel Tabağı</h4>
-              <p class="dish-desc">Çıtır nohut falafel, bulgur pilavı, sote mevsim sebzeleri, fırın patates ve çıtır soğan halkaları. Talep üzerine vegan olarak hazırlanır.</p>
+              <span class="dish-cat">Karışık ızgara</span>
+              <h4 class="dish-name">Karışık Izgara</h4>
+              <p class="dish-desc">Tek tabakta köfte, piliç ve kuzu ızgara çeşitleri. Pilav, püre, ızgara domates ve biber eşliğinde servis edilir.</p>
             </div>
           </div>
         </div>
@@ -1610,20 +1627,20 @@
           <div class="menu-block-head">
             <span class="menu-block-step">04</span>
             <span class="menu-block-name">Tatlı</span>
-            <span class="menu-block-count">Her iki pakette de aynı</span>
+            <span class="menu-block-count">Standart: baklava · VIP: baklava + meyve tabağı</span>
           </div>
-          <p class="menu-block-desc"><strong>Dondurmalı pasta</strong> — vanilya, çikolata ve fıstık katmanları, üzerine ılık şurup. Şovun final perdesine geçilirken, kahve ve çay servisinden önce gelir.</p>
+          <p class="menu-block-desc"><strong>Standart:</strong> iki dilim ılık fıstıklı baklava, hafif şurupla. <strong>VIP:</strong> aynı baklava, yanında taze mevsim meyve tabağıyla servis edilir.</p>
         </div>
 
-        <p class="menu-detail-foot">Sınırsız meşrubat (su, kola, meyve suyu) her iki pakete dahildir. Sınırsız yerli alkol +15 € ek olarak; ithal içkiler ek ücretle servis edilir. Özel diyetler (vejetaryen, vegan, glutensiz) teknede hazırlanır — rezervasyonda bize bildirin.</p>
+        <p class="menu-detail-foot">Sınırsız meşrubat (su, kola, meyve suyu) her iki pakete dahildir. Sınırsız yerli alkol +15 € ek olarak; ithal içkiler ek ücretle servis edilir. Vejetaryen, vegan ve glutensiz seçenekler teknede hazırlanır — rezervasyonda bize bildirin.</p>
       </div>
 
       <div class="photo-masonry">
-        <img src="/data/full-hall.webp" alt="" loading="lazy">
-        <img src="/data/steak-wine.webp" alt="" loading="lazy">
-        <img src="/data/chicken-wine.webp" alt="" loading="lazy">
-        <img src="/data/table-candle-glasses.webp" alt="" loading="lazy">
-        <img src="/data/waiter-wine-service.webp" alt="" loading="lazy">
+        <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-1.jpg" alt="" loading="lazy">
+        <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-24.jpg" alt="" loading="lazy">
+        <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-33.jpg" alt="" loading="lazy">
+        <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-5.jpg" alt="" loading="lazy">
+        <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-7.jpg" alt="" loading="lazy">
       </div>
     </div>
 
@@ -1633,7 +1650,7 @@
         <div class="info-tel">
           <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
-            <span class="info-val">+90 (XXX) XXX XX XX</span>
+            <span class="info-val">+90 532 177 7115</span>
             <span class="info-divider"></span>
             <div class="messengers">
               <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M27.286 4.714C24.286 1.714 20.286 0 16 0 7.143 0 0 7.143 0 16c0 2.857.714 5.571 2.143 8L0 32l8.286-2.143C10.571 30.857 13.286 32 16 32c8.857 0 16-7.143 16-16 0-4.286-1.714-8.286-4.714-11.286zM16 29.286c-2.429 0-4.857-.714-7-2L8.5 27l-4.929 1.286 1.286-4.857-.286-.5C3.143 20.857 2.429 18.5 2.429 16c0-7.5 6.071-13.571 13.571-13.571 3.643 0 7 1.429 9.571 4 2.571 2.571 4 5.929 4 9.571 0 7.5-6.143 13.286-13.571 13.286zm7.357-10.143c-.357-.179-2.357-1.179-2.714-1.286-.357-.143-.643-.214-.929.214-.286.429-1.071 1.286-1.286 1.571-.214.286-.464.321-.821.107-.357-.179-1.5-.571-2.857-1.786-1.071-.964-1.786-2.143-2-2.5-.214-.357-.018-.554.143-.732.143-.143.357-.357.464-.536.107-.179.179-.286.286-.464.107-.179.054-.357-.018-.5-.071-.143-.929-2.214-1.286-3.036-.321-.821-.643-.679-.857-.679-.214-.018-.464-.018-.714-.018-.25 0-.643.089-.964.464-.357.357-1.286 1.214-1.286 2.964s1.286 3.429 1.464 3.679c.179.214 2.5 3.821 6.071 5.357.857.357 1.5.571 2.036.75.857.286 1.643.214 2.286.143.679-.107 2.143-.857 2.464-1.714.286-.857.286-1.571.179-1.714-.107-.143-.357-.214-.714-.393z"/></svg></a>
@@ -1677,22 +1694,21 @@
           <div class="pkg-eyebrow">Standart Menü</div>
           <div class="pkg-name">Standart</div>
           <div class="pkg-price"><span class="strike">€38</span><span class="now">€25</span><span class="per">/ kişi</span></div>
-          <p class="pkg-desc">3 saatlik Boğaz akşam turu, çok aşamalı menü ve sınırsız meşrubat. Eminönü iskelesinden 21:00'da kalkış.</p>
+          <p class="pkg-desc">3 saatlik Boğaz akşam turu, 4 ana kaplı menü ve sınırsız meşrubat. Eminönü iskelesinden 21:00'da kalkış.</p>
           <div class="pkg-tags">
             <span class="pkg-tag">3 saat · 21:00</span>
             <span class="pkg-tag">Eminönü kalkış</span>
-            <span class="pkg-tag">Vergiler dahil</span>
           </div>
           <div class="pkg-included">Pakete Dahil</div>
           <ul class="pkg-list">
-            <li>10 çeşit Türk mezesi</li>
-            <li>Sıcak başlangıç: paçanga böreği (pastırma ve kaşar peyniri)</li>
-            <li><span>Ana yemek + mevsim salatası — birini seçin:<br>
+            <li>8 çeşit ordev · Türk meze sofrası</li>
+            <li>Sıcak başlangıç: kalem böreği</li>
+            <li><span>Ana yemek (birini seçin) — pilav, püre, ızgara domates ve biber eşliğinde:<br>
 <span class="cat">Et:</span> köfte<br>
-<span class="cat">Tavuk:</span> ızgara tavuk<br>
-<span class="cat">Balık:</span> somon · çipura<br>
-<span class="cat">Vejetaryen:</span> falafel tabağı (patates, bulgur pilavı, sote sebzeler, soğan halkaları)</span></li>
-            <li>Tatlı: dondurmalı pasta</li>
+<span class="cat">Tavuk:</span> ızgara piliç<br>
+<span class="cat">Balık:</span> ızgara somon<br>
+<span class="cat">Karışık:</span> karışık ızgara</span></li>
+            <li>Tatlı: 2 dilim baklava</li>
             <li>Sınırsız meşrubat (su, kola, meyve suyu)</li>
           </ul>
           <a class="pkg-cta" href="#m-book" data-preselect="standard">Standart'ı Ayırt →</a>
@@ -1703,23 +1719,22 @@
           <div class="pkg-badge">En Çok Tercih Edilen</div>
           <div class="pkg-eyebrow">VIP Menü</div>
           <div class="pkg-name">VIP</div>
-          <div class="pkg-price"><span class="strike">€100</span><span class="now">€65</span><span class="per">/ kişi</span></div>
-          <p class="pkg-desc">Premium et seçenekleri, klasik açık meze servisi ve sahneye yakın özel masayla yükseltilmiş bir akşam.</p>
+          <div class="pkg-price"><span class="strike">€100</span><span class="now">€50</span><span class="per">/ kişi</span></div>
+          <p class="pkg-desc">Zengin meze sofrası, 4 çeşit sıcak başlangıç ve ana yemekte premium antrikot ile yükseltilmiş bir akşam.</p>
           <div class="pkg-tags">
             <span class="pkg-tag">3 saat · 21:00</span>
             <span class="pkg-tag">Sahneye yakın</span>
-            <span class="pkg-tag">Vergiler dahil</span>
           </div>
           <div class="pkg-included">Pakete Dahil</div>
           <ul class="pkg-list">
-            <li>15+ çeşit Türk mezesi · klasik açık sofra servisi</li>
-            <li>Sıcak başlangıç: paçanga böreği (pastırma ve kaşar peyniri)</li>
-            <li><span>Ana yemek + mevsim salatası — birini seçin:<br>
-<span class="cat">Et:</span> köfte · <strong>dana bonfile · antrikot</strong><br>
-<span class="cat">Tavuk:</span> ızgara tavuk<br>
-<span class="cat">Balık:</span> somon · çipura<br>
-<span class="cat">Vejetaryen:</span> falafel tabağı</span></li>
-            <li>Tatlı: dondurmalı pasta</li>
+            <li>12 çeşit ordev · zengin Türk meze sofrası</li>
+            <li>Sıcak başlangıç (4 çeşit): kalem böreği · karides pane · falafel · soğan halkası</li>
+            <li><span>Ana yemek (birini seçin) — pilav, püre, ızgara domates ve biber eşliğinde:<br>
+<span class="cat">Et:</span> köfte · <strong>antrikot ızgara</strong><br>
+<span class="cat">Tavuk:</span> ızgara piliç<br>
+<span class="cat">Balık:</span> ızgara somon<br>
+<span class="cat">Karışık:</span> karışık ızgara</span></li>
+            <li>Tatlı: 2 dilim baklava + taze meyve tabağı</li>
             <li>Sınırsız meşrubat (su, kola, meyve suyu)</li>
           </ul>
           <a class="pkg-cta" href="#m-book" data-preselect="vip">VIP'i Ayırt →</a>
@@ -1763,7 +1778,7 @@
       </div>
 
       <div class="ed-dietary">
-        Et <span class="sep">·</span> Tavuk <span class="sep">·</span> Balık <span class="sep">·</span> Vejetaryen
+        Et <span class="sep">·</span> Tavuk <span class="sep">·</span> Balık <span class="sep">·</span> Karışık ızgara <span class="sep">·</span> Vejetaryen (talep üzerine)
       </div>
 
     </div>
@@ -1774,7 +1789,7 @@
         <div class="info-tel">
           <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
-            <span class="info-val">+90 (XXX) XXX XX XX</span>
+            <span class="info-val">+90 532 177 7115</span>
           </div>
         </div>
       </div>
@@ -1815,7 +1830,7 @@
           </div>
           <p class="menu-block-desc">Akşamın huzurlu açılışı — bir Mevlevi <strong>sema</strong>sı. Semazen, beyaz tennuresiyle merkezi bir eksen etrafında döner; bir eli göğe, bir eli yere dönüktür. 13. yüzyıl Konya'sında şair Mevlana ile başlayan bu dans hem manevi bir ritüel hem de bir sahne sanatıdır. Gece enerjisini toplamadan önce yavaş, düşünceli bir başlangıç.</p>
           <div class="menu-block-figure">
-            <img src="/data/whirling-dervish.webp" alt="Boğaz akşam yemekli tekne turunda semazen gösterisi — Mevlevi sema" loading="lazy">
+            <img src="/data/08-performers-dervish/whirling-dervish-bosphorus-cruise-1.jpg" alt="Boğaz akşam yemekli tekne turunda semazen gösterisi — Mevlevi sema" loading="lazy">
           </div>
         </div>
 
@@ -1828,7 +1843,7 @@
           </div>
           <p class="menu-block-desc">Yöresel kostümleriyle bir halk oyunları topluluğu Anadolu'nun kültürel haritasında geziniyor — Karadeniz <strong>horonu</strong>, Ege <strong>zeybeği</strong>, doğunun <strong>halay</strong>ı. Enerjik, vurmalı, geleneksel Anadolu çalgılarıyla. Türkiye'nin kültürel genişliği on beş dakikada.</p>
           <div class="menu-block-figure">
-            <img src="/data/folk-dance.webp" alt="Boğaz akşam yemekli tekne turunun güvertesinde Anadolu halk oyunları topluluğu" loading="lazy">
+            <img src="/data/06-performers-folk/anatolian-folk-dance-bosphorus-cruise-1.jpg" alt="Boğaz akşam yemekli tekne turunun güvertesinde Anadolu halk oyunları topluluğu" loading="lazy">
           </div>
         </div>
 
@@ -1841,7 +1856,7 @@
           </div>
           <p class="menu-block-desc">Profesyonel bir perküsyon ekibi güverteyi devralır — <strong>davul</strong>, <strong>darbuka</strong> ve <strong>bendir</strong> sürükleyici ritimlerde üst üste biner. Salonun enerjisi yükselir; gecenin gözlemden katılıma döndüğü an burasıdır: misafirler alkış tutar, ışıklar güverteyi yıkar.</p>
           <div class="menu-block-figure">
-            <img src="/data/drummer-party.webp" alt="Boğaz akşam yemekli tekne turunda canlı davul ekibi gösterisi" loading="lazy">
+            <img src="/data/06-performers-folk/anatolian-folk-dance-bosphorus-cruise-2.jpg" alt="Boğaz akşam yemekli tekne turunda canlı davul ekibi gösterisi" loading="lazy">
           </div>
         </div>
 
@@ -1854,7 +1869,7 @@
           </div>
           <p class="menu-block-desc">Akşamın baş gösterisi — profesyonel bir oryantal dansçının masalarla sahne arasında akan tüm rutini. Parlak pullu kostümler, ifade yüklü koreografi, dansa nazikçe dahil edilen misafirlerle seyirci anları. Misafirlerin fotoğraflayıp yıllarca hatırladığı türden bir an.</p>
           <div class="menu-block-figure">
-            <img src="/data/belly-dance-blue.webp" alt="Boğaz akşam yemekli tekne turunda oryantal dans gösterisi — gecenin doruğu" loading="lazy">
+            <img src="/data/07-performers-belly/belly-dance-bosphorus-night-cruise-1.jpg" alt="Boğaz akşam yemekli tekne turunda oryantal dans gösterisi — gecenin doruğu" loading="lazy">
           </div>
         </div>
 
@@ -1869,7 +1884,7 @@
         <div class="info-tel">
           <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
-            <span class="info-val">+90 (XXX) XXX XX XX</span>
+            <span class="info-val">+90 532 177 7115</span>
           </div>
         </div>
       </div>
@@ -1896,29 +1911,29 @@
 
       <!-- highlight photo strip -->
       <div class="photo-masonry">
-        <img src="/data/boat-night-bridge.webp" alt="Boğaz akşam yemekli tekne turunda gece ışıklandırılmış Boğaziçi Köprüsü" loading="lazy">
-        <img src="/data/a2.webp" alt="Boğaz gece turunda denizden Dolmabahçe Sarayı" loading="lazy">
-        <img src="/data/3.webp" alt="Gece Boğaz kıyısında Ortaköy Camii" loading="lazy">
-        <img src="/data/boat-night-drone.webp" alt="Geceleyin Boğaz ve İstanbul kıyı şeridinin havadan görünümü" loading="lazy">
-        <img src="/data/couple-cheers-bridge.webp" alt="Yemekli tekne turunda Boğaziçi Köprüsü altında çift" loading="lazy">
+        <img src="/data/manzara/ortakoy-mosque-bosphorus-cruise.jpg" alt="Boğaz akşam yemekli tekne turunda gece ışıklandırılmış Boğaziçi Köprüsü" loading="lazy">
+        <img src="/data/manzara/dolmabahce-palace-bosphorus-night.jpg" alt="Boğaz gece turunda denizden Dolmabahçe Sarayı" loading="lazy">
+        <img src="/data/manzara/ciragan-palace-bosphorus-cruise.jpg" alt="Gece Boğaz kıyısında Ortaköy Camii" loading="lazy">
+        <img src="/data/manzara/eminonu-pier-bosphorus-cruise.jpg" alt="Geceleyin Boğaz ve İstanbul kıyı şeridinin havadan görünümü" loading="lazy">
+        <img src="/data/manzara/bosphorus-bridge-istanbul-night.jpg" alt="Yemekli tekne turunda Boğaziçi Köprüsü altında çift" loading="lazy" style="object-position:center 37%">
       </div>
 
       <div class="route-map">
         <div class="route-map-title">Üç Saatlik Rota</div>
         <div class="route-stops">
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-pier-sunset.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Eminönü</div><div class="route-stop-side">Kalkış</div></div></summary><div class="route-balloon">Tarihi yarımadanın kalbi, Boğaz'ın Haliç ile buluştuğu nokta. Akşamımız burada, karşı yakada Galata Kulesi'nin uzandığı iskelemizde başlıyor.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/a1.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Karaköy</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">Bir zamanlar Galata'nın limanı; bugün Avrupa dönemi mimarisi, sanat galerileri ve sahil kafeleriyle hareketli bir semt.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/a2.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Dolmabahçe Sarayı</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">Sultan Abdülmecid'in 1856'da açılan görkemli barok sarayı — imparatorluğun son on yıllarında Osmanlı iktidarının merkezi.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/2.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Çırağan Sarayı</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">1871'de Sultan Abdülaziz için inşa edilen son hanedan sarayı. Bugün doğrudan Boğaz'dan yükselen lüks bir otel.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/3.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Ortaköy Camii</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">Mermer cephesi Boğaz'da yansıyan ikonik bir neo-barok cami (1856) — İstanbul'un kartpostalı.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-night-bridge.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Boğaziçi Köprüsü</div><div class="route-stop-side">Köprü</div></div></summary><div class="route-balloon">Boğaz'ı geçen ilk köprü, 1973'te açıldı. Tepede iki kıta birleşiyor — her gece değişen renklerle aydınlatılıyor.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/4.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Bebek</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">Yalıları, kafeleri ve zarif sahil yürüyüşüyle ün yapmış, Avrupa yakasının tarihi bir koyu — İstanbul'un sakin köşesi.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/5.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Rumeli Hisarı</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">II. Mehmed tarafından 1452'de yalnızca dört ayda inşa edildi — fetihten önce Konstantinopolis'in kaderini belirleyen kale.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/boat-night-drone.webp')"></div><div class="route-stop-text"><div class="route-stop-name">FSM Köprüsü</div><div class="route-stop-side">Orta Nokta</div></div></summary><div class="route-balloon">Boğaz'ın ikinci köprüsü (1988), Fatih Sultan Mehmed'in adını taşır. Turun orta noktası — burada Asya yakasına dönüyoruz.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/6.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Beylerbeyi Sarayı</div><div class="route-stop-side">Asya</div></div></summary><div class="route-balloon">Osmanlı sultanlarının yazlık sarayı (1865); kraliyet konuklarının Asya yakasında ağırlandığı yer.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/8.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Üsküdar</div><div class="route-stop-side">Asya</div></div></summary><div class="route-balloon">İstanbul'un Asya kalbi — antik Khrysopolis. Mihrimah Sultan Camii, dar sokaklar ve zamanın izini taşıyan rıhtımlar.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/10.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Kız Kulesi</div><div class="route-stop-side">Uzaktan</div></div></summary><div class="route-balloon">Boğaz'ın kalbinde efsanevi bir 18. yüzyıl kulesi. Işıklarını görecek kadar yaklaşıyoruz, gizemini koruyacak kadar uzakta kalıyoruz.</div></details>
-          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/couple-cheers-bridge.webp')"></div><div class="route-stop-text"><div class="route-stop-name">Eminönü</div><div class="route-stop-side">Varış</div></div></summary><div class="route-balloon">Akşamın başladığı yere dönüş — iskele, şehir, çöken gece. Üç saat, iki kıta, tek Boğaz.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/manzara/eminonu-pier-bosphorus-cruise.jpg')"></div><div class="route-stop-text"><div class="route-stop-name">Eminönü</div><div class="route-stop-side">Kalkış</div></div></summary><div class="route-balloon">Tarihi yarımadanın kalbi, Boğaz'ın Haliç ile buluştuğu nokta. Akşamımız burada, karşı yakada Galata Kulesi'nin uzandığı iskelemizde başlıyor.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/manzara/karakoy-istanbul-bosphorus.jpg')"></div><div class="route-stop-text"><div class="route-stop-name">Karaköy</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">Bir zamanlar Galata'nın limanı; bugün Avrupa dönemi mimarisi, sanat galerileri ve sahil kafeleriyle hareketli bir semt.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/manzara/dolmabahce-palace-bosphorus-night.jpg')"></div><div class="route-stop-text"><div class="route-stop-name">Dolmabahçe Sarayı</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">Sultan Abdülmecid'in 1856'da açılan görkemli barok sarayı — imparatorluğun son on yıllarında Osmanlı iktidarının merkezi.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/manzara/ciragan-palace-bosphorus-cruise.jpg')"></div><div class="route-stop-text"><div class="route-stop-name">Çırağan Sarayı</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">1871'de Sultan Abdülaziz için inşa edilen son hanedan sarayı. Bugün doğrudan Boğaz'dan yükselen lüks bir otel.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/manzara/ortakoy-mosque-bosphorus-cruise.jpg')"></div><div class="route-stop-text"><div class="route-stop-name">Ortaköy Camii</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">Mermer cephesi Boğaz'da yansıyan ikonik bir neo-barok cami (1856) — İstanbul'un kartpostalı.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/manzara/bosphorus-bridge-istanbul-night.jpg')"></div><div class="route-stop-text"><div class="route-stop-name">Boğaziçi Köprüsü</div><div class="route-stop-side">Köprü</div></div></summary><div class="route-balloon">Boğaz'ı geçen ilk köprü, 1973'te açıldı. Tepede iki kıta birleşiyor — her gece değişen renklerle aydınlatılıyor.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/01-aerial/bosphorus-cruise-aerial-1.jpg')"></div><div class="route-stop-text"><div class="route-stop-name">Bebek</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">Yalıları, kafeleri ve zarif sahil yürüyüşüyle ün yapmış, Avrupa yakasının tarihi bir koyu — İstanbul'un sakin köşesi.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/manzara/rumeli-hisari-bosphorus-night.jpg')"></div><div class="route-stop-text"><div class="route-stop-name">Rumeli Hisarı</div><div class="route-stop-side">Avrupa</div></div></summary><div class="route-balloon">II. Mehmed tarafından 1452'de yalnızca dört ayda inşa edildi — fetihten önce Konstantinopolis'in kaderini belirleyen kale.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/01-aerial/bosphorus-cruise-aerial-3.jpg')"></div><div class="route-stop-text"><div class="route-stop-name">FSM Köprüsü</div><div class="route-stop-side">Orta Nokta</div></div></summary><div class="route-balloon">Boğaz'ın ikinci köprüsü (1988), Fatih Sultan Mehmed'in adını taşır. Turun orta noktası — burada Asya yakasına dönüyoruz.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/manzara/dolmabahce-palace-bosphorus-cruise.jpg')"></div><div class="route-stop-text"><div class="route-stop-name">Beylerbeyi Sarayı</div><div class="route-stop-side">Asya</div></div></summary><div class="route-balloon">Osmanlı sultanlarının yazlık sarayı (1865); kraliyet konuklarının Asya yakasında ağırlandığı yer.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/02-boat-exterior/bosphorus-cruise-boat-night-3.jpg')"></div><div class="route-stop-text"><div class="route-stop-name">Üsküdar</div><div class="route-stop-side">Asya</div></div></summary><div class="route-balloon">İstanbul'un Asya kalbi — antik Khrysopolis. Mihrimah Sultan Camii, dar sokaklar ve zamanın izini taşıyan rıhtımlar.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/02-boat-exterior/bosphorus-cruise-boat-night-7.jpg')"></div><div class="route-stop-text"><div class="route-stop-name">Kız Kulesi</div><div class="route-stop-side">Uzaktan</div></div></summary><div class="route-balloon">Boğaz'ın kalbinde efsanevi bir 18. yüzyıl kulesi. Işıklarını görecek kadar yaklaşıyoruz, gizemini koruyacak kadar uzakta kalıyoruz.</div></details>
+          <details class="route-stop"><summary><div class="route-stop-dot" style="background-image:url('/data/manzara/eminonu-pier-bosphorus-cruise.jpg')"></div><div class="route-stop-text"><div class="route-stop-name">Eminönü</div><div class="route-stop-side">Varış</div></div></summary><div class="route-balloon">Akşamın başladığı yere dönüş — iskele, şehir, çöken gece. Üç saat, iki kıta, tek Boğaz.</div></details>
         </div>
       </div>
 
@@ -1931,7 +1946,7 @@
         <div class="info-tel">
           <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
-            <span class="info-val">+90 (XXX) XXX XX XX</span>
+            <span class="info-val">+90 532 177 7115</span>
             <span class="info-divider"></span>
             <div class="messengers">
               <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M27.286 4.714C24.286 1.714 20.286 0 16 0 7.143 0 0 7.143 0 16c0 2.857.714 5.571 2.143 8L0 32l8.286-2.143C10.571 30.857 13.286 32 16 32c8.857 0 16-7.143 16-16 0-4.286-1.714-8.286-4.714-11.286zM16 29.286c-2.429 0-4.857-.714-7-2L8.5 27l-4.929 1.286 1.286-4.857-.286-.5C3.143 20.857 2.429 18.5 2.429 16c0-7.5 6.071-13.571 13.571-13.571 3.643 0 7 1.429 9.571 4 2.571 2.571 4 5.929 4 9.571 0 7.5-6.143 13.286-13.571 13.286zm7.357-10.143c-.357-.179-2.357-1.179-2.714-1.286-.357-.143-.643-.214-.929.214-.286.429-1.071 1.286-1.286 1.571-.214.286-.464.321-.821.107-.357-.179-1.5-.571-2.857-1.786-1.071-.964-1.786-2.143-2-2.5-.214-.357-.018-.554.143-.732.143-.143.357-.357.464-.536.107-.179.179-.286.286-.464.107-.179.054-.357-.018-.5-.071-.143-.929-2.214-1.286-3.036-.321-.821-.643-.679-.857-.679-.214-.018-.464-.018-.714-.018-.25 0-.643.089-.964.464-.357.357-1.286 1.214-1.286 2.964s1.286 3.429 1.464 3.679c.179.214 2.5 3.821 6.071 5.357.857.357 1.5.571 2.036.75.857.286 1.643.214 2.286.143.679-.107 2.143-.857 2.464-1.714.286-.857.286-1.571.179-1.714-.107-.143-.357-.214-.714-.393z"/></svg></a>
@@ -1993,7 +2008,7 @@
           </div>
           <p class="menu-block-desc">Teknenin üst katı gökyüzüne açılır — ortada dans pisti, kenarlarda lounge oturma alanı, kokteyl servisi yapan ikinci bar ve her yanda Boğaz. Sıcak aylarda rüzgâr serinletir; kışın güverte ısıtılır.</p>
           <div class="menu-block-figure">
-            <img src="/data/dance-floor-crowd.webp" alt="Türk gecesi şovundan sonra Boğaz akşam yemekli tekne turunda üst güverte dans pisti" loading="lazy">
+            <img src="/data/10-party-guests/bosphorus-night-cruise-party-1.jpg" alt="Türk gecesi şovundan sonra Boğaz akşam yemekli tekne turunda üst güverte dans pisti" loading="lazy">
           </div>
         </div>
 
@@ -2025,7 +2040,7 @@
             <li><strong>Pazar</strong> · Lounge — yavaş, caz tınılı</li>
           </ul>
           <div class="menu-block-figure">
-            <img src="/data/happy-guests.webp" alt="Gece yarısından sonra Boğaz akşam yemekli tekne turunda dans eden misafirler" loading="lazy">
+            <img src="/data/10-party-guests/bosphorus-night-cruise-party-5.jpg" alt="Gece yarısından sonra Boğaz akşam yemekli tekne turunda dans eden misafirler" loading="lazy">
           </div>
         </div>
 
@@ -2034,11 +2049,11 @@
 
       <!-- PHOTO STRIP -->
       <div class="photo-masonry">
-        <img src="/data/dance-floor-crowd.webp" alt="Boğaz turunun üst güvertesinde açık hava dans pisti" loading="lazy">
-        <img src="/data/friends-cheers.webp" alt="Boğaz akşam yemekli tekne turunda kadeh kaldıran arkadaşlar" loading="lazy">
-        <img src="/data/cocktails-neon.webp" alt="Karanlıktan sonra Boğaz turunda kokteyller" loading="lazy">
-        <img src="/data/couple-cheers-bridge.webp" alt="Parti sırasında Boğaziçi Köprüsü altında bir çift" loading="lazy">
-        <img src="/data/happy-guests.webp" alt="Boğaz turunda partinin tadını çıkaran misafirler" loading="lazy">
+        <img src="/data/10-party-guests/bosphorus-night-cruise-party-1.jpg" alt="Boğaz turunun üst güvertesinde açık hava dans pisti" loading="lazy">
+        <img src="/data/10-party-guests/bosphorus-night-cruise-party-7.jpg" alt="Boğaz akşam yemekli tekne turunda kadeh kaldıran arkadaşlar" loading="lazy">
+        <img src="/data/10-party-guests/bosphorus-night-cruise-party-10.jpg" alt="Karanlıktan sonra Boğaz turunda kokteyller" loading="lazy">
+        <img src="/data/02-boat-exterior/bosphorus-cruise-boat-night-10.jpg" alt="Parti sırasında Boğaziçi Köprüsü altında bir çift" loading="lazy">
+        <img src="/data/10-party-guests/bosphorus-night-cruise-party-5.jpg" alt="Boğaz turunda partinin tadını çıkaran misafirler" loading="lazy">
       </div>
     </div>
 
@@ -2048,7 +2063,7 @@
         <div class="info-tel">
           <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
-            <span class="info-val">+90 (XXX) XXX XX XX</span>
+            <span class="info-val">+90 532 177 7115</span>
           </div>
         </div>
       </div>
@@ -2076,7 +2091,7 @@
       <div class="flow-stages">
         <div class="flow-stage">
           <span class="stage-tag">Başlangıç</span>
-          <img class="ph" src="/data/boat-pier-sunset.webp" alt="" loading="lazy">
+          <img class="ph" src="/data/01-aerial/bosphorus-cruise-aerial-2.jpg" alt="" loading="lazy">
           <div class="body">
             <div class="head-row">
               <h4>Karşılama</h4>
@@ -2087,7 +2102,7 @@
           <button type="button" class="flow-stage-next" aria-label="Sonraki aşama">↓</button>
         </div>
         <div class="flow-stage">
-          <img class="ph" src="/data/dining-romantic-wide.webp" alt="" loading="lazy">
+          <img class="ph" src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-2.jpg" alt="" loading="lazy">
           <div class="body">
             <div class="head-row">
               <h4>Akşam Yemeği</h4>
@@ -2098,7 +2113,10 @@
           <button type="button" class="flow-stage-next" aria-label="Sonraki aşama">↓</button>
         </div>
         <div class="flow-stage">
-          <img class="ph" src="/data/whirling-dervish.webp" alt="" loading="lazy">
+          <div class="ph-split">
+            <img class="ph" src="/data/08-performers-dervish/whirling-dervish-bosphorus-cruise-1.jpg" alt="" loading="lazy">
+            <img class="ph" src="/data/06-performers-folk/anatolian-folk-dance-bosphorus-cruise-31.jpg" alt="" loading="lazy">
+          </div>
           <div class="body">
             <div class="head-row">
               <h4>Şov</h4>
@@ -2110,7 +2128,7 @@
         </div>
         <div class="flow-stage">
           <span class="stage-tag">Final</span>
-          <img class="ph" src="/data/dance-floor-crowd.webp" alt="" loading="lazy">
+          <img class="ph" src="/data/10-party-guests/bosphorus-night-cruise-party-1.jpg" alt="" loading="lazy">
           <div class="body">
             <div class="head-row">
               <h4>DJ Partisi</h4>
@@ -2128,7 +2146,7 @@
         <div class="info-tel">
           <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
-            <span class="info-val">+90 (XXX) XXX XX XX</span>
+            <span class="info-val">+90 532 177 7115</span>
             <span class="info-divider"></span>
             <div class="messengers">
               <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M27.286 4.714C24.286 1.714 20.286 0 16 0 7.143 0 0 7.143 0 16c0 2.857.714 5.571 2.143 8L0 32l8.286-2.143C10.571 30.857 13.286 32 16 32c8.857 0 16-7.143 16-16 0-4.286-1.714-8.286-4.714-11.286zM16 29.286c-2.429 0-4.857-.714-7-2L8.5 27l-4.929 1.286 1.286-4.857-.286-.5C3.143 20.857 2.429 18.5 2.429 16c0-7.5 6.071-13.571 13.571-13.571 3.643 0 7 1.429 9.571 4 2.571 2.571 4 5.929 4 9.571 0 7.5-6.143 13.286-13.571 13.286zm7.357-10.143c-.357-.179-2.357-1.179-2.714-1.286-.357-.143-.643-.214-.929.214-.286.429-1.071 1.286-1.286 1.571-.214.286-.464.321-.821.107-.357-.179-1.5-.571-2.857-1.786-1.071-.964-1.786-2.143-2-2.5-.214-.357-.018-.554.143-.732.143-.143.357-.357.464-.536.107-.179.179-.286.286-.464.107-.179.054-.357-.018-.5-.071-.143-.929-2.214-1.286-3.036-.321-.821-.643-.679-.857-.679-.214-.018-.464-.018-.714-.018-.25 0-.643.089-.964.464-.357.357-1.286 1.214-1.286 2.964s1.286 3.429 1.464 3.679c.179.214 2.5 3.821 6.071 5.357.857.357 1.5.571 2.036.75.857.286 1.643.214 2.286.143.679-.107 2.143-.857 2.464-1.714.286-.857.286-1.571.179-1.714-.107-.143-.357-.214-.714-.393z"/></svg></a>
@@ -2158,7 +2176,7 @@
     <a href="#" class="modal-close" aria-label="Kapat">×</a>
 
     <div class="ed-hero">
-      <img src="/data/full-hall.webp" alt="">
+      <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-1.jpg" alt="">
       <div class="ed-hero-veil"></div>
       <div class="ed-hero-text">
         <div class="modal-eyebrow">SSS · Pratik Bilgiler</div>
@@ -2242,7 +2260,7 @@
         <div class="info-tel">
           <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
-            <span class="info-val">+90 (XXX) XXX XX XX</span>
+            <span class="info-val">+90 532 177 7115</span>
             <span class="info-divider"></span>
             <div class="messengers">
               <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M27.286 4.714C24.286 1.714 20.286 0 16 0 7.143 0 0 7.143 0 16c0 2.857.714 5.571 2.143 8L0 32l8.286-2.143C10.571 30.857 13.286 32 16 32c8.857 0 16-7.143 16-16 0-4.286-1.714-8.286-4.714-11.286zM16 29.286c-2.429 0-4.857-.714-7-2L8.5 27l-4.929 1.286 1.286-4.857-.286-.5C3.143 20.857 2.429 18.5 2.429 16c0-7.5 6.071-13.571 13.571-13.571 3.643 0 7 1.429 9.571 4 2.571 2.571 4 5.929 4 9.571 0 7.5-6.143 13.286-13.571 13.286zm7.357-10.143c-.357-.179-2.357-1.179-2.714-1.286-.357-.143-.643-.214-.929.214-.286.429-1.071 1.286-1.286 1.571-.214.286-.464.321-.821.107-.357-.179-1.5-.571-2.857-1.786-1.071-.964-1.786-2.143-2-2.5-.214-.357-.018-.554.143-.732.143-.143.357-.357.464-.536.107-.179.179-.286.286-.464.107-.179.054-.357-.018-.5-.071-.143-.929-2.214-1.286-3.036-.321-.821-.643-.679-.857-.679-.214-.018-.464-.018-.714-.018-.25 0-.643.089-.964.464-.357.357-1.286 1.214-1.286 2.964s1.286 3.429 1.464 3.679c.179.214 2.5 3.821 6.071 5.357.857.357 1.5.571 2.036.75.857.286 1.643.214 2.286.143.679-.107 2.143-.857 2.464-1.714.286-.857.286-1.571.179-1.714-.107-.143-.357-.214-.714-.393z"/></svg></a>
@@ -2453,7 +2471,7 @@
           </div>
           <p class="menu-block-desc">Turun kalbi — tam restoran düzeni, önde sahne, ortada dans pisti. Türk gecesi şovu burada sahnelenir ve ana bar buradadır. İklim kontrollü, her iki yanda panoramik camlar.</p>
           <div class="menu-block-figure">
-            <img src="/data/full-hall.webp" alt="Boğaz akşam yemekli tekne turunda ana güverte yemek salonu" loading="lazy">
+            <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-1.jpg" alt="Boğaz akşam yemekli tekne turunda ana güverte yemek salonu" loading="lazy">
           </div>
         </div>
 
@@ -2476,7 +2494,7 @@
           </div>
           <p class="menu-block-desc">Teknenin en üstü — gökyüzüne açık, lounge oturma alanı, ikinci bir bar ve DJ kabini. Şovdan sonra gece buraya kayar: dans pisti, yıldızlar altında içecekler, her yanda Boğaz. Soğuk aylarda ısıtmalı.</p>
           <div class="menu-block-figure">
-            <img src="/data/dance-floor-crowd.webp" alt="Geceleyin Boğaz akşam yemekli tekne turunda üst güverte açık hava dans pisti" loading="lazy">
+            <img src="/data/10-party-guests/bosphorus-night-cruise-party-1.jpg" alt="Geceleyin Boğaz akşam yemekli tekne turunda üst güverte açık hava dans pisti" loading="lazy">
           </div>
         </div>
 
@@ -2485,11 +2503,11 @@
 
       <!-- PHOTO STRIP -->
       <div class="photo-masonry">
-        <img src="/data/boat-night-bridge.webp" alt="Gece Boğaziçi Köprüsü altından geçen tur teknemiz" loading="lazy">
-        <img src="/data/boat-pier-sunset.webp" alt="Kalkıştan önce Eminönü iskelesinde Boğaz turu teknesi" loading="lazy">
-        <img src="/data/boat-night-drone.webp" alt="Gece Boğaz'da tur teknesinin havadan görünümü" loading="lazy">
-        <img src="/data/dining-romantic-wide.webp" alt="Boğaz turunda romantik masa düzeni" loading="lazy">
-        <img src="/data/happy-guests.webp" alt="Boğaz akşam yemekli tekne turunda teknedeki misafirler" loading="lazy">
+        <img src="/data/01-aerial/bosphorus-cruise-aerial-1.jpg" alt="Gece Boğaziçi Köprüsü altından geçen tur teknemiz" loading="lazy">
+        <img src="/data/01-aerial/bosphorus-cruise-aerial-2.jpg" alt="Kalkıştan önce Eminönü iskelesinde Boğaz turu teknesi" loading="lazy">
+        <img src="/data/01-aerial/bosphorus-cruise-aerial-3.jpg" alt="Gece Boğaz'da tur teknesinin havadan görünümü" loading="lazy">
+        <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-2.jpg" alt="Boğaz turunda romantik masa düzeni" loading="lazy">
+        <img src="/data/10-party-guests/bosphorus-night-cruise-party-5.jpg" alt="Boğaz akşam yemekli tekne turunda teknedeki misafirler" loading="lazy">
       </div>
     </div>
 
@@ -2499,7 +2517,7 @@
         <div class="info-tel">
           <div class="info-label">Rezervasyon:</div>
           <div class="info-tel-row">
-            <span class="info-val">+90 (XXX) XXX XX XX</span>
+            <span class="info-val">+90 532 177 7115</span>
           </div>
         </div>
       </div>
@@ -2550,7 +2568,7 @@
             <button type="button" class="wiz-pkg" data-pkg="vip">
               <span class="badge">En Çok Tercih Edilen</span>
               <span class="nm">VIP <span class="nm-sub">Menü</span></span>
-              <span class="pr"><span class="strike">€100</span><span class="now">€65</span><span class="per">kişi başı</span></span>
+              <span class="pr"><span class="strike">€100</span><span class="now">€50</span><span class="per">kişi başı</span></span>
               <span class="ds">Premium etler, sahneye yakın oturum, yükseltilmiş servis.</span>
             </button>
           </div>
@@ -2979,7 +2997,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
 </script>
 <script>
 (function(){
-  const PRICES = { standard:25, vip:65, alcohol:15, transfer:10, romantic:15, standardWas:38, vipWas:100 };
+  const PRICES = { standard:25, vip:50, alcohol:15, transfer:10, romantic:15, standardWas:38, vipWas:100 };
 
   const COUNTRIES = [
     ['TR','Türkiye','90','🇹🇷'],
@@ -3426,7 +3444,7 @@ document.querySelectorAll('.flow-stage-next').forEach(btn => {
     msg += '%0A• Ad: '+state.name+'%0A';
     msg += '• Telefon: +'+state.cc+' '+state.phone+'%0A';
     msg += '%0ATahmini toplam: '+fmt(t.total);
-    const PHONE = '905555555555';
+    const PHONE = '905321777115';
     let url;
     if (state.channel === 'telegram'){
       url = 'https://t.me/luxurybosphorustour?text='+msg;

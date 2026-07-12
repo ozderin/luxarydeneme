@@ -2,13 +2,13 @@
   "brand": "Luxury Bosphorus Tour",
   "domain": "luxurybosphorustour.com",
   "baseUrl": "https://luxurybosphorustour.com",
-  "ogImage": "https://luxurybosphorustour.com/data/boat-night-bridge.webp",
+  "ogImage": "https://luxurybosphorustour.com/data/01-aerial/bosphorus-cruise-aerial-1.jpg",
   "contact": {
-    "phone": "+90 (XXX) XXX XX XX",
-    "phoneRaw": "+90",
+    "phone": "+90 532 177 7115",
+    "phoneRaw": "+905321777115",
     "email": "info@luxurybosphorustour.com",
     "reservationEmail": "reservations@luxurybosphorustour.com",
-    "whatsapp": "905555555555",
+    "whatsapp": "905321777115",
     "telegram": "905555555555"
   },
   "tursab": {
@@ -47,7 +47,7 @@
     "currencySymbol": "€",
     "discountPct": 35,
     "standard": { "was": 38, "now": 25 },
-    "vip": { "was": 100, "now": 65 },
+    "vip": { "was": 100, "now": 50 },
     "transferPerPerson": 10,
     "alcoholPerPerson": 15,
     "tablePerTable": 15
