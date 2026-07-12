@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://luxurybosphorustour.com/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxurybosphorustour.com/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://luxurybosphorustour.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxurybosphorustour.com/"/>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/tr/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxurybosphorustour.com/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://luxurybosphorustour.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxurybosphorustour.com/"/>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/city-guide/best-photo-spots-bosphorus.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/city-guide/bosphorus-by-night.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/city-guide/halal-istanbul-muslim-family-guide.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/city-guide/imperial-palaces-from-water.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/city-guide/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/city-guide/istanbul-3-day-refined-itinerary.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/city-guide/romantic-istanbul-couples-guide.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/blog/bosphorus-cruise-with-kids.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/blog/bosphorus-sunset-cruise-guide.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/blog/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/blog/luxury-vs-standard-bosphorus-cruise.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/blog/marriage-proposal-bosphorus.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://luxurybosphorustour.com/blog/what-to-wear-bosphorus-dinner-cruise.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

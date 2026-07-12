@@ -8,6 +8,8 @@ const MIME = {
   '.css':  'text/css; charset=utf-8',
   '.js':   'application/javascript; charset=utf-8',
   '.json': 'application/json',
+  '.xml':  'application/xml; charset=utf-8',
+  '.webmanifest': 'application/manifest+json',
   '.webp': 'image/webp',
   '.png':  'image/png',
   '.jpg':  'image/jpeg',
@@ -34,7 +36,8 @@ http.createServer((req, res) => {
   } catch (e) { res.writeHead(500); res.end(String(e)); }
 }).listen(PORT, () => {
   console.log('Luxury Bosphorus Tour — local preview running');
-  console.log('Open:  http://localhost:' + PORT + '/preview.html');
+  console.log('Open:  http://localhost:' + PORT + '/            (EN)');
+  console.log('       http://localhost:' + PORT + '/tr/         (TR)');
   console.log('       http://localhost:' + PORT + '/city-guide/');
   console.log('       http://localhost:' + PORT + '/blog/');
 });
