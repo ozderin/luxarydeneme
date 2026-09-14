@@ -200,7 +200,7 @@
   .ev .sub{font-family:var(--sans);font-weight:300;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
 
   .ev.e1 .bg{background-image:url('/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-24.jpg')}
-  .ev.e2 .bg{background-image:url('/data/08-performers-dervish/whirling-dervish-bosphorus-cruise-1.jpg')}
+  .ev.e2 .bg{background-image:url('/data/08-performers-dervish/whirling-dervish-bosphorus-cruise-1.jpg');background-position:center 15%}
   .ev.e3 .bg{background-image:url('/data/manzara/dolmabahce-palace-bosphorus-night.jpg')}
   .ev.e4 .bg{background-image:url('/data/10-party-guests/bosphorus-night-cruise-party-23.jpg')}
   .ev.e5 .bg{background-image:url('/data/01-aerial/bosphorus-cruise-aerial-1.jpg')}
@@ -1090,7 +1090,20 @@
   .menu-block-count{font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-left:auto}
   .menu-block-desc{font-family:var(--sans);font-size:14px;color:var(--ink-muted);line-height:1.7;max-width:680px;margin:0 0 14px}
   .menu-block-figure{margin:14px 0 0;overflow:hidden;border:1px solid rgba(201,169,97,.15)}
-  .menu-block-figure img{width:100%;height:auto;max-height:240px;object-fit:cover;display:block}
+  .menu-block-figure img{width:100%;height:auto;max-height:360px;object-fit:cover;display:block}
+  /* image focal points — keep faces in frame wherever these photos get cropped (figures, thumbs, masonry, flow) */
+  img[src*="whirling-dervish-bosphorus-cruise-1."]{object-position:center 20%}
+  img[src*="anatolian-folk-dance-bosphorus-cruise-1."]{object-position:center 15%}
+  img[src*="anatolian-folk-dance-bosphorus-cruise-2."]{object-position:center 20%}
+  img[src*="anatolian-folk-dance-bosphorus-cruise-31."]{object-position:center 30%}
+  img[src*="belly-dance-bosphorus-night-cruise-8."]{object-position:center 30%}
+  img[src*="bosphorus-night-cruise-party-1."]{object-position:center 30%}
+  img[src*="bosphorus-night-cruise-party-5."]{object-position:center 20%}
+  img[src*="bosphorus-night-cruise-party-6."]{object-position:center 35%}
+  img[src*="bosphorus-night-cruise-party-7."]{object-position:center 25%}
+  img[src*="bosphorus-night-cruise-party-10."]{object-position:center 35%}
+  img[src*="bosphorus-night-cruise-party-17."]{object-position:center 35%}
+  img[src*="bosphorus-night-cruise-party-18."]{object-position:center 30%}
   .dish-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:8px}
   .dish-card{background:linear-gradient(180deg,rgba(201,169,97,.04),rgba(15,15,21,.6));border:1px solid var(--line-soft);padding:18px 20px;display:flex;flex-direction:column;gap:6px;position:relative}
   .dish-card.vip{border-color:var(--gold-deep);background:linear-gradient(180deg,rgba(201,169,97,.08),rgba(15,15,21,.6))}
@@ -1281,7 +1294,7 @@
         <p class="hero-lede">Her akşam canlı Türk gecesi şovu — semazen, oryantal dans, davul ekibi, Anadolu halk oyunları. Konser düzeyinde sahne ışıkları, tam prodüksiyon, profesyonel sanatçılar.</p>
         <div class="panel-thumbs">
           <a href="#m-shows"><img src="/data/08-performers-dervish/whirling-dervish-bosphorus-cruise-1.jpg" alt="" loading="lazy"></a>
-          <a href="#m-shows"><img src="/data/07-performers-belly/belly-dance-bosphorus-night-cruise-1.jpg" alt="" loading="lazy"></a>
+          <a href="#m-shows"><img src="/data/07-performers-belly/belly-dance-bosphorus-night-cruise-8.jpg" alt="" loading="lazy"></a>
           <a href="#m-shows"><img src="/data/06-performers-folk/anatolian-folk-dance-bosphorus-cruise-1.jpg" alt="" loading="lazy"></a>
           <a href="#m-shows"><img src="/data/06-performers-folk/anatolian-folk-dance-bosphorus-cruise-2.jpg" alt="" loading="lazy"></a>
         </div>
@@ -1346,8 +1359,8 @@
         </h2>
         <p class="hero-lede">Premium üç güverteli Boğaz teknesi — ana güvertede kapalı yemek alanı ve sahne, orta güvertede lounge yemek alanı, üst güvertede açık hava dans pisti ve bar. Her akşam Eminönü iskelesinden kalkış.</p>
         <div class="panel-thumbs">
-          <a href="#m-boat"><img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-1.jpg" alt="" loading="lazy"></a>
-          <a href="#m-boat"><img src="/data/10-party-guests/bosphorus-night-cruise-party-1.jpg" alt="" loading="lazy"></a>
+          <a href="#m-boat"><img src="/data/02-boat-exterior/bosphorus-cruise-boat-night-2.jpg" alt="" loading="lazy"></a>
+          <a href="#m-boat"><img src="/data/02-boat-exterior/bosphorus-cruise-boat-night-11.jpg" alt="" loading="lazy"></a>
           <a href="#m-boat"><img src="/data/01-aerial/bosphorus-cruise-aerial-2.jpg" alt="" loading="lazy"></a>
           <a href="#m-boat"><img src="/data/01-aerial/bosphorus-cruise-aerial-3.jpg" alt="" loading="lazy"></a>
         </div>
@@ -1876,7 +1889,7 @@
           </div>
           <p class="menu-block-desc">Akşamın baş gösterisi — profesyonel bir oryantal dansçının masalarla sahne arasında akan tüm rutini. Parlak pullu kostümler, ifade yüklü koreografi, dansa nazikçe dahil edilen misafirlerle seyirci anları. Misafirlerin fotoğraflayıp yıllarca hatırladığı türden bir an.</p>
           <div class="menu-block-figure">
-            <img src="/data/07-performers-belly/belly-dance-bosphorus-night-cruise-1.jpg" alt="Boğaz akşam yemekli tekne turunda oryantal dans gösterisi — gecenin doruğu" loading="lazy">
+            <img src="/data/07-performers-belly/belly-dance-bosphorus-night-cruise-8.jpg" alt="Boğaz akşam yemekli tekne turunda oryantal dans gösterisi — gecenin doruğu" loading="lazy">
           </div>
         </div>
 
@@ -2015,7 +2028,7 @@
           </div>
           <p class="menu-block-desc">Teknenin üst katı gökyüzüne açılır — ortada dans pisti, kenarlarda lounge oturma alanı, kokteyl servisi yapan ikinci bar ve her yanda Boğaz. Sıcak aylarda rüzgâr serinletir; kışın güverte ısıtılır.</p>
           <div class="menu-block-figure">
-            <img src="/data/10-party-guests/bosphorus-night-cruise-party-1.jpg" alt="Türk gecesi şovundan sonra Boğaz akşam yemekli tekne turunda üst güverte dans pisti" loading="lazy">
+            <img src="/data/10-party-guests/bosphorus-night-cruise-party-17.jpg" alt="Türk gecesi şovundan sonra Boğaz akşam yemekli tekne turunda üst güverte dans pisti" loading="lazy">
           </div>
         </div>
 
@@ -2060,7 +2073,7 @@
         <img src="/data/10-party-guests/bosphorus-night-cruise-party-7.jpg" alt="Boğaz akşam yemekli tekne turunda kadeh kaldıran arkadaşlar" loading="lazy">
         <img src="/data/10-party-guests/bosphorus-night-cruise-party-10.jpg" alt="Karanlıktan sonra Boğaz turunda kokteyller" loading="lazy">
         <img src="/data/02-boat-exterior/bosphorus-cruise-boat-night-10.jpg" alt="Parti sırasında Boğaziçi Köprüsü altında bir çift" loading="lazy">
-        <img src="/data/10-party-guests/bosphorus-night-cruise-party-5.jpg" alt="Boğaz turunda partinin tadını çıkaran misafirler" loading="lazy">
+        <img src="/data/10-party-guests/bosphorus-night-cruise-party-18.jpg" alt="Boğaz turunda partinin tadını çıkaran misafirler" loading="lazy">
       </div>
     </div>
 
@@ -2135,7 +2148,7 @@
         </div>
         <div class="flow-stage">
           <span class="stage-tag">Final</span>
-          <img class="ph" src="/data/10-party-guests/bosphorus-night-cruise-party-1.jpg" alt="" loading="lazy">
+          <img class="ph" src="/data/10-party-guests/bosphorus-night-cruise-party-6.jpg" alt="" loading="lazy">
           <div class="body">
             <div class="head-row">
               <h4>DJ Partisi</h4>
@@ -2478,7 +2491,7 @@
           </div>
           <p class="menu-block-desc">Turun kalbi — tam restoran düzeni, önde sahne, ortada dans pisti. Türk gecesi şovu burada sahnelenir ve ana bar buradadır. İklim kontrollü, her iki yanda panoramik camlar.</p>
           <div class="menu-block-figure">
-            <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-1.jpg" alt="Boğaz akşam yemekli tekne turunda ana güverte yemek salonu" loading="lazy">
+            <img src="/data/02-boat-exterior/bosphorus-cruise-boat-night-2.jpg" alt="Boğaz akşam yemekli tekne turunda ana güverte yemek salonu" loading="lazy">
           </div>
         </div>
 
@@ -2501,7 +2514,7 @@
           </div>
           <p class="menu-block-desc">Teknenin en üstü — gökyüzüne açık, lounge oturma alanı, ikinci bir bar ve DJ kabini. Şovdan sonra gece buraya kayar: dans pisti, yıldızlar altında içecekler, her yanda Boğaz. Soğuk aylarda ısıtmalı.</p>
           <div class="menu-block-figure">
-            <img src="/data/10-party-guests/bosphorus-night-cruise-party-1.jpg" alt="Geceleyin Boğaz akşam yemekli tekne turunda üst güverte açık hava dans pisti" loading="lazy">
+            <img src="/data/02-boat-exterior/bosphorus-cruise-boat-night-11.jpg" alt="Boğaz'daki teknenin havadan görünümü — en üstte açık hava güvertesi" loading="lazy">
           </div>
         </div>
 
@@ -2514,7 +2527,7 @@
         <img src="/data/01-aerial/bosphorus-cruise-aerial-2.jpg" alt="Kalkıştan önce Eminönü iskelesinde Boğaz turu teknesi" loading="lazy">
         <img src="/data/01-aerial/bosphorus-cruise-aerial-3.jpg" alt="Gece Boğaz'da tur teknesinin havadan görünümü" loading="lazy">
         <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-2.jpg" alt="Boğaz turunda romantik masa düzeni" loading="lazy">
-        <img src="/data/10-party-guests/bosphorus-night-cruise-party-5.jpg" alt="Boğaz akşam yemekli tekne turunda teknedeki misafirler" loading="lazy">
+        <img src="/data/10-party-guests/bosphorus-night-cruise-party-18.jpg" alt="Boğaz akşam yemekli tekne turunda teknedeki misafirler" loading="lazy">
       </div>
     </div>
 
