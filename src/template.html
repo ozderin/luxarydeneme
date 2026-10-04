@@ -122,7 +122,7 @@
   .ftc h3{position:relative;z-index:2;font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
   .ftc p{position:relative;z-index:2;font-size:11px;color:var(--ink-muted);line-height:1.4}
   .ftc.ft1::before{background-image:url('/data/02-boat-exterior/bosphorus-cruise-boat-night-14.jpg');background-position:center 75%}
-  .ftc.ft2::before{background-image:url('/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-15.jpg')}
+  .ftc.ft2::before{background-image:url('/data/03-interior-dining/bosphorus-dinner-cruise-lamplit-tables-1.jpg')}
   .ftc.ft3::before{background-image:url('/data/manzara/bosphorus-bridge-istanbul-night.jpg')}
   .ftc.ft4::before{background-image:url('/data/01-aerial/bosphorus-cruise-aerial-3.jpg')}
 
@@ -199,7 +199,7 @@
   .ev .name .accent{font-family:var(--script);font-weight:400;color:var(--gold-bright);font-size:1.3em;text-transform:none;letter-spacing:0}
   .ev .sub{font-family:var(--sans);font-weight:300;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
 
-  .ev.e1 .bg{background-image:url('/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-24.jpg')}
+  .ev.e1 .bg{background-image:url('/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-105.jpg');background-position:center 70%}
   .ev.e2 .bg{background-image:url('/data/08-performers-dervish/whirling-dervish-bosphorus-cruise-101.jpg')}
   .ev.e3 .bg{background-image:url('/data/manzara/dolmabahce-palace-bosphorus-night.jpg')}
   .ev.e4 .bg{background-image:url('/data/10-party-guests/bosphorus-night-cruise-party-23.jpg')}
@@ -355,8 +355,8 @@
   .pkg:hover::before{opacity:.28}
   .pkg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,11,.55) 0%,rgba(7,7,11,.85) 100%);z-index:1;pointer-events:none}
   .pkg > *{position:relative;z-index:2}
-  .pkg:not(.popular)::before{background-image:url('/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-33.jpg')}
-  .pkg.popular::before{background-image:url('/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-24.jpg')}
+  .pkg:not(.popular)::before{background-image:url('/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-108.jpg')}
+  .pkg.popular::before{background-image:url('/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-101.jpg')}
   .pkg.popular::after{background:linear-gradient(180deg,rgba(201,169,97,.08) 0%,rgba(7,7,11,.88) 100%)}
   .pkg.popular{border-color:var(--gold);box-shadow:0 0 0 1px rgba(201,169,97,.25), 0 18px 40px -20px rgba(201,169,97,.18)}
 
@@ -1099,6 +1099,10 @@
   img[src*="bosphorus-night-cruise-party-10."]{object-position:center 35%}
   img[src*="bosphorus-night-cruise-party-17."]{object-position:center 35%}
   img[src*="bosphorus-night-cruise-party-18."]{object-position:center 30%}
+  img[src*="turkish-dinner-main-bosphorus-cruise-101."]{object-position:center 70%}
+  img[src*="turkish-dinner-main-bosphorus-cruise-106."]{object-position:center 65%}
+  img[src*="turkish-baklava-bosphorus-cruise-1."]{object-position:center 60%}
+  img[src*="bosphorus-dinner-cruise-dining-hall-4."]{object-position:center 60%}
   .dish-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:8px}
   .dish-card{background:linear-gradient(180deg,rgba(201,169,97,.04),rgba(15,15,21,.6));border:1px solid var(--line-soft);padding:18px 20px;display:flex;flex-direction:column;gap:6px;position:relative}
   .dish-card.vip{border-color:var(--gold-deep);background:linear-gradient(180deg,rgba(201,169,97,.08),rgba(15,15,21,.6))}
@@ -1266,10 +1270,10 @@
         </h2>
         <p class="hero-lede">{{heroPanels.dinner.lede}}</p>
         <div class="panel-thumbs">
-          <a href="#m-dinner"><img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-1.jpg" alt="" loading="lazy"></a>
-          <a href="#m-dinner"><img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-24.jpg" alt="" loading="lazy"></a>
-          <a href="#m-dinner"><img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-33.jpg" alt="" loading="lazy"></a>
-          <a href="#m-dinner"><img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-5.jpg" alt="" loading="lazy"></a>
+          <a href="#m-dinner"><img src="/data/04-food-meze/turkish-meze-bosphorus-cruise-101.jpg" alt="" loading="lazy"></a>
+          <a href="#m-dinner"><img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-101.jpg" alt="" loading="lazy"></a>
+          <a href="#m-dinner"><img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-104.jpg" alt="" loading="lazy"></a>
+          <a href="#m-dinner"><img src="/data/11-desserts-drinks/turkish-baklava-bosphorus-cruise-1.jpg" alt="" loading="lazy"></a>
         </div>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="#m-dinner">{{heroPanels.dinner.ctaPrimary}} <span class="arr">→</span></a>
@@ -1556,7 +1560,7 @@
     <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
 
     <div class="ed-hero">
-      <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-15.jpg" alt="" style="object-position:center 35%">
+      <img src="/data/03-interior-dining/bosphorus-dinner-cruise-lamplit-tables-2.jpg" alt="">
       <div class="ed-hero-veil"></div>
       <div class="ed-hero-text">
         <div class="modal-eyebrow">{{modals.dinner.eyebrow}}</div>
@@ -1584,7 +1588,7 @@
           </div>
           <p class="menu-block-desc">{{modals.dinner.block1Desc}}</p>
           <div class="menu-block-figure">
-            <img src="/data/04-food-meze/turkish-meze-bosphorus-cruise-1.jpg" alt="{{modals.dinner.block1Alt}}" loading="lazy" style="object-position:center 35%">
+            <img src="/data/04-food-meze/turkish-meze-bosphorus-cruise-102.jpg" alt="{{modals.dinner.block1Alt}}" loading="lazy">
           </div>
         </div>
 
@@ -1616,13 +1620,12 @@
               <span class="dish-cat">{{modals.dinner.dish2Cat}}</span>
               <h4 class="dish-name">{{modals.dinner.dish2Name}}</h4>
               <p class="dish-desc">{{modals.dinner.dish2Desc}}</p>
-              <img class="dish-ph" src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-24.jpg" alt="{{modals.dinner.dish2Alt}}" loading="lazy">
+              <img class="dish-ph" src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-101.jpg" alt="{{modals.dinner.dish2Alt}}" loading="lazy">
             </div>
             <div class="dish-card">
               <span class="dish-cat">{{modals.dinner.dish3Cat}}</span>
               <h4 class="dish-name">{{modals.dinner.dish3Name}}</h4>
               <p class="dish-desc">{{modals.dinner.dish3Desc}}</p>
-              <img class="dish-ph" src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-33.jpg" alt="{{modals.dinner.dish3Alt}}" loading="lazy">
             </div>
             <div class="dish-card">
               <span class="dish-cat">{{modals.dinner.dish4Cat}}</span>
@@ -1633,6 +1636,7 @@
               <span class="dish-cat">{{modals.dinner.dish5Cat}}</span>
               <h4 class="dish-name">{{modals.dinner.dish5Name}}</h4>
               <p class="dish-desc">{{modals.dinner.dish5Desc}}</p>
+              <img class="dish-ph" src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-102.jpg" alt="{{modals.dinner.dish5Alt}}" loading="lazy">
             </div>
           </div>
         </div>
@@ -1645,17 +1649,20 @@
             <span class="menu-block-count">{{modals.dinner.block4Count}}</span>
           </div>
           <p class="menu-block-desc">{{modals.dinner.block4Desc}}</p>
+          <div class="menu-block-figure">
+            <img src="/data/11-desserts-drinks/turkish-baklava-bosphorus-cruise-1.jpg" alt="{{modals.dinner.block4Alt}}" loading="lazy">
+          </div>
         </div>
 
         <p class="menu-detail-foot">{{modals.dinner.menuFoot}}</p>
       </div>
 
       <div class="photo-masonry">
-        <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-1.jpg" alt="" loading="lazy">
-        <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-24.jpg" alt="" loading="lazy">
-        <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-33.jpg" alt="" loading="lazy">
-        <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-5.jpg" alt="" loading="lazy">
-        <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-7.jpg" alt="" loading="lazy">
+        <img src="/data/03-interior-dining/bosphorus-dinner-cruise-window-table-2.jpg" alt="" loading="lazy">
+        <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-104.jpg" alt="" loading="lazy">
+        <img src="/data/11-desserts-drinks/red-velvet-heart-cake-bosphorus-cruise-1.jpg" alt="" loading="lazy">
+        <img src="/data/11-desserts-drinks/wine-glasses-bosphorus-dinner-cruise-1.jpg" alt="" loading="lazy">
+        <img src="/data/03-interior-dining/bosphorus-dinner-cruise-dining-hall-4.jpg" alt="" loading="lazy">
       </div>
     </div>
 
@@ -2117,7 +2124,7 @@
           <button type="button" class="flow-stage-next" aria-label="{{modals.flow.nextAria}}">↓</button>
         </div>
         <div class="flow-stage">
-          <img class="ph" src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-2.jpg" alt="" loading="lazy">
+          <img class="ph" src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-106.jpg" alt="" loading="lazy">
           <div class="body">
             <div class="head-row">
               <h4>{{modals.flow.stage2Title}}</h4>
@@ -2191,7 +2198,7 @@
     <a href="#" class="modal-close" aria-label="{{modalClose}}">×</a>
 
     <div class="ed-hero">
-      <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-1.jpg" alt="">
+      <img src="/data/03-interior-dining/bosphorus-dinner-cruise-tables-row-1.jpg" alt="">
       <div class="ed-hero-veil"></div>
       <div class="ed-hero-text">
         <div class="modal-eyebrow">{{modals.info.eyebrow}}</div>
@@ -2521,7 +2528,7 @@
         <img src="/data/01-aerial/bosphorus-cruise-aerial-1.jpg" alt="{{modals.boat.photo1Alt}}" loading="lazy">
         <img src="/data/01-aerial/bosphorus-cruise-aerial-2.jpg" alt="{{modals.boat.photo2Alt}}" loading="lazy">
         <img src="/data/01-aerial/bosphorus-cruise-aerial-3.jpg" alt="{{modals.boat.photo3Alt}}" loading="lazy">
-        <img src="/data/05-food-mains/turkish-dinner-main-bosphorus-cruise-2.jpg" alt="{{modals.boat.photo4Alt}}" loading="lazy">
+        <img src="/data/09-guests-celebration/bosphorus-dinner-cruise-romantic-table-1.jpg" alt="{{modals.boat.photo4Alt}}" loading="lazy">
         <img src="/data/10-party-guests/bosphorus-night-cruise-party-18.jpg" alt="{{modals.boat.photo5Alt}}" loading="lazy">
       </div>
     </div>
