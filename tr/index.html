@@ -175,6 +175,9 @@
   .play:hover::before{inset:-9px;border-color:rgba(201,169,97,.2)}
   .play .label{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);white-space:nowrap;font-weight:500}
   .play svg{width:26px;height:26px;margin-left:4px}
+  /* no video configured (config.video.heroEmbed empty) → button inert, lightbox never opens */
+  .play.is-off{cursor:default;pointer-events:none}
+  .no-video #m-video{display:none!important}
 
   .socials{display:flex;flex-direction:column;gap:10px;margin-top:20px}
   .socials a{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink);transition:all .3s}
@@ -2953,8 +2956,17 @@ window.initWizMap = function(){
    open, lock body scroll while open, ESC closes. */
 (function videoModal(){
   const frame = document.getElementById('videoFrame');
-  const url   = 'https://www.youtube.com/embed/QBB3ENbpYUM?autoplay=1&rel=0&modestbranding=1';
+  const url   = '';
   if (!frame) return;
+  if (!url) {
+    document.documentElement.classList.add('no-video');
+    document.querySelectorAll('a.play[href="#m-video"]').forEach(a => {
+      a.removeAttribute('href');
+      a.classList.add('is-off');
+      a.setAttribute('aria-disabled', 'true');
+    });
+    return;
+  }
   const sync = () => {
     if (location.hash === '#m-video') {
       if (frame.src !== url) frame.src = url;
